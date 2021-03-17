@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from '../views/home.vue'
@@ -9,45 +10,93 @@ import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 
-export const routes = new Router ({
-
-  // mode: 'history',
-  // base: process.env.BASE_URL,
-  routes: [ 
+const routes = [
   {
     path: '/',
     name: 'home',
     component: home
   },
   {
-    path: '/login',
-    component: login
-  },
-  {
     path: '/stay',
-    name:'stayApp',
     component: stayApp
   },
   {
     path: '/stay/:id',
-    name: 'stayDetails',
     component: stayDetails
   },
   {
     path: '/stay/edit/:id?',
-    name: 'stayEdit',
     component: stayEdit
   },
   {
     path: '/user/:id',
-    name: 'userDetails',
     component: userDetails
   },
+  {
+    path: '/login',
+    component: login
+  },
+
 ]
-})
 
 const router = new VueRouter({
   routes
 })
 
 export default router
+
+
+
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+// import home from '../views/home.vue'
+// import stayApp from '../views/stay-app.vue'
+// import stayDetails from '../views/stay-details.vue'
+// import stayEdit from '../views/stay-edit.vue'
+// import userDetails from '../views/user-details.vue'
+// import login from '../views/login.vue'
+
+// Vue.use(VueRouter)
+
+// export const routes = new Router ({
+
+//   // mode: 'history',
+//   // base: process.env.BASE_URL,
+//   routes: [ 
+//   {
+//     path: '/',
+//     name: 'home',
+//     component: home
+//   },
+//   {
+//     path: '/login',
+//     component: login
+//   },
+//   {
+//     path: '/stay',
+//     name:'stayApp',
+//     component: stayApp
+//   },
+//   {
+//     path: '/stay/:id',
+//     name: 'stayDetails',
+//     component: stayDetails
+//   },
+//   {
+//     path: '/stay/edit/:id?',
+//     name: 'stayEdit',
+//     component: stayEdit
+//   },
+//   {
+//     path: '/user/:id',
+//     name: 'userDetails',
+//     component: userDetails
+//   },
+// ]
+// })
+
+// const router = new VueRouter({
+//   routes
+// })
+
+// export default router
