@@ -9,34 +9,42 @@ import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = new Router ({
+
+  // mode: 'history',
+  // base: process.env.BASE_URL,
+  routes: [ 
   {
     path: '/',
     name: 'home',
     component: home
   },
   {
+    path: '/login',
+    component: login
+  },
+  {
     path: '/stay',
+    name:'stayApp',
     component: stayApp
   },
   {
     path: '/stay/:id',
+    name: 'stayDetails',
     component: stayDetails
   },
   {
     path: '/stay/edit/:id?',
+    name: 'stayEdit',
     component: stayEdit
   },
   {
     path: '/user/:id',
+    name: 'userDetails',
     component: userDetails
   },
-  {
-    path: '/login',
-    component: login
-  },
-
 ]
+})
 
 const router = new VueRouter({
   routes
