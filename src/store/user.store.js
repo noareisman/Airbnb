@@ -4,29 +4,31 @@ import { userService } from '../services/user.service.js';
 export const userStore = {
     state: {
         loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
-        // users: []
+        users: []
     },
     getters: {
-        // users(state) {
-        //     return state.users;
-        // },
+        users(state) {
+            return state.users;
+        },
         loggedinUser(state) {
             return state.loggedInUser;
         },
-        isAdmin(state) {
-            return state.loggedInUser.isAdmin
-        },
-        isUserLogged(state) {
-            return state.isUserLogged;
-        }
+        // isAdmin(state) {
+        //     return state.loggedInUser.isAdmin
+        // },
+        // isUserLogged(state) {
+        //     return state.isUserLogged;
+        // }
     },
 
     mutations: {
         setUser(state, { user }) {
             state.loggedinUser = user;
+            console.log('state.loggedinUser', state.loggedinUser);
         },
         setUsers(state, { users }) {
             state.users = users;
+            console.log('users are:', state.users);
         },
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
@@ -35,8 +37,6 @@ export const userStore = {
     actions: {
         async login({ commit }, { userCred }) {
             try {
-                console.log("userCred:", userCred);
-                return
                 const user = await userService.login(userCred);
                 commit({ type: 'setUser', user })
                 return user;
@@ -47,8 +47,6 @@ export const userStore = {
         },
         async signup({ commit }, { userCred }) {
             try {
-                console.log("userCred:", userCred);
-                return
                 const user = await userService.signup(userCred)
                 commit({ type: 'setUser', user })
                 return user;
@@ -67,16 +65,15 @@ export const userStore = {
                 throw err
             }
         },
-        // async loadUsers({ commit }) {
-        //     // TODO: loading
-        //     try {
-        //         const users = await userService.getUsers();
-        //         commit({ type: 'setUsers', users })
-        //     } catch (err) {
-        //         console.log('userStore: Error in loadUsers', err)
-        //         throw err
-        //     }
-        // },
+        async loadUsers({ commit }) {
+            try {
+                const users = await userService.getUsers();
+                commit({ type: 'setUsers', users })
+            } catch (err) {
+                console.log('userStore: Error in loadUsers', err)
+                throw err
+            }
+        },
         async removeUser({ commit }, { userId }) {
             try {
                 await userService.remove(userId);
