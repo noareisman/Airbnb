@@ -2,7 +2,7 @@
 
 <template>
   <section>
-    <h1>Stay list</h1>
+    <h1>Places to stay for you</h1>
     <ul  v-if="stays" class="list-card-container">
       <stay-preview
         v-for="stay in stays"

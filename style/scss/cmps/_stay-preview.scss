@@ -23,6 +23,8 @@
     cursor: pointer;
     position: relative;
     width: 100%;
+    object-fit: cover;
+
 
 }
 
@@ -47,6 +49,8 @@
     z-index:10;
     transform:translateY(-50%);
     opacity: 0;
+    outline: none;
+
 
 }
 
@@ -65,7 +69,6 @@
 
 .stay-img:hover ~ .img-btn ,.img-btn:hover{
     opacity: 0.9;
-    outline: none;
 }
 
 .like-btn{

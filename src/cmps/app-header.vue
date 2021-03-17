@@ -1,27 +1,55 @@
 <template>
-  <header>
-    <nav>
-      <router-link to="/">
-        <span role="img" aria-label="logo">🙏</span>
-      </router-link>
-      <!-- <router-link to="/review">Reviews</router-link> -->
-      <!-- <router-link to="/chat">Chat</router-link> -->
-      <router-link to="/login">Login / Signup</router-link>
-    </nav>
-    <section className="loggedin-user" v-if="loggedInUser">
+  <header class="full main-layout header-container">
+    <el-menu 
+      class="el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect">     
+
+      <el-menu-item  @click="navTo('/')" index="1"> <span class=" logo txt"> HomeAway </span> </el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">Workspace</template>
+        <el-menu-item index="2-1">item one</el-menu-item>
+        <el-menu-item index="2-2">item two</el-menu-item>
+        <el-menu-item index="2-3">item three</el-menu-item>
+        <el-submenu index="2-4">
+          <template slot="title">item four</template>
+          <el-menu-item index="2-4-1">item one</el-menu-item>
+          <el-menu-item index="2-4-2">item two</el-menu-item>
+          <el-menu-item index="2-4-3">item three</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-menu-item @click="navTo('/stay/')" index="4"> Explore</el-menu-item>
+    </el-menu>
+
+    <!-- <section className="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
         {{ loggedInUser.fullname }}
       </router-link>
       <span>{{ loggedInUser.score }}</span>
-    </section>
+    </section> -->
   </header>
 </template>
 <script>
 export default {
+  name: "app-header",
+  data() {
+    return {
+      activeIndex: "1",
+      activeIndex2: "1",
+    };
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    navTo(dest) {
+      this.$router.push(dest);
+    },
+  },
   computed: {
     loggedInUser() {
       // return this.$store.getters.loggedinUser
-    }
+    },
   },
 };
 </script>

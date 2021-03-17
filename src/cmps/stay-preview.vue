@@ -5,6 +5,7 @@
         class="stay-img" :stay="stay"
         :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[Imgidx]}.jpg`)"
       />
+  
       <button @click="changeImg(-1)" class="img-btn prev-img"> &#60;</button>
       <button @click="changeImg(1)" class="img-btn next-img">	&#62; </button>
     </div>
@@ -51,7 +52,8 @@ export default {
           this.isLiked = !this.isLiked
       console.log(stayId);
 
-    }
+    },
+    
   },
   computed: {
     summary() {

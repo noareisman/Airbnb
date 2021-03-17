@@ -4,7 +4,8 @@ img{
 
 .list-card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-auto-rows: 300px;
     gap: 15px;
     margin: 0;
     padding: 0;

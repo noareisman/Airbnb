@@ -1,6 +1,5 @@
 <template>
 <section class="main-layout"> 
-  
   <stay-filter/>
   <h1> stay app </h1>
   <stay-list v-if="staysToShow && staysToShow.length" :stays="staysToShow"/>
@@ -10,6 +9,7 @@
 <script>
 import stayFilter from '../cmps/stay-filter.vue';
 import stayList from "../cmps/stay-list.vue";
+import myHeader from '../cmps/app-header.vue'
 export default {
 
   computed: {
@@ -25,7 +25,8 @@ export default {
   },
 components:{
 stayList,
-stayFilter
+stayFilter,
+myHeader
 }
 }
 
