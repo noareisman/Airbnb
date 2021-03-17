@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import home from '../views/home.vue'
+import home from '../views/Home.vue'
 import stayApp from '../views/stay-app.vue'
 import stayDetails from '../views/stay-details.vue'
 import stayEdit from '../views/stay-edit.vue'
@@ -22,6 +22,10 @@ const routes = [
   {
     path: '/stay/:id',
     component: stayDetails
+  },
+  {
+    path: '/stay/:id/:location?',//
+    // component: stayDetails
   },
   {
     path: '/stay/edit/:id?',
