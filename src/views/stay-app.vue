@@ -8,16 +8,16 @@
 </template>
 
 <script>
-import StayFilter from '../components/stay-filter.vue';
+import stayFilter from '../cmps/stay-filter.vue';
 
-import stayList from "../components/stay-list.vue";
+import stayList from "../cmps/stay-list.vue";
 export default {
 
 
 
 components:{
   stayList,
-StayFilter
+stayFilter
 }
 }
 
