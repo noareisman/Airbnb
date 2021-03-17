@@ -21,7 +21,8 @@
     // grid-auto-rows: 300px;
 
     > * {
-        @include aspect-ratio(1, 1);
+        @include aspect-ratio(1, 0.8);
+        border-radius: 18px;
     }
 
 }

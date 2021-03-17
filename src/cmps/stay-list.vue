@@ -1,13 +1,17 @@
+
+
 <template>
   <section>
-    <h1>Stay list</h1>
-    <ul class="card-grid">
-      <li v-for="stay in stays" :key="stay._id">
-        <stay-preview :stay="stay"></stay-preview>
-      </li>
+    <h1>Places to stay for you</h1>
+    <ul  v-if="stays" class="list-card-container">
+      <stay-preview
+        v-for="stay in stays"
+        :key="stay._id"
+        :stay="stay"
+      />
     </ul>
     <button @click="changePage(1)">></button>
-    <button @click="changePage(-1)"></button>
+    <button @click="changePage(-1)">></button>
   </section>
 </template>
 
@@ -21,10 +25,17 @@ export default {
   },
   methods: {
     changePage(diff) {
-      this.$store.commit("changePage", diff);
+      // this.$store.commit("changePage", diff);
     },
+  },
+  mounted() {
+    },
+  created(){
+    
+    console.log(this.stays);
   },
   components: {
     stayPreview,
   },
 };
+</script>
