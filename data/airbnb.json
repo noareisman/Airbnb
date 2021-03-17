@@ -62,7 +62,440 @@
             }
           }
         ]
-      }
+      },
+      {
+      "_id": "10006547",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["2.1","2.2a","2.2b","2.2c","2.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006548",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["3.1","3.2a","3.2b","3.2c","3.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006549",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["4.1","4.2a","4.2b","4.2c","4.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006550",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["5.1","5.2a","5.2b","5.2c","5.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006551",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["6.1","6.2a","6.2b","6.2c","6.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006552",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["7.1","7.2a","7.2b","7.2c","7.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006553",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["8.1","8.2a","8.2b","8.2c","8.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006554",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["9.1","9.2a","9.2b","9.2c","9.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006555",
+      "name": "Ribeira Charming Duplex",
+      "imgUrls": ["10.1","10.2a","10.2b","10.2c","10.2d"],
+      "price": 80.00,
+      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "capacity": 8,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Smoking allowed",
+        "Pets allowed",
+        "Cooking basics"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "Davit Pok",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+      },
+      "loc": {
+        "country": "Portugal",
+        "countryCode": "PT",
+        "address": "Porto, Portugal",
+        "lat": -8.61308,
+        "lng": 41.1413
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "Very helpful hosts. Cooked traditional...",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
+          },
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]
+    },
+
     ],
     "order": [
       {
@@ -109,3 +542,4 @@
       }
     ]  
 }
+
