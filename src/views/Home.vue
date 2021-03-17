@@ -41,7 +41,11 @@
           </span>
           <div class="search-icon">
             <div class="btn-search">
+<<<<<<< HEAD
+              <img src="../assets/imgs/icons/icon-search.png">
+=======
               <img src="../assets/images/icons/icon-search.png" />
+>>>>>>> 3cde00238beb57920e5a626de2ef6870160eef52
             </div>
           </div>
         </div>

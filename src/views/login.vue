@@ -104,6 +104,7 @@ export default {
       // }
       try {
         await this.$store.dispatch({ type: "login", userCred: this.loginCred });
+        this.resetCreds();
         this.$router.push("/");
       } catch (err) {
         console.log(err);
@@ -123,7 +124,12 @@ export default {
       //   return;
       // }
       await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
+      this.resetCreds();
       this.$router.push("/");
+    },
+    resetCreds() {
+      this.loginCred = { username: "", password: "" };
+      this.signupCred = { username: "", password: "", fullname: "" };
     },
     // loadUsers() {
     //   this.$store.dispatch({ type: "loadUsers" });

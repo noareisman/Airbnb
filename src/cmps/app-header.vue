@@ -20,7 +20,7 @@
 export default {
   computed: {
     loggedInUser() {
-      return this.$store.getters.loggedinUser
+      // return this.$store.getters.loggedinUser
     }
   },
 };
