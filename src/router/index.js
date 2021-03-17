@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from '../views/home.vue'
 import stayApp from '../views/stay-app.vue'
