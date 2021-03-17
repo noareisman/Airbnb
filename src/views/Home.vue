@@ -37,7 +37,7 @@
           </span>
           <div class="search-icon">
             <div class="btn-search">
-              <img src="../assets/images/icons/icon-search.png">
+              <img src="../assets/imgs/icons/icon-search.png">
             </div>
              </div>
         </div>

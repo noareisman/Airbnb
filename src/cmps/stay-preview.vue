@@ -1,6 +1,9 @@
 <template>
   <section class="stay-card">
-    <img class="stay-main-img" :src="require(`@/assets/imgs/airbnb-imgs/${this.stay.imgs[0]}.jpg`)"/>
+  <div>
+    <img class="stay-main-img" :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"/>
+    </div> 
+
   </section>
 </template>
             
