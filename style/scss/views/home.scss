@@ -1,0 +1,161 @@
+.main-layout{
+    display: grid;
+    grid-template-columns:minmax(2rem,1fr) minmax(auto,1100px) minmax( 2rem,1fr);
+}
+
+.hero{
+    margin-bottom: 60px;
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,.123),rgba(0,0,0,.178)),url(https://cdn57.androidauthority.net/wp-content/uploads/2019/12/Home-available-on-BoutiqueHomes.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+    .main-layout>.full {
+        grid-column: 1/-1;
+    }
+
+    .main-layout>* {
+        grid-column: 2;
+    }
+    
+
+    .filter-container{
+        display: flex;
+        // justify-content: center;
+        // align-content: center;
+        margin-top: 6vh;
+        cursor: pointer
+    }
+
+    .scroll-serarch{
+            transform-origin: 50% 0!important;
+            // transform: scale(.42,.69) translateY(-58px)!important;
+            transition: transform .25s ease,opacity 50ms ease 20ms,visibility 0ms .15s!important
+    }
+
+    .filter-container .wrapper {
+        border-radius: 50px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        
+    }
+    
+        .filter-container .wrapper .box {
+            line-height: 18px;
+            padding: 10px;
+            position: relative;
+            -webkit-padding-start: 24px;
+            padding-inline-start: 24px
+        }
+
+    .filter-container .wrapper .box:first-child{
+        // min-width: 250px;
+        width: 250px;
+    }
+
+    .filter-container .wrapper .box:nth-child(2) {
+        width: 250px;
+
+    }
+
+    .filter-container .wrapper .box:nth-child(3) {
+        width: 160px;
+    }
+
+  
+
+    .hero .h1-container {
+        line-height: 70px;
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        font-size: 6.5rem;
+        font-weight: 800;
+        color: #fff;
+        justify-content: center;
+        align-items: end;
+        height: 100%;
+       
+    }
+
+    .hero .h1-container h1 {
+        padding: 20px;
+        -webkit-padding-start: 0;
+        padding-inline-start: 0;
+    }
+
+    .hero .h1-container h1 .dot {
+        color: #f05;
+        font-size: 4rem;
+    }
+
+    .justify-center{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .filter-container .wrapper .box .title {
+        font-weight: 800;
+        line-height: 16px;
+        padding-bottom: 2px;
+        -webkit-padding-end: 60px;
+        padding-inline-end: 60px;
+        font-size: 12px;
+
+    }
+
+
+    .filter-container .wrapper .box .desc {
+        color: #afafaf;
+        line-height: 18px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .filter-container .wrapper .box:first-child:after, .filter-container .wrapper .box:nth-child(2):after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 25%;
+        height: 50%;
+        border-right: 1px solid #eee;
+    }
+
+    .wrapper{
+        display: flex;
+        height:80px;
+    }
+
+    .dates , .guests , .location{
+        display: flex;
+        flex-direction: column;
+        padding: 1px 2px;
+
+    }
+
+    .box{
+        width: 250px;
+    }
+
+    .search-icon{
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 10px;
+    }
+    .btn-search{
+    background-color: #ff385c;
+    border-radius: 50%;
+    width: 40px!important;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
