@@ -33,7 +33,6 @@
 
 .img-btn{
     position: absolute;
- 
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: rgb(255, 255, 255);
@@ -44,15 +43,36 @@
     cursor: pointer;
     border-radius: 22px;
     text-align: center;
-    
+    transition: .3s;
+    z-index:10;
+    transform:translateY(-50%);
+    opacity: 0;
+
 }
 
 .prev-img{
     top: 34%;
-    left: 7%;
+    left: 2%;
+    opacity: 0;
+
 }
 
 .next-img{
     top: 34%;
-    right: -4%;
+    right: 2%;
+
+}
+
+.stay-img:hover ~ .img-btn ,.img-btn:hover{
+    opacity: 0.9;
+    outline: none;
+}
+
+.like-btn{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }

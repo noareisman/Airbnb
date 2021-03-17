@@ -9,7 +9,9 @@
       <button @click="changeImg(1)" class="img-btn next-img">	&#62; </button>
     </div>
     <div class="card-info">
-      <span> ⭐{{ stay.reviews[0].avgRate }}</span>
+      <img v-if="!isLiked" @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/heart.png"> 
+      <img v-else @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/fillheart.png"> 
+      <span>⭐{{ stay.reviews[0].avgRate }}</span>
       <span> {{ stay.name }}</span>
       <span> {{ summary }}</span>
       <span> {{ price }}</span>
@@ -28,7 +30,8 @@ export default {
   },
   data(){
     return{
-      Imgidx:0
+      Imgidx:0,
+      isLiked:false
     }
   },
   methods:{
@@ -41,6 +44,16 @@ export default {
       else if(this.Imgidx===4 && val ===1)this.Imgidx = 0
       console.log(this.Imgidx, 'imgidx' , val, 'val')
       this.Imgidx +=val
+    },
+    ToggleLike(stayId){
+      if(this.isLiked){
+        //add to Liked array in  
+      }else{
+        //remove from liked array in user
+      }
+          this.isLiked = !this.isLiked
+      console.log(stayId);
+
     }
   },
   computed: {
