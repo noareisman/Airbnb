@@ -1,5 +1,5 @@
 <template>
-<section> 
+<section class="main-layout"> 
   
   <stay-filter/>
   <h1> stay app </h1>
