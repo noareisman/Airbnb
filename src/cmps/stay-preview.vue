@@ -2,7 +2,7 @@
   <section class="preview-card space-preview">
     <div>
       <img @click="toDetails(stay._id)"
-        class="stay-img"
+        class="stay-img" :stay="stay"
         :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[Imgidx]}.jpg`)"
       />
       <button @click="changeImg(-1)" class="img-btn prev-img"> &#60;</button>
@@ -17,9 +17,6 @@
   </section>
 </template>
             
-
-
-
 <script>
 export default {
   name: "stay-preview",
