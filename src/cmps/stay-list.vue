@@ -3,7 +3,7 @@
 <template>
   <section>
     <h1>Stay list</h1>
-    <ul  v-if="stays" class="card-grid">
+    <ul  v-if="stays" class="list-card-container">
       <stay-preview
         v-for="stay in stays"
         :key="stay._id"

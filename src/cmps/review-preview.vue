@@ -1,8 +1,8 @@
 <template>
   <section class="review-card">
   <div>
-    <p>{{}}<p>
     <img class="reviewer-img" :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"/>
+    <p>{{}}</p>
   </div> 
 
   </section>
@@ -12,7 +12,7 @@
 export default {
     name:'review-preview',
     props:{
-        reviews:Array
+        review:Object
     },      
 }
 </script>
