@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import stayPreview from '../components/stay-preview.vue'
+import stayPreview from '../cmps/stay-preview.vue'
 export default {
 
 components:{
