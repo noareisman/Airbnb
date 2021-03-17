@@ -1,25 +1,25 @@
 
 export const stayStore = {
     state: {
-        stays:[],
+        stays: [],
         // currStay
     },
     getters: {
-      
-    }, 
-  
+
+    },
+
     mutations: {
-     
+
     },
     actions: {
-        loadStays ({ commit, state }){
-            
+        loadStays({ commit, state }) {
+
         },
         // loadStay?
-        
-        saveStay ({ commit }, { stay }){
 
-        } 
+        saveStay({ commit }, { stay }) {
 
-}
+        }
+
+    }
 }

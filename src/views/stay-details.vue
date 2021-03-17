@@ -1,107 +1,44 @@
 <template>
-  <section>
-      <h1>stay details</h1>
-      <trip-setting/>
-  </section>
+   <section v-if="stay" class="stay-details main-container flex align-center space-between">
+       <h1>{{stay.name}}</h1>
+       <!-- <router-link :to="/stay"> map page-->
+       <div class="stay-details-img-grid">
+          <img class="primary-stay-img" :src="require(`@/assets/imgs/airbnb-imgs/${this.stay.imgs[0]}.jpg`)"/>
+          <ul class="stay-details-secondary-img-grid">
+              <li v-for="img in stay.imgs" :key="img">
+                <img class="secondary-stay-img" :src="require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)"/>
+              </li>
+          </ul>
+        </div>
+        <trip-settings/>
+        <stay-map :location="stay.loc"/>
+    </section>
 </template>
 
 <script>
-
-import tripSetting from '../cmps/trip-settings.vue'
+import tripSettings from '../cmps/trip-settings.vue'
 import reviewList from '../cmps/reviewList.vue'
 import { stayService } from "../services/stay.service.js";
-import reviewList from "@/cmps/review-list.vue";
+import reviewList from '@/cmps/review-list.vue';
 
 export default {
-  components:{
-    tripSetting,
-    reviewList
-
-  }
-  }
-</script>
-
-<style>
-
-</style>
-
-
-<template>
-  <section
-    v-if="toy"
-    class="toy-details main-container flex align-center space-evenly"
-    :style="direction"
-  >
-    <div class="info-container flex column space-between">
-      <h2>{{ toy.name }}</h2>
-      <div class="details-info">
-        <!-- <h3>id:</h3>
-        <h4>{{ toy._id }}</h4> -->
-        <h3>{{ $t("message.price") }}</h3>
-        <h4>{{ formattedPrice }}</h4>
-        <h3>{{ $t("message.type") }}:</h3>
-        <h4>{{ toy.type }}</h4>
-        <h3>{{ $t("message.in-stock") }}:</h3>
-        <h4>{{ toy.inStock }}</h4>
-        <h3>{{ $t("message.created-at") }}:</h3>
-        <h4>{{ date }}</h4>
-      </div>
-      <div class="flex space-between align-center">
-        <router-link class="btn back" to="/toy">{{
-          $t("message.back")
-        }}</router-link>
-        <button @click="addReview" class="btn confirm">{{ $t("message.add-review") }}</button>
-      </div>
-    </div>
-    <div class="img-container">
-      <img class="details-img" :src="imgSrc" />
-    </div>
-    <review-list v-if="reviews" class="review-accordion" :reviews="reviews" :pageSize="3"/>
-  </section>
-</template>
-
-<script>
-
-export default {
-  name: "toyDetails",
-  data() {
-    return {
-      toy: null,
-      reviews : null
-    };
+  name:"stay-details",
+  props:{
+    stay:Object
   },
-  created() {
-    const toyId = this.$route.params.toyId;
-    toyService.getById(toyId).then((toy) => (this.toy = toy));
-    this.setReviews(toyId);
-  },
-  methods: {
-    addReview() {
-      this.$router.push("/details/review/" + this.toy._id);
-    },
-    async setReviews(toyId){
-      this.reviews = await reviewService.query({toyId})
+  data(){
+    return{
+
     }
-  },
-  computed: {
-    date() {
-      return new Date(this.toy.createdAt).toLocaleDateString("he-IS");
-    },
-    imgSrc() {
-      return require(`@/assets/imgs/${this.toy.url}`);
-    },
-    direction() {
-      return this.$store.getters.direction;
-    },
-    formattedPrice() {
-      const { locale, currency, multiplier } = this.$store.getters.getLocale;
-      const price = this.toy.price * multiplier;
-      return (
-        "locale", price.toLocaleString(locale, { style: "currency", currency })
-      );
-    },
 
   },
+   components:{
+     tripSettings,
+     reviewList
+   }
 
-};
+}
 </script>
+
+
+

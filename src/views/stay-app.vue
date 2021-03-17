@@ -1,10 +1,9 @@
 <template>
-<section> 
-  
-  <stay-filter/>
-  <h1> stay app </h1>
-  <stay-list/>
-</section>
+  <section>
+    <stay-filter />
+    <h1>stay app</h1>
+    <stay-list />
+  </section>
 </template>
 
 <script>
@@ -25,5 +24,4 @@ stayFilter
 </script>
 
 <style>
-
 </style>
