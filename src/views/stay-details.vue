@@ -11,7 +11,6 @@ import tripSetting from '../cmps/trip-settings.vue'
 export default {
   components:{
     tripSetting
-
   }
   }
 </script>
