@@ -1,7 +1,7 @@
 // import { userService } from '../services/user.service.js';
 
 
-// export const userStore = {
+export const userStore = {
 //     state: {
 //         loggedInUser:userService.getLoggedinUser(),
 
@@ -68,4 +68,4 @@
 //       }
 //   }
 // }
-// }
+}
