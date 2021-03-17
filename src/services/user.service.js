@@ -21,17 +21,17 @@ window.userService = userService
 // userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 100})
 
 function getUsers() {
-    // return storageService.query('user')
-    return httpService.get(`user`)
+    return storageService.query('user')
+    // return httpService.get(`user`)
 }
 
 function getById(userId) {
-    // return storageService.get('user', userId)
-    return httpService.get(`user/${userId}`)
+    return storageService.get('user', userId)
+    // return httpService.get(`user/${userId}`)
 }
 function remove(userId) {
-    // return storageService.remove('user', userId)
-    return httpService.delete(`user/${userId}`)
+    return storageService.remove('user', userId)
+    // return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {

@@ -29,17 +29,21 @@
               />
             </div>
           </span>
-       <span class="box">
-            <div class="guests  ">
-            <span class="title">Guests</span>
-          <input type="text" placeholder="where are you going?" class="desc" />
-          </div>
+          <span class="box">
+            <div class="guests">
+              <span class="title">Guests</span>
+              <input
+                type="text"
+                placeholder="where are you going?"
+                class="desc"
+              />
+            </div>
           </span>
           <div class="search-icon">
             <div class="btn-search">
-              <img src="../assets/images/icons/icon-search.png">
+              <img src="../assets/images/icons/icon-search.png" />
             </div>
-             </div>
+          </div>
         </div>
       </div>
       <div class="h1-container">
@@ -56,8 +60,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'home',
-  components: {
-  }
-}
+  name: "home",
+  components: {},
+};
 </script>

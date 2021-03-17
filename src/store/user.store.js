@@ -63,16 +63,16 @@ export const userStore = {
                 throw err
             }
         },
-        async loadUsers({ commit }) {
-            // TODO: loading
-            try {
-                const users = await userService.getUsers();
-                commit({ type: 'setUsers', users })
-            } catch (err) {
-                console.log('userStore: Error in loadUsers', err)
-                throw err
-            }
-        },
+        // async loadUsers({ commit }) {
+        //     // TODO: loading
+        //     try {
+        //         const users = await userService.getUsers();
+        //         commit({ type: 'setUsers', users })
+        //     } catch (err) {
+        //         console.log('userStore: Error in loadUsers', err)
+        //         throw err
+        //     }
+        // },
         async removeUser({ commit }, { userId }) {
             try {
                 await userService.remove(userId);
