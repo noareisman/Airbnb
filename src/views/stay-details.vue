@@ -7,7 +7,7 @@
 
 <script>
 
-import tripSetting from '../cmps/trip-setting.vue'
+import tripSetting from '../cmps/trip-settings.vue'
 export default {
   components:{
     tripSetting

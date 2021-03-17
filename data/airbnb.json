@@ -18,7 +18,7 @@
       {
         "_id": "10006546",
         "name": "Ribeira Charming Duplex",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+        "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
         "price": 80.00,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
         "capacity": 8,
@@ -46,7 +46,7 @@
           {
             "id": "madeId",
             "txt": "Very helpful hosts. Cooked traditional...",
-            "rate": 4,
+            "avgRate": 4.9,
             "category":{
                 "Cleanliness":4.9,
                 "Accuracy":4.9,
@@ -105,9 +105,7 @@
         "imgUrl": "/img/img2.jpg",
         "isAdmin": false,
         "username" : "user2",
-        "password" : "secret",
-        "favorites":[]
-        
+        "password" : "secret"
       }
     ]  
 }
