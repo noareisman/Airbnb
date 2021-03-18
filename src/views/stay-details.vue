@@ -23,6 +23,7 @@
 
     <!-- <trip-settings /> -->
     <!-- <stay-map :location="stay.loc" /> -->
+    <review-list :reviews="stay.reviews"/>
   </section>
 </template>
  
@@ -52,6 +53,8 @@ export default {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
       this.stay = stay;
+      console.log('stay' ,stay);
+      console.log('reviews' ,stay.reviews);
     });
   },
   components: {
