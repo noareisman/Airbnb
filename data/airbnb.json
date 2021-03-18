@@ -540,6 +540,27 @@
       },   
       {
         "_id": "o1226",
+        "createdAt": 9898953,
+        "buyer": {
+          "_id": "u101",
+          "fullname": "User 1"
+        },
+        "totalPrice": 160,
+        "startDate": "2025/10/15",
+        "endDate": "2025/10/17",
+        "guests": {
+          "adults": 2,
+          "kids": 1
+        },
+        "stay": {
+          "_id": "10006548",
+          "name": "Ribeira Charming Duplex",
+          "price": 80.00
+        },
+        "status": "pending"
+      },   
+      {
+        "_id": "o1226",
         "createdAt": 9898999,
         "buyer": {
           "_id": "u102",

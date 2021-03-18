@@ -22,12 +22,24 @@ export const orderStore = {
         const orders = await orderService.query();
         console.log('stays:', stays);
         console.log('orders:', orders);
-        const userOrders = orders.filter(order => {
-          stays.forEach(stay => {
-            return order.stay._id === stay._id
-          });
+
+        // const n = []
+        // for (let i = 0; i < stays; i++) {
+        //   orders[i]
+        // }
+        
+        const myOrders = orders.filter(order => {
+          return stays.find(stay => {
+            return stay._id === order.stay._id;
+          })
         })
-        console.log(userOrders);
+        console.log('myOrders', myOrders);
+        // const userOrders = orders.filter(order => {
+        //   stays.forEach(stay => {
+        //     return order.stay._id === stay._id
+        //   });
+        // })
+        // console.log(userOrders);
         return
         commit({ type: 'setOrders', orders })
       } catch (err) {
