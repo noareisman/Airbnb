@@ -1,8 +1,15 @@
 <template>
   <header class="full main-layout header-container">
     <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item @click="navTo('/')" index="1">
-        <span class="logo txt"> HomeAway </span>
+      <el-menu-item index="1">
+        <router-link class="router" :to="`/`">
+          <span class="logo txt"> HomeAway </span>
+        </router-link>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <router-link class="router" :to="`/stay`">
+          <span class="txt"> Explore </span>
+        </router-link>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">Workspace</template>
@@ -42,7 +49,6 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
     },
     navTo(dest) {
       this.$router.push(dest);

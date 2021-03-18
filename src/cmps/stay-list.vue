@@ -1,8 +1,9 @@
 
 
 <template>
-  <section>
-    <h1>Places to stay for you</h1>
+  <section class="list-container">
+    <h1 v-if="place">Places to stay for you in {{place}} </h1>
+    <h1 v-else>Places to stay for you </h1>
     <ul  v-if="stays" class="list-card-container">
       <stay-preview
         v-for="stay in stays"
@@ -10,8 +11,8 @@
         :stay="stay"
       />
     </ul>
-    <button @click="changePage(1)">></button>
-    <button @click="changePage(-1)">></button>
+    <!-- <button @click="changePage(1)">></button>
+    <button @click="changePage(-1)">></button> -->
   </section>
 </template>
 
@@ -23,6 +24,11 @@ export default {
   props: {
     stays: Array,
   },
+    data(){
+    return{
+      place:''
+    }
+  },
   methods: {
     changePage(diff) {
       // this.$store.commit("changePage", diff);
@@ -31,8 +37,7 @@ export default {
   mounted() {
     },
   created(){
-    
-    console.log(this.stays);
+   this.place = this.$route.query.location
   },
   components: {
     stayPreview,

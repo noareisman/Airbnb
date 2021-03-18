@@ -10,7 +10,7 @@ export const stayService = {
 }
 
 
-async function query(filterBy = {name: '', startDate: '',endDate: ''}) {
+async function query(filterBy = { location: '', startDate: '', endDate: '', guests:0}) {
     // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
     // return httpService.get(`review${queryStr}`)
     let stays = await storageService.query('stay')
@@ -23,7 +23,13 @@ async function query(filterBy = {name: '', startDate: '',endDate: ''}) {
             if (filterBy._id) return stay.host._id === filterBy._id;
         })
     }
-    return stays;
+    const regex = new RegExp(filterBy.location, 'i')
+    var toysForDisplay = stays.filter(stay => {
+        return regex.test(stay.loc.address) && (stay.capacity >= filterBy.guests || !filterBy.guests)
+            // && (JSON.stringify(toy.inStock) === filterBy.inStock || filterBy.inStock === 'all')
+    })
+    
+    return toysForDisplay;
 }
 
 async function getById(stayId) {
