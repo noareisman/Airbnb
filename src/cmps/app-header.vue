@@ -17,6 +17,7 @@
         </el-submenu>
       </el-submenu>
       <el-menu-item @click="navTo('/stay/')" index="4"> Explore</el-menu-item>
+    <user-selections />
     </el-menu>
 
     <!-- <section className="loggedin-user" v-if="loggedInUser">
@@ -25,16 +26,12 @@
       </router-link>
       <span>{{ loggedInUser.score }}</span>
     </section> -->
-    <select @change="changeTo">
-      <option v-if="loggedInUser" value="" def>Hello {{loggedInUser.fullname}}</option>
-      <option v-if="!loggedInUser" value="" def>Hello gust</option>
-      <option v-if="!loggedInUser" value="login">Log-in</option>
-      <option v-if="loggedInUser" value="profile">My propfile</option>
-      <option v-if="loggedInUser" value="logout">Log-out</option>
-    </select>
+
+
   </header>
 </template>
 <script>
+import userSelections from '../cmps/user-selections.vue'
 export default {
   name: "app-header",
   data() {
@@ -49,28 +46,10 @@ export default {
     },
     navTo(dest) {
       this.$router.push(dest);
-    },
-    async changeTo(ev) {
-      switch (ev.target.value) {
-        case "login":
-          this.$router.push("/login");
-          break;
-        case "logout":
-          await this.$store.dispatch({ type: "logout" });
-          this.$router.push("/");
-          break;
-        case "profile":
-          this.$router.push("/user");
-          break;
-      }
-      // ev.target.value;
-    },
+    }
   },
-  computed: {
-    loggedInUser() {
-      // return this.$store.getters.isUserLogged;
-      return this.$store.getters.loggedinUser;
-    },
-  },
+  components:{
+    userSelections
+  }
 };
 </script>
