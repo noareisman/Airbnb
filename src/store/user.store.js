@@ -3,27 +3,29 @@ import { userService } from '../services/user.service.js';
 
 export const userStore = {
     state: {
-        loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
+        // loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
         users: [],
-        isUserLogged: userService.getLoggedinUser()
+        user: userService.getLoggedinUser()
     },
     getters: {
         users(state) {
             return state.users;
         },
         loggedinUser(state) {
-            return state.loggedInUser;
+            // return state.loggedInUser;
+            return state.user;
         },
         // isAdmin(state) {
         //     return state.loggedInUser.isAdmin
         // },
-        isUserLogged(state) {
-            return state.isUserLogged;
-        }
+        // user(state) {
+        //     return state.user;
+        // }
     },
     mutations: {
         setUser(state, { user }) {
-            state.isUserLogged = user
+            // state.loggedInUser = user
+            state.user = user
         },
         setUsers(state, { users }) {
             state.users = users;

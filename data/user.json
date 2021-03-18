@@ -5,6 +5,7 @@
     "username": "Illy555",
     "password": "4sd65654aaa",
     "isAdmin": "false",
+    "imgProfileSrc": "src",
     "myReservations": [
       {"id": "la75mD", "name": "reserve 1","status": "pending"}
     ],
@@ -16,6 +17,7 @@
     "username": "ben97",
     "password": "ddad22",
     "isAdmin": "false",
+    "imgProfileSrc": "src",
     "myReservations": [
       {"id": "aGaf75", "name": "reserve 1","status": "pending"},
       {"id": "dxCC52", "name": "reserve 2","status": "pending"},
@@ -29,6 +31,7 @@
     "username": "ream",
     "password": "333",
     "isAdmin": "false",
+    "imgProfileSrc": "src",
     "myReservations": [
       {"id": "K97Q5a", "name": "reserve 1","status": "pending"},
       {"id": "ajg4Fa", "name": "reserve 2","status": "decline"},
@@ -43,6 +46,7 @@
     "username": "mor",
     "password": "da999",
     "isAdmin": "false",
+    "imgProfileSrc": "src",
     "myReservations": [
       {"id": "oa75A", "name": "reserve 1","status":"pending"},
       {"id": "Hdaa53", "name": "reserve 2","status":"pending"}

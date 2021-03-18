@@ -65,8 +65,7 @@ async function signup(userCred) {
     user.myReservations = [];
     user.saved = [];
     gUsers.push(user);
-    // TODO
-    _saveUsersToFile()
+    storageService.save('user', gUsers)
     return _saveLocalUser(user)
 }
 
@@ -84,13 +83,3 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem('loggedinUser'));
 }
 
-// TODO
-function _saveUsersToFile() {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        fs.writeFile('../../data/user.json', JSON.stringify(gUsers, null, 2), (err) => {
-            if (err) reject(err)
-            else resolve()
-        })
-    })
-}
