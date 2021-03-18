@@ -1,0 +1,26 @@
+// .stay-details-container{
+//     grid:2
+// }
+
+.stay-details-img-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 8px 8px;
+    max-height: 400px;
+    margin-top: 25px;
+}
+//     li{
+//         display: block
+        
+//         img{
+//             object-fit:cover
+//         }
+//     }
+
+    
+//         > * {
+//             @include aspect-ratio(1, 0.8);
+//             border-radius: 18px;
+//         }
+// }

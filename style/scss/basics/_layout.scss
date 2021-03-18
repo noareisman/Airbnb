@@ -1,4 +1,7 @@
-// .main-layout {
+.main-layout {
+    display: grid;
+    grid-template-columns:minmax(2rem,1fr) minmax(auto,1100px) minmax( 2rem,1fr);
+    
 //     // @include for-narrow-layout {
 //     //     grid-template-columns:
 //     // }
@@ -11,7 +14,7 @@
 //     //     grid-template-columns:      
 //     // }
 
-// }
+}
 
 .card-grid {
     display: grid;
