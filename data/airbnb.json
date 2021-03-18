@@ -564,13 +564,7 @@
         "isAdmin": false,
         "username" : "user1",
         "password" : "secret",
-        "favorites":[{"id":"10006546"}],
-        "myReservations": [
-          {"id": "K97Q5a", "name": "reserve 1","status": "pending"},
-          {"id": "ajg4Fa", "name": "reserve 2","status": "decline"},
-          {"id": "HDK2a7", "name": "reserve 3","status": "approve"},
-          {"id": "Jla75A", "name": "reserve 4","status": "approve"}
-        ]
+        "favorites":[{"id":"10006546"}]
     },
     {
         "_id": "u102",
@@ -579,10 +573,7 @@
         "isAdmin": false,
         "username" : "user2",
         "password" : "secret",
-        "favorites":[{"id":"10006546"}],
-        "myReservations": [
-        {"id": "la75mD", "name": "reserve 1","status": "pending"}
-        ]
+        "favorites":[{"id":"10006546"}]
       }
     ]  
 }
