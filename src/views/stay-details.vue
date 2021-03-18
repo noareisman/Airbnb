@@ -5,7 +5,10 @@
   >
     <h1>{{ stay.summary }}</h1>
     <!-- TODO: finish routerLink -->
-    <!-- <router-link to="/stay/:id/:location?">{{stay.loc.address}}</router-link> -->
+    <div>
+    <div></div>
+    <router-link to="/stay/:id/:location?">{{stay.loc.address}}</router-link>
+    </div>
     <div>
       <button class="share-btn">Share</button>
       <button class="save-btn">Save</button>
