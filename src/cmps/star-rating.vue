@@ -10,5 +10,13 @@ export default {
   props: {
     reviews: Array,
   },
+  computed(){
+    avgRateFromAllReviewers(){
+      const sum=this.reviews.reduce(acc,this.reviews.avgRate)
+    }
+  },
+  created(){
+    console.log(this.reviews);
+  }
 };
 </script>
