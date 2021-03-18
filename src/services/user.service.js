@@ -1,6 +1,9 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
+const gUsers = require('../../data/user.json');
+
+
 export const userService = {
     login,
     logout,
@@ -18,20 +21,25 @@ window.userService = userService
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
 // userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 100})
 
-function getUsers() {
-    return storageService.query('user')
-        .then(users => console.log(users))
+async function getUsers() {
     // return httpService.get(`user`)
+    let users = await storageService.query('user')
+    if (!users || !users.length) {
+        users = JSON.parse(JSON.stringify(gUsers))
+        storageService.save('user', users)
+    }
+    return users;
 }
 
-function getById(userId) {
-    return storageService.get('user', userId)
+async function getById(userId) {
     // return httpService.get(`user/${userId}`)
+    const user = await storageService.get('user', userId);
+    return user;
 }
 
 function remove(userId) {
-    return storageService.remove('user', userId)
     // return httpService.delete(`user/${userId}`)
+    return storageService.remove('user', userId)
 }
 
 async function update(user) {
@@ -56,6 +64,9 @@ async function login(userCred) {
 async function signup(userCred) {
     const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred)
+    gUsers.push(user);
+    // TODO
+    // _saveUsersToFile()
     return _saveLocalUser(user)
 }
 async function logout() {
@@ -71,3 +82,13 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem('loggedinUser'));
 }
 
+// TODO
+function _saveUsersToFile() {
+    return new Promise((resolve, reject) => {
+        const fs = require('fs');
+        fs.writeFile('data/user.json', JSON.stringify(gUsers, null, 2), (err) => {
+            if (err) reject(err)
+            else resolve()
+        })
+    })
+}

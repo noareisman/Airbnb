@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "EbP3f",
+    "fullname": "Illy don",
+    "username": "Illy555",
+    "password": "4sd65654aaa",
+    "isAdmin": "false",
+    "myReservations": [
+      {"id": "la75mD", "name": "reserve 1","status": "pending"}
+    ],
+    "saved": "[]"
+  },
+  {
+    "_id": "AbFa9",
+    "fullname": "Ben josh",
+    "username": "ben97",
+    "password": "ddad22",
+    "isAdmin": "false",
+    "myReservations": [
+      {"id": "aGaf75", "name": "reserve 1","status": "pending"},
+      {"id": "dxCC52", "name": "reserve 2","status": "pending"},
+      {"id": "laQG4c", "name": "reserve 3","status": "pending"}
+    ],
+    "saved": "[]"
+  },
+  {
+    "_id": "LxlRQ",
+    "fullname": "Ream lasry",
+    "username": "ream",
+    "password": "333",
+    "isAdmin": "false",
+    "myReservations": [
+      {"id": "K97Q5a", "name": "reserve 1","status": "pending"},
+      {"id": "ajg4Fa", "name": "reserve 2","status": "decline"},
+      {"id": "HDK2a7", "name": "reserve 3","status": "approve"},
+      {"id": "Jla75A", "name": "reserve 4","status": "approve"}
+    ],
+    "saved": "[]"
+  },
+  {
+    "_id": "xiZMH",
+    "fullname": "Mor levi",
+    "username": "mor",
+    "password": "da999",
+    "isAdmin": "false",
+    "myReservations": [
+      {"id": "oa75A", "name": "reserve 1","status":"pending"},
+      {"id": "Hdaa53", "name": "reserve 2","status":"pending"}
+    ],
+    "saved": "[]"
+  }
+]

@@ -4,7 +4,8 @@ import { userService } from '../services/user.service.js';
 export const userStore = {
     state: {
         loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
-        users: []
+        users: [],
+        isUserLogged: userService.getLoggedinUser()
     },
     getters: {
         users(state) {
@@ -16,19 +17,16 @@ export const userStore = {
         // isAdmin(state) {
         //     return state.loggedInUser.isAdmin
         // },
-        // isUserLogged(state) {
-        //     return state.isUserLogged;
-        // }
+        isUserLogged(state) {
+            return state.isUserLogged;
+        }
     },
-
     mutations: {
         setUser(state, { user }) {
-            state.loggedinUser = user;
-            console.log('state.loggedinUser', state.loggedinUser);
+            state.isUserLogged = user
         },
         setUsers(state, { users }) {
             state.users = users;
-            console.log('users are:', state.users);
         },
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
@@ -47,6 +45,7 @@ export const userStore = {
         },
         async signup({ commit }, { userCred }) {
             try {
+                userCred = JSON.parse(JSON.stringify(userCred))
                 const user = await userService.signup(userCred)
                 commit({ type: 'setUser', user })
                 return user;
