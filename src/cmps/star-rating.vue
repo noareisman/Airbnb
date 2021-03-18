@@ -1,16 +1,17 @@
 <template>
-  <section>
-    <span>⭐{{ reviews.avgRate }}({{ reviews.length }})</span>
+  <section class="">
+    <span class="star-container"><img class="star-img" src="../assets/imgs/icons/star.png">
+<p> {{ reviews.avgRate }}({{ reviews.length }}) </p></span>
   </section>
 </template>
 
-<script>
+<script> 
 export default {
   name: "star-rating",
   props: {
     reviews: Array,
   },
-  computed(){
+  computed:{
     avgRateFromAllReviewers(){
       const sum=this.reviews.reduce(acc,this.reviews.avgRate)
     }

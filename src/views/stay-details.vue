@@ -25,7 +25,7 @@
     <!-- <stay-map :location="stay.loc" /> -->
   </section>
 </template>
-
+ 
 <script>
 import tripSettings from "../cmps/trip-settings.vue";
 import reviewList from "../cmps/review-list.vue";
