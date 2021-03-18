@@ -4,7 +4,7 @@ import { stayService } from '../services/stay.service.js';
 export const stayStore = {
     state: {
         stays: [],
-        filterBy: {}
+        // filterBy: {}
         // currStay
     },
     getters: {
@@ -12,21 +12,16 @@ export const stayStore = {
             return state.stays;
         }
     },
-
     mutations: {
         setStays(state, { stays }) {
             state.stays = stays;
-            
-          },
+        },
     },
     actions: {
-        async loadStays({
-            commit,
-            state 
-        }) {
+        async loadStays({ commit, state }, { filterBy }) {
             try {
-                const stays = await stayService.query()
-                
+                const stays = await stayService.query(filterBy)
+
                 commit({
                     type: 'setStays',
                     stays
@@ -38,12 +33,7 @@ export const stayStore = {
             }
         },
         // loadStay?
-
-        saveStay({
-            commit
-        }, {
-            stay
-        }) {
+        saveStay({ commit }, { stay }) {
 
         }
 

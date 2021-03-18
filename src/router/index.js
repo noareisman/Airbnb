@@ -32,7 +32,8 @@ const routes = [
     component: stayEdit
   },
   {
-    path: '/user/:id',
+    // path: '/user/:id',
+    path: '/user',
     component: userDetails
   },
   {
