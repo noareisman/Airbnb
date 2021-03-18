@@ -1,7 +1,7 @@
 <template>
-  <section class="">
+  <section v-if="reviews" class="star-rating">
     <span class="star-container"><img class="star-img" src="../assets/imgs/icons/star.png">
-<p> {{ reviews.avgRate }}({{ reviews.length }}) </p></span>
+<p> {{ avgRateFromAllReviewers }}({{ reviews.length }}) </p></span>
   </section>
 </template>
 
@@ -13,7 +13,9 @@ export default {
   },
   computed:{
     avgRateFromAllReviewers(){
-      const sum=this.reviews.reduce(acc,this.reviews.avgRate)
+      const sum=this.reviews.reduce((acc, currVal)=>{return acc+=this.reviews.avgRate},0)
+      const avg= sum/reviews.length
+      return avg
     }
   },
   created(){
