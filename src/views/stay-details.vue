@@ -10,15 +10,10 @@
       <button class="share-btn">Share</button>
       <button class="save-btn">Save</button>
     </div>
-    <ul class="stay-details-img-grid-container">
-      <li v-for="img in stay.imgUrls" :key="img">
-        <img
-          class="stay-img"
-          :src="require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)"
-        />
-      </li>
-    </ul>
+    <div class="img-gallery" :imgs="stay.imgUrls"/>
+    <trip-settings/>
     <review-list :reviews="stay.reviews"/>
+    <review-categories :reviews="stay.reviews"/>
     <!-- <h1>{{ stay.name }} hosted by {{ host }}</h1> -->
     <!-- <p>Up to {{ guestAmount }}</p> -->
 
@@ -28,9 +23,12 @@
 </template>
  
 <script>
+import stayImgGallery from "../cmps/stay-img-gallery.vue";
 import tripSettings from "../cmps/trip-settings.vue";
 import reviewList from "../cmps/review-list.vue";
+import reviewCategories from "../cmps/review-categories.vue";
 import starRating from "../cmps/star-rating.vue";
+import stayMap from "../cmps/stay-map.vue";
 import { stayService } from "../services/stay.service.js";
 
 export default {
@@ -53,14 +51,15 @@ export default {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
       this.stay = stay;
-      console.log('stay' ,stay);
-      console.log('reviews' ,stay.reviews);
     });
   },
   components: {
+    stayImgGallery,
     tripSettings,
     reviewList,
     stayService,
+    stayMap,
+    reviewCategories,
     starRating,
   },
 };
