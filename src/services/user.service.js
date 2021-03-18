@@ -1,7 +1,9 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
-const gUsers = require('../../data/user.json');
+// const gUsers = require('../../data/user.json');
+const gUsers = require ('../../data/airbnb.json')
+
 
 
 export const userService = {
@@ -25,7 +27,7 @@ async function getUsers() {
     // return httpService.get(`user`)
     let users = await storageService.query('user')
     if (!users || !users.length) {
-        users = JSON.parse(JSON.stringify(gUsers))
+        users = JSON.parse(JSON.stringify(gUsers.user))
         storageService.save('user', users)
     }
     return users;
@@ -64,8 +66,10 @@ async function signup(userCred) {
     // const user = await httpService.post('auth/signup', userCred)
     user.myReservations = [];
     user.saved = [];
-    gUsers.push(user);
-    storageService.save('user', gUsers)
+    user.imgProfileSrc = 'src';
+    user.isAdmin = false;
+    gUsers.user.push(user);
+    storageService.save('user', gUsers.user)
     return _saveLocalUser(user)
 }
 

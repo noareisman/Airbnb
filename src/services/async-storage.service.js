@@ -13,11 +13,11 @@ function query(entityType) {
     return Promise.resolve(entities)
 }
 
-
 function get(entityType, entityId) {
     return query(entityType)
         .then(entities => entities.find(entity => entity._id === entityId))
 }
+
 function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
@@ -27,6 +27,7 @@ function post(entityType, newEntity) {
             return newEntity
         })
 }
+
 function postMany(entityType, newEntities) {
     return query(entityType)
         .then(entities => {
@@ -56,11 +57,9 @@ function remove(entityType, entityId) {
         })
 }
 
-
 function save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
-
 
 function _makeId(length = 5) {
     var text = ''
