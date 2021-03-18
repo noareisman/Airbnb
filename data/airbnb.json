@@ -31,9 +31,9 @@
           "Cooking basics"
         ],
         "host": {
-          "_id": "51399391",
-          "fullname": "Davit Pok",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "_id": "xiZMH",
+          "fullname": "Mor Levi",
+          "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg"
         },
         "loc": {
           "country": "Portugal",
@@ -56,14 +56,14 @@
                 "accessibility":4.0 
             },
             "by": {
-              "_id": "u10000",
-              "fullname": "Sam Cohen",
-              "imgUrl": "/imgs/.jpg"
+              "_id": "EbP3f",
+              "fullname": "Illy Don",
+              "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
             }
           },
           {
             "id": "qwer124",
-            "txt": "Very helpful hosts. Cooked traditional...",
+            "txt": "Great apartment, amazing view and amnesties",
             "avgRate": 4.9,
             "category":{
                 "Cleanliness":4.9,
@@ -74,9 +74,27 @@
                 "accessibility":4.9 
             },
             "by": {
-              "_id": "u10001",
-              "fullname": "Alex Weiss",
-              "imgUrl": "/img/img2.jpg"
+              "_id": "AbFa9",
+              "fullname": "Ben Josh",
+              "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg"
+            }
+          },
+          {
+            "id": "qwer124",
+            "txt": "Had a good time...",
+            "avgRate": 4.5,
+            "category":{
+                "Cleanliness":5.0,
+                "Accuracy":5.0,
+                "Communication":5.0,
+                "Location":4.0,
+                "Check-in":4.0,
+                "accessibility":4.0 
+            },
+            "by": {
+              "_id": "LxlRQ",
+              "fullname": "Ream Lasry",
+              "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg"
             }
           }
         ]
