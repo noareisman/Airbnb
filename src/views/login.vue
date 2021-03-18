@@ -2,15 +2,15 @@
   <div>
     <p>{{ msg }}</p>
 
-    <div v-if="loggedinUser">
-      <userDetails @logout="doLogout" :loggedinUser="loggedinUser" />
-      <!-- <h2>
+    <div v-if="loggedInUser">
+      <userDetails @logout="doLogout" :user="loggedInUser" />
+      <!-- <h2>loggedInUser
         Hello &nbsp; {{ loggedinUser.username }}.
         <button @click="doLogout">Logout</button>
       </h2> -->
     </div>
 
-    <div class="login-page" v-if="!loggedinUser">
+    <div class="login-page" v-if="!loggedInUser">
       <h2 class="login-page-headlines">Login</h2>
       <form @submit.prevent="doLogin">
         <input
@@ -81,9 +81,9 @@ export default {
     users() {
       return this.$store.getters.users;
     },
-    loggedinUser() {
-      return this.$store.getters.isUserLogged;
-      //  return this.$store.getters.loggedinUser;
+    loggedInUser() {
+      // return this.$store.getters.isUserLogged;
+       return this.$store.getters.loggedinUser;
     },
   },
   methods: {

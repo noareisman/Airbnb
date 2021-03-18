@@ -16,6 +16,7 @@
             <h3>{{ reserv.name }}</h3>
             <button v-if="reserv.status === 'pending'" class="reject">X</button>
             <button class="approve">V</button>
+          </div>
         </li>
       </ul>
     </section>
@@ -24,12 +25,7 @@
 
 <script>
 export default {
-  props: ["loggedinUser"],
-  data() {
-    return {
-      user: null,
-    };
-  },
+  props: ["user"],
   methods: {
     doLogout() {
       this.$emit("logout");
@@ -45,7 +41,6 @@ export default {
     },
   },
   created() {
-    this.user = this.loggedinUser;
   },
 };
 </script>
