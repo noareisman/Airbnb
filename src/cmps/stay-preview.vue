@@ -1,6 +1,6 @@
 <template>
   <section class="preview-card space-preview">
-    <div>
+    <div> 
       <img @click="toDetails(stay._id)"
         class="stay-img" :stay="stay"
         :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[Imgidx]}.jpg`)"
@@ -12,7 +12,8 @@
     <div class="card-info">
       <img v-if="!isLiked" @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/heart.png"> 
       <img v-else @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/fillheart.png"> 
-      <span>⭐{{ stay.reviews[0].avgRate }}</span>
+      <star-rating :reviews="stay.reviews" />
+      <!-- <span>⭐{{ stay.reviews[0].avgRate }}</span> -->
       <span> {{ stay.name }}</span>
       <span> {{ summary }}</span>
       <span> {{ price }}</span>
@@ -21,6 +22,8 @@
 </template>
             
 <script>
+import starRating from "../cmps/star-rating.vue";
+
 export default {
   name: "stay-preview",
   props: {
@@ -63,6 +66,10 @@ export default {
       return "$" + this.stay.price + "/ Night";
     },
   },
+  components:{
+        starRating,
+
+  }
 };
 </script>
 
