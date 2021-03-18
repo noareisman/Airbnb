@@ -17,7 +17,11 @@
     "stay": [
     {
         "_id": "10006546",
+<<<<<<< HEAD
         "name": "Villa hosted by Vlada",
+=======
+        "name": "House Of Uncle My",
+>>>>>>> 361759fd66b95fa81adb5413e53dcc835c83a7a4
         "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
         "price": 80.00,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -84,7 +88,7 @@
     },
     {
       "_id": "10006547",
-      "name": "Ribeira Charming Duplex",
+      "name": "House Of Ben",
       "imgUrls": ["2.1","2.2a","2.2b","2.2c","2.2d"],
       "price": 40.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -532,8 +536,29 @@
           "kids": 1
         },
         "stay": {
-          "_id": "h102",
+          "_id": "10006546",
           "name": "House Of Uncle My",
+          "price": 80.00
+        },
+        "status": "pending"
+      },   
+      {
+        "_id": "o1226",
+        "createdAt": 9898953,
+        "buyer": {
+          "_id": "u101",
+          "fullname": "User 1"
+        },
+        "totalPrice": 160,
+        "startDate": "2025/10/15",
+        "endDate": "2025/10/17",
+        "guests": {
+          "adults": 2,
+          "kids": 1
+        },
+        "stay": {
+          "_id": "10006548",
+          "name": "Ribeira Charming Duplex",
           "price": 80.00
         },
         "status": "pending"
@@ -553,7 +578,7 @@
           "kids": 0
         },
         "stay": {
-          "_id": "h103",
+          "_id": "10006547",
           "name": "House Of Ben",
           "price": 60.00
         },
