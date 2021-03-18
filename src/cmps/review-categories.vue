@@ -1,11 +1,11 @@
 <template>
 <section>
 <h1>review categories</h1>
-<ul>
+<!-- <ul>
     <il v-for="cat in categories" :key="cat">
-        <el-progress :stroke-width="26" :percentage="this.category"></el-progress>
+        <el-progress :stroke-width="26" :percentage="category"></el-progress>
     </il>
-</ul>
+</ul> -->
 </section>
 </template>
 <script>
@@ -16,8 +16,7 @@ export default {
   },
   data() {
     return {
-        categories:{},
-        category:1
+        category:null
       
     }
   },
@@ -40,21 +39,25 @@ export default {
 //     },
     created(){
     if(this.reviews){
-        var categories=Objectthis.reviews.keys(this.reviews.category)
-        console.log(categories);
+    var categories=this.reviews.map(review=>review.category)
+    var category={...categories[0]}
+    for (var i=1; i<categories.length;i++){
+        var currCategory=categories[i];
+        for (const cat in currCategory){
+            category[currCategoty]+=currCategory[cat]
+        }
     }
+    for (const cat in category){
+        cat/this.reviews.length
+    }
+    this.category=category
+    //     // var categoryKeys=Object.keys(category)
+    //     // categoryKeys.forEach((key)=>{
+    //     //     this.categories.key=this.category
+        
+    // }
 
-    },
+    }
+}
 }
 </script>
-            "id": "qwer124",
-            "txt": "Had a good time...",
-            "avgRate": 4.5,
-            "category":{
-                "Cleanliness":5.0,
-                "Accuracy":5.0,
-                "Communication":5.0,
-                "Location":4.0,
-                "Check-in":4.0,
-                "accessibility":4.0 
-            },

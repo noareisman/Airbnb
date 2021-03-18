@@ -1,15 +1,14 @@
 <template>
   <section>
-    <el-date-picker></el-date-picker>
+    <date-picker></date-picker>
   </section>
 </template>
 
 <script>
+import datePicker from './date-picker.vue'
 export default {
-
+components:{
+  datePicker
+}
 }
 </script>
-
-<style>
-
-</style>
