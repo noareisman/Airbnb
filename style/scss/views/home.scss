@@ -159,3 +159,43 @@
     justify-content: center;
     align-items: center;
     }
+
+    .location-header{
+        font-size: 2rem;
+        line-height: 2.25rem;
+        color: #222;
+        margin-bottom: 35px
+    }
+
+    .explore-crad{
+        grid: 2;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        flex-direction: row;
+        font-size: 32px;
+        line-height: 36px;
+        color: #222;
+    }
+
+    .card-container{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .explore-img{
+        width: 330px;
+        height: 220px;
+        border-radius: 13px;
+        cursor: pointer;
+
+    }
+
+    .location-txt{
+        font-size:20px;
+        font-weight: 700;
+        padding: 4px 0px 4px 4px;
+        cursor: pointer;
+
+    }
