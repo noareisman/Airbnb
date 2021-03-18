@@ -1,4 +1,4 @@
-// import { orderService } from '../services/order.service.js';
+import { stayService } from '../services/stay.service.js';
 
 export const orderStore = {
   state: {
@@ -15,15 +15,17 @@ export const orderStore = {
     },
   },
   actions: {
-    // async loadOrders({ commit, state }) {
-    //   try {
-    //     const orders = await orderService.getOrders();
-    //     commit({ type: 'setOrders', orders })
-    //   } catch (err) {
-    //     console.log('orderStore: Error in loadOrders', err)
-    //     throw err
-    //   }
-    // },
+    async loadOrders({ commit, state }, {user}) {
+      try {
+        const orders = await stayService.query(user);
+        console.log(orders);
+        return
+        commit({ type: 'setOrders', orders })
+      } catch (err) {
+        console.log('orderStore: Error in loadOrders', err)
+        throw err
+      }
+    },
   },
   // updateOrderStatus
   // saveOrder

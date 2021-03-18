@@ -15,15 +15,12 @@ async function query(filterBy) {
     // return httpService.get(`review${queryStr}`)
     let stays = await storageService.query('stay')
     if (!stays.length) {
-        // console.log(DB.stay)
         stays = JSON.parse(JSON.stringify(DB.stay))
         storageService.save('stay', stays)
     }
-    else if (filterBy) {
+    else if (filterBy._id) {
         stays = stays.filter(stay => {
-            if (filterBy.hostId) {
-                return stay.host._id === filterBy.hostId;
-            }
+            if (filterBy._id) return stay.host._id === filterBy._id;
         })
     }
     return stays;

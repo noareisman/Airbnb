@@ -1,6 +1,6 @@
 <template>
   <section>
-    {{ user }}
+    i am user dashboard
   </section>
 </template>
 

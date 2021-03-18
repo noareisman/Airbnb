@@ -32,7 +32,7 @@
           "Cooking basics"
         ],
         "host": {
-          "_id": "xiZMH",
+          "_id": "u101",
           "fullname": "Mor Levi",
           "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg"
         },
@@ -43,7 +43,8 @@
           "lat": -8.61308,
           "lng": 41.1413
         },
-        "reviews": [{
+        "reviews": [
+          {
           "id": "qwer124",
           "txt": "Great apartment, amazing view and amnesties",
           "avgRate": 4.9,
@@ -60,25 +61,26 @@
             "fullname": "Ben Josh",
             "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg"
           }
-        },
-        {
-          "id": "qwer124",
-          "txt": "Had a good time...",
-          "avgRate": 4.5,
-          "category":{
-              "Cleanliness":5.0,
-              "Accuracy":5.0,
-              "Communication":5.0,
-              "Location":4.0,
-              "Check-in":4.0,
-              "accessibility":4.0 
           },
-          "by": {
-            "_id": "LxlRQ",
-            "fullname": "Ream Lasry",
-            "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg"
+          {
+            "id": "qwer124",
+            "txt": "Had a good time...",
+            "avgRate": 4.5,
+            "category":{
+                "Cleanliness":5.0,
+                "Accuracy":5.0,
+                "Communication":5.0,
+                "Location":4.0,
+                "Check-in":4.0,
+                "accessibility":4.0 
+            },
+            "by": {
+              "_id": "LxlRQ",
+              "fullname": "Ream Lasry",
+              "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg"
+            }
           }
-        }]
+        ]
     },
     {
       "_id": "10006547",
@@ -96,7 +98,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -144,7 +146,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -192,7 +194,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -240,7 +242,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -288,7 +290,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -336,7 +338,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -384,7 +386,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -432,7 +434,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -480,7 +482,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },

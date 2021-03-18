@@ -2,7 +2,7 @@
   <section>
     <!-- ORDERS REQUEST -->
     <section class="reservations">
-      <reservations />
+      <reservations :user="user" />
     </section>
 
     <!-- LIST OF HOUSES REQUEST -->
