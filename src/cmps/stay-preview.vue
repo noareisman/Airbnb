@@ -1,8 +1,10 @@
 <template>
   <section class="preview-card space-preview">
     <div> 
+
+      <!-- <slide-img stayImg:stay.imgUrls /> -->
       <img @click="toDetails(stay._id)"
-        class="stay-img" :stay="stay"
+        class="stay-img slider"
         :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[Imgidx]}.jpg`)"
       />
   
@@ -16,12 +18,13 @@
       <!-- <span>⭐{{ stay.reviews[0].avgRate }}</span> -->
       <span> {{ stay.name }}</span>
       <span> {{ summary }}</span>
-      <span> {{ price }}</span>
+      <span> {{ price }}</span> 
     </div>
   </section>
 </template>
             
 <script>
+import slideImg from '../cmps/slide-img.vue'
 import starRating from "../cmps/star-rating.vue";
 
 export default {
@@ -68,6 +71,7 @@ export default {
   },
   components:{
         starRating,
+        slideImg
 
   }
 };
