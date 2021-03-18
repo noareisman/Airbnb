@@ -23,10 +23,10 @@ const routes = [
     path: '/stay/:id',
     component: stayDetails
   },
-  {
-    path: '/stay/:id/:location?',//
-    // component: stayDetails
-  },
+  // {
+  //   path: '/stay/:id/:location?',//
+  //   // component: stayDetails
+  // },
   {
     path: '/stay/edit/:id?',
     component: stayEdit

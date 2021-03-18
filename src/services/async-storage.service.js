@@ -23,7 +23,7 @@ function post(entityType, newEntity) {
     return query(entityType)
         .then(entities => {
             entities.push(newEntity)
-            _save(entityType, entities)
+            save(entityType, entities)
             return newEntity
         })
 }
@@ -32,19 +32,17 @@ function postMany(entityType, newEntities) {
         .then(entities => {
             newEntities = newEntities.map(entity => ({...entity, _id: _makeId()}))
             entities.push(...newEntities)
-            _save(entityType, entities)
+            save(entityType, entities)
             return newEntity
         })
 }
-
-
 
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
             const idx = entities.findIndex(entity => entity._id === updatedEntity._id)
             entities.splice(idx, 1, updatedEntity)
-            _save(entityType, entities)
+            save(entityType, entities)
             return updatedEntity
         })
 }
@@ -54,7 +52,7 @@ function remove(entityType, entityId) {
         .then(entities => {
             const idx = entities.findIndex(entity => entity._id === entityId)
             entities.splice(idx, 1)
-            _save(entityType, entities)
+            save(entityType, entities)
         })
 }
 
@@ -62,6 +60,7 @@ function remove(entityType, entityId) {
 function save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
+
 
 function _makeId(length = 5) {
     var text = ''

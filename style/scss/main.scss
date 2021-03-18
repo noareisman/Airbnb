@@ -12,11 +12,12 @@
 // COMPONENTS
 // @import 'components/main-header';
 // @import 'components/main-footer';
-@import 'cmps/stay-list';
+@import 'cmps/_stay-list';
+@import 'cmps/app-header';
 @import 'cmps/stay-preview';
 
 //VIEWS
-@import 'views/stay-details';
 @import 'views/stay-app';
 @import 'views/home';
 @import 'views/login';
+@import 'views/user-details';

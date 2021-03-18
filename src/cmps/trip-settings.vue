@@ -4,7 +4,7 @@
       Check-in:<input type="date"/>
       Check-out:<input type="date"/>
       <select>Guests
-        <option/>
+        <option>
         </select> -->
 
   </section>

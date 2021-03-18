@@ -1,15 +1,16 @@
 <template>
   <div>
-    <!-- <p>{{ msg }}</p> -->
+    <p>{{ msg }}</p>
 
     <div v-if="loggedinUser">
-      <h2>
+      <userDetails @logout="doLogout" :loggedinUser="loggedinUser" />
+      <!-- <h2>
         Hello &nbsp; {{ loggedinUser.username }}.
         <button @click="doLogout">Logout</button>
-      </h2>
+      </h2> -->
     </div>
 
-    <div class="login-page" v-else>
+    <div class="login-page" v-if="!loggedinUser">
       <h2 class="login-page-headlines">Login</h2>
       <form @submit.prevent="doLogin">
         <input
@@ -48,7 +49,7 @@
         <br />
         <input
           required
-          type="text"
+          type="password"
           v-model="signupCred.password"
           placeholder="Password"
         />
@@ -63,24 +64,15 @@
         <button>Signup</button>
       </form>
     </div>
-
-    <!-- <details>
-      <summary>Admin Section</summary>
-      <ul>
-        <li v-for="user in users" :key="user._id">
-          <pre>{{ user }}</pre>
-          <button @click="removeUser(user._id)">x</button>
-        </li>
-      </ul>
-    </details> -->
   </div>
 </template>
 
 <script>
+import userDetails from "./user-details.vue";
 export default {
   data() {
     return {
-      // msg: "",
+      msg: "",
       loginCred: { username: "", password: "" },
       signupCred: { username: "", password: "", fullname: "" },
     };
@@ -90,58 +82,51 @@ export default {
       return this.$store.getters.users;
     },
     loggedinUser() {
-      return this.$store.getters.loggedinUser;
+      return this.$store.getters.isUserLogged;
+      //  return this.$store.getters.loggedinUser;
     },
   },
-  // created() {
-  //   this.loadUsers();
-  // },
   methods: {
     async doLogin() {
-      // if (!this.loginCred.username) {
-      //   this.msg = "Please enter username/password";
-      //   return;
-      // }
+      if (!this.loginCred.username) {
+        this.msg = "Please enter username/password";
+        return;
+      }
       try {
-        await this.$store.dispatch({ type: "login", userCred: this.loginCred });
-        this.resetCreds();
-        this.$router.push("/");
+        const user = await this.$store.dispatch({
+          type: "login",
+          userCred: JSON.parse(JSON.stringify(this.loginCred)),
+        });
+        // this.$router.push('/stay');
+        this.$router.push("/stay");
       } catch (err) {
         console.log(err);
         this.msg = "Failed to login";
       }
     },
-    doLogout() {
-      this.$store.dispatch({ type: "logout" });
-    },
-    async doSignup() {
-      // if (
-      //   !this.signupCred.fullname ||
-      //   !this.signupCred.password ||
-      //   !this.signupCred.username
-      // ) {
-      //   this.msg = "Please fill up the form";
-      //   return;
-      // }
-      await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
-      this.resetCreds();
+    async doLogout() {
+      await this.$store.dispatch({ type: "logout" });
       this.$router.push("/");
     },
-    resetCreds() {
-      this.loginCred = { username: "", password: "" };
-      this.signupCred = { username: "", password: "", fullname: "" };
+    async doSignup() {
+      if (
+        !this.signupCred.fullname ||
+        !this.signupCred.password ||
+        !this.signupCred.username
+      )
+        return;
+      await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
+      this.$router.push("/");
     },
-    // loadUsers() {
-    //   this.$store.dispatch({ type: "loadUsers" });
-    // },
-    // async removeUser(userId) {
-    //   try {
-    //     await this.$store.dispatch({ type: "removeUser", userId });
-    //     this.msg = "User removed";
-    //   } catch (err) {
-    //     this.msg = "Failed to remove user";
-    //   }
-    // },
+    loadUsers() {
+      this.$store.dispatch({ type: "loadUsers" });
+    },
+  },
+  created() {
+    this.loadUsers();
+  },
+  components: {
+    userDetails,
   },
 };
 </script>
