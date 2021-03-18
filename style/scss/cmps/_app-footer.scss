@@ -1,0 +1,51 @@
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rights-container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.footer-contant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    color: rgb(34, 34, 34);
+    font-size:12px;;
+}
+
+.social-links{
+    display: flex;
+    flex-direction: row;
+}
+
+  .facebook :hover {
+    background-color: #385898;
+    cursor: pointer;
+  }
+  
+  .twitter :hover {
+    background-color: #2962ff;
+    cursor: pointer;
+  }
+.linkedin :hover {
+background-color: rgb(40, 103, 178);
+cursor: pointer;
+}
+
+
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  

@@ -20,7 +20,6 @@
       </el-submenu>
       <el-menu-item @click="navTo('/stay/')" index="4"> Explore</el-menu-item>
     </el-menu>
-      <router-link to='/login'>Login/user details</router-link>
 
     <!-- <section className="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
