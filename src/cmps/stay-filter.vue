@@ -59,9 +59,10 @@ export default {
       console.log(this.isGuests)
        this.isGuests = !this.isGuests
     },
-    submitSearch(){
+    async submitSearch(){
       const filterBy = JSON.parse(JSON.stringify(this.filterBy))
-      console.log(filterBy)
+          const stays =  await this.$store.dispatch({type:"loadStays", filterBy })
+      
     }
   },
   computed:{

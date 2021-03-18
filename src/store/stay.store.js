@@ -20,12 +20,9 @@ export const stayStore = {
           },
     },
     actions: {
-        async loadStays({
-            commit,
-            state 
-        }) {
+        async loadStays({ commit, state} , {filterBy} ) {
             try {
-                const stays = await stayService.query()
+                const stays = await stayService.query(filterBy)
                 
                 commit({
                     type: 'setStays',
