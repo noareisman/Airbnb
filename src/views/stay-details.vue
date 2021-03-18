@@ -18,6 +18,7 @@
         />
       </li>
     </ul>
+    <review-list :reviews="stay.reviews"/>
     <!-- <h1>{{ stay.name }} hosted by {{ host }}</h1> -->
     <!-- <p>Up to {{ guestAmount }}</p> -->
 
@@ -52,6 +53,8 @@ export default {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
       this.stay = stay;
+      console.log('stay' ,stay);
+      console.log('reviews' ,stay.reviews);
     });
   },
   components: {

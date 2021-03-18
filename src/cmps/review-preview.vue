@@ -2,10 +2,10 @@
   <section class="review-card">
     <div>
       <img
-        class="reviewer-img"
-        :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
+        class="thumb-img"
+        :src="review.by.imgUrl"
       />
-      <h3>{{ date }}</h3>
+      <h3>{{review.by.fullname}}</h3>
       <p>{{ review.txt }}</p>
     </div>
   </section>
