@@ -15,7 +15,7 @@
       }
     },
     "stay": [
-      {
+    {
         "_id": "10006546",
         "name": "Villa hosted by Vlada",
         "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
@@ -32,7 +32,7 @@
           "Cooking basics"
         ],
         "host": {
-          "_id": "xiZMH",
+          "_id": "u101",
           "fullname": "Mor Levi",
           "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg"
         },
@@ -45,40 +45,22 @@
         },
         "reviews": [
           {
-            "id": "qwer123",
-            "txt": "Very helpful hosts. Cooked traditional...",
-            "avgRate": 4.3,
-            "category":{
-                "Cleanliness":4.5,
-                "Accuracy":4.5,
-                "Communication":4.5,
-                "Location":4.0,
-                "Check-in":4.0,
-                "accessibility":4.0 
-            },
-            "by": {
-              "_id": "EbP3f",
-              "fullname": "Illy Don",
-              "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
-            }
+          "id": "qwer124",
+          "txt": "Great apartment, amazing view and amnesties",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "accessibility":4.9 
           },
-          {
-            "id": "qwer124",
-            "txt": "Great apartment, amazing view and amnesties",
-            "avgRate": 4.9,
-            "category":{
-                "Cleanliness":4.9,
-                "Accuracy":4.9,
-                "Communication":4.9,
-                "Location":4.9,
-                "Check-in":4.9,
-                "accessibility":4.9 
-            },
-            "by": {
-              "_id": "AbFa9",
-              "fullname": "Ben Josh",
-              "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg"
-            }
+          "by": {
+            "_id": "AbFa9",
+            "fullname": "Ben Josh",
+            "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg"
+          }
           },
           {
             "id": "qwer124",
@@ -99,8 +81,8 @@
             }
           }
         ]
-      },
-      {
+    },
+    {
       "_id": "10006547",
       "name": "Ribeira Charming Duplex",
       "imgUrls": ["2.1","2.2a","2.2b","2.2c","2.2d"],
@@ -116,7 +98,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -164,7 +146,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -212,7 +194,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -260,7 +242,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -308,7 +290,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -356,7 +338,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -404,7 +386,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -452,7 +434,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u102",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -500,7 +482,7 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "51399391",
+        "_id": "u101",
         "fullname": "Davit Pok",
         "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
       },
@@ -553,6 +535,27 @@
           "_id": "h102",
           "name": "House Of Uncle My",
           "price": 80.00
+        },
+        "status": "pending"
+      },   
+      {
+        "_id": "o1226",
+        "createdAt": 9898999,
+        "buyer": {
+          "_id": "u102",
+          "fullname": "User 2"
+        },
+        "totalPrice": 130,
+        "startDate": "2027/8/1",
+        "endDate": "2027/9/1",
+        "guests": {
+          "adults": 4,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "h103",
+          "name": "House Of Ben",
+          "price": 60.00
         },
         "status": "pending"
       }    

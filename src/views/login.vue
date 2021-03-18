@@ -2,13 +2,13 @@
   <div>
     <p>{{ msg }}</p>
 
-    <div v-if="loggedInUser">
-      <userDetails @logout="doLogout" :user="loggedInUser" />
+    <!-- <div v-if="loggedInUser"> -->
+      <!-- <userDetails @logout="doLogout" :user="loggedInUser" /> -->
       <!-- <h2>loggedInUser
         Hello &nbsp; {{ loggedinUser.username }}.
         <button @click="doLogout">Logout</button>
       </h2> -->
-    </div>
+    <!-- </div> -->
 
     <div class="login-page" v-if="!loggedInUser">
       <h2 class="login-page-headlines">Login</h2>
@@ -105,10 +105,10 @@ export default {
         this.msg = "Failed to login";
       }
     },
-    async doLogout() {
-      await this.$store.dispatch({ type: "logout" });
-      this.$router.push("/");
-    },
+    // async doLogout() {
+    //   await this.$store.dispatch({ type: "logout" });
+    //   this.$router.push("/");
+    // },
     async doSignup() {
       if (
         !this.signupCred.fullname ||
