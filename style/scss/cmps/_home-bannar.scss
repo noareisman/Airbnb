@@ -1,0 +1,37 @@
+.home-bannar-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, rgba(255,56,92,1) 0%, rgba(255,56,120,1) 25%, rgba(255,56,110,1) 75%, rgba(255,56,92,1) 100%);    width: 100%;
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
+
+.exp-btn{
+    padding: 10px;
+    width: 40px;
+    border-radius: 20px;
+    margin-top: 60px;
+    background-color: #fff;
+    font-family: Circular;
+    cursor: pointer;
+    border: none;
+    width: 20%;
+    font-size: 18px;
+}
+
+.quate2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-inline-end: 30px;
+    height: 100px;
+}
+
+.quate2-txt{
+    font-size: 30px;
+}
+
