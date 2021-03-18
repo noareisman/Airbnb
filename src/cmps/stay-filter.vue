@@ -21,10 +21,11 @@
       <span class="box">
         <div class="guests">
           <span class="title">Guests</span>
-          <input type="text" placeholder="where are you going?" class="desc" />
+          <input v-model="filterBy.guests" type="text" placeholder="1 Guest" class="desc" @click="openGuests"/>
+              <el-input-number v-model="filterBy.guests" v-if="isGuests" size="mini" style="position:absolute; top:60px;"></el-input-number>
         </div>
       </span>
-      <div class="search-icon">
+      <div @click="submitSearch" class="search-icon">
         <div class="btn-search">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
@@ -43,8 +44,9 @@ export default {
         location: "",
         startDate: "",
         endDate: "",
-        guests: 0,
+        guests: 1,
       },
+      isGuests:false
     };
   },
   methods: {
@@ -53,6 +55,17 @@ export default {
       this.filterBy.endDate = date[1];
       console.log(date);
     },
+      openGuests(){
+      console.log(this.isGuests)
+       this.isGuests = !this.isGuests
+    },
+    submitSearch(){
+      const filterBy = JSON.parse(JSON.stringify(this.filterBy))
+      console.log(filterBy)
+    }
+  },
+  computed:{
+  
   },
   components: {
     datePicker,
