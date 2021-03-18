@@ -525,8 +525,8 @@
           "fullname": "User 1"
         },
         "totalPrice": 160,
-        "startDate": "2025/10/15",
-        "endDate": "2025/10/17",
+        "startDate": "4/15/2025",
+        "endDate": "4/17/2025",
         "guests": {
           "adults": 2,
           "kids": 1
@@ -546,11 +546,11 @@
           "fullname": "User 1"
         },
         "totalPrice": 160,
-        "startDate": "2025/10/15",
-        "endDate": "2025/10/17",
+        "startDate": "10/15/2025",
+        "endDate": "10/17/2025",
         "guests": {
-          "adults": 2,
-          "kids": 1
+          "adults": 3,
+          "kids": 0
         },
         "stay": {
           "_id": "10006548",
@@ -560,15 +560,36 @@
         "status": "pending"
       },   
       {
-        "_id": "o1226",
+        "_id": "o1227",
         "createdAt": 9898999,
         "buyer": {
           "_id": "u102",
           "fullname": "User 2"
         },
         "totalPrice": 130,
-        "startDate": "2027/8/1",
-        "endDate": "2027/9/1",
+        "startDate": "8/1/2027",
+        "endDate": "9/1/2027",
+        "guests": {
+          "adults": 4,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006547",
+          "name": "House Of Ben",
+          "price": 60.00
+        },
+        "status": "pending"
+      },    
+      {
+        "_id": "o1229",
+        "createdAt": 9893999,
+        "buyer": {
+          "_id": "u102",
+          "fullname": "User 2"
+        },
+        "totalPrice": 130,
+        "startDate": "8/1/2027",
+        "endDate": "9/1/2027",
         "guests": {
           "adults": 4,
           "kids": 0
@@ -593,7 +614,71 @@
     {
         "_id": "u102",
         "fullname": "User 2",
+        "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg",
+        "isAdmin": false,
+        "username" : "user2",
+        "password" : "secret"
+      },
+    {
+        "_id": "u103",
+        "fullname": "User 3",
         "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg",
+        "isAdmin": false,
+        "username" : "user3",
+        "password" : "secret"
+      },
+    {
+        "_id": "u104",
+        "fullname": "User 4",
+        "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg",
+        "isAdmin": false,
+        "username" : "user4",
+        "password" : "secret"
+      },
+    {
+        "_id": "u105",
+        "fullname": "User 5",
+        "imgUrl": "https://randomuser.me/api/portraits/men/5.jpg",
+        "isAdmin": false,
+        "username" : "user5",
+        "password" : "secret"
+      },
+    {
+        "_id": "u106",
+        "fullname": "User 6",
+        "imgUrl": "https://randomuser.me/api/portraits/men/6.jpg",
+        "isAdmin": false,
+        "username" : "user6",
+        "password" : "secret"
+      },
+    {
+        "_id": "u107",
+        "fullname": "User 7",
+        "imgUrl": "https://randomuser.me/api/portraits/men/7.jpg",
+        "isAdmin": false,
+        "username" : "user7",
+        "password" : "secret"
+      },
+    {
+        "_id": "u108",
+        "fullname": "User 8",
+        "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg",
+        "isAdmin": false,
+        "username" : "user8",
+        "password" : "secret"
+      },
+    {
+        "_id": "u109",
+        "fullname": "User 9",
+        "imgUrl": "https://randomuser.me/api/portraits/men/9.jpg",
+        "isAdmin": false,
+        "username" : "user9",
+        "password" : "secret"
+      },
+    {
+        "_id": "u110",
+        "fullname": "User 2",
+        "imgUrl": "https://randomuser.me/api/portraits/men/10.jpg",
         "isAdmin": false,
         "username" : "user2",
         "password" : "secret"
