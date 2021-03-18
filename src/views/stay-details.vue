@@ -13,16 +13,16 @@
     <div class="img-gallery" :imgs="stay.imgUrls"/>
     <trip-settings/>
     <review-list :reviews="stay.reviews"/>
-    <review-categories :reviews="stay.reviews"/>
+    <!-- <review-categories :reviews="stay.reviews"/> -->
     <!-- <h1>{{ stay.name }} hosted by {{ host }}</h1> -->
-    <!-- <p>Up to {{ guestAmount }}</p> -->
-
+    <p>Up to {{ guestAmount }}</p>
     <!-- <trip-settings /> -->
     <!-- <stay-map :location="stay.loc" /> -->
   </section>
 </template>
  
 <script>
+// import datePicker from "../cmps/date-picker.vue"
 import stayImgGallery from "../cmps/stay-img-gallery.vue";
 import tripSettings from "../cmps/trip-settings.vue";
 import reviewList from "../cmps/review-list.vue";
@@ -40,7 +40,11 @@ export default {
   },
   computed: {
     guestAmount() {
-      return;
+      if (this.stay.capacity>1) {
+        return this.stay.capacity.toString()+' guests' 
+      }else{
+        return this.stay.capacity.toString()+' guest'
+      }
     },
     host() {
       const hostFirstName = stay.host.fullname;
@@ -54,6 +58,7 @@ export default {
     });
   },
   components: {
+    // datePicker,
     stayImgGallery,
     tripSettings,
     reviewList,

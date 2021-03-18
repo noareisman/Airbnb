@@ -40,7 +40,9 @@ export default {
   },
   methods:{
     toDetails(stayId){
+        console.log(stayId);
         this.$router.push(`/stay/${stayId}`);
+
 
     },
     changeImg(val){

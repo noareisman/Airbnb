@@ -1,11 +1,11 @@
 <template>
 <section>
 <h1>review categories</h1>
-<!-- <ul>
-    <il v-for="cat in categories" :key="cat">
-        <el-progress :stroke-width="26" :percentage="category"></el-progress>
+<ul>
+    <il v-for="cat in categoriesToRender" :key="cat">
+        <el-progress :stroke-width="26" :percentage="categoriesToRender[1]">cat[0]</el-progress>
     </il>
-</ul> -->
+</ul>
 </section>
 </template>
 <script>
@@ -16,47 +16,33 @@ export default {
   },
   data() {
     return {
-        category:null
+        categoriesToRender:null
       
     }
   },
 
-//   computed: {
-//     avgPerCategory() {
-//       return;
-//     //   if (this.reviews) {
-//     //       this.reviews.forEach(review=>{
-
-//     //       })
-//     //       let sum = this.reviews.reduce((acc, currVal) => {
-//     //       Object.keys(this.reviews.category)
-          
-//     //       acc += currVal.avgRate;
-//     //       return acc;
-//     //     }, 0);
-//     //     return parseFloat(sum / this.reviews.length).toFixed(1);
-//     //   }
-//     },
     created(){
     if(this.reviews){
-    var categories=this.reviews.map(review=>review.category)
-    var category={...categories[0]}
+        // console.log(this.reviews[0].category);
+    var categories=this.reviews.map(review=> {
+        return {...review.category}})
+        console.log(categories);
+    var categoryMap={...categories[0]}
+    // var categoryMap=JSON.parse(JSON.stringify(categories[0]))
+    console.log(categoryMap);
     for (var i=1; i<categories.length;i++){
         var currCategory=categories[i];
         for (const cat in currCategory){
-            category[currCategoty]+=currCategory[cat]
+            categoryMap[currCategory]+=currCategory[cat]
         }
     }
-    for (const cat in category){
-        cat/this.reviews.length
+    for (const cat in categoryMap){
+        categoryMap[cat]/this.reviews.length
     }
-    this.category=category
-    //     // var categoryKeys=Object.keys(category)
-    //     // categoryKeys.forEach((key)=>{
-    //     //     this.categories.key=this.category
-        
-    // }
-
+    console.log(category);
+    var categoriesToRender=Object.keys(category).map((key)=>[key,category[key]])
+    this.categories=categoriesToRender
+        console.log(categoriesToRender);
     }
 }
 }

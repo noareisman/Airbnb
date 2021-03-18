@@ -1,21 +1,23 @@
 <template>
+<section class="googl-map">
 <h1>Location</h1>
-  <!-- <GmapMap -->
-    <!-- class="google-map" -->
-    <!-- ref="gMap" -->
-    <!-- :center="position" -->
-    <!-- :zoom="zoom" -->
-    <!-- map-type-id="terrain" -->
-    <!-- style="width: 700px; height: 500px" -->
-  <!-- > -->
-    <!-- <GmapMarker -->
-      <!-- :key="index" -->
-      <!-- :clickable="true" -->
-      <!-- :draggable="true" -->
-      <!-- @click="centerMap(stay - position)" -->
-    <!-- /> -->
-    <!-- <GmapInfoWindow>gfds</GmapInfoWindow> -->
-  <!-- </GmapMap> -->
+  <GmapMap
+    class="google-map"
+    ref="gMap"
+    :center="position"
+    :zoom="zoom"
+    map-type-id="terrain"
+    style="width: 700px; height: 500px"
+  >
+    <GmapMarker
+      :key="index"
+      :clickable="true"
+      :draggable="true"
+      @click="centerMap(stay - position)"
+    />
+    <GmapInfoWindow>gfds</GmapInfoWindow>
+  </GmapMap>
+  </section>
 </template>
 
 <script>
@@ -26,7 +28,7 @@ export default {
   },
   data() {
     return {
-      zoom: 7,
+      zoom: 16,
       position:{ lat: this.location.lat, lng: this.location.lng  }
     }
   },
