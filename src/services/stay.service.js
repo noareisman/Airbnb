@@ -10,7 +10,7 @@ export const stayService = {
 }
 
 
-async function query(filterBy) {
+async function query(filterBy = {name: '', startDate: '',endDate: ''}) {
     // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
     // return httpService.get(`review${queryStr}`)
     let stays = await storageService.query('stay')
