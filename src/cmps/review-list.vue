@@ -21,6 +21,6 @@ export default {
   },
   components: {
     reviewPreview,
-  },
+  }
 };
 </script>

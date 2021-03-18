@@ -18,12 +18,12 @@
         />
       </li>
     </ul>
+    <review-list :reviews="stay.reviews"/>
     <!-- <h1>{{ stay.name }} hosted by {{ host }}</h1> -->
     <!-- <p>Up to {{ guestAmount }}</p> -->
 
     <!-- <trip-settings /> -->
     <!-- <stay-map :location="stay.loc" /> -->
-    <review-list :reviews="stay.reviews"/>
   </section>
 </template>
  
