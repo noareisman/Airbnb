@@ -56,7 +56,6 @@ export default {
         //remove from liked array in user
       }
           this.isLiked = !this.isLiked
-      console.log(stayId);
 
     },
     

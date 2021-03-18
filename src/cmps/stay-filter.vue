@@ -53,10 +53,8 @@ export default {
     datePick(date) {
       this.filterBy.startDate = date[0];
       this.filterBy.endDate = date[1];
-      console.log(date);
     },
       openGuests(){
-      console.log(this.isGuests)
        this.isGuests = !this.isGuests
     },
     async submitSearch(){
