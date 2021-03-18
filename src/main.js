@@ -5,10 +5,11 @@ import  router  from './router'
 import store from './store'
 // import * as VueGoogleMaps from 'vue2-google-maps';
 import '../style/scss/main.scss'
-
+import locale from 'element-ui/lib/locale/lang/en'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+Vue.use(ElementUI, { locale })
+
 
 
 

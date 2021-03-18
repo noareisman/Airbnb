@@ -16,52 +16,34 @@
     },
     "stay": [
     {
-      "_id": "10006546",
-      "name": "Ribeira Charming Duplex",
-      "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
-      "price": 80.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
-      "amenities": [
-        "TV",
-        "Wifi",
-        "Kitchen",
-        "Smoking allowed",
-        "Pets allowed",
-        "Cooking basics"
-      ],
-      "host": {
-        "_id": "xiZMH",
-        "fullname": "Mor Levi",
-        "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg"
-      },
-      "loc": {
-        "country": "Portugal",
-        "countryCode": "PT",
-        "address": "Porto, Portugal",
-        "lat": -8.61308,
-        "lng": 41.1413
-      },
-      "reviews": [
-        {
-          "id": "qwer123",
-          "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.3,
-          "category":{
-              "Cleanliness":4.5,
-              "Accuracy":4.5,
-              "Communication":4.5,
-              "Location":4.0,
-              "Check-in":4.0,
-              "accessibility":4.0 
-          },
-          "by": {
-            "_id": "EbP3f",
-            "fullname": "Illy Don",
-            "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
-          }
+        "_id": "10006546",
+        "name": "Ribeira Charming Duplex",
+        "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
+        "price": 80.00,
+        "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+        "capacity": 8,
+        "favorites":[{"id":"10006546"}],
+        "amenities": [
+          "TV",
+          "Wifi",
+          "Kitchen",
+          "Smoking allowed",
+          "Pets allowed",
+          "Cooking basics"
+        ],
+        "host": {
+          "_id": "xiZMH",
+          "fullname": "Mor Levi",
+          "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg"
         },
-        {
+        "loc": {
+          "country": "Portugal",
+          "countryCode": "PT",
+          "address": "Porto, Portugal",
+          "lat": -8.61308,
+          "lng": 41.1413
+        },
+        "reviews": [{
           "id": "qwer124",
           "txt": "Great apartment, amazing view and amnesties",
           "avgRate": 4.9,
@@ -96,8 +78,7 @@
             "fullname": "Ream Lasry",
             "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg"
           }
-        }
-      ]
+        }]
     },
     {
       "_id": "10006547",
@@ -584,8 +565,7 @@
         "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
         "isAdmin": false,
         "username" : "user1",
-        "password" : "secret",
-        "favorites":[{"id":"10006546"}]
+        "password" : "secret"
     },
     {
         "_id": "u102",
@@ -593,8 +573,7 @@
         "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg",
         "isAdmin": false,
         "username" : "user2",
-        "password" : "secret",
-        "favorites":[{"id":"10006546"}]
+        "password" : "secret"
       }
     ]  
 }
