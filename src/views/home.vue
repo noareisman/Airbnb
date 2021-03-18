@@ -28,6 +28,7 @@
       </div>
     </div>
     <about />
+    <home-bannar/>
   </section>
 </template>
 
@@ -36,11 +37,13 @@
 
 import hero from "../cmps/hero.vue";
 import about from "../cmps/about.vue";
+import homeBannar from '../cmps/bannar';
 export default {
   name: "home",
   components: {
     hero,
     about,
+    homeBannar
   },
 };
 </script>

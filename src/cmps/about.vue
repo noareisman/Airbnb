@@ -1,6 +1,6 @@
 <template>
   <section class="">
-    <h1 class="about-section-title">About HomeAway</h1>
+    <h1 class="about-section-title">Tell Me More</h1>
     <div class="about-container">
       <div class="about-card-homeaway">
         <h2 class="about-title">What is HomeAway?</h2>
