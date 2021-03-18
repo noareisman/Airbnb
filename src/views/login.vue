@@ -49,16 +49,16 @@
         <br />
         <input
           required
-          type="password"
-          v-model="signupCred.password"
-          placeholder="Password"
+          type="text"
+          v-model="signupCred.username"
+          placeholder="Username"
         />
         <br />
         <input
           required
-          type="text"
-          v-model="signupCred.username"
-          placeholder="Username"
+          type="password"
+          v-model="signupCred.password"
+          placeholder="Password"
         />
         <br />
         <button>Signup</button>
@@ -75,6 +75,7 @@ export default {
       msg: "",
       loginCred: { username: "", password: "" },
       signupCred: { username: "", password: "", fullname: "" },
+      allUsers: null,
     };
   },
   computed: {
@@ -83,7 +84,7 @@ export default {
     },
     loggedInUser() {
       // return this.$store.getters.isUserLogged;
-       return this.$store.getters.loggedinUser;
+      return this.$store.getters.loggedinUser;
     },
   },
   methods: {
@@ -115,11 +116,20 @@ export default {
         !this.signupCred.username
       )
         return;
+      
+      this.allUsers.forEach((user) => {
+        if (user.username === this.signupCred.username) {
+          console.log("userName is taken");
+          return;
+        }
+      });
+
       await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
       this.$router.push("/");
     },
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" });
+      this.allUsers = this.$store.getters.users;
     },
   },
   created() {

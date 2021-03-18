@@ -2,30 +2,28 @@
   <section class="user-details">
     <section class="user-profile">
       <div>
-        <img src="" alt="User profile IMG" />
+        <img :src="user.imgUrl" alt="User profile IMG" />
       </div>
       <h2>Hello, {{ userName }}</h2>
       <small>Joined in {{ userCreationTime }}</small>
       <br />
       <button @click="doLogout">Logout</button>
     </section>
+
     <section class="reservations">
-      <h2>Pending / Accepted reservations:</h2>
-      <ul>
-        <li v-for="reserv in user.myReservations" :key="reserv.id" class="reservation">
-            <h3>{{ reserv.name }}</h3>
-            <button v-if="reserv.status === 'pending'" class="reject">X</button>
-            <button class="approve">V</button>
-          </div>
-        </li>
-      </ul>
+      <reservations  :user="user" />
+    </section>
+    <section >
+      <houses-to-host  />
     </section>
   </section>
 </template>
 
 <script>
+import reservations from '../cmps/reservations.vue';
+import housesToHost from '../cmps/houses-to-host.vue';
 export default {
-  props: ["user"],
+  props: ['user'],
   methods: {
     doLogout() {
       this.$emit("logout");
@@ -40,8 +38,10 @@ export default {
       return "June 2010";
     },
   },
-  created() {
-  },
+  components:{
+    reservations,
+    housesToHost
+  }
 };
 </script>
 
