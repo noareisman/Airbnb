@@ -50,8 +50,6 @@ async function update(user) {
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
-
-
 async function login(userCred) {
     const users = await storageService.query('user');
     const user = users.find(user => user.username === userCred.username);
@@ -64,15 +62,19 @@ async function login(userCred) {
 async function signup(userCred) {
     const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred)
+    user.myReservations = [];
+    user.saved = [];
     gUsers.push(user);
     // TODO
-    // _saveUsersToFile()
+    _saveUsersToFile()
     return _saveLocalUser(user)
 }
+
 async function logout() {
     sessionStorage.clear()
     // return await httpService.post('auth/logout')
 }
+
 function _saveLocalUser(user) {
     sessionStorage.setItem('loggedinUser', JSON.stringify(user));
     return user;
@@ -86,7 +88,7 @@ function getLoggedinUser() {
 function _saveUsersToFile() {
     return new Promise((resolve, reject) => {
         const fs = require('fs');
-        fs.writeFile('data/user.json', JSON.stringify(gUsers, null, 2), (err) => {
+        fs.writeFile('../../data/user.json', JSON.stringify(gUsers, null, 2), (err) => {
             if (err) reject(err)
             else resolve()
         })
