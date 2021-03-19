@@ -16,14 +16,12 @@ import myHeader from "../cmps/app-header.vue";
 export default {
   computed: {
     staysToShow() {
-      const x = JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay));
-      console.log(x);
-      return x;
+      return JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay));
     },
   },
   created() {
     console.log("created");
-    const filterBy = {};
+    var filterBy = {};
     if (this.$route.query) {
       filterBy.location = this.$route.query.location;
     }

@@ -23,17 +23,8 @@
           <el-menu-item index="2-4-3">item three</el-menu-item>
         </el-submenu>
       </el-submenu>
-      <el-menu-item @click="navTo('/stay/')" index="4"> Explore</el-menu-item>
     <user-selections />
     </el-menu>
-
-    <!-- <section className="loggedin-user" v-if="loggedInUser">
-      <router-link :to="`/user/${loggedInUser._id}`">
-        {{ loggedInUser.fullname }}
-      </router-link>
-      <span>{{ loggedInUser.score }}</span>
-    </section> -->
-
 
   </header>
 </template>
@@ -50,9 +41,6 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
     },
-    navTo(dest) {
-      this.$router.push(dest);
-    }
   },
   components:{
     userSelections
