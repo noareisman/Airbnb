@@ -10,6 +10,17 @@ export const stayStore = {
     getters: {
         staysForDisplay(state) {
             return state.stays;
+        },
+
+        sortByPrice(state){
+            state.stays.sort((a,b) =>{
+                return a.price - b.price
+            })
+        },
+        sortByPopularity(state){
+            state.stays.sort((a,b) =>{
+                return  b.favorites.length -  a.favorites.length
+            })
         }
     },
 

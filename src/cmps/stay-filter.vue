@@ -59,7 +59,7 @@ export default {
     },
     async submitSearch(){
       const filterBy = JSON.parse(JSON.stringify(this.filterBy))
-          const stays =  await this.$store.dispatch({type:"loadStays", filterBy })
+      await this.$store.dispatch({type:"loadStays", filterBy })
       
     }
   },
