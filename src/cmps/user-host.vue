@@ -1,7 +1,7 @@
 <template>
   <section>
     <!-- ORDERS REQUEST -->
-    <section class="reservations">
+    <section>
       <user-reservations :user="user" />
     </section>
 
@@ -16,11 +16,11 @@
 import userReservations from "./user-reservations.vue";
 import userStays from "./user-stays.vue";
 export default {
-  props: ['user'],
+  props: ["user"],
   components: {
     userReservations,
     userStays,
-  }
+  },
 };
 </script>
 

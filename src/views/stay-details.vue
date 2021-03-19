@@ -4,7 +4,7 @@
     <!-- TODO: finish routerLink -->
     <div>
       <star-rating :reviews="stay.reviews" />
-      <router-link to="/stay/:id/:location?">{{stay.loc.address}}</router-link>
+      <!-- <router-link to="/stay/:id:location?">{{stay.loc.address}}</router-link> -->
     </div>
     <div>
     <i class="share-btn btn fas fa-share-square">Share</i>
@@ -28,7 +28,7 @@
 </el-input>
 <button class="call-to-action-btn">Send message</button>
 </div>
-    <stay-map :location="stay.loc" />
+    <!-- <stay-map :location="stay.loc" /> -->
   </section>
 </template>
  

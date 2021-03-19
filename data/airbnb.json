@@ -22,7 +22,7 @@
         "price": 80.00,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
         "capacity": 8,
-        "favorites":[{"userId":"10006546"}],
+        "favorites":[{"userId":"u109"}],
         "amenities": [
           "TV",
           "Wifi",
@@ -269,11 +269,6 @@
               "Location":4.9,
               "Check-in":4.9,
               "accessibility":4.9 
-          },
-          "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
           }
         }
       ]
@@ -530,8 +525,8 @@
         "_id": "o1225",
         "createdAt": 9898989,
         "buyer": {
-          "_id": "u101",
-          "fullname": "User 1"
+          "_id": "u105",
+          "fullname": "User 5"
         },
         "totalPrice": 160,
         "startDate": "4/15/2025",
@@ -545,14 +540,35 @@
           "name": "House Of Uncle My",
           "price": 80.00
         },
-        "status": "pending"
+        "status": "confirmed"
       },   
       {
+        "_id": "o1235",
+        "createdAt": 9898992,
+        "buyer": {
+          "_id": "u102",
+          "fullname": "User 2"
+        },
+        "totalPrice": 160,
+        "startDate": "3/15/2025",
+        "endDate": "3/17/2025",
+        "guests": {
+          "adults": 2,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006546",
+          "name": "House Of Uncle My",
+          "price": 80.00
+        },
+        "status": "pending"
+      },   
+            {
         "_id": "o1226",
         "createdAt": 9898953,
         "buyer": {
-          "_id": "u101",
-          "fullname": "User 1"
+          "_id": "u104",
+          "fullname": "User 4"
         },
         "totalPrice": 160,
         "startDate": "10/15/2025",
@@ -563,7 +579,7 @@
         },
         "stay": {
           "_id": "10006548",
-          "name": "Ribeira Charming Duplex",
+          "name": "Apartment of Sean",
           "price": 80.00
         },
         "status": "pending"
@@ -572,8 +588,8 @@
         "_id": "o1227",
         "createdAt": 9898999,
         "buyer": {
-          "_id": "u102",
-          "fullname": "User 2"
+          "_id": "u106",
+          "fullname": "User 6"
         },
         "totalPrice": 130,
         "startDate": "8/1/2027",
@@ -606,6 +622,48 @@
         "stay": {
           "_id": "10006547",
           "name": "House Of Ben",
+          "price": 60.00
+        },
+        "status": "pending"
+      },    
+      {
+        "_id": "o1231",
+        "createdAt": 98939929,
+        "buyer": {
+          "_id": "u107",
+          "fullname": "User 7"
+        },
+        "totalPrice": 270,
+        "startDate": "10/15/2022",
+        "endDate": "10/18/2022",
+        "guests": {
+          "adults": 2,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006553",
+          "name": "The castle of lin",
+          "price": 90.00
+        },
+        "status": "approve"
+      },
+      {
+        "_id": "o1230",
+        "createdAt": 98939929,
+        "buyer": {
+          "_id": "u106",
+          "fullname": "User 6"
+        },
+        "totalPrice": 600,
+        "startDate": "5/2/2021",
+        "endDate": "5/12/2021",
+        "guests": {
+          "adults": 2,
+          "kids": 2
+        },
+        "stay": {
+          "_id": "10006555",
+          "name": "Privat house on the bitch",
           "price": 60.00
         },
         "status": "pending"
