@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section  class="reservations">
     <h2>Pending / Accepted reservations:</h2>
     <ul>
       <li v-for="order in orders" :key="order.id">

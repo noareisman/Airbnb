@@ -20,8 +20,10 @@ export const orderStore = {
     async loadOrders({ commit, state }, { user }) {
       try {
         this.user = user
+        
         const stays = await stayService.query(user);
         const orders = await orderService.query();
+
         const myOrders = orders.filter(order => {
           return stays.find(stay => {
             return stay._id === order.stay._id;
