@@ -21,7 +21,22 @@ export const stayStore = {
             state.stays.sort((a,b) =>{
                 return  b.favorites.length -  a.favorites.length
             })
-        }
+        },
+        getAllUserLike( state, getters ){
+            const userId = getters.loggedinUser._id;
+            console.log(userId)
+            const stays = []
+            state.stays.forEach(stay => {
+            stay.favorites.forEach(fav => {
+                if(fav.userId === userId){
+                    stays.push(stay)
+                }
+            });
+           });
+            return stays
+           
+        },
+        
     },
 
     mutations: {
@@ -34,7 +49,8 @@ export const stayStore = {
             const idx = state.stays.findIndex(({ _id }) => _id === updatedStay._id);
             state.stays.splice(idx, 1, updatedStay);
             console.log(updatedStay)
-        }
+        },
+
     },
     actions: {
         async loadStays({ commit, state }, { filterBy }) {
@@ -76,20 +92,20 @@ export const stayStore = {
                 throw err
             }
         },
-        getAllUserLike(context){
-            const userId = context.getters.loggedinUser._id;
-            console.log(userId)
-            const stays = []
-            context.state.stays.forEach(stay => {
-            stay.favorites.forEach(fav => {
-                if(fav.userId === userId){
-                    stays.push(stay)
-                }
-            });
-           });
-            return stays
+        // getAllUserLike(context){
+        //     const userId = context.getters.loggedinUser._id;
+        //     console.log(userId)
+        //     const stays = []
+        //     context.state.stays.forEach(stay => {
+        //     stay.favorites.forEach(fav => {
+        //         if(fav.userId === userId){
+        //             stays.push(stay)
+        //         }
+        //     });
+        //    });
+        //     return stays
            
-        },
+        // },
         checkAvailability(context, stayId) {
 
         },
