@@ -10,51 +10,57 @@
       <button @click="doLogout">Logout</button>
     </section>
 
-    <button value='traveler' @click="changeStat">Travveler</button>
-    <button value='host' @click="changeStat">Host</button>
-    <div>
-      <user-host v-if="userStatus === 'host'" :user="user" />
-      <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
-    </div>
+    <section class="user-back-office">
+      <div class="user-status-btns">
+        <button value="traveler" @click="changeStat">Traveler</button>
+        <button value="host" @click="changeStat">Host</button>
+      </div>
+      <div>
+        <user-host v-if="userStatus === 'host'" :user="user" />
+        <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
+      </div>
+    </section>
   </section>
 </template>
 
 <script>
-import userHost from '../cmps/user-host.vue';
-import userDashboard from '../cmps/user-dashboard.vue';
+import userHost from "../cmps/user-host.vue";
+import userDashboard from "../cmps/user-dashboard.vue";
 
 export default {
-  data(){
+  data() {
     return {
-      user: this.$store.getters.loggedinUser,
-      userStatus: 'traveler'
-    }
+      userStatus: "traveler",
+    };
   },
   methods: {
-     async doLogout() {
-      await this.$store.dispatch({ type: "logout" });
+    doLogout() {
       this.$router.push("/");
+      this.$store.dispatch({ type: "logout" });
     },
-    changeStat(ev){
+    changeStat(ev) {
       this.userStatus = ev.target.value;
-    }
+    },
   },
   computed: {
     userName() {
       return this.user.fullname;
+    },
+    user() {
+      return this.$store.getters.loggedinUser;
     },
     userCreationTime() {
       // return this.loggedinUser. ?creation time?
       return "June 2010";
     },
   },
-  created(){
-    this.user = this.$store.getters.loggedinUser;
-  },
-  components:{
+  // created() {
+  //   this.user = this.$store.getters.loggedinUser;
+  // },
+  components: {
     userHost,
-    userDashboard
-  }
+    userDashboard,
+  },
 };
 </script>
 

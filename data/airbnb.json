@@ -540,7 +540,7 @@
           "name": "House Of Uncle My",
           "price": 80.00
         },
-        "status": "confirmed"
+        "status": "approve"
       },   
       {
         "_id": "o1235",
@@ -561,7 +561,7 @@
           "name": "House Of Uncle My",
           "price": 80.00
         },
-        "status": "pending"
+        "status": "approve"
       },   
             {
         "_id": "o1226",

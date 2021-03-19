@@ -1,40 +1,38 @@
 
 .user-details{
-    .user-profile button{
-        outline: none !important;
-        color: white;
-        border-radius: 10px;
-        height: 30px;
-        cursor: pointer;
-        background-color: #e95074;
-    }
+    display: flex;
+    
     .user-profile{
         text-align: center;
         padding: 3%;
         border: 1px solid gray;
         width: 30%;
-
+        height: fit-content;
+        margin: auto 0 ;
+        
     }
-    .user-profile button:hover{
-        background-color: #eb738fcb;
+    .user-back-office{
+        width: 70%;
+        padding: 3%;
     }
-    .reservation{
-        border: 1px solid black;
-        width: fit-content;
-        padding: 5px;
-    }
-    .reservation button{
-        background-color: unset !important;
-        border: unset !important;
-        outline: unset !important;
-        cursor: pointer;
-    }
-    .reject{
-        color: red;
-        font-weight: bolder;
-    }
-    .approve{
-        color: green;
-        font-weight: bolder;
-    }
+    
+    // .reservation{
+    //     border: 1px solid black;
+    //     width: fit-content;
+    //     padding: 5px;
+    // }
+    // .reservation button{
+    //     background-color: unset !important;
+    //     border: unset !important;
+    //     outline: unset !important;
+    //     cursor: pointer;
+    // }
+    // .reject{
+    //     color: red;
+    //     font-weight: bolder;
+    // }
+    // .approve{
+    //     color: green;
+    //     font-weight: bolder;
+    // }
 }
