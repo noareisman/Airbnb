@@ -24,12 +24,12 @@ export const stayStore = {
             console.log(filterBy)
             try {
                 const stays = await stayService.query(filterBy)
-                
+                console.log(stays);
                 commit({
                     type: 'setStays',
                     stays
                 });
-
+                return stays
             } catch (err) {
                 console.log('from Store: Cannot load stays', err);
                 throw new Error('Cannot load stays');
