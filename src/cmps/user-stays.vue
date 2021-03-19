@@ -18,10 +18,15 @@ import singleStayOrder from '../cmps/single-stay-order.vue';
 
 export default {
   props: ["user"],
-  data() {
-    return {
-      stays: null,
-    };
+  // data() {
+  //   return {
+  //     stays: null,
+  //   };
+  // },
+  computed:{
+    stays(){
+      return this.$store.getters.staysForDisplay
+    }
   },
   methods: {
     async loadStays() {
@@ -29,9 +34,8 @@ export default {
         type: "loadStays",
         filterBy: this.user,
       });
-      this.stays = stays;
-      console.log(this.stays);
-    },
+      // this.stays = stays;
+    }
   },
   created() {
     this.loadStays();

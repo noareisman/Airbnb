@@ -2,7 +2,7 @@
   <section class="slecet">
     <el-dropdown>
       <span class="el-dropdown-link">
-        USER OPTIONS<i class=" el-icon--right"></i>
+        USER OPTIONS<i class="el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
@@ -41,15 +41,14 @@ export default {
     };
   },
   methods: {
-    async navTo(ev) {
-      console.log(ev.target.textContent);
+    navTo(ev) {
       switch (ev.target.textContent) {
         case "Log-in":
           this.$router.push("/login");
           break;
         case "Log-out":
-          await this.$store.dispatch({ type: "logout" });
           this.$router.push("/");
+          this.$store.dispatch({ type: "logout" });
           break;
         case "My propfile":
           this.$router.push("/user");
