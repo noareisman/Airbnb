@@ -1,18 +1,29 @@
 <template>
-  <section  class="reservations">
+  <section class="orders">
     <h2>Pending / Accepted reservations:</h2>
     <ul>
-      <li v-for="order in orders" :key="order.id">
-        <div v-if="order.status === 'pending'" class="reservation">
+      <li
+        v-for="order in orders.filter((order) => order.status === 'pending')"
+        :key="order.id"
+        class="order"
+      >
+        <div class="order-bio">
           <h2>{{ order.buyer.fullname }}</h2>
           <p>{{ order.startDate }}-{{ order.endDate }}</p>
-          <div>
-            <h4>Guests:</h4>
+        </div>
+        <div class="order-bio">
+          <h4>Stay at:&nbsp;</h4>
+          <p>"{{ order.stay.name }}"</p>
+        </div>
+        <div class="order-bio">
+          <h4>Guests:</h4>
+          <p>
             Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
               order.guests.kids
             }}
-          </div>
-          <p>{{ order.stay.name }}</p>
+          </p>
+        </div>
+        <div>
           <button @click="changeOrderStat($event, order)" class="reject">
             X
           </button>
@@ -33,10 +44,10 @@ export default {
   //     orders: null,
   //   };
   // },
-  computed:{
-    orders(){
-      return this.$store.getters.orders
-    }
+  computed: {
+    orders() {
+      return this.$store.getters.orders;
+    },
   },
   methods: {
     async loadOrders() {
@@ -60,7 +71,7 @@ export default {
           break;
       }
       this.loadOrders();
-      this.$emit('reloadStays');
+      this.$emit("reloadStays");
     },
   },
   created() {

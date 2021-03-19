@@ -8,6 +8,8 @@ import '../style/scss/main.scss'
 import locale from 'element-ui/lib/locale/lang/en'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+const Swal = require('sweetalert2')
+
 Vue.use(ElementUI, { locale })
 
 
@@ -26,6 +28,7 @@ new Vue({
   router,
   store,
   ElementUI,
+  Swal,
   render: h => h(app)
 }).$mount('#app')
  

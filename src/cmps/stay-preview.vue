@@ -1,4 +1,5 @@
 <template>
+
   <section class="preview-card space-preview">
     <router-link class="router" :to="`/stay/${stay._id}`">
       <el-carousel :autoplay="false" height="200px" indicator-position="none">
@@ -39,6 +40,7 @@
 <script>
 import slideImg from "../cmps/slide-img.vue";
 import starRating from "../cmps/star-rating.vue";
+const Swal = require('sweetalert2')
 
 export default {
   name: "stay-preview",
@@ -52,9 +54,12 @@ export default {
   },
   methods: {
     async ToggleLike(stay) {
+        if (!this.$store.getters.loggedinUser) {
+      Swal.fire('Its better to sign in :)')
+        return
+      }
       await this.$store.dispatch({ type: "toggleLike", stay });
     },
-  
   },
   computed: {
     summary() {
@@ -65,6 +70,7 @@ export default {
     },
     isLiked() {
       const user = this.$store.getters.loggedinUser;
+      if(!user) return
       return this.stay.favorites.some((element) => {
         return element.userId === user._id;
       });
