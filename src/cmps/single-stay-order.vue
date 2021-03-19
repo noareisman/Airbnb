@@ -47,6 +47,9 @@ export default {
   //   },
   // },
   computed: {
+
+    /////////////////////////////Noa: I think  maybe you can get it filtered 
+    ////////////////////straight from the store I wrote there a function just like it
     stayOrders() {
       return this.$store.getters.orders.filter((order) => {
         return order.stay._id === this.stay._id;
