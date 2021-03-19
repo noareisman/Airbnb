@@ -25,8 +25,20 @@ export default {
     if (this.$route.query) {
       filterBy.location = this.$route.query.location;
     }
+      console.log("🚀 ~ file: stay-app.vue ~ line 29 ~ created ~ filterBy", filterBy)
     this.$store.dispatch({ type: "loadStays", filterBy });
   },
+
+//   watch: { 
+//      'this.$route': {
+//         handler: function() {
+//            console.log($route.params)
+//         },
+//         deep: t rue,
+//         immediate: true
+//       }
+// },
+
   components: {
     stayList,
     stayFilter,
