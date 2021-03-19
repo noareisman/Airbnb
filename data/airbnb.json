@@ -529,8 +529,8 @@
           "fullname": "User 5"
         },
         "totalPrice": 160,
-        "startDate": "4/25/2021",
-        "endDate": "4/27/2021",
+        "startDate": "04/25/2021",
+        "endDate": "04/27/2021",
         "guests": {
           "adults": 2,
           "kids": 1
@@ -550,8 +550,8 @@
           "fullname": "User 2"
         },
         "totalPrice": 160,
-        "startDate": "3/15/2025",
-        "endDate": "3/17/2025",
+        "startDate": "03/15/2025",
+        "endDate": "03/17/2025",
         "guests": {
           "adults": 2,
           "kids": 0
@@ -592,8 +592,8 @@
           "fullname": "User 6"
         },
         "totalPrice": 130,
-        "startDate": "8/1/2027",
-        "endDate": "9/1/2027",
+        "startDate": "08/1/2027",
+        "endDate": "09/1/2027",
         "guests": {
           "adults": 4,
           "kids": 0
@@ -613,8 +613,8 @@
           "fullname": "User 2"
         },
         "totalPrice": 130,
-        "startDate": "8/1/2027",
-        "endDate": "9/1/2027",
+        "startDate": "08/1/2027",
+        "endDate": "09/1/2027",
         "guests": {
           "adults": 4,
           "kids": 0
@@ -655,8 +655,8 @@
           "fullname": "User 6"
         },
         "totalPrice": 600,
-        "startDate": "5/2/2021",
-        "endDate": "5/12/2021",
+        "startDate": "05/2/2021",
+        "endDate": "05/12/2021",
         "guests": {
           "adults": 2,
           "kids": 2
@@ -676,8 +676,8 @@
           "fullname": "User 3"
         },
         "totalPrice": 600,
-        "startDate": "5/2/2021",
-        "endDate": "5/12/2021",
+        "startDate": "05/2/2021",
+        "endDate": "05/12/2021",
         "guests": {
           "adults": 2,
           "kids": 2
@@ -773,4 +773,3 @@
       }
     ]  
 }
-

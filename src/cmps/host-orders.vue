@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  props: ["user"],
+  props: ["host"],
   // data() {
   //   return {
   //     orders: null,
@@ -62,8 +62,8 @@ export default {
   methods: {
     async loadOrders() {
       await this.$store.dispatch({
-        type: "loadOrders",
-        user: { ...this.user },
+        type: "loadHostOrders",
+        host: { ...this.host },
       });
       // this.orders = this.$store.getters.orders;
     },

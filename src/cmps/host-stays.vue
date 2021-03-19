@@ -17,7 +17,7 @@
 import singleStayOrder from '../cmps/single-stay-order.vue';
 
 export default {
-  props: ["user"],
+  props: ["host"],
   // data() {
   //   return {
   //     stays: null,
@@ -32,7 +32,7 @@ export default {
     async loadStays() {
       const stays = await this.$store.dispatch({
         type: "loadStays",
-        filterBy: this.user,
+        filterBy: this.host,
       });
       // this.stays = stays;
     }

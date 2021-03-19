@@ -1,20 +1,20 @@
 <template>
   <section>
     <!-- ORDERS REQUEST -->
-      <user-orders :user="user" />
+      <host-orders :host="host" />
     <!-- LIST OF HOUSES REQUEST -->
-      <user-stays :user="user" />
+      <host-stays :host="host" />
   </section>
 </template>
 
 <script>
-import userOrders from "./user-orders";
-import userStays from "./user-stays";
+import hostOrders from "./host-orders";
+import hostStays from "./host-stays";
 export default {
-  props: ["user"],
+  props: ["host"],
   components: {
-    userOrders,
-    userStays,
+    hostOrders,
+    hostStays,
   },
 };
 </script>
