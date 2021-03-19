@@ -1,5 +1,6 @@
 <template>
   <section class="home main-layout">
+
     <section class="hero full main-layout">
       <hero />
     </section>

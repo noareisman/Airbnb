@@ -15,7 +15,7 @@ export default {
     return {};
   },
   created() {
-    // this.$store.dispatch({ type: "loadStays" });
+    this.$store.dispatch({ type: "loadStays" });
   },
   components: {
     myHeader,

@@ -20,13 +20,23 @@ export default {
     },
   },
   created() {
-    console.log("created");
     var filterBy = {};
     if (this.$route.query) {
       filterBy.location = this.$route.query.location;
     }
     this.$store.dispatch({ type: "loadStays", filterBy });
   },
+
+//   watch: { 
+//      'this.$route': {
+//         handler: function() {
+//            console.log($route.params)
+//         },
+//         deep: true,
+//         immediate: true
+//       }
+// },
+
   components: {
     stayList,
     stayFilter,
