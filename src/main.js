@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI, { locale })
 
 
-const GOOGLE_API_KEY='AIzaSyANybSXcN18B2OElfk5DWJj_S7PKqi4BW8'// need to secure 
+const GOOGLE_API_KEY=''// need to secure 
 
 Vue.config.productionTip = false
 
