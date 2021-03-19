@@ -563,7 +563,7 @@
         },
         "status": "approve"
       },   
-            {
+      {
         "_id": "o1226",
         "createdAt": 9898953,
         "buyer": {
@@ -627,7 +627,7 @@
         "status": "pending"
       },    
       {
-        "_id": "o1231",
+        "_id": "o1230",
         "createdAt": 98939929,
         "buyer": {
           "_id": "u107",
@@ -648,11 +648,32 @@
         "status": "approve"
       },
       {
-        "_id": "o1230",
+        "_id": "o1231",
         "createdAt": 98939929,
         "buyer": {
           "_id": "u106",
           "fullname": "User 6"
+        },
+        "totalPrice": 600,
+        "startDate": "5/2/2021",
+        "endDate": "5/12/2021",
+        "guests": {
+          "adults": 2,
+          "kids": 2
+        },
+        "stay": {
+          "_id": "10006552",
+          "name": "Becca house",
+          "price": 60.00
+        },
+        "status": "pending"
+      },   
+      {
+        "_id": "o1232",
+        "createdAt": 98939329,
+        "buyer": {
+          "_id": "u103",
+          "fullname": "User 3"
         },
         "totalPrice": 600,
         "startDate": "5/2/2021",
