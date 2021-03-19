@@ -1,73 +1,54 @@
 <template>
   <section>
     <star-rating />
-
-    <date-picker></date-picker>
-
-    <el-dropdown>
-      <span class="el-dropdown-link">
-        GUESTS<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item
-          >Adults:
-          <el-input-number
-            v-model="adultsNum"
-            @change="handleChange"
-            :min="1"
-            :max="10"
-          >
-          </el-input-number>
-        </el-dropdown-item>
-        <el-dropdown-item
-          >Children:
-          <el-input-number
-            v-model="childrenNum"
-            @change="handleChange"
-            :min="1"
-            :max="10"
-          >
-          </el-input-number>
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-
-    <span class="price">{{ price }}</span>
-
-    <button class="call-to-action-btn">Check availability</button>
+    <form>
+      <div class="settings-container flex justify-center items-center">
+        <date-picker @pick="setDates"></date-picker>
+        <guest-settings @pickguests="setGuests"></guest-settings>
+      </div>
+      <span class="price">{{ price }}</span>
+      <button class="call-to-action-btn">Check Availability</button>
+    </form>
   </section>
 </template>
 
 <script>
 import datePicker from "./date-picker.vue";
 import starRating from "./star-rating.vue";
+import guestSettings from "./guest-settings.vue";
+
 export default {
-  props:{
-    "stay":Object
-    },
+  props: {
+    stay: Object,
+  },
   data() {
     return {
-      adultNum: 0,
-      ChildrenNum: 0,
-    };
+      requestedDates: [],
+      guest: {},
+    }
   },
   methods: {
-    handleChange(value) {
-      console.log(value);
+    setDates(value) {
+      this.requestedDates = value;
+      console.log(this.requestedDates);
+    },
+    setGuests(value) {
+      this.guest = value;
+      console.log(this.guest);
     },
   },
   computed: {
-    price(){
+    price() {
       return "$" + this.stay.price + "/ Night";
-    }
+    },
   },
   components: {
     datePicker,
     starRating,
+    guestSettings,
   },
 };
-</script>
-
+</script>   
 
 <style>
 .el-dropdown-link {
