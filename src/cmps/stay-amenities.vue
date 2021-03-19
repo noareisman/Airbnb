@@ -43,7 +43,6 @@ export default {
         }
     },
     created(){
-        console.log(this.stay);
     }
 }
 </script>

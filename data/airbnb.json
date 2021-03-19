@@ -22,7 +22,7 @@
         "price": 80.00,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
         "capacity": 8,
-        "favorites":[{"id":"10006546"}],
+        "favorites":[{"userId":"10006546"}],
         "amenities": [
           "TV",
           "Wifi",
@@ -89,6 +89,7 @@
       "price": 40.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -137,6 +138,7 @@
       "price": 72.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -185,6 +187,7 @@
       "price": 150.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -233,6 +236,7 @@
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -281,6 +285,7 @@
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -329,6 +334,7 @@
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -377,6 +383,7 @@
       "price": 76.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -425,6 +432,7 @@
       "price": 85.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",
@@ -473,6 +481,7 @@
       "price": 100.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
+      "favorites":[],
       "amenities": [
         "TV",
         "Wifi",

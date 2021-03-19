@@ -6,7 +6,7 @@ export const stayService = {
     query,
     getById,
     remove,
-    update
+    save
 }
 
 
@@ -46,9 +46,14 @@ function remove(stayId) {
 
 }
 
-
-async function update(stay) {
-    return storageService.put('stay', stay)
+ 
+async function save(stay) {
+    if(stay._id){
+        return storageService.put('stay', stay)
+    }
+    else{
+        return storageService.post('stay', stay)
+    }
     // user = await httpService.put(`user/${user._id}`, user)
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)

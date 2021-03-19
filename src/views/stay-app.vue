@@ -20,12 +20,10 @@ export default {
     },
   },
   created() {
-    console.log("created");
     var filterBy = {};
     if (this.$route.query) {
       filterBy.location = this.$route.query.location;
     }
-      console.log("🚀 ~ file: stay-app.vue ~ line 29 ~ created ~ filterBy", filterBy)
     this.$store.dispatch({ type: "loadStays", filterBy });
   },
 
@@ -34,7 +32,7 @@ export default {
 //         handler: function() {
 //            console.log($route.params)
 //         },
-//         deep: t rue,
+//         deep: true,
 //         immediate: true
 //       }
 // },
