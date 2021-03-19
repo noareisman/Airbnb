@@ -26,7 +26,7 @@
         "amenities": [
           "TV",
           "Wifi",
-          "Kitchen",
+          "Air-conditioning",
           "Smoking allowed",
           "Pets allowed",
           "Cooking basics"
@@ -154,8 +154,8 @@
         "country": "Portugal",
         "countryCode": "PT",
         "address": "Porto, Portugal",
-        "lat": -8.61308,
-        "lng": 41.1413
+        "lat": 41.14961,
+        "lng": -8.61099
       },
       "reviews": [
         {

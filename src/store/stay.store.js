@@ -33,8 +33,17 @@ export const stayStore = {
             }
         },
         // loadStay?
-        saveStay({ commit }, { stay }) {
+        saveStay({ commit }, { stayId }) {
 
+        },
+        checkAvailability(context,stayId){
+
+        },
+        sendMsgToHost(context,payload){
+
+        },
+        addReview(context,payload){
+            
         }
 
     }

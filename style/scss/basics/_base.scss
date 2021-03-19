@@ -40,12 +40,12 @@ p {
  }
 
  .fa-star{
-color: rgb(202, 76, 76);
+color: #ca4c4c;
  }
 
  .loader {
     border: 16px solid #f3f3f3;
-    border-top: 16px solid rgb(202, 76, 76);
+    border-top: 16px solid #ca4e4e;
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -55,6 +55,19 @@ color: rgb(202, 76, 76);
     animation: spin 3s linear infinite;
     margin-top: -40px;
     margin-left: -40px;
+  }
+
+  .btn :hover{
+      cursor: pointer;
+  }
+  .call-to-action-btn{
+    color: #f3f3f3;
+    background-color: #ca4e4e;
+    padding:1em;
+    border-radius: 5px;
+    appearance: none;
+    border:none
+
   }
   
   @keyframes spin {

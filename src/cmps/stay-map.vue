@@ -10,12 +10,12 @@
     style="width: 700px; height: 500px"
   >
     <GmapMarker
-      :key="index"
+      :position="position"
       :clickable="true"
       :draggable="true"
-      @click="centerMap(stay - position)"
+      @click="centerMap(position)"
     />
-    <GmapInfoWindow>gfds</GmapInfoWindow>
+    <GmapInfoWindow></GmapInfoWindow>
   </GmapMap>
   </section>
 </template>
@@ -28,16 +28,26 @@ export default {
   },
   data() {
     return {
-      zoom: 16,
-      position:{ lat: this.location.lat, lng: this.location.lng  }
+      zoom: 10,
+      // markers:[ 
+      //   {      
+        position: { 
+          lat: this.location.lat,
+          lng: this.location.lng
+          }  
+        // }          
+      // ]
     }
   },
   methods: {
-    // centerMap(pos) {
-    //   this.$refs.gMap.panTo(pos);
-    //   this.zoom = 10;
-    // },
-//   },
-}
+    centerMap(pos) {
+      zoom: 4,
+      this.$refs.gMap.panTo(pos);
+    },
+  },
+  created(){
+    this.position.lng=this.location.lng
+    this.position.lat=this.location.lat
+  }
 }
 </script>
