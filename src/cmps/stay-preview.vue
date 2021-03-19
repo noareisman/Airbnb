@@ -54,6 +54,7 @@ export default {
     async ToggleLike(stay) {
       await this.$store.dispatch({ type: "toggleLike", stay });
     },
+  
   },
   computed: {
     summary() {
