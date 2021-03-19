@@ -1,29 +1,17 @@
 <template>
   <section class="preview-card space-preview">
-    <div> 
-
-      <!-- <slide-img stayImg:stay.imgUrls /> -->
-<!-- style="width: 220px" -->
-     <el-carousel :autoplay="false"  height="200px"    indicator-position="outside">
+        <router-link class="router" :to="`/stay/${stay._id}`">
+     <el-carousel   :autoplay="false"  height="200px"    indicator-position="none">
       <el-carousel-item style="background-color: #fff"   v-for="item,idx in stay.imgUrls" :key="item">
         <img class="stay-img" :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[idx]}.jpg`)">
       </el-carousel-item>
     </el-carousel>
-
-
-      <!-- <img @click="toDetails(stay._id)"
-        class="stay-img"
-        :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[Imgidx]}.jpg`)"
-      /> -->
-  
-      <!-- <button @click="changeImg(-1)" class="img-btn prev-img"> &#60;</button>
-      <button @click="changeImg(1)" class="img-btn next-img">	&#62; </button> -->
-    </div>
-    <div class="card-info">
+     </router-link>
+     
+    <div class="card-info" >
       <img v-if="!isLiked" @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/heart.png"> 
       <img v-else @click="ToggleLike(stay)" class="like-btn" src="../assets/imgs/icons/fillheart.png"> 
       <star-rating :reviews="stay.reviews" />
-      <!-- <span>⭐{{ stay.reviews[0].avgRate }}</span> -->
       <span> {{ stay.name }}</span>
       <span> {{ summary }}</span>
       <span> {{ price }}</span> 
