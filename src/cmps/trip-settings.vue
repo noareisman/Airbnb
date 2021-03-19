@@ -3,7 +3,7 @@
     <star-rating />
     <form>
       <div class="settings-container flex justify-center items-center">
-        <date-picker @pick="setDates"></date-picker>
+        <date-picker :stayId="stay._id" @pick="setDates"></date-picker>
         <!-- <guest-settings @pickguests="setGuests"></guest-settings> -->
       </div>
       <span class="price">{{ price }}</span>
@@ -29,8 +29,10 @@ export default {
   },
   methods: {
     setDates(value) {
+      const startDate=value[0].split("-").join('/')
+      const endDate=value[1].split("-").join('/')
       this.requestedDates = value;
-      console.log(this.requestedDates);
+      console.log([startDate,endDate]);
     },
     setGuests(value) {
       this.guest = value;

@@ -11,7 +11,6 @@ export const stayStore = {
         staysForDisplay(state) {
             return state.stays;
         },
-
         sortByPrice(state){
             state.stays.sort((a,b) =>{
                 return a.price - b.price

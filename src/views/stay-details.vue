@@ -16,7 +16,7 @@
     <p>Up to {{ guestAmount }}</p>
     <img class="thumb-img" :src="stay.host.imgUrl"/>
     <stay-amenities :stay="stay"/>
-    <!-- <trip-settings :stay="stay"/> -->
+    <trip-settings :stay="stay"/>
     <review-list :reviews="stay.reviews"/>
     <review-categories :reviews="stay.reviews"/>
     <div>Contact host
@@ -48,7 +48,8 @@ export default {
     return {
       stay: null,
       textarea: '',
-      isLiked:false
+      isLiked:false,
+      stayOrders:
     };
   },
   methods:{
@@ -76,6 +77,9 @@ export default {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
       this.stay = stay;
+    getStayOrders(stay.id){
+this.$store.getters.
+    }
     });
   },
   components: {

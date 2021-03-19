@@ -4,7 +4,8 @@ import { orderService } from '../services/order.service.js';
 export const orderStore = {
   state: {
     orders: [],
-    user: null
+    user: null,
+    ordersByStayId:[]
   },
   getters: {
     orders(state) {
