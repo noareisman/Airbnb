@@ -28,10 +28,15 @@
 <script>
 export default {
   props: ["user"],
-  data() {
-    return {
-      orders: null,
-    };
+  // data() {
+  //   return {
+  //     orders: null,
+  //   };
+  // },
+  computed:{
+    orders(){
+      return this.$store.getters.orders
+    }
   },
   methods: {
     async loadOrders() {
@@ -39,21 +44,23 @@ export default {
         type: "loadOrders",
         user: { ...this.user },
       });
-      this.orders = this.$store.getters.orders;
+      // this.orders = this.$store.getters.orders;
     },
-    changeOrderStat(event, order) {
+    async changeOrderStat(event, order) {
       order = JSON.parse(JSON.stringify(order));
 
       switch (event.target.className) {
         case "reject":
           order.status = "deny";
-          this.$store.dispatch({ type: "updateOrderStatus", order });
+          await this.$store.dispatch({ type: "updateOrderStatus", order });
           break;
         case "approve":
           order.status = "approve";
-          this.$store.dispatch({ type: "updateOrderStatus", order });
+          await this.$store.dispatch({ type: "updateOrderStatus", order });
           break;
       }
+      this.loadOrders();
+      this.$emit('reloadStays');
     },
   },
   created() {

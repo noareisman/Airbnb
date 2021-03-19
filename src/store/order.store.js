@@ -29,7 +29,6 @@ export const orderStore = {
             return stay._id === order.stay._id;
           })
         })
-
         commit({ type: 'setOrders', orders: myOrders })
       } catch (err) {
         console.log('orderStore: Error in loadOrders', err)
