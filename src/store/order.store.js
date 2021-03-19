@@ -3,7 +3,8 @@ import { orderService } from '../services/order.service.js';
 
 export const orderStore = {
   state: {
-    orders: []
+    orders: [],
+    user: null
   },
   getters: {
     orders(state) {
@@ -18,22 +19,25 @@ export const orderStore = {
   actions: {
     async loadOrders({ commit, state }, { user }) {
       try {
+        this.user = user
         const stays = await stayService.query(user);
         const orders = await orderService.query();
-        console.log(orders);
         const myOrders = orders.filter(order => {
           return stays.find(stay => {
             return stay._id === order.stay._id;
           })
         })
+
         commit({ type: 'setOrders', orders: myOrders })
       } catch (err) {
         console.log('orderStore: Error in loadOrders', err)
         throw err
       }
     },
+    async updateOrderStatus({ dispatch, state }, { order }) {
+      await orderService.save(order)
+      dispatch({ type: "loadOrders", order });
+    }
   },
-  // updateOrderStatus
-  // saveOrder
 
 }

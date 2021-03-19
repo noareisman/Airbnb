@@ -8,11 +8,17 @@
           <p>{{ order.startDate }}-{{ order.endDate }}</p>
           <div>
             <h4>Guests:</h4>
-            Adults:&nbsp;	{{ order.guests.adults }}, Kids:&nbsp;{{ order.guests.kids }}
+            Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
+              order.guests.kids
+            }}
           </div>
-          <p>{{order.stay.name}}</p>
-          <button class="reject">X</button>
-          <button class="approve">V</button>
+          <p>{{ order.stay.name }}</p>
+          <button @click="changeOrderStat($event, order)" class="reject">
+            X
+          </button>
+          <button @click="changeOrderStat($event, order)" class="approve">
+            V
+          </button>
         </div>
       </li>
     </ul>
@@ -34,6 +40,20 @@ export default {
         user: { ...this.user },
       });
       this.orders = this.$store.getters.orders;
+    },
+    changeOrderStat(event, order) {
+      order = JSON.parse(JSON.stringify(order));
+
+      switch (event.target.className) {
+        case "reject":
+          order.status = "deny";
+          this.$store.dispatch({ type: "updateOrderStatus", order });
+          break;
+        case "approve":
+          order.status = "approve";
+          this.$store.dispatch({ type: "updateOrderStatus", order });
+          break;
+      }
     },
   },
   created() {

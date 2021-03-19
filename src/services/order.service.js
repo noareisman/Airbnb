@@ -12,7 +12,7 @@ export const orderService = {
     query,
     // getById,
     // remove,
-    // update,
+    save,
     // getLoggedinUser,
 }
 
@@ -24,4 +24,11 @@ async function query() {
         storageService.save('order', orders)
     }
     return orders;
+}
+async function save(order) {
+    return storageService.put('order', order);
+    // user = await httpService.put(`user/${user._id}`, user)
+
+    // Handle case in which admin updates other user's details
+    // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
