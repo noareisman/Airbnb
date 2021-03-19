@@ -34,35 +34,20 @@
 <script>
 export default {
   props: ["stay"],
-  // data() {
-  //   return {
-  //     stayOrders: null,
-  //   };
-  // },
-  // methods: {
-  //   loadOrders() {
-  //     this.stayOrders = this.$store.getters.orders.filter((order) => {
-  //       return order.stay._id === this.stay._id;
-  //     });
-  //   },
-  // },
   computed: {
-
     /////////////////////////////Noa: I think  maybe you can get it filtered 
     ////////////////////straight from the store I wrote there a function just like it
     stayOrders() {
-      return this.$store.getters.orders.filter((order) => {
-        return order.stay._id === this.stay._id;
-      });
+      // return this.$store.getters.orders.filter((order) => {
+      //   return order.stay._id === this.stay._id;
+      // });
+      return this.$store.getters.getCurrStayOrders;
     },
     singleStayOrders() {
       if (!this.stayOrders || !this.stayOrders.length) return;
       return this.stayOrders;
     },
-  },
-  // created() {
-  //   this.loadOrders();
-  // },
+  }
 };
 </script>
 
