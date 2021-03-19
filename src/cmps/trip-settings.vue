@@ -4,7 +4,7 @@
     <form>
       <div class="settings-container flex justify-center items-center">
         <date-picker @pick="setDates"></date-picker>
-        <guest-settings @pickguests="setGuests"></guest-settings>
+        <!-- <guest-settings @pickguests="setGuests"></guest-settings> -->
       </div>
       <span class="price">{{ price }}</span>
       <button class="call-to-action-btn">Check Availability</button>

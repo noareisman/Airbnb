@@ -16,7 +16,7 @@
     <p>Up to {{ guestAmount }}</p>
     <img class="thumb-img" :src="stay.host.imgUrl"/>
     <stay-amenities :stay="stay"/>
-    <trip-settings :stay="stay"/>
+    <!-- <trip-settings :stay="stay"/> -->
     <review-list :reviews="stay.reviews"/>
     <review-categories :reviews="stay.reviews"/>
     <div>Contact host
