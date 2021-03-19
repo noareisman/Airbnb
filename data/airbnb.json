@@ -265,11 +265,6 @@
               "Location":4.9,
               "Check-in":4.9,
               "accessibility":4.9 
-          },
-          "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
           }
         }
       ]
@@ -536,9 +531,30 @@
           "name": "House Of Uncle My",
           "price": 80.00
         },
-        "status": "pending"
+        "status": "confirmed"
       },   
       {
+        "_id": "o1235",
+        "createdAt": 9898992,
+        "buyer": {
+          "_id": "u102",
+          "fullname": "User 2"
+        },
+        "totalPrice": 160,
+        "startDate": "3/15/2025",
+        "endDate": "3/17/2025",
+        "guests": {
+          "adults": 2,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006546",
+          "name": "House Of Uncle My",
+          "price": 80.00
+        },
+        "status": "pending"
+      },   
+            {
         "_id": "o1226",
         "createdAt": 9898953,
         "buyer": {
