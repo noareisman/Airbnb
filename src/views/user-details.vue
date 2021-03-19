@@ -12,8 +12,8 @@
 
     <section class="user-back-office">
       <div class="user-status-btns">
-        <button value="traveler" @click="changeStat">Traveler</button>
         <button value="host" @click="changeStat">Host</button>
+        <button value="traveler" @click="changeStat">Traveler</button>
       </div>
       <div>
         <user-host v-if="userStatus === 'host'" :user="user" />
