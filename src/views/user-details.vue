@@ -15,6 +15,7 @@
         <button value="host" @click="changeStat">Host</button>
         <button value="traveler" @click="changeStat">Traveler</button>
       </div>
+      <hr />
       <div>
         <user-host v-if="userStatus === 'host'" :user="user" />
         <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
