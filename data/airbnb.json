@@ -17,11 +17,7 @@
     "stay": [
     {
         "_id": "10006546",
-<<<<<<< HEAD
         "name": "Villa hosted by Vlada",
-=======
-        "name": "House Of Uncle My",
->>>>>>> 361759fd66b95fa81adb5413e53dcc835c83a7a4
         "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
         "price": 80.00,
         "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
