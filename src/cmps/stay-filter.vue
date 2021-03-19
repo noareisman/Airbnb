@@ -53,15 +53,14 @@ export default {
     datePick(date) {
       this.filterBy.startDate = date[0];
       this.filterBy.endDate = date[1];
-      console.log(date);
     },
       openGuests(){
-      console.log(this.isGuests)
        this.isGuests = !this.isGuests
     },
-    submitSearch(){
+    async submitSearch(){
       const filterBy = JSON.parse(JSON.stringify(this.filterBy))
-      console.log(filterBy)
+          const stays =  await this.$store.dispatch({type:"loadStays", filterBy })
+      
     }
   },
   computed:{

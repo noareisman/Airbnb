@@ -16,7 +16,7 @@ const routes = [
     component: home
   },
   {
-    path: '/stay',
+    path: '/stay/',
     component: stayApp
   },
   {

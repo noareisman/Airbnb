@@ -5,7 +5,6 @@
     >
       <stay-filter />
     </div>
-    <h1>stay app</h1>
     <stay-list v-if="staysToShow && staysToShow.length" :stays="staysToShow" />
   </section>
 </template>
@@ -24,7 +23,11 @@ export default {
   },
   created() {
     console.log("created");
-    this.$store.dispatch({ type: "loadStays" });
+    const filterBy = {};
+    if (this.$route.query) {
+      filterBy.location = this.$route.query.location;
+    }
+    this.$store.dispatch({ type: "loadStays", filterBy });
   },
   components: {
     stayList,
