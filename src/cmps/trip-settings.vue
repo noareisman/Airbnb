@@ -67,7 +67,6 @@ export default {
   },
   created() {
     this.orderSettings.buyer=this.$store.getters.loggedinUser;
-
   },
   components: {
     datePicker,
