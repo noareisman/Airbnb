@@ -1,43 +1,41 @@
-.dash-title{
+.dash-title {
     margin-bottom: 20px;
 }
 
-.user-dashboard-container{
-    display:flex;
+.user-dashboard-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 15px;
 }
 
-  .dash-details{
-      display: grid;
-      flex-direction: column;
-      
-  }
+.dash-details {
+    display: grid;
+    flex-direction: column;
 
-
+}
 
 .bottom {
     margin-top: 13px;
     line-height: 12px;
-  }
+}
 
-  .button {
+.button {
     padding: 0;
     float: right;
-  }
+}
 
-  .image {
+.image {
     width: 100%;
     display: block;
-  }
+}
 
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: "";
-  }
-  
-  .clearfix:after {
-      clear: both
-  }
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}

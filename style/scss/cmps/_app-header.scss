@@ -1,5 +1,6 @@
 .header-container{
     opacity: 0.8;
+    height: 80px;
 }
 
 .logo {
@@ -7,3 +8,49 @@
     font-weight: 700;
     color: #ff385c
 }
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;}
+
+.slecet * {
+    outline: unset !important;
+  }
+  .el-dropdown-link {
+    cursor: pointer;
+    color: #409eff;
+  
+  }
+  .user-menu-img{
+    width: 28px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 0px 0px 0px 2px;
+  
+      
+  }
+  
+  .el-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:82px; 
+    height: max-content;
+    padding: 10px;
+  }
+  
+  .el-icon--right{
+    width: 20px;
+  
+  }
+  
+  .user-select{
+    border: 1px solid #dadada;
+    border-radius: 40px;
+    width: max-content;
+  
+  
+  }
+

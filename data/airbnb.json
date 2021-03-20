@@ -697,7 +697,11 @@
         "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
         "isAdmin": false,
         "username" : "user1",
-        "password" : "secret"
+        "password" : "secret",
+        "msg":{
+          "user102":[{"txt":"hello user101" , "time":12342141244, "sender":"user102"}, {"txt":"hello to you to",  "time":123424141244, "sender":"user101" }],
+          "user103":[{"txt":"hello user101 from user 103" , "time":123421412244, "sender":"user103"}, {"txt":"hello to you to",  "time":1234232141244, "sender":"user101" }]
+        }
     },
     {
         "_id": "u102",
