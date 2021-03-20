@@ -55,6 +55,8 @@
         Add Review
       </button>
     </div>
+        </div>
+
     <div>
       Contact host
       <el-input
