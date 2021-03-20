@@ -1,4 +1,5 @@
 import { stayService } from '../services/stay.service.js';
+import { utilService } from '../services/util.service.js';
 
 
 export const stayStore = {
@@ -65,10 +66,12 @@ export const stayStore = {
                 throw new Error('Cannot load stays');
             }
         },
-        async postReview(context,{review,stay}){
-            var review=stayService.getReviewTemplate
-            review={
-                id:utilService.makeId(15),
+        postReview(context,{review}){
+            var newReview=stayService.getReviewTemplate
+            console.log(review);
+            newReview={
+                currStay:review.stay,
+                id:utilService.makeId(),
                 txt: review.txt,
                 avgRate: review.avgRate,
                 category: {
@@ -86,7 +89,8 @@ export const stayStore = {
                     time:Date.now()
                 }
             }
-            stayService.addReview(review,stay)
+            console.log(newReview);
+            stayService.addReview(newReview,currStay)
         },
         // loadStay?
         async toggleLike(context, { stay }) {

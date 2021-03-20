@@ -84,8 +84,9 @@ export const orderStore = {
       dispatch({ type: "loadOrders", order });
     },
     async setPendingOrder(context, { orderSettings }) {
-      var newPendingOrder = orderService.getNewOrder()
-      newPendingOrder = {
+      // var newPendingOrder = orderService.getNewOrder()
+      // console.log(newPendingOrder);
+      var newPendingOrder = {
         createdAt: Date.now(),
         buyer: {
           _id: orderSettings.buyer._id,
@@ -105,8 +106,11 @@ export const orderStore = {
         },
         status: 'pending'
       }
+      // console.log(newPendingOrder);
       await orderService.save(newPendingOrder)
       dispatch({ type: "loadHostOrders", order });
+      console.log(newPendingOrder);
+      log.state.orders
     }
   }
 }

@@ -32,7 +32,7 @@ export default {
         guest: {},
         buyer: null,
         totalPrice: 0,
-        nightsNum: null,
+        nightsNum: 5,
         currStay: this.stay,
       },
     };
@@ -49,25 +49,26 @@ export default {
       console.log(this.orderSettings.guest);
     },
     sendOrderRequest() {
+      // console.log('tripSettings', this.orderSettings);
       this.$store.dispatch({ type: "setPendingOrder", orderSettings:this.orderSettings });
     },
   },
   computed: {
-    nights() {
-      this.orderSettings.nightsNum = 5;
+    // nights() {
+      // this.orderSettings.nightsNum = 5;
       // return this.requestedDates[1]-this.requestedDates[0]/////////////////////////////////////////////////////////////////////////////////////////////////////////
-    },
+    // },
     price() {
       return "$" + this.stay.price ;
     },
     totalPrice() {
       this.orderSettings.totalPrice = "$" + this.stay.price * this.nightsNum;
     },
-    buyer() {
-      this.$store.getters.loggedinUser;
-    },
   },
-  created() {},
+  created() {
+    this.orderSettings.buyer=this.$store.getters.loggedinUser;
+
+  },
   components: {
     datePicker,
     starRating,

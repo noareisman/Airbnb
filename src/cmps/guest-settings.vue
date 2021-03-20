@@ -2,8 +2,8 @@
     <section>
         <el-popover  placement="right"   width="400" trigger="click">
             <span> Adults: </span><el-input-number v-model="guest.adultsNum" @change="handleChange" :min="1" :max="10">Adults</el-input-number>
-            <br/><span> Children: </span><el-input-number v-model="guest.childrenNum" @change="handleChange" :min="1" :max="10">Adults</el-input-number>
-            <br/><span> Infants: </span><el-input-number v-model="guest.infantsNum" @change="handleChange" :min="1" :max="10">Adults</el-input-number>
+            <br/><span> Children: </span><el-input-number v-model="guest.childrenNum" @change="handleChange" :min="0" :max="10">Adults</el-input-number>
+            <br/><span> Infants: </span><el-input-number v-model="guest.infantsNum" @change="handleChange" :min="0" :max="10">Adults</el-input-number>
             <el-button slot="reference">Guests</el-button>
         </el-popover>
     </section>
@@ -17,7 +17,7 @@ export default {
         guest:{
             adultsNum:1,
             childrenNum:0,
-            infantsNum:1,
+            infantsNum:0,
         }
     };
   },
