@@ -1,7 +1,7 @@
 <template>
   <header class="full main-layout header-container">
     <div class="nav-container">  
-    <el-menu class="el-menu-demo" style="border:none;"  mode="horizontal" @select="handleSelect">
+    <el-menu class="el-menu-demo" style="border:none; border:none"  mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
         <router-link class="router" :to="`/`">
           <span class="logo txt"> HomeAway </span>
@@ -9,7 +9,7 @@
       </el-menu-item>
       <el-menu-item index="4" >
         <router-link class="router" :to="`/stay`">
-          <span class="txt"> Explore </span>
+          <span @click="reloadStays" class="txt"> Explore </span>
         </router-link>
       </el-menu-item>
       <el-submenu index="2">
@@ -44,7 +44,10 @@ export default {
     handleSelect(key, keyPath) {
         
     },
- 
+ async reloadStays(){
+    await  this.$store.dispatch({ type: "loadStays" });
+
+  }
   },
   components:{
     userSelections

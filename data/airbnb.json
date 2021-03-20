@@ -698,7 +698,7 @@
         "isAdmin": false,
         "username" : "user1",
         "password" : "secret",
-        "massages":{
+        "messages":{
           "user102":[{"txt":"hello user101" , "time":12342141244, "sender":"user102"}, {"txt":"hello to you to",  "time":123424141244, "from":"user101" }]
         }
     },
