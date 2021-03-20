@@ -7,7 +7,7 @@
         <img v-else class="user-menu-img" :src="require(`@/assets/imgs/icons/userGuest.jpg`)">
         <!-- <i class="el-icon--right">= </i> -->
       
-      </span>
+      </span> 
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
           >Log-in</el-dropdown-item
