@@ -65,10 +65,10 @@ export const stayStore = {
                 throw new Error('Cannot load stays');
             }
         },
-        async addReview(context,{review}){
+        async postReview(context,{review,stay}){
             var review=stayService.getReviewTemplate
             review={
-                id:utilService.makeId(),
+                id:utilService.makeId(15),
                 txt: review.txt,
                 avgRate: review.avgRate,
                 category: {
@@ -82,10 +82,11 @@ export const stayStore = {
                 by: {
                     _id: review.buyer._id,
                     fullname: review.buyer.fullname,
-                    imgUrl: review.buyer.imgUrl
+                    imgUrl: review.buyer.imgUrl,
+                    time:Date.now()
                 }
             }
-            stayService.addReview(review)
+            stayService.addReview(review,stay)
         },
         // loadStay?
         async toggleLike(context, { stay }) {

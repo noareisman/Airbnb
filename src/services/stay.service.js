@@ -8,7 +8,8 @@ export const stayService = {
     getById,
     remove,
     save,
-    getReviewTemplate
+    getReviewTemplate,
+    addReview
 }
 
 
@@ -60,6 +61,14 @@ async function save(stay) {
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
+
+async function addReview(review,stay){
+    var stayToUpdate=await getById(stay.id)
+    stayToUpdate.reviews.unshift(review)
+    await save(stay)
+    return
+}
+
 
 function getReviewTemplate() {
     return review = {
