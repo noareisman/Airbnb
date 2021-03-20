@@ -5,13 +5,13 @@ export const orderStore = {
   state: {
     allOrders: [],
     currStayOrders: [],
-    orders: [],
+    hostOrders: [],
     host: null,
     // currViewedStayId: null
   },
   getters: {
-    orders(state) {
-      return state.orders;
+    getHostOrders(state) {
+      return state.hostOrders;
     },
     getAllOrders(state) {
       return state.allOrders
@@ -30,8 +30,8 @@ export const orderStore = {
     }
   },
   mutations: {
-    setOrders(state, { orders }) {
-      state.orders = orders;
+    setHostOrders(state, { hostOrders }) {
+      state.hostOrders = hostOrders;
     },
     setHost(state, { host }) {
       state.host = host;
@@ -67,12 +67,12 @@ export const orderStore = {
         const stays = await stayService.query(host);
         const orders = await orderService.query();
 
-        const myOrders = orders.filter(order => {
+        const hostOrders = orders.filter(order => {
           return stays.find(stay => {
             return stay._id === order.stay._id;
           })
         })
-        commit({ type: 'setOrders', orders: myOrders })
+        commit({ type: 'setHostOrders', hostOrders: hostOrders })
       } catch (err) {
         console.log('orderStore: Error in loadHostOrders', err)
         throw err
@@ -81,7 +81,7 @@ export const orderStore = {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     async updateOrderStatus({ dispatch, state }, { order }) {
       await orderService.save(order)
-      dispatch({ type: "loadOrders", order });
+      dispatch({ type: "loadHostOrders", order });
     },
     async setPendingOrder(context, { orderSettings }) {
       // var newPendingOrder = orderService.getNewOrder()

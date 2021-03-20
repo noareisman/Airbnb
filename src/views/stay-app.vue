@@ -23,8 +23,13 @@ export default {
     var filterBy = {};
     if (this.$route.query) {
       filterBy.location = this.$route.query.location;
+      // filterBy.startDate = this.$route.query.startDate
+      // filterBy.endDate = this.$route.query.endDate
+      // filterBy.endDate = this.$route.query.endDate
+      // filterBy.guests = this.$route.query.guests
     }
     this.$store.dispatch({ type: "loadStays", filterBy });
+    
   },
 
 //   watch: { 

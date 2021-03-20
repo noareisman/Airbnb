@@ -2,3 +2,22 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
+.advanced-input {
+    border: none;
+    outline: none;
+    background-color: red;
+}
+
+.advanced-input-section {
+    border: none;
+    outline: none;
+}
+
+.input-section {
+    border: none;
+}
+
+.advanced-search-input .advanced-input-container .advanced-input-section .advanced-input,
+.advanced-search-input .advanced-input-container .advanced-input-section .label{
+    border: none !important;
+}

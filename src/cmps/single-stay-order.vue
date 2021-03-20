@@ -41,7 +41,7 @@ export default {
     /////////////////////////////Noa: I think  maybe you can get it filtered
     ////////////////////straight from the store I wrote there a function just like it
     stayOrders() {
-      return this.$store.getters.orders.filter((order) => {
+      return this.$store.getters.getHostOrders.filter((order) => {
         return order.stay._id === this.stay._id;
       });
       // return this.$store.getters.getCurrStayOrders;

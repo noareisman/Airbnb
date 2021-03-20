@@ -1,25 +1,33 @@
 <template>
   <section class="user-select">
-    <el-dropdown >
+    <el-dropdown>
       <span class="el-dropdown-link">
-        <img class="user-menu-img" :src="require(`@/assets/imgs/icons/hamburger.png`)">
-        <img v-if="loggedInUser" class="user-menu-img" :src="userPic">
-        <img v-else class="user-menu-img" :src="require(`@/assets/imgs/icons/userGuest.jpg`)">
+        <img
+          class="user-menu-img"
+          :src="require(`@/assets/imgs/icons/hamburger.png`)"
+        />
+        <img v-if="loggedInUser" class="user-menu-img" :src="userPic" />
+        <img
+          v-else
+          class="user-menu-img"
+          :src="require(`@/assets/imgs/icons/userGuest.jpg`)"
+        />
         <!-- <i class="el-icon--right">= </i> -->
-      
-      </span> 
+      </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
           >Log-in</el-dropdown-item
         >
         <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
-          >My propfile</el-dropdown-item
+          >My profile</el-dropdown-item
         >
         <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
     </el-dropdown>
+     <span v-if="numOfUserMesseges" class="badge">{{numOfUserMesseges}}</span>
+    <!-- {{numOfUserMesseges}} -->
   </section>
 </template>
 
@@ -64,9 +72,14 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser;
     },
-    userPic(){
-      return this.$store.getters.loggedinUser.imgUrl
-    }
-  },
+    userPic() {
+      return this.$store.getters.loggedinUser.imgUrl;
+    },
+    numOfUserMesseges() {
+      const user = this.loggedInUser;
+      console.log(user); 
+      return Object.keys(user.messages).length;
+    },
+  }
 };
 </script>

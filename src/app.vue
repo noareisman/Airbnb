@@ -14,8 +14,9 @@ export default {
   data() {
     return {};
   },
-  created() {
-    this.$store.dispatch({ type: "loadStays" });
+  async created() {
+    await this.$store.dispatch({ type: "loadStays" });
+    await this.$store.dispatch({ type: "login", userCred: { username: 'user1', password: 'secret' }});
   },
   components: {
     myHeader,

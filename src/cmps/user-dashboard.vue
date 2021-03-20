@@ -1,20 +1,20 @@
 <template>
   <section class="user-dashboard-container">
-    <h1 class="dash-title">{{ user.fullname }} Favorites</h1>
+    <h2 class="dash-title">{{ user.fullname }} Favorites</h2>
     <el-row>
-      <el-col
+      <el-col 
         :span="8"
         v-for="(stayLiked, index) in likes"
         :key="index"
         :offset="index > 0 ? 2 : 2"
       >
-        <el-card :body-style="{ padding: '0px', width: '400px' }">
+        <el-card :body-style="{ padding: '0px', width: '400px' }" style="margin:10px">
           <el-carousel
             :autoplay="false"
             height="200px"
             indicator-position="none"
           >
-            <el-carousel-item
+            <el-carousel-item 
               style="background-color: #fff"
               v-for="(item, idx) in stayLiked.imgUrls"
               :key="item"

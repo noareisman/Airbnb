@@ -56,7 +56,7 @@ export default {
   // },
   computed: {
     orders() {
-      return this.$store.getters.orders;
+      return this.$store.getters.getHostOrders;
     },
   },
   methods: {
