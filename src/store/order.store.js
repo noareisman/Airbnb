@@ -6,7 +6,7 @@ export const orderStore = {
     allOrders: [],
     currStayOrders: [],
     orders: [],
-    user: null,
+    host: null,
     // currViewedStayId: null
   },
   getters: {
@@ -33,6 +33,9 @@ export const orderStore = {
     setOrders(state, { orders }) {
       state.orders = orders;
     },
+    setHost(state, { host }) {
+      state.host = host;
+    },
     setAllOrders(state, { allOrders }) {
       state.allOrders = allOrders;
     },
@@ -58,11 +61,10 @@ export const orderStore = {
 
     //////////Noa: I think the filtering here is not done correctly /////////////////////////////////////////////////
     // and it should compare the user._id to the order.buyer._id//////////////////////////////////////////////////////////
-    async loadOrders({ commit, state }, { user }) {
+    async loadHostOrders({ commit, state }, { host }) {
       try {
-        this.user = user
-
-        const stays = await stayService.query(user);
+        commit({ type: 'setHost', host })
+        const stays = await stayService.query(host);
         const orders = await orderService.query();
 
         const myOrders = orders.filter(order => {
@@ -72,7 +74,7 @@ export const orderStore = {
         })
         commit({ type: 'setOrders', orders: myOrders })
       } catch (err) {
-        console.log('orderStore: Error in loadOrders', err)
+        console.log('orderStore: Error in loadHostOrders', err)
         throw err
       }
     },
@@ -104,7 +106,7 @@ export const orderStore = {
         status: 'pending'
       }
       await orderService.save(newPendingOrder)
-      dispatch({ type: "loadOrders", order });
+      dispatch({ type: "loadHostOrders", order });
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Pending / Accepted reservations:</h2>
-    <section class="orders">
+    <section class="host-orders">
       <h2
         v-if="
           !orders.filter((order) => order.status === 'pending') ||
@@ -14,17 +14,17 @@
         <li
           v-for="order in orders.filter((order) => order.status === 'pending')"
           :key="order.id"
-          class="order"
+          class="host-order"
         >
-          <div class="order-bio">
+          <div class="host-order-bio cell-1">
             <h2>{{ order.buyer.fullname }}</h2>
             <p>{{ order.startDate }}-{{ order.endDate }}</p>
           </div>
-          <div class="order-bio">
+          <div class="host-order-bio cell-2">
             <h4>Stay at:&nbsp;</h4>
             <p>"{{ order.stay.name }}"</p>
           </div>
-          <div class="order-bio">
+          <div class="host-order-bio cell-3">
             <h4>Guests:</h4>
             <p>
               Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
@@ -32,7 +32,7 @@
               }}
             </p>
           </div>
-          <div class="order-btns">
+          <div class="host-order-btns">
             <button @click="changeOrderStat($event, order)" class="reject">
               X
             </button>
@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  props: ["user"],
+  props: ["host"],
   // data() {
   //   return {
   //     orders: null,
@@ -62,8 +62,8 @@ export default {
   methods: {
     async loadOrders() {
       await this.$store.dispatch({
-        type: "loadOrders",
-        user: { ...this.user },
+        type: "loadHostOrders",
+        host: { ...this.host },
       });
       // this.orders = this.$store.getters.orders;
     },

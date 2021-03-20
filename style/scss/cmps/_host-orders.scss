@@ -1,0 +1,50 @@
+.host-orders{
+    height: 145px;
+    border: 1px solid rgba(211, 211, 211, 0.671);
+    padding: 2%;
+    overflow-y: auto;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin-top: 2%;
+    
+    .host-order {
+        display: grid;
+        grid-template-columns: 30% 28% 28% 14%;
+        list-style-type: none;
+        padding: 1%;
+        border-bottom: 2px solid lightgray;
+        
+        .host-order-bio {
+            display: grid;
+            grid-template-rows: 50% 50%;
+            text-align: left;
+            padding: 3px;
+        }
+
+        .host-order-btns{
+            margin: auto auto;
+        }
+
+        button {
+            height: fit-content;
+            background-color: unset;
+            border: unset ;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bolder;
+            font-size: 1.5rem;
+        }
+
+        button:hover {
+            background-color: rgb(218, 218, 218);
+        }
+
+        .reject{
+            color: red;
+        }
+
+        .approve{
+            color: green;
+        }
+    }
+}
