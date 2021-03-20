@@ -1,7 +1,7 @@
 <template>
 <section v-if="stay">
-<h1>Amenities</h1>
-<ul>
+<h2>Amenities</h2>
+<ul class="two-column-grid clean-list amenities-grid">
     <li v-for="(amen,idx) in stay.amenities" :key="idx">
         <i :class="icon(idx)"/> {{stay.amenities[idx]}}
     </li>

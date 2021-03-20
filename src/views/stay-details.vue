@@ -1,60 +1,62 @@
 <template>
-  <section v-if="stay" class="stay-details-container">
-    <h1>{{ stay.summary }}</h1>
-    <!-- TODO: finish routerLink -->
-    <div>
-      <star-rating :reviews="stay.reviews" />
-      <!-- <router-link to="/stay/:id:location?">{{stay.loc.address}}</router-link> -->
+  <section v-if="stay" class="stay-details-container main-layout">
+    <div class="stay-details-title flex column">
+      <div class="stay-title-primary">{{ stay.summary }}</div>
+      <div class="stay-title-secondary flex space-between">
+        <div class="left flex space-between">
+          <star-rating :reviews="stay.reviews" /> <span> · </span>
+        <!-- TODO: finish routerLink -->
+          <router-link to="/stay/:id:location?">{{stay.loc.address}}</router-link>
+        </div>
+        <div class="right flex space-between">
+          <button class="btn flex center space-evenly action-btn"><i class="share-btn btn fas fa-share-square"></i><span>Share</span></button>
+          <button class="btn flex center space-evenly action-btn" v-if="isLiked" @click="toggleLike()"><i class="save-btn btn fas fa-heart" style="color: #ca4c4c"></i><span>Save</span></button>
+          <button class="btn flex center space-evenly action-btn" v-if="!isLiked" @click="toggleLike()"><i class="save-btn btn far fa-heart"></i><span>Save</span></button>
+        </div>
+      </div>
     </div>
-    <div>
-      <i class="share-btn btn fas fa-share-square">Share</i>
-      <i
-        class="save-btn btn fas fa-heart"
-        style="color: #ca4c4c"
-        v-if="isLiked"
-        @click="toggleLike()"
-        >Save</i
-      >
-      <i class="save-btn btn far fa-heart" v-if="!isLiked" @click="toggleLike()"
-        >Save</i
-      >
-    </div>
-    <div class="img-gallery" :imgs="stay.imgUrls" />
-    <h1>{{ stay.name }} hosted by {{ stay.host.fullname }}</h1>
-    <p>Up to {{ guestAmount }}</p>
-    <img class="thumb-img" :src="stay.host.imgUrl" />
-    <stay-amenities :stay="stay" />
-    <trip-settings :stay="stay" />
-    <review-list :reviews="stay.reviews" />
-    <review-categories :reviews="stay.reviews" />
+    <stay-img-gallery class="img-gallery" :imgs="stay.imgUrls" />
+      <div class="flex space-between">
+        <div class="stay-description bottom-border">
+          <div class="stay-desctiption-title flex space-between bottom-border">
+            <div>
+              <h2>{{ stay.name }} hosted by {{ stay.host.fullname }}</h2>
+              <p>Up to {{ guestAmount }}</p>
+            </div>
+            <img class="thumb-img" :src="stay.host.imgUrl" />
+          </div>
+        <stay-amenities :stay="stay" />
+        <button class="link">Contact Host</button>
+        </div>
 
+        <trip-settings class="trip-settings" :stay="stay" />
+      </div>
+      <div>
+        <!-- <el-input
+          type="textarea"
+          :rows="2"
+          placeholder="Please input"
+          v-model="contactHostMsg"
+        >
+        </el-input>
+        <button class="call-to-action-btn" @click="contactHost()">
+          Send message
+        </button> -->
+      </div> 
+    <div class="review-section bottom-border">
+    <review-categories :reviews="stay.reviews" />
+    <review-list :reviews="stay.reviews" />
     <div>
-      Add Review
-      <el-input
-        type="textarea"
-        :rows="2"
-        placeholder="Please input"
-        v-model="review.reviewToAdd"
-      >
+      <h3>Add Your Review:</h3>
+      <el-input type="textarea" :rows="2" placeholder="Please input"
+        v-model="review.reviewToAdd">
       </el-input>
       <button class="call-to-action-btn" @click="addReview()">
         Add Review
       </button>
     </div>
-    <div>
-      Contact host
-      <el-input
-        type="textarea"
-        :rows="2"
-        placeholder="Please input"
-        v-model="contactHostMsg"
-      >
-      </el-input>
-      <button class="call-to-action-btn" @click="contactHost()">
-        Send message
-      </button>
     </div>
-    <!-- <stay-map :location="stay.loc" /> -->
+    <stay-map :location="stay.loc" />
   </section>
 </template>
  

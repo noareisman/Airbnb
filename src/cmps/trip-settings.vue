@@ -1,15 +1,17 @@
 <template>
   <section>
-    <star-rating />
     <form>
-      <div class="settings-container flex justify-center items-center">
+      <div class="settings-container flex column center">
+      <div class="value-for-money flex space-between">
+        <span class="price">{{ price }}/ night</span>
+        <star-rating :reviews="stay.reviews"/>
+      </div>
         <date-picker :stayId="stay._id" @pick="setDates"></date-picker>
         <guest-settings @pickguests="setGuests"></guest-settings>
+        <button class="call-to-action-btn" @click="sendOrderRequest()">
+          Check availability
+        </button>
       </div>
-      <span class="price">{{ price }}</span>
-      <button class="call-to-action-btn" @click="sendOrderRequest()">
-        Check Availability
-      </button>
     </form>
   </section>
 </template>
@@ -56,7 +58,7 @@ export default {
       // return this.requestedDates[1]-this.requestedDates[0]/////////////////////////////////////////////////////////////////////////////////////////////////////////
     },
     price() {
-      return "$" + this.stay.price + "/ Night";
+      return "$" + this.stay.price ;
     },
     totalPrice() {
       this.orderSettings.totalPrice = "$" + this.stay.price * this.nightsNum;

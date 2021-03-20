@@ -6,6 +6,7 @@
         :src="review.by.imgUrl"
       />
       <h3>{{review.by.fullname}}</h3>
+      <p>{{review.time}}</p>
       <p>{{ review.txt }}</p>
     </div>
   </section>

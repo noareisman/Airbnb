@@ -3,6 +3,13 @@
     grid-template-columns:minmax(2rem,1fr) minmax(auto,1100px) minmax( 2rem,1fr);
 }
 
+.main-layout>.full {
+    grid-column: 1/-1;
+}
+
+.main-layout>* {
+    grid-column: 2;
+}
 .hero{
     margin-bottom: 60px;
     height: 80vh;
@@ -14,13 +21,6 @@
     position: relative;
 }
 
-    .main-layout>.full {
-        grid-column: 1/-1;
-    }
-
-    .main-layout>* {
-        grid-column: 2;
-    }
     
 
     .filter-container{
