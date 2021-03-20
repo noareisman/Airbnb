@@ -42,6 +42,7 @@ function createDummySocketService() {
     },
     on(eventName, cb) {
       listenersMap[eventName] = [...(listenersMap[eventName]) || [], cb]
+
     },
     off(eventName, cb) {
       if (!listenersMap[eventName]) return
@@ -52,6 +53,7 @@ function createDummySocketService() {
       listenersMap[eventName].forEach(listener => {
         listener(data)
       })
+
     },
     debugMsg() {
       this.emit('chat newMsg', {from: 'Someone', txt: 'Aha it worked!'})
@@ -60,9 +62,10 @@ function createDummySocketService() {
   return socketService
 }
 
+  socketService.on()
 
 // Basic Tests
-// function cb(x) {console.log(x)}
-// socketService.on('baba', cb)
-// socketService.emit('baba', 'DATA')
-// socketService.off('baba', cb)
+function cb(x=2) {console.log(x)}
+socketService.on('chat addMsg', cb)
+socketService.emit('chat addMsg', 'DATA')
+socketService.off('chat addMsg', cb)

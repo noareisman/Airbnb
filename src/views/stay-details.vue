@@ -55,10 +55,30 @@
         Add Review
       </button>
     </div>
+    <div>
+      Contact host
+      <el-input
+        type="textarea"
+        :rows="2"
+        placeholder="Please input"
+        v-model="contactHostMsg"
+      >
+      </el-input>
+      <button class="call-to-action-btn" @click="contactHost()">
+        Send message
+      </button>
+
+       <!-- <button class="call-to-action-btn" @click="chatModal">
+        send message to
+      </button>
+          <pop-up> -->
+            <!-- @updateToy="updateToy"  -->
+      <!-- <app-chat :stay="stay" slot="main" v-if="onChat" />
+    </pop-up> -->
     </div>
     <stay-map :location="stay.loc" />
   </section>
-</template>
+</template> 
  
 <script>
 import stayAmenities from "../cmps/stay-amenities.vue";
@@ -69,11 +89,14 @@ import reviewCategories from "../cmps/review-categories.vue";
 import starRating from "../cmps/star-rating.vue";
 import stayMap from "../cmps/stay-map.vue";
 import { stayService } from "../services/stay.service.js";
+import appChat from '../cmps/app-chat.vue';
+import popUp from '../cmps/pop-up.vue'
 
 export default {
   name: "stay-details",
   data() {
     return {
+      onChat: false,
       stay: null,
       contactHostMsg: '',
       review: {
@@ -124,6 +147,10 @@ export default {
       }
       await this.$store.dispatch({ type: "toggleLike", stay });
     },
+  chatModal(){
+    this.onChat = !this.onChat
+  }
+    
   },
   computed: {
     guestAmount() {
@@ -155,6 +182,8 @@ export default {
     reviewCategories,
     starRating,
     stayAmenities,
+    appChat,
+    popUp
   },
 };
 </script>

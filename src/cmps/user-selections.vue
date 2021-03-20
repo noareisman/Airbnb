@@ -1,9 +1,13 @@
 <template>
-  <section class="slecet">
-    <el-dropdown>
+  <section class="user-select">
+    <el-dropdown >
       <span class="el-dropdown-link">
-        USER OPTIONS<i class="el-icon--right"></i>
-      </span>
+        <img class="user-menu-img" :src="require(`@/assets/imgs/icons/hamburger.png`)">
+        <img v-if="loggedInUser" class="user-menu-img" :src="userPic">
+        <img v-else class="user-menu-img" :src="require(`@/assets/imgs/icons/userGuest.jpg`)">
+        <!-- <i class="el-icon--right">= </i> -->
+      
+      </span> 
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
           >Log-in</el-dropdown-item
@@ -60,16 +64,9 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser;
     },
+    userPic(){
+      return this.$store.getters.loggedinUser.imgUrl
+    }
   },
 };
 </script>
-
-<style>
-.slecet * {
-  outline: unset !important;
-}
-.el-dropdown-link {
-  cursor: pointer;
-  color: #409eff;
-}
-</style>

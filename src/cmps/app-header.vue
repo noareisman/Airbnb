@@ -1,6 +1,7 @@
 <template>
   <header class="full main-layout header-container">
-    <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <div class="nav-container">  
+    <el-menu class="el-menu-demo" style="border:none;"  mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
         <router-link class="router" :to="`/`">
           <span class="logo txt"> HomeAway </span>
@@ -23,8 +24,9 @@
           <el-menu-item index="2-4-3">item three</el-menu-item>
         </el-submenu>
       </el-submenu>
-    <user-selections />
     </el-menu>
+    <user-selections />
+</div>    
 
   </header>
 </template>
