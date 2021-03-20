@@ -50,7 +50,16 @@
     border: 1px solid #dadada;
     border-radius: 40px;
     width: max-content;
-  
+    
+    .badge {
+      // position: absolute;
+      // top: 72%;
+      // right: 18%;
+      padding: 0px 4px;
+      border-radius: 50%;
+      background: red;
+      color: white;
+  }
   
   }
 
