@@ -57,7 +57,7 @@
     </div>
         </div>
 
-    <div>
+    <!-- <div>
       Contact host
       <el-input
         type="textarea"
@@ -68,7 +68,7 @@
       </el-input>
       <button class="call-to-action-btn" @click="contactHost()">
         Send message
-      </button>
+      </button> -->
 
        <!-- <button class="call-to-action-btn" @click="chatModal">
         send message to
@@ -77,7 +77,7 @@
             <!-- @updateToy="updateToy"  -->
       <!-- <app-chat :stay="stay" slot="main" v-if="onChat" />
     </pop-up> -->
-    </div>
+    <!-- </div> -->
     <stay-map :location="stay.loc" />
   </section>
 </template> 
@@ -131,14 +131,14 @@ export default {
       this.$store.dispatch({ type: "contactHost", msg });
     },
     postReview() {
-      var review = {
+      var newReview = {
         txt: this.reviewToAdd,
         buyerId: this.buyerId,
         hostId: this.stay.host_id,
         stayId: this.stay._id,
         date: Date.now(),
       };
-      this.$store.dispatch({ type: "postReview", review });
+      this.$store.dispatch({ type: "postReview", review: {newReview,stay} });
     },
     async toggleLike() {
       this.isLiked = !this.isLike;
