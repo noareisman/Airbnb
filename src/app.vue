@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-      <my-header/>
-    <router-view/>
-    <my-footer/>
+    <my-header />
+    <router-view class="app-main-content" />
+    <my-footer />
   </div>
 </template>
 
 <script>
-import myHeader from './cmps/app-header.vue'
-import myFooter from './cmps/app-footer.vue';
+import myHeader from "./cmps/app-header.vue";
+import myFooter from "./cmps/app-footer.vue";
 export default {
   name: "vueApp",
   data() {
@@ -20,7 +20,7 @@ export default {
   },
   components: {
     myHeader,
-    myFooter
+    myFooter,
   },
 };
 </script>

@@ -12,7 +12,6 @@
           class="user-menu-img"
           :src="require(`@/assets/imgs/icons/userGuest.jpg`)"
         />
-        <!-- <i class="el-icon--right">= </i> -->
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
@@ -22,12 +21,14 @@
           >My profile</el-dropdown-item
         >
         <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
+          >Messages</el-dropdown-item
+        >
+        <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
     </el-dropdown>
-     <span v-if="numOfUserMesseges" class="badge">{{numOfUserMesseges}}</span>
-    <!-- {{numOfUserMesseges}} -->
+    <span v-if="loggedInUser && numOfUserMesseges" class="badge">{{numOfUserMesseges}}</span>
   </section>
 </template>
 
@@ -55,6 +56,9 @@ export default {
   methods: {
     navTo(ev) {
       switch (ev.target.textContent) {
+        case "Messages":
+          // this.$router.push("/messages");
+          break;
         case "Log-in":
           this.$router.push("/login");
           break;
@@ -62,7 +66,7 @@ export default {
           this.$router.push("/");
           this.$store.dispatch({ type: "logout" });
           break;
-        case "My propfile":
+        case "My profile":
           this.$router.push("/user");
           break;
       }
@@ -76,10 +80,10 @@ export default {
       return this.$store.getters.loggedinUser.imgUrl;
     },
     numOfUserMesseges() {
-      const user = this.loggedInUser;
-      console.log(user); 
-      return Object.keys(user.messages).length;
+        const user = this.loggedInUser;
+        console.log(user);
+        return Object.keys(user.messages).length;
     },
-  }
+  },
 };
 </script>
