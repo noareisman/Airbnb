@@ -27,16 +27,32 @@
     <trip-settings :stay="stay" />
     <review-list :reviews="stay.reviews" />
     <review-categories :reviews="stay.reviews" />
+
+    <div>
+      Add Review
+      <el-input
+        type="textarea"
+        :rows="2"
+        placeholder="Please input"
+        v-model="review.reviewToAdd"
+      >
+      </el-input>
+      <button class="call-to-action-btn" @click="addReview()">
+        Add Review
+      </button>
+    </div>
     <div>
       Contact host
       <el-input
         type="textarea"
         :rows="2"
         placeholder="Please input"
-        v-model="textarea"
+        v-model="contactHostMsg"
       >
       </el-input>
-      <button class="call-to-action-btn">Send message</button>
+      <button class="call-to-action-btn" @click="contactHost()">
+        Send message
+      </button>
     </div>
     <!-- <stay-map :location="stay.loc" /> -->
   </section>
@@ -57,21 +73,54 @@ export default {
   data() {
     return {
       stay: null,
-      textarea: "",
+      contactHostMsg: '',
+      review: {
+        reviewToAdd: '',
+        avgRate: null,
+        category: {
+          Cleanliness: null,
+          Accuracy: null,
+          Communication: null,
+          Location: null,
+          CheckIn: null,
+          Accessibility: null,
+        },
+      },
       isLiked: false,
       stayOrders: [],
+      buyer: null,
+      host: null,
     };
   },
   methods: {
-    toggleLike() {
+    contactHost() {
+      var msg = {
+        txt: this.contactHostMsg,
+        buyerId: this.buyerId,
+        hostId: this.stay.host_id,
+        stayId: this.stay._id,
+        date: Date.now(),
+      };
+      this.$store.dispatch({ type: "contactHost", msg });
+    },
+    postReview() {
+      var review = {
+        txt: this.reviewToAdd,
+        buyerId: this.buyerId,
+        hostId: this.stay.host_id,
+        stayId: this.stay._id,
+        date: Date.now(),
+      };
+      this.$store.dispatch({ type: "postReview", review });
+    },
+    async toggleLike() {
       this.isLiked = !this.isLike;
       if (this.isLiked) {
         this.class = "save-btn btn fas fa-heart";
-        this.$store.dispatch("saveStay", this.stay.id);
       } else {
         this.class = "save-btn btn far fa-heart";
-        this.$store.dispatch("unsaveStay", this.stay._id);
       }
+      await this.$store.dispatch({ type: "toggleLike", stay });
     },
   },
   computed: {
@@ -82,15 +131,18 @@ export default {
         return this.stay.capacity.toString() + " guest";
       }
     },
-
   },
   created() {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
+      if (stay){ 
       this.stay = stay;
-      this.$store.dispatch({type:'loadAllOrders',stayId: stay._id})
-
-    });
+      this.stay.host._id;
+      this.$store.dispatch({ type: "loadAllOrders", stayId: stay._id });
+    }});
+    if (this.$store.getters.loggedinUser) {
+      this.buyerId = this.$store.getters.loggedinUser._id;
+    }
   },
   components: {
     stayImgGallery,

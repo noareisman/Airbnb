@@ -4,10 +4,12 @@
     <form>
       <div class="settings-container flex justify-center items-center">
         <date-picker :stayId="stay._id" @pick="setDates"></date-picker>
-        <!-- <guest-settings @pickguests="setGuests"></guest-settings> -->
+        <guest-settings @pickguests="setGuests"></guest-settings>
       </div>
       <span class="price">{{ price }}</span>
-      <button class="call-to-action-btn">Check Availability</button>
+      <button class="call-to-action-btn" @click="sendOrderRequest()">
+        Check Availability
+      </button>
     </form>
   </section>
 </template>
@@ -23,27 +25,47 @@ export default {
   },
   data() {
     return {
-      requestedDates: [],
-      guest: {},
-    }
+      orderSettings: {
+        requestedDates: [],
+        guest: {},
+        buyer: null,
+        totalPrice: 0,
+        nightsNum: null,
+        currStay: this.stay,
+      },
+    };
   },
   methods: {
     setDates(value) {
-      const startDate=value[0].split("-").join('/')
-      const endDate=value[1].split("-").join('/')
-      this.requestedDates = value;
-      console.log([startDate,endDate]);
+      const startDate = value[0].split("-").join("/");
+      const endDate = value[1].split("-").join("/");
+      this.orderSettings.requestedDates = value;
+      console.log([startDate, endDate]);
     },
     setGuests(value) {
-      this.guest = value;
-      console.log(this.guest);
+      this.orderSettings.guest = value;
+      console.log(this.orderSettings.guest);
+    },
+    sendOrderRequest() {
+      this.$store.dispatch({ type: "setPendingOrder", orderSettings:this.orderSettings });
     },
   },
   computed: {
+    nights() {
+      this.orderSettings.nightsNum = 5;
+      // return this.requestedDates[1]-this.requestedDates[0]/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    },
     price() {
       return "$" + this.stay.price + "/ Night";
     },
+    totalPrice() {
+      this.orderSettings.totalPrice = "$" + this.stay.price * this.nightsNum;
+    },
+    buyer() {
+      this.$store.getters.loggedinUser;
+    },
   },
+  created() {},
   components: {
     datePicker,
     starRating,

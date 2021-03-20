@@ -12,7 +12,7 @@
       :picker-options="pickerOptions"
     >
     </el-date-picker>
-    <button @click="print()">print orders</button>
+    <!-- <button @click="print()">print orders</button> -->
   </section>
 </template>
 
@@ -25,12 +25,11 @@ export default {
       stayOrders: [],
       pickerOptions: {
         disabledDate(time) {
-          return (
-            time.getTime() < Date.now() ||
-            (time.getTime() > Date.now() + 3600 * 1000 * 24 * 2 &&
-              time.getTime() < Date.now() + 3600 * 1000 * 24 * 4)
-          );
-        },
+          return (       
+          time.getTime() < Date.now() 
+          // || ((time.getTime() > this.stayOrders[0][0]) && (time.getTime() < this.stayOrders[0][1]))
+          // ((time.getTime() > this.stayOrders[1][0]) && (time.getTime() < this.stayOrders[1][1]))
+          )},
         shortcuts: [
           {
             text: "",
@@ -50,24 +49,15 @@ export default {
     changed() {
       this.$emit("pick", this.value1);
     },
-    print() {
-      console.log(this.stayOrders);
-    },
-  },
-  computed: {
+    // print() {
+    //   console.log(this.stayOrders);
+    // },
   },
   created() {
-    var stayOrders=this.$store.getters.getCurrStayOrders
-    stayOrders=stayOrders.map((order) => {
-        var start=order.startDate.split('/')
-        start=new Date(parseInt(start[2], 10), parseInt(start[1], 10) - 1 , parseInt(start[0]), 10).getTime();
-        var end= order.endDate.split('/')
-        end =new Date(parseInt(end[2], 10), parseInt(end[1], 10) - 1 , parseInt(end[0]), 10).getTime();
-        return 
-      });
-        console.log(stayOrders);
+    var stayOrders=this.$store.getters.getStayOrdersTimeStamps
+      console.log(stayOrders);
       this.stayOrders = stayOrders;
-      // console.log(this.stayOrders);
+      console.log(this.stayOrders);
   },
 };
 </script>

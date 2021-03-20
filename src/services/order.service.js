@@ -1,7 +1,7 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
-const gOrders = require ('../../data/airbnb.json')
+const gOrders = require('../../data/airbnb.json')
 
 
 
@@ -14,6 +14,7 @@ export const orderService = {
     // remove,
     save,
     // getLoggedinUser,
+    getNewOrder
 }
 
 async function query() {
@@ -31,4 +32,28 @@ async function save(order) {
 
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
+}
+
+function getNewOrder() {
+    return order = {
+        _id: '',
+        createdAt:null,
+        buyer: {
+            _id: '',
+            fullname: ''
+        },
+        totalPrice: 0,
+        startDate: '',
+        endDate: '',
+        guests: {
+            adults: 0,
+            kids: 0
+        },
+        stay: {
+            _id: '',
+            name: '',
+            price: 0
+        },
+        status: 'pending'
+    }
 }

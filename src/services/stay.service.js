@@ -1,16 +1,18 @@
 // import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
+import { utilService } from './util.service'
 const DB = require('../../data/airbnb.json')
 
 export const stayService = {
     query,
     getById,
     remove,
-    save
+    save,
+    getReviewTemplate
 }
 
 
-async function query(filterBy = { location: '', startDate: '', endDate: '', guests:0}) {
+async function query(filterBy = { location: '', startDate: '', endDate: '', guests: 0 }) {
     // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
     // return httpService.get(`review${queryStr}`)
     let stays = await storageService.query('stay')
@@ -26,9 +28,9 @@ async function query(filterBy = { location: '', startDate: '', endDate: '', gues
     const regex = new RegExp(filterBy.location, 'i')
     var toysForDisplay = stays.filter(stay => {
         return regex.test(stay.loc.address) && (stay.capacity >= filterBy.guests || !filterBy.guests)
-            // && (JSON.stringify(toy.inStock) === filterBy.inStock || filterBy.inStock === 'all')
+        // && (JSON.stringify(toy.inStock) === filterBy.inStock || filterBy.inStock === 'all')
     })
-    
+
     return toysForDisplay;
 }
 
@@ -46,15 +48,36 @@ function remove(stayId) {
 
 }
 
- 
+
 async function save(stay) {
-    if(stay._id){
+    if (stay._id) {
         return storageService.put('stay', stay)
     }
-    else{
+    else {
         return storageService.post('stay', stay)
     }
     // user = await httpService.put(`user/${user._id}`, user)
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
+}
+
+function getReviewTemplate() {
+    return review = {
+        id:utilService.makeId(),
+        txt: '',
+        avgRate: null,
+        category: {
+            Cleanliness: null,
+            Accuracy: null,
+            Communication: null,
+            Location: null,
+            CheckIn: null,
+            accessibility: null
+        },
+        by: {
+            _id: '',
+            fullname: '',
+            imgUrl: ''
+        }
+    }
 }

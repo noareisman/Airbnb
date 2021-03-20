@@ -13,11 +13,20 @@ export const orderStore = {
     orders(state) {
       return state.orders;
     },
-    getAllOrders(state){
+    getAllOrders(state) {
       return state.allOrders
     },
     getCurrStayOrders(state) {
       return state.currStayOrders
+    },
+    getStayOrdersTimeStamps(state) {
+      return state.currStayOrders.map((order) => {
+        var start = order.startDate.split('/')
+        start = new Date(parseInt(start[2], 10), parseInt(start[1], 10) - 1, parseInt(start[0]), 10).getTime();
+        var end = order.endDate.split('/')
+        end = new Date(parseInt(end[2], 10), parseInt(end[1], 10) - 1, parseInt(end[0]), 10).getTime();
+        return [start, end]
+      })
     }
   },
   mutations: {
@@ -28,8 +37,8 @@ export const orderStore = {
       state.allOrders = allOrders;
     },
     setCurrStayOrders(state, { stayId }) {
-      state.currStayOrders = state.allOrders.filter(order=>{
-        return (order.stay._id===stayId)
+      state.currStayOrders = state.allOrders.filter(order => {
+        return (order.stay._id === stayId)
       });
     },
   },
@@ -37,9 +46,9 @@ export const orderStore = {
     loadAllOrders(context, { stayId }) {
       try {
         return orderService.query()
-        .then(allOrders => {
-          context.commit({ type: 'setAllOrders', allOrders })
-          context.commit({ type: 'setCurrStayOrders', stayId })
+          .then(allOrders => {
+            context.commit({ type: 'setAllOrders', allOrders })
+            context.commit({ type: 'setCurrStayOrders', stayId })
           })
       } catch (err) {
         console.log('orderStore: Error in loadOrders', err)
@@ -71,7 +80,33 @@ export const orderStore = {
     async updateOrderStatus({ dispatch, state }, { order }) {
       await orderService.save(order)
       dispatch({ type: "loadOrders", order });
+    },
+    async setPendingOrder(context, { orderSettings }) {
+      var newPendingOrder = orderService.getNewOrder()
+      newPendingOrder = {
+        createdAt: Date.now(),
+        buyer: {
+          _id: orderSettings.buyer._id,
+          fullname: orderSettings.buyer.fullname
+        },
+        totalPrice: orderSettings.totalPrice,
+        startDate: orderSettings.requestedDates[0],
+        endDate: orderSettings.requestedDates[0],
+        guests: {
+          adults: orderSettings.guest.adultsNum,
+          kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
+        },
+        stay: {
+          _id: orderSettings.currStay._id,
+          name: orderSettings.currStay.name,
+          price: orderSettings.currStay.price
+        },
+        status: 'pending'
+      }
+      await orderService.save(newPendingOrder)
+      dispatch({ type: "loadOrders", order });
     }
-  },
-
+  }
 }
+
+
