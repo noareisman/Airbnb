@@ -29,7 +29,7 @@
               :key="item"
             >
               <img
-                class="stay-img"
+                class="stay-img-card"
                 :src="
                   require(`@/assets/imgs/airbnb-imgs/${stayLiked.imgUrls[idx]}.jpg`)
                 "

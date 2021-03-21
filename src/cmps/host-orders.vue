@@ -34,10 +34,10 @@
           </div>
           <div class="host-order-btns">
             <button @click="changeOrderStat($event, order)" class="reject">
-              X
+              ❌
             </button>
             <button @click="changeOrderStat($event, order)" class="approve">
-              V
+              ✔️
             </button>
           </div>
         </li>

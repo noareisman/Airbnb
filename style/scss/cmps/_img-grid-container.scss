@@ -12,7 +12,8 @@
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 275px 275px;
+    // grid-template-rows: 275px 275px;
+    grid-template-rows: 165px 165px;
     // grid-template-rows: 50% 50%;///////////////////calc according to cody width
     gap: 8px;
     margin-bottom: 40px;

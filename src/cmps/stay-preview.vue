@@ -9,7 +9,7 @@
         >
     <router-link class="router" :to="`/stay/${stay._id}`">
           <img
-            class="stay-img"
+            class="stay-img-prev"
             :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[idx]}.jpg`)"
           />
     </router-link>
