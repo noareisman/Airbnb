@@ -556,7 +556,7 @@
       "_id": "10006555",
       "name": "Privat house on the bitch",
       "imgUrls": ["10.1","10.2a","10.2b","10.2c","10.2d"],
-      "price": 100.00,
+      "price": 60.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
       "capacity": 8,
       "favorites":[],
@@ -621,7 +621,7 @@
         },
         "stay": {
           "_id": "10006546",
-          "name": "House Of Uncle My",
+          "name": "House Of Mor",
           "price": 80.00
         },
         "status": "approve"
@@ -642,7 +642,7 @@
         },
         "stay": {
           "_id": "10006546",
-          "name": "House Of Uncle My",
+          "name": "House Of Mor",
           "price": 80.00
         },
         "status": "approve"
@@ -663,7 +663,7 @@
         },
         "stay": {
           "_id": "10006548",
-          "name": "Apartment of Sean",
+          "name": "Apartment of Mor",
           "price": 80.00
         },
         "status": "pending"
@@ -684,7 +684,7 @@
         },
         "stay": {
           "_id": "10006547",
-          "name": "House Of Ben",
+          "name": "House Of Davit",
           "price": 60.00
         },
         "status": "pending"
@@ -705,7 +705,7 @@
         },
         "stay": {
           "_id": "10006547",
-          "name": "House Of Ben",
+          "name": "House Of Davit",
           "price": 60.00
         },
         "status": "pending"
@@ -726,7 +726,7 @@
         },
         "stay": {
           "_id": "10006553",
-          "name": "The castle of lin",
+          "name": "The castle of Mor",
           "price": 90.00
         },
         "status": "approve"
@@ -747,7 +747,7 @@
         },
         "stay": {
           "_id": "10006552",
-          "name": "Becca house",
+          "name": "Mor loft",
           "price": 60.00
         },
         "status": "pending"
