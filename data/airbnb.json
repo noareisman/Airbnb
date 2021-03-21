@@ -200,9 +200,9 @@
               "Accessibility":4.9 
           },
           "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg",
+            "_id": "u101",
+            "fullname": "Mor Levy",
+            "imgUrl": "/img/img1.jpg",
             "time":1616124717372
           }
         }
@@ -251,7 +251,7 @@
           },
           "by": {
             "_id": "u102",
-            "fullname": "user2",
+            "fullname": "Davit Pok",
             "imgUrl": "/img/img2.jpg",
             "time":1616123717372
           }
@@ -301,7 +301,7 @@
           },
           "by": {
             "_id": "u102",
-            "fullname": "user2",
+            "fullname": "Davit Pok",
             "imgUrl": "/img/img2.jpg",
             "time":1606124717372
           }
@@ -348,13 +348,19 @@
               "Location":4.9,
               "Check-in":4.9,
               "Accessibility":4.9 
+          },
+          "by": {
+            "_id": "u103",
+            "fullname": "Jack Daniel",
+            "imgUrl": "/img/img3.jpg",
+            "time":1606124717372
           }
         }
       ]
     },
     {
       "_id": "10006551",
-      "name": "House of gellers",
+      "name": "House of poks",
       "imgUrls": ["6.1","6.2a","6.2b","6.2c","6.2d"],
       "price": 80.00,
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -394,9 +400,9 @@
               "Accessibility":4.9 
           },
           "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg",
+            "_id": "u103",
+            "fullname": "Jack Daniel",
+            "imgUrl": "/img/img3.jpg",
             "time":1606124717372
           }
         }
@@ -445,8 +451,27 @@
           },
           "by": {
             "_id": "u102",
-            "fullname": "user2",
+            "fullname": "Davit Pok",
             "imgUrl": "/img/img2.jpg",
+            "time":1606123717372
+          }
+        },
+        {
+          "id": "madeId",
+          "txt": "Nice attitude, Bathrooms very clean!",
+          "avgRate": 4.9,
+          "category":{
+              "Cleanliness":4.9,
+              "Accuracy":4.9,
+              "Communication":4.9,
+              "Location":4.9,
+              "Check-in":4.9,
+              "Accessibility":4.9 
+          },
+          "by": {
+            "_id": "u103",
+            "fullname": "Jack Daniel",
+            "imgUrl": "/img/img3.jpg",
             "time":1606123717372
           }
         }
@@ -495,7 +520,7 @@
           },
           "by": {
             "_id": "u102",
-            "fullname": "user2",
+            "fullname": "Davit Pok",
             "imgUrl": "/img/img2.jpg",
             "time":1606113717372
           }
@@ -544,9 +569,9 @@
               "Accessibility":4.9 
           },
           "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg",
+            "_id": "u103",
+            "fullname": "Jack Daniel",
+            "imgUrl": "/img/img3.jpg",
             "time":1506113717372
           }
         }
@@ -594,8 +619,8 @@
               "Accessibility":4.9 
           },
           "by": {
-            "_id": "u102",
-            "fullname": "user2",
+            "_id": "u103",
+            "fullname": "Jack Daniel",
             "imgUrl": "/img/img2.jpg",
             "time":1506113717372
           }
@@ -610,7 +635,7 @@
         "createdAt": 9898989,
         "buyer": {
           "_id": "u105",
-          "fullname": "User 5"
+          "fullname": "John Lenon"
         },
         "totalPrice": 160,
         "startDate": "04/25/2021",
@@ -631,7 +656,7 @@
         "createdAt": 9898992,
         "buyer": {
           "_id": "u102",
-          "fullname": "User 2"
+          "fullname": "Davit Pok"
         },
         "totalPrice": 160,
         "startDate": "03/15/2025",
@@ -652,7 +677,7 @@
         "createdAt": 9898953,
         "buyer": {
           "_id": "u104",
-          "fullname": "User 4"
+          "fullname": "Adi Ben David"
         },
         "totalPrice": 160,
         "startDate": "10/15/2025",
@@ -673,7 +698,7 @@
         "createdAt": 9898999,
         "buyer": {
           "_id": "u106",
-          "fullname": "User 6"
+          "fullname": "Adam kolt"
         },
         "totalPrice": 130,
         "startDate": "08/01/2027",
@@ -693,8 +718,8 @@
         "_id": "o1229",
         "createdAt": 9893999,
         "buyer": {
-          "_id": "u102",
-          "fullname": "User 2"
+          "_id": "u107",
+          "fullname": "Chan Mi Sun"
         },
         "totalPrice": 130,
         "startDate": "08/01/2027",
@@ -715,7 +740,7 @@
         "createdAt": 98939929,
         "buyer": {
           "_id": "u107",
-          "fullname": "User 7"
+          "fullname": "Chan Mi Sun"
         },
         "totalPrice": 270,
         "startDate": "10/15/2022",
@@ -736,7 +761,7 @@
         "createdAt": 98939929,
         "buyer": {
           "_id": "u106",
-          "fullname": "User 6"
+          "fullname": "Adam kolt"
         },
         "totalPrice": 600,
         "startDate": "05/02/2021",
@@ -753,11 +778,11 @@
         "status": "pending"
       },   
       {
-        "_id": "o1232",
+        "_id": "o1228",
         "createdAt": 98939329,
         "buyer": {
           "_id": "u103",
-          "fullname": "User 3"
+          "fullname": "Jack Daniel"
         },
         "totalPrice": 600,
         "startDate": "05/02/2021",
@@ -772,7 +797,70 @@
           "price": 60.00
         },
         "status": "pending"
-      }    
+      },
+      {
+        "_id": "o1232",
+        "createdAt": 98939379,
+        "buyer": {
+          "_id": "u108",
+          "fullname": "Nicolas Roho"
+        },
+        "totalPrice": 600,
+        "startDate": "05/02/2021",
+        "endDate": "05/12/2021",
+        "guests": {
+          "adults": 2,
+          "kids": 5
+        },
+        "stay": {
+          "_id": "10006555",
+          "name": "Privat house on the bitch",
+          "price": 60.00
+        },
+        "status": "approve"
+      },
+      {
+        "_id": "o1233",
+        "createdAt": 98939999,
+        "buyer": {
+          "_id": "u107",
+          "fullname": "Chan Mi Sun"
+        },
+        "totalPrice": 300,
+        "startDate": "09/02/2021",
+        "endDate": "09/07/2021",
+        "guests": {
+          "adults": 4,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006549",
+          "name": "Charming Duplex of Mor",
+          "price": 60.00
+        },
+        "status": "approve"
+      },
+      {
+        "_id": "o1234",
+        "createdAt": 98939999,
+        "buyer": {
+          "_id": "u105",
+          "fullname": "John Lenon"
+        },
+        "totalPrice": 180,
+        "startDate": "10/14/2021",
+        "endDate": "10/17/2021",
+        "guests": {
+          "adults": 4,
+          "kids": 0
+        },
+        "stay": {
+          "_id": "10006549",
+          "name": "Charming Duplex of Mor",
+          "price": 60.00
+        },
+        "status": "pending"
+      }
     ],
     "user": [
       {
@@ -780,7 +868,7 @@
         "fullname": "Mor Levi",
         "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
         "isAdmin": false,
-        "username" : "user1",
+        "username" : "mor97",
         "password" : "secret",
         "messages":{
           "user102":[{"txt":"hello user101" , "time":12342141244, "sender":"user102"}, {"txt":"hello to you to",  "time":123424141244, "from":"user101" }]
@@ -791,71 +879,55 @@
         "fullname": "Davit Pok",
         "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg",
         "isAdmin": false,
-        "username" : "user2",
+        "username" : "david_Pok",
         "password" : "secret"
       },
     {
         "_id": "u103",
-        "fullname": "User 3",
+        "fullname": "Jack Daniel",
         "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg",
         "isAdmin": false,
-        "username" : "user3",
+        "username" : "jack1987",
         "password" : "secret"
       },
     {
         "_id": "u104",
-        "fullname": "User 4",
+        "fullname": "Adi Ben David",
         "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg",
         "isAdmin": false,
-        "username" : "user4",
+        "username" : "adi_benda",
         "password" : "secret"
       },
     {
         "_id": "u105",
-        "fullname": "User 5",
+        "fullname": "John Lenon",
         "imgUrl": "https://randomuser.me/api/portraits/men/5.jpg",
         "isAdmin": false,
-        "username" : "user5",
+        "username" : "johnLen90",
         "password" : "secret"
       },
     {
         "_id": "u106",
-        "fullname": "User 6",
+        "fullname": "Adam kolt",
         "imgUrl": "https://randomuser.me/api/portraits/men/6.jpg",
         "isAdmin": false,
-        "username" : "user6",
+        "username" : "aKolt",
         "password" : "secret"
       },
     {
         "_id": "u107",
-        "fullname": "User 7",
+        "fullname": "Chan Mi Sun",
         "imgUrl": "https://randomuser.me/api/portraits/men/7.jpg",
         "isAdmin": false,
-        "username" : "user7",
+        "username" : "chan_sun",
         "password" : "secret"
       },
     {
         "_id": "u108",
-        "fullname": "User 8",
+        "fullname": "Nicolas Roho",
         "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg",
         "isAdmin": false,
-        "username" : "user8",
-        "password" : "secret"
-      },
-    {
-        "_id": "u109",
-        "fullname": "User 9",
-        "imgUrl": "https://randomuser.me/api/portraits/men/9.jpg",
-        "isAdmin": false,
-        "username" : "user9",
-        "password" : "secret"
-      },
-    {
-        "_id": "u110",
-        "fullname": "User 2",
-        "imgUrl": "https://randomuser.me/api/portraits/men/10.jpg",
-        "isAdmin": false,
-        "username" : "user2",
+        "username" : "nicoR",
         "password" : "secret"
       }
     ]  
