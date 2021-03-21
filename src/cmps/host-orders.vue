@@ -17,15 +17,15 @@
           class="host-order"
         >
           <div class="host-order-bio cell-1">
-            <h2>{{ order.buyer.fullname }}</h2>
+            <h3>{{ order.buyer.fullname }}</h3>
             <p>{{ order.startDate }}-{{ order.endDate }}</p>
           </div>
           <div class="host-order-bio cell-2">
-            <h4>Stay at:&nbsp;</h4>
+            <h3>Stay at:&nbsp;</h3>
             <p>"{{ order.stay.name }}"</p>
           </div>
           <div class="host-order-bio cell-3">
-            <h4>Guests:</h4>
+            <h3>Guests:</h3>
             <p>
               Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
                 order.guests.kids

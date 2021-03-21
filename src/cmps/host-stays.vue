@@ -1,6 +1,5 @@
 <template>
-  <section>
-    <hr />
+  <section class="host-stays-headline">
     <!--REAM: FIND NEW NAME -->
     <h2>Stays:</h2>
     <!--REAM: FIND NEW NAME -->

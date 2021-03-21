@@ -7,9 +7,10 @@
     border-bottom-left-radius: 25px;
     margin-top: 2%;
     
+    
     .host-order {
         display: grid;
-        grid-template-columns: 30% 28% 28% 14%;
+        grid-template-columns: 32% 28% 28% 12%;
         list-style-type: none;
         padding: 1%;
         border-bottom: 2px solid lightgray;
@@ -19,6 +20,17 @@
             grid-template-rows: 50% 50%;
             text-align: left;
             padding: 3px;
+            p {
+                padding: 1%;
+            }
+            
+            h3 {
+                padding: 1%;
+                width: fit-content;
+                border-bottom: 1px solid lightgray;
+                padding-bottom: 1%;
+                margin-bottom: 1%;
+            }
         }
 
         .host-order-btns{

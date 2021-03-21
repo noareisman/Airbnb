@@ -14,18 +14,17 @@
         <!-- </div> -->
       <!-- </div> -->
     </section>
-
     <section class="user-back-office">
       <div class="user-status-btns">
         <button value="host" @click="changeUserStatus">Host</button>
-        <button value="traveler" @click="changeUserStatus">Traveler</button>
+        <button class="traveler" value="traveler" @click="changeUserStatus">Traveler</button>
       </div>
-      <hr />
       <div>
         <user-host v-if="userStatus === 'host'" :host="user" />
         <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
       </div>
     </section>
+
   </section>
 </template>
 

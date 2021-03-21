@@ -14,16 +14,16 @@
         />
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item v-if="!loggedInUser" @click.native="navTo"
+        <el-dropdown-item class="user-option" v-if="!loggedInUser" @click.native="navTo"
           >Log-in</el-dropdown-item
         >
-        <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
+        <el-dropdown-item class="user-option" v-if="loggedInUser" @click.native="navTo"
           >My profile</el-dropdown-item
         >
-        <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
+        <el-dropdown-item class="user-option" v-if="loggedInUser" @click.native="navTo"
           >Messages</el-dropdown-item
         >
-        <el-dropdown-item v-if="loggedInUser" @click.native="navTo"
+        <el-dropdown-item class="user-option" v-if="loggedInUser" @click.native="navTo"
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>

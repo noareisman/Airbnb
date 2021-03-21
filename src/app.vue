@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <my-header />
-    <router-view class="app-main-content" />
+    <router-view />
     <my-footer />
   </div>
 </template>
@@ -15,8 +15,9 @@ export default {
     return {};
   },
   async created() {
+    await this.$store.dispatch({ type: "loadUsers" });
+    await this.$store.dispatch({ type: "login", userCred: { username: "user1", password: "secret" }});
     await this.$store.dispatch({ type: "loadStays" });
-    await this.$store.dispatch({ type: "login", userCred: { username: 'user1', password: 'secret' }});
   },
   components: {
     myHeader,

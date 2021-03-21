@@ -9,9 +9,6 @@
         </tr>
       </thead>
       <tbody>
-      <h2 v-if="!singleStayOrders || !singleStayOrders.length">
-        No orders for this place...
-      </h2>
         <tr v-for="order in singleStayOrders" :key="order._id">
           <td v-if="order.status === 'approve'">
             <b>{{ order.buyer.fullname }}</b>
@@ -44,7 +41,6 @@ export default {
       return this.$store.getters.getHostOrders.filter((order) => {
         return order.stay._id === this.stay._id;
       });
-      // return this.$store.getters.getCurrStayOrders;
     },
     singleStayOrders() {
       if (!this.stayOrders || !this.stayOrders.length) return;

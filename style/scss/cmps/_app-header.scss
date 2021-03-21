@@ -1,69 +1,87 @@
 .header-container{
-  opacity: 0.8;
+  // opacity: 0.8;
   height: 80px;
+  background-color: white !important;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: #ff385c
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff385c;
+  padding-left: unset !important;
 }
 
-.nav-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
-  .slecet * {
-      outline: unset !important;
-    }
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409eff;
+  .el-menu-item{
+    padding-left: unset ;
+    border-bottom: unset !important;
   }
-  .user-menu-img{
-    width: 28px;
-    height: 25px;
+  .el-menu-item.is-active{
+    padding-left: unset ;
+    border-bottom: unset !important;
+  }
+}
+
+.slecet * {
+  outline: unset !important;
+}
+
+.el-dropdown-link {
+  cursor: pointer;
+  outline: none !important;
+}
+
+.user-menu-img{
+  width: 28px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 0px 0px 0px 2px;
+}
+
+.el-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.el-icon--right{
+  width: 20px;
+}
+
+.user-select{
+  border: 1px solid #dadada;
+  border-radius: 40px;
+  width: max-content;
+  
+  .badge {
+    position: fixed;
+    top: 2%;
+    right: 6.5%;
+    padding: 0px 6px;
     border-radius: 50%;
-    padding: 0px 0px 0px 2px;
+    background: red;
+    color: white;
   }
-  
-  .el-dropdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .el-icon--right{
-    width: 20px;
-  
-  }
-  
-  .user-select{
-    border: 1px solid #dadada;
-    border-radius: 40px;
-    width: max-content;
-
-    .el-dropdown-link {
-      color: unset !important;
-    }
-    
-    .badge {
-      position: absolute;
-      top: 2%;
-      right: 6.25%;
-      padding: 0px 6px;
-      border-radius: 50%;
-      background: red;
-      color: white;
-    }
-  
-  }
+}
 
 
-  .el-menu--horizontal>.el-menu-item.is-active{
-    border: none;
-  }
+.el-menu--horizontal>.el-menu-item.is-active{
+  border: none;
+}
 
+.user-option {
+  color: unset !important;
+  font-weight: bold;
+}
+.user-option:hover {
+  color: unset !important;
+  background-color: rgba(211, 211, 211, 0.26) !important;
+}
