@@ -1,33 +1,31 @@
 <template>
   <div>
-    <p>{{ msg }}</p>
-
-    <!-- <div v-if="loggedInUser"> -->
-      <!-- <userDetails @logout="doLogout" :user="loggedInUser" /> -->
-      <!-- <h2>loggedInUser
-        Hello &nbsp; {{ loggedinUser.username }}.
-        <button @click="doLogout">Logout</button>
-      </h2> -->
-    <!-- </div> -->
-
     <div class="login-page" v-if="!loggedInUser">
       <h2 class="login-page-headlines">Login</h2>
-      <form @submit.prevent="doLogin">
+      <form @submit.prevent="doLogin" class="login-form">
         <input
-          required
+          autocomplete="off"
           type="text"
           v-model="loginCred.username"
           placeholder="User name"
         />
         <br />
         <input
-          required
+          autocomplete="off"
           type="password"
           v-model="loginCred.password"
           placeholder="Password"
         />
         <br />
         <button class="login-btn">Login</button>
+        <p
+          v-if="
+            msg === 'Incorrect username or password.' ||
+            msg === 'Please enter username and password.'
+          "
+        >
+          {{ msg }}
+        </p>
       </form>
       <div class="middle-page flex">
         <div class="login-signup-supperline">
@@ -38,30 +36,38 @@
           <hr />
         </div>
       </div>
-      <form @submit.prevent="doSignup">
+      <form @submit.prevent="doSignup" class="signup-form">
         <h2 class="login-page-headlines">Signup</h2>
         <input
-          required
+          autocomplete="off"
           type="text"
           v-model="signupCred.fullname"
           placeholder="Your full name"
         />
         <br />
         <input
-          required
+          autocomplete="off"
           type="text"
           v-model="signupCred.username"
           placeholder="Username"
         />
         <br />
         <input
-          required
+          autocomplete="off"
           type="password"
           v-model="signupCred.password"
           placeholder="Password"
         />
         <br />
         <button>Signup</button>
+        <p
+          v-if="
+            msg === 'Please enter your fullname, username and password.' ||
+            msg === 'Username is alrady taken.'
+          "
+        >
+          {{ msg }}
+        </p>
       </form>
     </div>
   </div>
@@ -72,7 +78,6 @@ import userDetails from "./user-details.vue";
 export default {
   data() {
     return {
-      msg: "",
       loginCred: { username: "", password: "" },
       signupCred: { username: "", password: "", fullname: "" },
       allUsers: null,
@@ -83,14 +88,19 @@ export default {
       return this.$store.getters.users;
     },
     loggedInUser() {
-      // return this.$store.getters.isUserLogged;
       return this.$store.getters.loggedinUser;
+    },
+    msg() {
+      return this.$store.getters.msg;
     },
   },
   methods: {
     async doLogin() {
-      if (!this.loginCred.username) {
-        this.msg = "Please enter username/password";
+      if (!this.loginCred.username || !this.loginCred.password) {
+        this.$store.commit({
+          type: "setMsg",
+          msg: "Please enter username and password.",
+        });
         return;
       }
       try {
@@ -98,34 +108,28 @@ export default {
           type: "login",
           userCred: JSON.parse(JSON.stringify(this.loginCred)),
         });
-        // this.$router.push('/stay');
-        this.$router.push("/stay");
+        if (user._id) this.$router.push("/stay");
       } catch (err) {
         console.log(err);
-        this.msg = "Failed to login";
       }
     },
-    // async doLogout() {
-    //   await this.$store.dispatch({ type: "logout" });
-    //   this.$router.push("/");
-    // },
     async doSignup() {
       if (
         !this.signupCred.fullname ||
         !this.signupCred.password ||
         !this.signupCred.username
-      )
+      ) {
+        this.$store.commit({
+          type: "setMsg",
+          msg: "Please enter your fullname, username and password.",
+        });
         return;
-      
-      this.allUsers.forEach((user) => {
-        if (user.username === this.signupCred.username) {
-          console.log("userName is taken");
-          return;
-        }
+      }
+      const user = await this.$store.dispatch({
+        type: "signup",
+        userCred: this.signupCred,
       });
-
-      await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
-      this.$router.push("/");
+      if (user._id) this.$router.push("/");
     },
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" });
