@@ -13,6 +13,13 @@
     }
 }
 
+.txt-input{
+
+}
+
+.review-card-grid{
+    margin-bottom:35px;
+}
 .amenities-grid{
     margin-top: 20px;
     width:fit-content;
@@ -39,22 +46,52 @@ width:60%;
 
 .trip-settings{
     width: 30%;
-    position: sticky;
-    // top: 100px;
+    position: sticky !important;
     border-radius: 12px;
-    
-    // box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
-    min-height: 290px;
-    // border: none;
+    padding:24px;
+    box-shadow:rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    height: fit-content;
     border:1px solid rgb(221,221,221)
 
 }
-
-
+.check-availability-btn{
+    width:100%
+}
+.price{
+    font-weight: 600;
+    font-size: 22px;
+    margin-right:3px;
+}
+.value-for-money{
+    width:100%;
+    align-items: baseline;
+    margin-bottom: 14px;
+}
 .setting-container>*{
-
     width:100%;
 }
+.settings{
+    margin-bottom: 20px;
+}
+.reviewer-img{
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.two-column-grid-categories{
+    margin-bottom: 50px;
+
+}
+.txt-input{
+margin-bottom: 10px;
+margin-top: 5px;
+}
+.date-picker{
+    border-radius: 4px;
+    border:1px solid rgb(221,221,221);
+    margin-bottom:20px;
+}
+
 //     li{
 //         display: block
         

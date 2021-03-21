@@ -26,8 +26,7 @@
       </el-submenu>
     </el-menu>
     <user-selections />
-</div>    
-
+  </div>    
   </header>
 </template>
 <script>

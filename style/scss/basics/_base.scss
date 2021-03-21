@@ -57,7 +57,7 @@ color: #ca4c4c;
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    position:fixed;
+    position: fixed;
     top:20%;
     left:50%;
     animation: spin 3s linear infinite;
@@ -109,6 +109,15 @@ cursor: pointer;
     appearance: none;
     border:none
 
+  }
+  .add-review-btn{
+    color: #ca4e4e;
+    background-color:white ;
+    border: 1px solid #ca4e4e;
+    padding:1em;
+    border-radius: 5px;
+    appearance: none;
+    margin-top: 15px;
   }
   
   @keyframes spin {

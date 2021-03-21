@@ -1,6 +1,6 @@
 <template>
   <section class="user-dashboard-container">
-    <h1 class="dash-title">{{ user.fullname }} Favorites</h1>
+    <h2 class="dash-title">{{ user.fullname }} Favorites</h2>
     <el-row>
       <el-col
         :span="8"

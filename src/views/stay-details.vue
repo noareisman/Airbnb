@@ -4,7 +4,7 @@
       <div class="stay-title-primary">{{ stay.summary }}</div>
       <div class="stay-title-secondary flex space-between">
         <div class="left flex space-between">
-          <star-rating :reviews="stay.reviews" /> <span> · </span>
+          <star-rating :reviews="this.reviews" /> <span> · </span>
         <!-- TODO: finish routerLink -->
           <router-link to="/stay/:id:location?">{{stay.loc.address}}</router-link>
         </div>
@@ -44,14 +44,14 @@
         </button> -->
       </div> 
     <div class="review-section bottom-border">
-    <review-categories :reviews="stay.reviews" />
-    <review-list :reviews="stay.reviews" />
+    <review-categories :reviews="this.reviews" />
+    <review-list :reviews="this.reviews" />
     <div>
       <h3>Add Your Review:</h3>
-      <el-input type="textarea" :rows="2" placeholder="Please input"
+      <el-input class="txt-input" type="textarea" :rows="2" placeholder="Please input"
         v-model="review.reviewToAdd">
       </el-input>
-      <button class="call-to-action-btn" @click="addReview()">
+      <button class="btn add-review-btn" @click="postReview()">
         Add Review
       </button>
     </div>
@@ -91,6 +91,7 @@ import reviewCategories from "../cmps/review-categories.vue";
 import starRating from "../cmps/star-rating.vue";
 import stayMap from "../cmps/stay-map.vue";
 import { stayService } from "../services/stay.service.js";
+// import { utilService } from "../services/util.service.js";
 import appChat from '../cmps/app-chat.vue';
 import popUp from '../cmps/pop-up.vue'
 
@@ -98,6 +99,7 @@ export default {
   name: "stay-details",
   data() {
     return {
+      reviews:null,
       onChat: false,
       stay: null,
       contactHostMsg: '',
@@ -131,14 +133,25 @@ export default {
       this.$store.dispatch({ type: "contactHost", msg });
     },
     postReview() {
-      var newReview = {
-        txt: this.reviewToAdd,
+      var review = {
+        txt: this.review.reviewToAdd,
         buyerId: this.buyerId,
-        hostId: this.stay.host_id,
-        stayId: this.stay._id,
-        date: Date.now(),
+        hostId: this.stay.host._id,
+        stay: this.stay,
+        time: Date.now(),
+        avgRate:3,
+        category:{
+          Cleanliness: 3,
+          Accuracy: 3,
+          Communication: 3,
+          Location: 3,
+          CheckIn: 3,
+          Accessibility: 3,
+        }
       };
-      this.$store.dispatch({ type: "postReview", review: {newReview,stay} });
+      console.log('detail',review);
+      this.$store.dispatch({ type: "postReview",review });
+      this.reviews=this.stayService.getById(review.stay._id).reviews 
     },
     async toggleLike() {
       this.isLiked = !this.isLike;
@@ -165,10 +178,12 @@ export default {
   },
   created() {
     const _id = this.$route.params.id;
-    stayService.getById(_id).then((stay) => {
+    stayService.getById(_id)
+    .then((stay) => {
       if (stay){ 
       this.stay = stay;
       this.stay.host._id;
+      this.reviews=stay.reviews
       this.$store.dispatch({ type: "loadAllOrders", stayId: stay._id });
     }});
     if (this.$store.getters.loggedinUser) {

@@ -1,6 +1,5 @@
 <template>
-  <section>
-    <hr />
+  <section class="host-stays-headline">
     <!--REAM: FIND NEW NAME -->
     <h2>Stays:</h2>
     <!--REAM: FIND NEW NAME -->
@@ -30,7 +29,10 @@ export default {
   props: ["host"],
   computed: {
     stays() {
-      return this.$store.getters.staysForDisplay;
+      //TODO do filter in store
+      return this.$store.getters.staysForDisplay.filter((stay) => {
+        return stay.host._id === this.host._id;
+      });
     },
   },
   components: {

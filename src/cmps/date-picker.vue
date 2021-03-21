@@ -12,7 +12,7 @@
       :picker-options="pickerOptions"
     >
     </el-date-picker>
-    <!-- <button @click="print()">print orders</button> -->
+    <!-- <button @click="print()"></button> -->
   </section>
 </template>
 
@@ -22,13 +22,16 @@ export default {
   props: { stayId: String },
   data() {
     return {
-      stayOrders: [],
       pickerOptions: {
-        disabledDate(time) {
+        disabledDate:(time)=> {
           return (       
           time.getTime() < Date.now() 
-          // || ((time.getTime() > this.stayOrders[0][0]) && (time.getTime() < this.stayOrders[0][1]))
-          // ((time.getTime() > this.stayOrders[1][0]) && (time.getTime() < this.stayOrders[1][1]))
+          ||
+          ( 
+          this.stayOrders && this.stayOrders.some((stayOrder)=>{
+            return (time.getTime() > stayOrder[0]) && (time.getTime() <stayOrder[1])
+          }))
+
           )},
         shortcuts: [
           {
@@ -49,15 +52,14 @@ export default {
     changed() {
       this.$emit("pick", this.value1);
     },
-    // print() {
-    //   console.log(this.stayOrders);
-    // },
-  },
-  created() {
-    var stayOrders=this.$store.getters.getStayOrdersTimeStamps
-      console.log(stayOrders);
-      this.stayOrders = stayOrders;
+    print() {
       console.log(this.stayOrders);
+    },
   },
+  computed:{
+    stayOrders(){
+      return this.$store.getters.getStayOrdersTimeStamps
+    }
+  }
 };
 </script>

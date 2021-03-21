@@ -1,49 +1,64 @@
-.host-stays {
-    // height: 400px;
-    padding: 1%;
-    margin-top: 2%;    
-    list-style-type: none;
-
-    .host-stay-and-orders{
-        border: 1px solid rgba(211, 211, 211, 0.671);
-        border-radius: 25px;
-        padding: 2%;
-        margin-top: 2%;
-    }
-    
-    .host-stay{
-        border-radius: 5px;
+.host-stays-headline{
+    margin-top: 2%;
+    border-top: 3px solid lightgray;
+   
+    .host-stays {
         padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        .host-stay-img{
-            width: 100px;
-            height: 100px;
-            img {
-                border-radius: 50%;
-            }
+        list-style-type: none;
+        
+        .host-stay-and-orders{
+            border: 1px solid rgba(211, 211, 211, 0.671);
+            border-radius: 25px;
+            padding: 2%;
+            margin-top: 2%;
         }
-    }
-    table {
-        thead {
-            tr {
-                td {
-                    padding: 1%;
-                    width: 25%;
-                    border-bottom: 1px solid lightgray;
-                    text-align: center;
+        
+        .host-stay{
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+
+            h2 {
+                margin-left: 7%;
+            }
+            
+            .host-stay-img{
+                width: 100px;
+                height: 100px;
+                img {
+                    border-radius: 50%;
                 }
             }
         }
-        tbody {
-            h2{
-                width: 400%;
+        table {
+            width: 100%;
+            thead {
+                tr {
+                    td {
+                        padding: 1%;
+                        text-align: left;
+                        // width: fit-content;
+                        h3 {
+                            border-bottom: 1px solid lightgray;
+                            width: fit-content;
+                        }
+                    }
+                }
             }
-            tr {
-                td {
-                    text-align: center;
+            tbody {
+                h2{
+                    width: 400%;
+                }
+                h4 {
+                    background-color: red;
+                    width: fit-content;
+                }
+                tr {
+                    td {
+                        padding: 1%;
+                        text-align: left;
+                        // text-align: center;
+                    }
                 }
             }
         }

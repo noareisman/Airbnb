@@ -1,13 +1,17 @@
 <template>
-  <section class="review-card">
-    <div>
+  <section>
+    <div class="review-card">
+      <div class="flex">
       <img
-        class="thumb-img"
+        class="reviewer-img thumb-img"
         :src="review.by.imgUrl"
       />
-      <h3>{{review.by.fullname}}</h3>
-      <p>{{review.time}}</p>
-      <p>{{ review.txt }}</p>
+      <div class="review-txt-section">
+        <h3>{{review.by.fullname}}</h3>
+        <p>{{date}}</p>
+      </div>
+      </div>
+      <div>{{ review.txt }}</div>
     </div>
   </section>
 </template>
@@ -18,11 +22,13 @@ export default {
   props: {
     review: Object,
   },
-  computed: {
-    date() {
-      return new Date(this.review.createdAt).toLocaleDateString("he-IL");
-    },
-  },
+  // computed: {
+  //   date() {
+  //     var date=this.review.time
+  //     var strDate=date.toString()
+  //     return moment(strDate,"YYYYMMDD").fromNow()
+  //   },
+  // },
 };
 </script>
 

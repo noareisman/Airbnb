@@ -2,6 +2,7 @@
     object-fit: cover;
     height: 100%;
     border-radius:0px;
+    // @include aspect-ratio(1, 1);
 }
 
 .stay-details-img-grid-container {
