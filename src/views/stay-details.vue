@@ -25,8 +25,10 @@
             </div>
             <img class="thumb-img" :src="stay.host.imgUrl" />
           </div>
-        <stay-amenities :stay="stay" />
-        <button class="link">Contact Host</button>
+          <div>
+          <stay-amenities :stay="stay" />
+          <button class="contact-host-btn underline">Contact Host</button>
+          </div>
         </div>
 
         <trip-settings class="trip-settings" :stay="stay" />

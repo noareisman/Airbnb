@@ -12,18 +12,6 @@
        margin-left: 12px;
     }
 }
-.price-calc{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 20px;
-}
-
-.total-price{
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgb(221,221,221);
-    width:100%;
-}
 
 .review-card-grid{
     margin-bottom:35px;
@@ -49,8 +37,14 @@
 }
 
 .stay-description{
-width:60%;
+    width:60%;
 }
+
+.contact-host-btn{
+    cursor:pointer;
+    align-items: baseline;
+}
+
 /*TRIP SETTINGS CMP*/
 .trip-settings{
     width: 30%;
@@ -60,7 +54,24 @@ width:60%;
     box-shadow:rgba(0, 0, 0, 0.12) 0px 6px 16px;
     height: fit-content;
     border:1px solid rgb(221,221,221)
+    
+}
+.price-calc{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    width:100%;
+}
 
+.service-fee{
+    width:100%;
+}
+
+.total-price{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(221,221,221);
+    width:100%;
 }
 .check-availability-btn{
     width:100%
@@ -84,6 +95,11 @@ width:60%;
 .reservation-summary{
     width:100%;
 }
+.date-picker{
+    border-radius: 4px;
+    border:1px solid rgb(221,221,221);
+    margin-bottom:20px;
+}
 // 
 .reviewer-img{
     margin-right: 10px;
@@ -97,11 +113,6 @@ width:60%;
 .txt-input{
 margin-bottom: 10px;
 margin-top: 5px;
-}
-.date-picker{
-    border-radius: 4px;
-    border:1px solid rgb(221,221,221);
-    margin-bottom:20px;
 }
 
 //     li{
