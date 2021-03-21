@@ -36,6 +36,7 @@ export const stayStore = {
             return stays
            
         },
+ 
         
     },
 
