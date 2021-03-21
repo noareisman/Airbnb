@@ -2,7 +2,7 @@ import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
 // const gUsers = require('../../data/user.json');
-const gUsers = require ('../../data/airbnb.json')
+const gUsers = require('../../data/airbnb.json')
 
 
 
@@ -54,21 +54,32 @@ async function update(user) {
 
 async function login(userCred) {
     const users = await storageService.query('user');
-    const user = users.find(user => user.username === userCred.username);
-    return _saveLocalUser(user);
+    const user = users.find(user => user.username === userCred.username && user.password === userCred.password);
+    if (!user) return 'Incorrect username or password.';
+    else return _saveLocalUser(user);
 
     // const user = await httpService.post('auth/login', userCred)
     // if (user) return _saveLocalUser(user)
 }
 
 async function signup(userCred) {
-    const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred)
-    // TODO
-    user.myReservations = [];
-    user.saved = [];
-    user.imgProfileSrc = 'src';
+    const msg = 'Username is alrady taken.'
+    const users = await storageService.query('user');
+    let user;
+    users.forEach(u => {
+        if (u.username === userCred.username) {
+            user = msg
+            return;
+        }
+    });
+    if (user === msg) return msg;
+    return;
+    // const user = await storageService.post('user', userCred)
+    user.imgUrl = require(`@/assets/imgs/icons/userGuest.jpg`);
     user.isAdmin = false;
+    user.messages = {};
+
     gUsers.user.push(user);
     storageService.save('user', gUsers.user)
     return _saveLocalUser(user)
