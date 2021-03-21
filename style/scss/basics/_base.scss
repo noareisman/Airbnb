@@ -67,19 +67,17 @@ color: #ca4c4c;
 
   .btn :hover{
       cursor: pointer;
-  }
-
-  .action-btn{
-    background-color:white;
-    padding:0.5em;
-    border-radius: 5px;
-    appearance: none;
-    border:none;
-  }
-
-  .action-btn :hover{
-background-color: #807171;
-  }
+    }
+    
+    .action-btn{
+      background-color:white;
+      padding:0.5em;
+      border-radius: 5px;
+      appearance: none;
+      border:none;
+      cursor: pointer;
+    }
+    
   .action-btn :nth-child(2){
     text-decoration: underline;
   }

@@ -13,12 +13,11 @@
         <button v-if="!isTotalPriceClalculable" class="call-to-action-btn check-availability-btn">
           Check availability
         </button>
-        <div v-else class="reservation-summary">
+        <div v-else class="reservation-summary flex column center"> 
           <button class="call-to-action-btn check-availability-btn" @click="sendOrderRequest()">
             Reserve
           </button>
           <p>You won't be charged yet</p>
-          <div>
             <div class="price-calc flex space-between">
               <span class="underline">${{stay.price}} X {{orderSettings.nightsNum}} nights</span>
               <span>${{priceCalc}}</span>
@@ -27,13 +26,12 @@
               <span class="underline">Service fee</span>
               <span>${{serviceFee}}</span>
             </div>
-          </div>
           <div class="total-price flex space-between">
             <span>Total</span>
             <span>${{orderSettings.totalPrice}}</span>
           </div>
+          </div>
         </div>
-      </div>
     </form>
   </section>
 </template>

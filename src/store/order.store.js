@@ -89,7 +89,7 @@ export const orderStore = {
         },
         totalPrice: orderSettings.totalPrice,
         startDate: orderSettings.requestedDates[0],
-        endDate: orderSettings.requestedDates[0],
+        endDate: orderSettings.requestedDates[1],
         guests: {
           adults: orderSettings.guest.adultsNum,
           kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
