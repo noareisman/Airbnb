@@ -1,15 +1,8 @@
 
 .user-details{
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 1%;
-    min-height:85vh;
-=======
     display: grid;
     grid-template-columns:minmax(2rem,1fr) minmax(auto,250px) minmax(auto,850px) minmax( 2rem,1fr);
     padding-top: 1%;
->>>>>>> 68890fc00b5876852cf7f15e6ec8e9b9a58c0e56
     
     .user-profile{
         position: sticky;
