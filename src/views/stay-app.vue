@@ -31,17 +31,6 @@ export default {
     this.$store.dispatch({ type: "loadStays", filterBy });
     
   },
-
-//   watch: { 
-//      'this.$route': {
-//         handler: function() {
-//            console.log($route.params)
-//         },
-//         deep: true,
-//         immediate: true
-//       }
-// },
-
   components: {
     stayList,
     stayFilter,

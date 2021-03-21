@@ -18,13 +18,13 @@
 
     <div class="card-info">
       <img
-        v-if="!isLiked"
+        v-if="!isLiked" title="Save To Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
-        src="../assets/imgs/icons/heart.png"
+        src="../assets/imgs/icons/heart.png" 
       />
       <img
-        v-else
+        v-else title="Remove From Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
         src="../assets/imgs/icons/fillheart.png"
