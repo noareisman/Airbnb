@@ -1,22 +1,17 @@
 .user-status-btns{
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 1% 0;
-    border-bottom: 3px solid lightgray;
-    
-    button{
-        outline: none !important;
-        color: white;
-        border-radius: 10px;
-        // height: 30px;
-        cursor: pointer;
-        background-color: #e95074;
-    }   
-    .traveler{
-        margin-right: 3%;
+    .el-tabs__item{
+        font-weight: bolder;
+        outline: unset !important;
     }
- 
-    button:hover {
-        background-color: #eb738fec;
+    .el-tabs__item.is-active{
+        color: #e95074;
+    }
+    .el-tabs__item:hover {
+        font-weight: bolder;
+        color: #e95074;
+        cursor: pointer;
+    }
+    .el-tabs__active-bar {
+        background-color: #e95074;
     }
 }

@@ -6,25 +6,19 @@
       </div>
       <h2>{{ userName }}</h2>
       <small>Joined in {{ userCreationTime }}</small>
-      <!-- <div class="user-profile-last-line"> -->
-        <!-- <button @click="doLogout">Logout</button> -->
-        <!-- <div> -->
-        <!-- <span v-if="numOfUserMesseges" class="badge">{{numOfUserMesseges}}</span> -->
-        <!-- <i class="fa fa-envelope" style="font-size: 33px"></i> -->
-        <!-- </div> -->
-      <!-- </div> -->
     </section>
     <section class="user-back-office">
-      <div class="user-status-btns ">
-        <button class="call-to-action-btn" value="host" @click="changeUserStatus">Host</button>
-        <button class="traveler call-to-action-btn" value="traveler" @click="changeUserStatus">Traveler</button>
-      </div>
+       <el-tabs class="user-status-btns" v-model="userStatus" @tab-click="changeUserStatus">
+          <el-tab-pane class="host" label="Host" name="host"></el-tab-pane>
+
+          <el-tab-pane label="Traveler" name="traveler"></el-tab-pane>
+      </el-tabs>
+      
       <div>
         <user-host v-if="userStatus === 'host'" :host="user" />
         <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
       </div>
     </section>
-
   </section>
 </template>
 
@@ -39,10 +33,6 @@ export default {
     };
   },
   methods: {
-    // doLogout() {
-    //   this.$router.push("/");
-    //   this.$store.dispatch({ type: "logout" });
-    // },
     changeUserStatus(ev) {
       this.userStatus = ev.target.value;
     },
@@ -55,12 +45,8 @@ export default {
       return this.$store.getters.loggedinUser;
     },
     userCreationTime() {
-      // return this.loggedinUser. ?creation time?
       return "June 2010";
-    },
-    // numOfUserMesseges() {
-    //   return Object.keys(this.user.messages).length;
-    // },
+    }
   },
   created() {
     this.userStatus = "host";
@@ -71,6 +57,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
