@@ -7,7 +7,7 @@
            class="exp-btn">Explore</button>
             </router-link>
           <div class="quate2">
-          <h4 class="quate2-txt"> bla bla bla</h4>
+          <h4 class="quate2-txt"> "bla bla bla"</h4>
 
           </div>
       </div>
