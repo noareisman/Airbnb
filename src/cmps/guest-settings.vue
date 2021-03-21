@@ -1,6 +1,6 @@
 <template>
   <section>
-    <el-popover placement="right" width="400" trigger="click">
+    <el-popover placement="right" width="210" trigger="click" class="guests-picker">
       <span> Adults: </span
       ><el-input-number
         v-model="guest.adultsNum"
