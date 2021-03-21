@@ -15,9 +15,9 @@
       <!-- </div> -->
     </section>
     <section class="user-back-office">
-      <div class="user-status-btns">
-        <button value="host" @click="changeUserStatus">Host</button>
-        <button class="traveler" value="traveler" @click="changeUserStatus">Traveler</button>
+      <div class="user-status-btns ">
+        <button class="call-to-action-btn" value="host" @click="changeUserStatus">Host</button>
+        <button class="traveler call-to-action-btn" value="traveler" @click="changeUserStatus">Traveler</button>
       </div>
       <div>
         <user-host v-if="userStatus === 'host'" :host="user" />

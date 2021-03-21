@@ -18,8 +18,8 @@
             v-model="model"
             @input.native="copyData"
             :options="options"
-            style="border: none"
-            class="advanced-input-section"
+            style="border: none" 
+            class="advanced-input-section desc"
             placeholder="Where are we going?"
           />
 
