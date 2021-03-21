@@ -110,6 +110,15 @@ cursor: pointer;
     border:none
 
   }
+  .add-review-btn{
+    color: #ca4e4e;
+    background-color:white ;
+    border: 1px solid #ca4e4e;
+    padding:1em;
+    border-radius: 5px;
+    appearance: none;
+    margin-top: 15px;
+  }
   
   @keyframes spin {
     0% { transform: rotate(0deg); }

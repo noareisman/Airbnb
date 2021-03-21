@@ -3,12 +3,14 @@
     <form>
       <div class="settings-container flex column center">
       <div class="value-for-money flex space-between">
-        <span class="price">{{ price }}/ night</span>
+        <span><span class="price">{{ price }}</span><span>/ night</span></span>
         <star-rating :reviews="stay.reviews"/>
       </div>
-        <date-picker :stayId="stay._id" @pick="setDates"></date-picker>
-        <guest-settings @pickguests="setGuests"></guest-settings>
-        <button class="call-to-action-btn" @click="sendOrderRequest()">
+      <div class="settings flex column align-center">
+        <date-picker class="date-picker" :stayId="stay._id" @pick="setDates"></date-picker>
+        <guest-settings class="guest-picker" @pickguests="setGuests"></guest-settings>
+      </div>
+        <button class="call-to-action-btn check-availability-btn" @click="sendOrderRequest()">
           Check availability
         </button>
       </div>

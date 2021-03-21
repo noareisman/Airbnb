@@ -5,12 +5,12 @@
       <span>{{avgRateFromAllReviewers}}</span>
       <span>({{reviews.length}} reviews)</span>
     </div>
-    <ul class="two-column-grid categories">
+    <ul class="two-column-grid-categories">
         <li v-for="(cat,idx) in categories" :key="idx" class="clean-list two-column-grid">
             <p>{{categories[idx][0]}}</p>
-            <div>
-            <el-progress :show-text="false" color="#ca4c4c" :stroke-width="8" :percentage="starNum(idx)"></el-progress>
-            <p>{{categories[idx][1]}}</p>
+            <div class="bar">
+            <p class="score">{{(categories[idx][1]).toFixed(2)}}</p>
+            <el-progress class="progress-bar" :show-text="false" color="#ca4c4c" :stroke-width="8" :percentage="starNum(idx)"></el-progress>
             </div>
         </li>
     </ul>
@@ -66,6 +66,9 @@ export default {
         return parseFloat(sum / this.reviews.length).toFixed(1);
       }
     },
+    categoryAvgFormat(){
+      return 
+    }
   }
 };
 </script>

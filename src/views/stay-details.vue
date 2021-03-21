@@ -48,10 +48,10 @@
     <review-list :reviews="this.reviews" />
     <div>
       <h3>Add Your Review:</h3>
-      <el-input type="textarea" :rows="2" placeholder="Please input"
+      <el-input class="txt-input" type="textarea" :rows="2" placeholder="Please input"
         v-model="review.reviewToAdd">
       </el-input>
-      <button class="call-to-action-btn" @click="postReview()">
+      <button class="btn add-review-btn" @click="postReview()">
         Add Review
       </button>
     </div>
@@ -138,7 +138,7 @@ export default {
         buyerId: this.buyerId,
         hostId: this.stay.host._id,
         stay: this.stay,
-        date: Date.now(),
+        time: Date.now(),
         avgRate:3,
         category:{
           Cleanliness: 3,
