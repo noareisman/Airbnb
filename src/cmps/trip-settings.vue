@@ -3,16 +3,36 @@
     <form>
       <div class="settings-container flex column center">
       <div class="value-for-money flex space-between">
-        <span><span class="price">{{ price }}</span><span>/ night</span></span>
+        <span><span class="price">${{ price }}</span><span>/ night</span></span>
         <star-rating :reviews="stay.reviews"/>
       </div>
       <div class="settings flex column align-center">
         <date-picker class="date-picker" :stayId="stay._id" @pick="setDates"></date-picker>
         <guest-settings class="guest-picker" @pickguests="setGuests"></guest-settings>
       </div>
-        <button class="call-to-action-btn check-availability-btn" @click="sendOrderRequest()">
+        <button v-if="!isTotalPriceClalculable" class="call-to-action-btn check-availability-btn">
           Check availability
         </button>
+        <div v-else class="reservation-summary">
+          <button class="call-to-action-btn check-availability-btn" @click="sendOrderRequest()">
+            Reserve
+          </button>
+          <p>You won't be charged yet</p>
+          <div>
+            <div class="price-calc flex space-between">
+              <span class="underline">${{stay.price}} X {{orderSettings.nightsNum}} nights</span>
+              <span>${{priceCalc}}</span>
+            </div>
+            <div class="service-fee flex space-between">
+              <span class="underline">Service fee</span>
+              <span>${{serviceFee}}</span>
+            </div>
+          </div>
+          <div class="total-price flex space-between">
+            <span>Total</span>
+            <span>${{orderSettings.totalPrice}}</span>
+          </div>
+        </div>
       </div>
     </form>
   </section>
@@ -22,6 +42,7 @@
 import datePicker from "./date-picker.vue";
 import starRating from "./star-rating.vue";
 import guestSettings from "./guest-settings.vue";
+const Swal = require('sweetalert2')
 
 export default {
   props: {
@@ -29,6 +50,7 @@ export default {
   },
   data() {
     return {
+      serviceFee:10,
       orderSettings: {
         requestedDates: [],
         guest: {},
@@ -37,6 +59,7 @@ export default {
         nightsNum: 5,
         currStay: this.stay,
       },
+      isTotalPriceClalculable:false
     };
   },
   methods: {
@@ -45,6 +68,7 @@ export default {
       const endDate = value[1].split("-").join("/");
       this.orderSettings.requestedDates = value;
       console.log([startDate, endDate]);
+      this.isTotalPriceClalculable=true;
     },
     setGuests(value) {
       this.orderSettings.guest = value;
@@ -53,19 +77,22 @@ export default {
     sendOrderRequest() {
       // console.log('tripSettings', this.orderSettings);
       this.$store.dispatch({ type: "setPendingOrder", orderSettings:this.orderSettings });
+    Swal.fire('Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. ')
     },
   },
   computed: {
-    // nights() {
-      // this.orderSettings.nightsNum = 5;
+    nights() {
+      return this.orderSettings.nightsNum = 5;
       // return this.requestedDates[1]-this.requestedDates[0]/////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // },
+    },
     price() {
-      return "$" + this.stay.price ;
+      return this.stay.price ;
     },
-    totalPrice() {
-      this.orderSettings.totalPrice = "$" + this.stay.price * this.nightsNum;
-    },
+    priceCalc() {
+      var priceCalc= this.stay.price * this.orderSettings.nightsNum;
+      this.orderSettings.totalPrice = priceCalc + this.serviceFee
+      return priceCalc
+      }
   },
   created() {
     this.orderSettings.buyer=this.$store.getters.loggedinUser;

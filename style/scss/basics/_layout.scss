@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 27px;
-    column-gap: 37px;
+    column-gap: 100px;
 }
 
 .two-column-grid-categories{
@@ -28,11 +28,6 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 27px;
     column-gap: 100px;
-}
-// display: flex;
-
-.progress-bar{
-    width:90%;
 }
 
 .card-grid {

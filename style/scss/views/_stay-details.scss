@@ -12,9 +12,17 @@
        margin-left: 12px;
     }
 }
+.price-calc{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
 
-.txt-input{
-
+.total-price{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(221,221,221);
+    width:100%;
 }
 
 .review-card-grid{
@@ -43,7 +51,7 @@
 .stay-description{
 width:60%;
 }
-
+/*TRIP SETTINGS CMP*/
 .trip-settings{
     width: 30%;
     position: sticky !important;
@@ -73,6 +81,10 @@ width:60%;
 .settings{
     margin-bottom: 20px;
 }
+.reservation-summary{
+    width:100%;
+}
+// 
 .reviewer-img{
     margin-right: 10px;
     margin-bottom: 15px;
