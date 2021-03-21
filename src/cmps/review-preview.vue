@@ -8,7 +8,7 @@
       />
       <div class="review-txt-section">
         <h3>{{review.by.fullname}}</h3>
-        <p>{{date}}</p>
+        <!-- <p>{{date}}</p> -->
       </div>
       </div>
       <div>{{ review.txt }}</div>

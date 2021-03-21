@@ -1,5 +1,6 @@
 .header-container{
   // opacity: 0.8;
+  z-index: 50;
   height: 80px;
   background-color: white !important;
   position: sticky;
@@ -14,6 +15,7 @@
 }
 
 .nav-container {
+  z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
