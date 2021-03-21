@@ -89,11 +89,16 @@ background-color: #807171;
     background-color: #fff;
     border:none;
   }
-
+  
   .link :hover{
-background-color: rgb(221,221,221);
-cursor: pointer;
+    background-color: rgb(221,221,221);
+    cursor: pointer;
   }
+  .underline{
+  text-decoration: underline;
+  background-color: #fff;
+  border:none;
+}
 
   .action-btn>*{
       margin:3px;
@@ -107,8 +112,9 @@ cursor: pointer;
     padding:1em;
     border-radius: 5px;
     appearance: none;
-    border:none
-
+    border:none;
+    cursor:pointer;
+    
   }
   .add-review-btn{
     color: #ca4e4e;
@@ -118,6 +124,7 @@ cursor: pointer;
     border-radius: 5px;
     appearance: none;
     margin-top: 15px;
+    cursor:pointer;
   }
   
   @keyframes spin {

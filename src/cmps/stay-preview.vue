@@ -30,7 +30,7 @@
         src="../assets/imgs/icons/fillheart.png"
       />
       <star-rating :reviews="stay.reviews" />
-      <span> {{ stay.name }}</span>
+      <span> {{ stay.name }} - <span class=stay-address>  {{stay.loc.address}} </span> </span>
       <span> {{ summary }}</span>
       <span> {{ price }}</span>
     </div>

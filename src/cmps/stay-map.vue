@@ -1,13 +1,13 @@
 <template>
 <section class="googl-map">
-<h1>Location</h1>
+<h2>Location</h2>
   <GmapMap
     class="google-map"
     ref="gMap"
     :center="position"
     :zoom="zoom"
     map-type-id="terrain"
-    style="width: 700px; height: 500px"
+    style="width: 1100px; height: 500px"
   >
     <GmapMarker
       :position="position"
