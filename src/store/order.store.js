@@ -58,9 +58,6 @@ export const orderStore = {
         throw err
       }
     },
-
-    //////////Noa: I think the filtering here is not done correctly /////////////////////////////////////////////////
-    // and it should compare the user._id to the order.buyer._id//////////////////////////////////////////////////////////
     async loadHostOrders({ commit, state }, { host }) {
       try {
         commit({ type: 'setHost', host })
@@ -78,14 +75,13 @@ export const orderStore = {
         throw err
       }
     },
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     async updateOrderStatus({ dispatch, state }, { order }) {
       await orderService.save(order)
       dispatch({ type: "loadHostOrders", order });
     },
-    async setPendingOrder(context, { orderSettings }) {
-      var newPendingOrder = orderService.getNewOrder()
-      newPendingOrder = {
+    async setPendingOrder({dispatch}, { orderSettings }) {
+      var host = orderSettings.currStay.host
+      var newPendingOrder = {
         createdAt: Date.now(),
         buyer: {
           _id: orderSettings.buyer._id,
@@ -106,7 +102,7 @@ export const orderStore = {
         status: 'pending'
       }
       await orderService.save(newPendingOrder)
-      dispatch({ type: "loadHostOrders", order });
+      dispatch({ type: "loadHostOrders", host });
     }
   }
 }

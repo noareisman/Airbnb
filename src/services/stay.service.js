@@ -63,9 +63,9 @@ async function save(stay) {
 }
 
 async function addReview(review,stay){
-    var stayToUpdate=await getById(stay.id)
+    var stayToUpdate=getById(stay._id)
     stayToUpdate.reviews.unshift(review)
-    await save(stay)
+    save(stay)
     return
 }
 
@@ -86,7 +86,8 @@ function getReviewTemplate() {
         by: {
             _id: '',
             fullname: '',
-            imgUrl: ''
+            imgUrl: '',
+            time:Date.now()
         }
     }
 }
