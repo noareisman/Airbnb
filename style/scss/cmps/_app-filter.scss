@@ -44,3 +44,46 @@
 .el-date-editor .el-range-separator{
     padding: 0;
 }
+
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    margin:auto 0;
+    z-index: 1000;
+    width: 300px;
+    border: 1px solid lightgray ;
+    transition: .15s ease-in-out;
+
+}
+
+.search-btn-sticky{
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    top: 0;
+    transition: .15s ease-in-out;
+    min-width: 350px;
+    background-color: #fff;
+    border-radius: 200px;
+    padding: 0px, 10px, 0px, 5px ;
+    margin-top: 6px;
+    border: 1px solid rgb(235, 229, 229);
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    color: rgb(185, 184, 184);
+    
+}
+
+.sticy-search-icon{
+    margin-inline-end: 4px;
+}
+
+.title-sticky{
+    margin-inline-start: 20px;
+}

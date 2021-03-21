@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="wrapper flex">
+    <div ref="wrapper" class="wrapper flex">
       <span class="box">
         <div class="location">
           <span class="title">Location</span>
@@ -18,7 +18,7 @@
             v-model="model"
             @input.native="copyData"
             :options="options"
-            style="border: none" 
+            style="border: none"
             class="advanced-input-section desc"
             placeholder="Where are we going?"
           />
@@ -68,6 +68,18 @@
         </div>
       </div>
     </div>
+
+
+      <div class="search-btn-sticky" v-if="isSticky">
+         <span class="title-sticky"> Start Searching</span>  
+       <div @click="openSearch" class="search-icon sticy-search-icon">
+        <div class="btn-search">
+          <img src="../assets/imgs/icons/icon-search.png" />
+        </div>
+      </div>
+      </div>
+      
+
   </section>
 </template>
 
@@ -79,6 +91,7 @@ export default {
   name: "stayFilter",
   data() {
     return {
+      isSticky: false,
       filterBy: {
         location: "",
         startDate: "",
@@ -105,12 +118,31 @@ export default {
     },
     async submitSearch() {
       const filterBy = JSON.parse(JSON.stringify(this.filterBy));
-      if(this.$route.path==='/') await this.$router.push('/stay')
+      if (this.$route.path === "/") await this.$router.push("/stay");
       await this.$store.dispatch({ type: "loadStays", filterBy });
     },
     copyData(ev) {
       this.filterBy.location = ev.target.value;
     },
+    checkOffset() {
+      if(!this.$refs.wrapper) return
+      const sticky = this.$refs.wrapper.offsetTop
+      if (window.pageYOffset > sticky) {
+        this.isSticky=true;
+      } else {
+        this.isSticky=false;
+      }
+    },
+    openSearch(){
+      console.log('open search')
+    }
+  },
+  created() {
+    window.onscroll = () => {
+     this.checkOffset();
+    };
+  },
+  destroyed(){
   },
   computed: {},
   components: {
@@ -120,5 +152,4 @@ export default {
 };
 </script>
 <style src="vue-advanced-search/dist/AdvancedSearch.css">
-
 </style>
