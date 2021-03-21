@@ -9,7 +9,7 @@
       <div class="h1-container">
         <h1 class="hero-header">Choose</h1>
         <h1 class="hero-header-2">
-          Where To Live <span class="dot">. </span>
+          Where To Live <span class="dot"> . </span>
         </h1>
       </div>
 

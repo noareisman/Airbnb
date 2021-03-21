@@ -23,7 +23,7 @@ html {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    // position: relative;
+    // background-attachment: fixed;
 }
 
 .filter-container{
@@ -91,6 +91,8 @@ html {
 .hero .h1-container h1 .dot {
     color: #f05;
     font-size: 4rem;
+    font-family: serif;
+    
 }
 
 .justify-center{
