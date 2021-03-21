@@ -20,7 +20,7 @@
         "name": "House Of Mor",
         "imgUrls": ["1.1","1.2a","1.2b","1.2c","1.2d"],
         "price": 80.00,
-        "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+        "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Paris",
         "capacity": 8,
         "favorites":[{"userId":"u109"}],
         "amenities": [
@@ -163,7 +163,7 @@
       "name": "House Of Davit",
       "imgUrls": ["2.1","2.2a","2.2b","2.2c","2.2d"],
       "price": 40.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "summary": "Beautifull three bedroom apartment, located in the the center of Porto, Ribeira (Cube)...",
       "capacity": 8,
       "favorites":[],
       "amenities": [
@@ -175,9 +175,9 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "u102",
+        "_id": "u108",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -202,7 +202,7 @@
           "by": {
             "_id": "u101",
             "fullname": "Mor Levy",
-            "imgUrl": "/img/img1.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
             "time":1616124717372
           }
         }
@@ -213,8 +213,8 @@
       "name": "Apartment of Mor",
       "imgUrls": ["3.1","3.2a","3.2b","3.2c","3.2d"],
       "price": 72.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
+      "summary": "Charming loft in Paris",
+      "capacity": 3,
       "favorites":[],
       "amenities": [
         "TV",
@@ -227,7 +227,7 @@
       "host": {
         "_id": "u101",
         "fullname": "Mor Levi",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
       },
       "loc": {
         "country": "France",
@@ -250,9 +250,9 @@
               "Accessibility":4.9 
           },
           "by": {
-            "_id": "u102",
+            "_id": "u108",
             "fullname": "Davit Pok",
-            "imgUrl": "/img/img2.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg",
             "time":1616123717372
           }
         }
@@ -277,7 +277,7 @@
       "host": {
         "_id": "u101",
         "fullname": "Mor Levi",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -292,17 +292,17 @@
           "txt": "Very helpful hosts. Cooked traditional...",
           "avgRate": 4.9,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":4,
+              "Accuracy":4,
+              "Communication":4,
+              "Location":4,
+              "Check-in":4,
+              "Accessibility":4 
           },
           "by": {
-            "_id": "u102",
-            "fullname": "Davit Pok",
-            "imgUrl": "/img/img2.jpg",
+            "_id": "u109",
+            "fullname": "David Shechter",
+            "imgUrl": "https://randomuser.me/api/portraits/men/9.jpg",
             "time":1606124717372
           }
         }
@@ -313,8 +313,8 @@
       "name": "Davit vila vilacola",
       "imgUrls": ["5.1","5.2a","5.2b","5.2c","5.2d"],
       "price": 80.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
+      "summary": "Modern loft in Beautiful Barcelona",
+      "capacity": 4,
       "favorites":[],
       "amenities": [
         "TV",
@@ -325,9 +325,9 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "u102",
+        "_id": "u108",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg"
       },
       "loc": {
         "country": "spain",
@@ -338,21 +338,21 @@
       },
       "reviews": [
         {
-          "id": "madeId",
+          "id": "u110rev",
           "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "avgRate": 4,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":4,
+              "Accuracy":4,
+              "Communication":4,
+              "Location":4,
+              "Check-in":4,
+              "Accessibility":4 
           },
           "by": {
-            "_id": "u103",
+            "_id": "u110",
             "fullname": "Jack Daniel",
-            "imgUrl": "/img/img3.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/10.jpg",
             "time":1606124717372
           }
         }
@@ -360,10 +360,10 @@
     },
     {
       "_id": "10006551",
-      "name": "House of poks",
+      "name": "House of Pok",
       "imgUrls": ["6.1","6.2a","6.2b","6.2c","6.2d"],
-      "price": 80.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "price": 180.00,
+      "summary": "Luxury apartment with 5 bedrooms,  in Porto, Ribeira",
       "capacity": 8,
       "favorites":[],
       "amenities": [
@@ -375,9 +375,9 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "u102",
+        "_id": "u108",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -388,21 +388,21 @@
       },
       "reviews": [
         {
-          "id": "madeId",
+          "id": "u111rev",
           "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "avgRate": 3,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":4,
+              "Accuracy":4,
+              "Communication":2,
+              "Location":2,
+              "Check-in":3,
+              "Accessibility":3 
           },
           "by": {
-            "_id": "u103",
+            "_id": "u111",
             "fullname": "Jack Daniel",
-            "imgUrl": "/img/img3.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/11.jpg",
             "time":1606124717372
           }
         }
@@ -412,9 +412,9 @@
       "_id": "10006552",
       "name": "Mor loft",
       "imgUrls": ["7.1","7.2a","7.2b","7.2c","7.2d"],
-      "price": 80.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
+      "price": 90.00,
+      "summary": "Large apartment in Porto",
+      "capacity": 4,
       "favorites":[],
       "amenities": [
         "TV",
@@ -427,7 +427,7 @@
       "host": {
         "_id": "u101",
         "fullname": "Mor Levi",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -438,41 +438,41 @@
       },
       "reviews": [
         {
-          "id": "madeId",
-          "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "id": "u112",
+          "txt": "Kind hosts. Redomended...",
+          "avgRate": 5,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":5,
+              "Accuracy":5,
+              "Communication":5,
+              "Location":5,
+              "Check-in":5,
+              "Accessibility":5 
           },
           "by": {
-            "_id": "u102",
+            "_id": "u108",
             "fullname": "Davit Pok",
-            "imgUrl": "/img/img2.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg",
             "time":1606123717372
           }
         },
         {
           "id": "madeId",
           "txt": "Nice attitude, Bathrooms very clean!",
-          "avgRate": 4.9,
+          "avgRate": 4.5,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":4,
+              "Accuracy":4,
+              "Communication":5,
+              "Location":5,
+              "Check-in":5,
+              "Accessibility":4 
           },
           "by": {
-            "_id": "u103",
-            "fullname": "Jack Daniel",
-            "imgUrl": "/img/img3.jpg",
-            "time":1606123717372
+            "_id": "u113",
+            "fullname": "Daniel Zukerman",
+            "imgUrl": "https://randomuser.me/api/portraits/men/13.jpg",
+            "time":1605123717372
           }
         }
       ]
@@ -482,8 +482,8 @@
       "name": "The castle of Mor",
       "imgUrls": ["8.1","8.2a","8.2b","8.2c","8.2d"],
       "price": 76.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
+      "summary": "2 bedroom apartmen, in New-York center",
+      "capacity": 4,
       "favorites":[],
       "amenities": [
         "TV",
@@ -496,7 +496,7 @@
       "host": {
         "_id": "u101",
         "fullname": "Mor Levi",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg"
       },
       "loc": {
         "country": " United States",
@@ -507,21 +507,21 @@
       },
       "reviews": [
         {
-          "id": "madeId",
+          "id": "u114",
           "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "avgRate": 4.8,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":5,
+              "Accuracy":5,
+              "Communication":5,
+              "Location":5,
+              "Check-in":5,
+              "Accessibility":4 
           },
           "by": {
-            "_id": "u102",
+            "_id": "u108",
             "fullname": "Davit Pok",
-            "imgUrl": "/img/img2.jpg",
+            "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg",
             "time":1606113717372
           }
         }
@@ -529,10 +529,10 @@
     },
     {
       "_id": "10006554",
-      "name": "Davit 2 room appartement",
+      "name": "Davit 2 room apartement",
       "imgUrls": ["9.1","9.2a","9.2b","9.2c","9.2d"],
       "price": 85.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+      "summary": "2 room apartement, Porto, Ribeira (Cube)...",
       "capacity": 8,
       "favorites":[],
       "amenities": [
@@ -544,9 +544,9 @@
         "Cooking basics"
       ],
       "host": {
-        "_id": "u102",
+        "_id": "u108",
         "fullname": "Davit Pok",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -557,33 +557,33 @@
       },
       "reviews": [
         {
-          "id": "madeId",
-          "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "id": "u115",
+          "txt": "Very Small, don't trust the pictures, save yourself the money...",
+          "avgRate": 2,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":2,
+              "Accuracy":2,
+              "Communication":2,
+              "Location":2,
+              "Check-in":2,
+              "Accessibility":2 
           },
           "by": {
-            "_id": "u103",
-            "fullname": "Jack Daniel",
-            "imgUrl": "/img/img3.jpg",
-            "time":1506113717372
+            "_id": "u115",
+            "fullname": "Josh Davidoff",
+            "imgUrl": "https://randomuser.me/api/portraits/men/15.jpg",
+            "time":1506613717372
           }
         }
       ]
     },
     {
       "_id": "10006555",
-      "name": "Privat house on the bitch",
+      "name": "Privat house on the beach",
       "imgUrls": ["10.1","10.2a","10.2b","10.2c","10.2d"],
       "price": 60.00,
-      "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-      "capacity": 8,
+      "summary": "Privat beach-house",
+      "capacity": 3,
       "favorites":[],
       "amenities": [
         "TV",
@@ -596,7 +596,7 @@
       "host": {
         "_id": "u101",
         "fullname": "Mor Levi",
-        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+        "imgUrl": "https://randomuser.me/api/portraits/men/15.jpg"
       },
       "loc": {
         "country": "Portugal",
@@ -608,20 +608,20 @@
       "reviews": [
         {
           "id": "madeId",
-          "txt": "Very helpful hosts. Cooked traditional...",
-          "avgRate": 4.9,
+          "txt": "Cool beach house - recomended fot surfers",
+          "avgRate": 5,
           "category":{
-              "Cleanliness":4.9,
-              "Accuracy":4.9,
-              "Communication":4.9,
-              "Location":4.9,
-              "Check-in":4.9,
-              "Accessibility":4.9 
+              "Cleanliness":5,
+              "Accuracy":5,
+              "Communication":5,
+              "Location":5,
+              "Check-in":5,
+              "Accessibility":5 
           },
           "by": {
-            "_id": "u103",
-            "fullname": "Jack Daniel",
-            "imgUrl": "/img/img2.jpg",
+            "_id": "u116",
+            "fullname": "Tom Partush",
+            "imgUrl": "https://randomuser.me/api/portraits/men/16.jpg",
             "time":1506113717372
           }
         }
