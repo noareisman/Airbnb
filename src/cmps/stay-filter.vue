@@ -1,19 +1,9 @@
 <template>
   <section>
-    <div ref="wrapper" class="wrapper flex">
+    <div ref="wrapper" class="wrapper flex" :class="{out:isOpen}">
       <span class="box">
         <div class="location">
           <span class="title">Location</span>
-
-          <!-- <advanced-search input="copyData"
-            v-model="model"
-            style="display: block"
-            placeholder="where are you going?"
-            :options="options"
-            class="desc"
-          >
-          </advanced-search> -->
-
           <advanced-search
             v-model="model"
             @input.native="copyData"
@@ -22,13 +12,6 @@
             class="advanced-input-section desc"
             placeholder="Where are we going?"
           />
-
-          <!-- <input
-            v-model="filterBy.location"
-            type="text"
-            placeholder="where are you going?"
-            class="desc"
-          /> -->
         </div>
       </span>
       <span class="box">
@@ -56,12 +39,6 @@
         </div>
       </span>
 
-      <!-- <router-link  class="router search-icon" :to="`/stay/?location=${filterBy.location}&guests=${filterBy.guests}`">
-        <div class="btn-search">
-          <img src="../assets/imgs/icons/icon-search.png" />
-        </div>
-      </router-link> -->
-
       <div @click="submitSearch" class="search-icon">
         <div class="btn-search">
           <img src="../assets/imgs/icons/icon-search.png" />
@@ -70,15 +47,66 @@
     </div>
 
 
-      <div class="search-btn-sticky" v-if="isSticky">
-         <span class="title-sticky"> Start Searching</span>  
-       <div @click="openSearch" class="search-icon sticy-search-icon">
+
+
+
+      
+      <div v-if="isOpen" class="secondary wrapper">
+      <span class="box">
+        <div class="location">
+          <span class="title">Location</span>
+          <advanced-search
+            v-model="model"
+            @input.native="copyData"
+            :options="options"
+            style="border: none"
+            class="advanced-input-section desc"
+            placeholder="Where are we going?"
+          />
+        </div>
+      </span>
+      <span class="box">
+        <div class="location">
+          <span class="title">Dates</span>
+          <date-picker @pick="datePick" />
+        </div>
+      </span>
+      <span class="box">
+        <div class="guests">
+          <span class="title">Guests</span>
+          <input
+            v-model="filterBy.guests"
+            type="text"
+            placeholder="1 Guest"
+            class="desc"
+            @click="openGuests"
+          />
+          <el-input-number
+            v-model="filterBy.guests"
+            v-if="isGuests"
+            size="mini"
+            style="position: absolute; top: 60px"
+          ></el-input-number>
+        </div>
+      </span>
+
+      <div @click="submitSearch" class="search-icon">
+        <div class="btn-search">
+          <img src="../assets/imgs/icons/icon-search.png" />
+        </div>
+      </div>
+    </div>
+
+      <div @click="openSearch" class="search-btn-sticky" v-if="isSticky">
+         <span v-if="filterBy.location" class="title-sticky"> 
+           {{filterBy.location}} </span>  
+           <span v-else class="title-sticky"> Start Searching</span>
+       <div  class="search-icon sticy-search-icon">
         <div class="btn-search">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
       </div>
       </div>
-      
 
   </section>
 </template>
@@ -92,6 +120,7 @@ export default {
   data() {
     return {
       isSticky: false,
+      isOpen:false,
       filterBy: {
         location: "",
         startDate: "",
@@ -132,9 +161,21 @@ export default {
       } else {
         this.isSticky=false;
       }
+         this.isOpen = false;
+
     },
     openSearch(){
+       this.isSticky=false;
+      this.isOpen = true;
       console.log('open search')
+    }
+  },
+  computed:{
+    searchName(){
+      const filter = this.$store.getters.currentFilter
+      console.log(filter)
+      if(filter.location) return filter.location
+      else return "Start Searching" 
     }
   },
   created() {
