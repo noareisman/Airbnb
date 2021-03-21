@@ -8,7 +8,7 @@
       format="dd/MM/yyyy"
       value-format="dd-MM-yyyy"
       start-placeholder="Check In"
-      end-placeholder="   Check Out"
+      end-placeholder=" Check Out"
       :picker-options="pickerOptions"
     >
     </el-date-picker>

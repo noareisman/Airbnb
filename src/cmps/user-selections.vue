@@ -27,8 +27,8 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
+    <span v-if="loggedInUser && numOfUserMesseges" class="badge" title="New Message">{{numOfUserMesseges}}</span>
     </el-dropdown>
-    <span v-if="loggedInUser && numOfUserMesseges" class="badge">{{numOfUserMesseges}}</span>
   </section>
 </template>
 
@@ -81,7 +81,6 @@ export default {
     },
     numOfUserMesseges() {
         const user = this.loggedInUser;
-        console.log(user);
         return Object.keys(user.messages).length;
     },
   },

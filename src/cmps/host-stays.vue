@@ -1,7 +1,7 @@
 <template>
   <section class="host-stays-headline">
     <!--REAM: FIND NEW NAME -->
-    <h2>Stays:</h2>
+    <h2 class="ssets-title"> {{userName}} Assets :</h2>
     <!--REAM: FIND NEW NAME -->
 
     <ul class="host-stays">
@@ -34,6 +34,9 @@ export default {
         return stay.host._id === this.host._id;
       });
     },
+    userName(){
+      return this.$store.getters.loggedinUser.fullname
+    }
   },
   components: {
     singleStayOrder,

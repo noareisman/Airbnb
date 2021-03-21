@@ -31,7 +31,6 @@ export default {
   methods: {
     sendMsg() {
       this.msg.from = this.$store.getters.loggedinUser.username;
-      console.log("sent", this.msg);
       socketService.emit("chat newMsg", this.msg);
       // this.messages.push(this.msg);
     },

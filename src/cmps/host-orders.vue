@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h2>Pending / Accepted reservations:</h2>
+  <section class="host-order-container">
+    <h2 class="reservations-title">Pending / Accepted reservations:</h2>
     <section class="host-orders">
       <h2
         v-if="

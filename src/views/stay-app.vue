@@ -5,7 +5,8 @@
     >
       <stay-filter />
     </div>
-    <stay-list v-if="staysToShow && staysToShow.length" :stays="staysToShow" />
+    <stay-list v-if="staysToShow" :stays="staysToShow" />
+        <img v-else :src="require(`@/assets/imgs/icons/load.gif`)">
   </section>
 </template>
 
@@ -31,17 +32,6 @@ export default {
     this.$store.dispatch({ type: "loadStays", filterBy });
     
   },
-
-//   watch: { 
-//      'this.$route': {
-//         handler: function() {
-//            console.log($route.params)
-//         },
-//         deep: true,
-//         immediate: true
-//       }
-// },
-
   components: {
     stayList,
     stayFilter,

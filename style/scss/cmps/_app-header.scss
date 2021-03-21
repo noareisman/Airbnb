@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 10px 6px 10px;
 }
 
 .el-icon--right{
@@ -64,13 +64,15 @@
   width: max-content;
   
   .badge {
-    position: fixed;
-    top: 2%;
-    right: 6.5%;
     padding: 0px 6px;
     border-radius: 50%;
-    background: red;
+    background: #FF3842;
     color: white;
+    font-weight: 600;
+    position:absolute;
+    top:-5px;
+    cursor: pointer;
+    
   }
 }
 
@@ -82,6 +84,7 @@
 .user-option {
   color: unset !important;
   font-weight: bold;
+  position: relative;
 }
 .user-option:hover {
   color: unset !important;

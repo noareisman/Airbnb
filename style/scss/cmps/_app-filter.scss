@@ -1,5 +1,6 @@
 .wrapper {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    position: relative;
 }
 
 .advanced-input {
@@ -18,6 +19,28 @@
 }
 
 .advanced-search-input .advanced-input-container .advanced-input-section .advanced-input,
-.advanced-search-input .advanced-input-container .advanced-input-section .label{
+.advanced-search-input .advanced-input-container .advanced-input-section .label {
     border: none !important;
+}
+
+.advanced-search-input .advanced-input-container .advanced-input-section .advanced-input span,
+.advanced-search-input .advanced-input-container .advanced-input-section .label span {
+    top: 0;
+    color: #afafaf;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.advanced-search-input .advanced-input-container .advanced-input-section .advanced-input,
+.advanced-search-input .advanced-input-container .advanced-input-section .label{
+    color: #afafaf;
+    letter-spacing: 1px;
+
+}
+
+.advanced-search-input .search .options .row .option .title{
+    font-style: 12px;
+}
+
+.el-date-editor .el-range-separator{
+    padding: 0;
 }

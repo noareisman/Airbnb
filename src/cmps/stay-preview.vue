@@ -18,19 +18,19 @@
 
     <div class="card-info">
       <img
-        v-if="!isLiked"
+        v-if="!isLiked" title="Save To Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
-        src="../assets/imgs/icons/heart.png"
+        src="../assets/imgs/icons/heart.png" 
       />
       <img
-        v-else
+        v-else title="Remove From Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
         src="../assets/imgs/icons/fillheart.png"
       />
       <star-rating :reviews="stay.reviews" />
-      <span> {{ stay.name }}</span>
+      <span> {{ stay.name }} - <span class=stay-address>  {{stay.loc.address}} </span> </span>
       <span> {{ summary }}</span>
       <span> {{ price }}</span>
     </div>
