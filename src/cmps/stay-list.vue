@@ -42,7 +42,7 @@ export default {
     sortBy(sortBy){
       if(sortBy === 'price')
       this.$store.getters.sortByPrice
-      else if(sortBy ==='rate')  this.$store.getters.sortByPopularity
+      else if(sortBy ==='rate') this.$store.getters.sortByPopularity
 
     }
   },
