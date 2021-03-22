@@ -54,7 +54,7 @@ export const stayStore = {
 
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy }) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 }}) {
             try {
                 const stays = await stayService.query(filterBy)
                 commit({

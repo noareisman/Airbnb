@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     changeUserStatus(ev) {
-      this.userStatus = ev.target.value;
+      // this.userStatus = ev.target.value;
     },
   },
   computed: {

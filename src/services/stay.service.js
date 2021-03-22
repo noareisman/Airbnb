@@ -1,4 +1,4 @@
-// import { httpService } from './http.service'
+import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
 import { utilService } from './util.service'
 const DB = require('../../data/airbnb.json')
@@ -10,42 +10,42 @@ export const stayService = {
     save,
     getReviewTemplate,
     addReview
-}
+} 
 
 
-async function query(filterBy = { location: '', startDate: '', endDate: '', guests: 0 }) {
-    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-    // return httpService.get(`review${queryStr}`)
-    let stays = await storageService.query('stay')
-    if (!stays.length) {
-        stays = JSON.parse(JSON.stringify(DB.stay))
-        storageService.save('stay', stays)
-    }
-    else if (filterBy._id) {
-        stays = stays.filter(stay => {
-            if (filterBy._id) return stay.host._id === filterBy._id;
-        })
-    }
-    const regex = new RegExp(filterBy.location, 'i')
-    var toysForDisplay = stays.filter(stay => {
-        return regex.test(stay.loc.address) && (stay.capacity >= filterBy.guests || !filterBy.guests)
-        // && (JSON.stringify(toy.inStock) === filterBy.inStock || filterBy.inStock === 'all')
-    })
+ function query(filterBy = { location: '', guests: 0 }) {
+     console.log("🚀 ~ file: stay.service.js ~ line 17 ~ query ~ filterBy ", filterBy )
+    var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}`
+    return httpService.get(`stay${queryStr}`)
 
-    return toysForDisplay;
+    // let stays = await storageService.query('stay')
+    // if (!stays.length) {
+    //     stays = JSON.parse(JSON.stringify(DB.stay))
+    //     storageService.save('stay', stays)
+    // }
+    // else if (filterBy._id) {
+    //     stays = stays.filter(stay => {
+    //         if (filterBy._id) return stay.host._id === filterBy._id;
+    //     })
+    // }
+    // const regex = new RegExp(filterBy.location, 'i')
+    // var toysForDisplay = stays.filter(stay => {
+    //     return regex.test(stay.loc.address) && (stay.capacity >= filterBy.guests || !filterBy.guests)
+    //     // && (JSON.stringify(toy.inStock) === filterBy.inStock || filterBy.inStock === 'all')
+    // })
+
+    // return toysForDisplay;
 }
 
 async function getById(stayId) {
-    const stay = await storageService.get('stay', stayId)
-    return stay
-
-
-    // return httpService.get(`user/${userId}`)
+    // const stay = await storageService.get('stay', stayId)
+    // return stay
+    return httpService.get(`stay/${stayId}`)
 }
 
 function remove(stayId) {
-    // return httpService.delete(`review/${reviewId}`)
-    return storageService.delete('stay', stayId)
+    return httpService.delete(`stay/${stayId}`)
+    // return storageService.delete('stay', stayId)
 
 }
 
