@@ -1,6 +1,12 @@
-import { httpService } from './http.service'
-import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
+import {
+    httpService
+} from './http.service'
+import {
+    storageService
+} from './async-storage.service'
+import {
+    utilService
+} from './util.service'
 const DB = require('../../data/airbnb.json')
 
 export const stayService = {
@@ -10,11 +16,13 @@ export const stayService = {
     save,
     getReviewTemplate,
     addReview
-} 
+}
 
 
- function query(filterBy = { location: '', guests: 0 }) {
-     console.log("🚀 ~ file: stay.service.js ~ line 17 ~ query ~ filterBy ", filterBy )
+function query(filterBy = {
+    location: '',
+    guests: 0
+}) {
     var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}`
     return httpService.get(`stay${queryStr}`)
 
@@ -52,18 +60,19 @@ function remove(stayId) {
 
 async function save(stay) {
     if (stay._id) {
-        return storageService.put('stay', stay)
-    }
-    else {
-        return storageService.post('stay', stay)
+        return httpService.put(`stay/${stay._id}`, stay)
+        // return storageService.put('stay', stay)
+    } else {
+        return httpService.post(`stay`, stay)
+        // return storageService.post('stay', stay)
     }
     // user = await httpService.put(`user/${user._id}`, user)
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
-async function addReview(review,stay){
-    var stayToUpdate=getById(stay._id)
+async function addReview(review, stay) {
+    var stayToUpdate = getById(stay._id)
     stayToUpdate.reviews.unshift(review)
     save(stay)
     return
@@ -72,7 +81,7 @@ async function addReview(review,stay){
 
 function getReviewTemplate() {
     return review = {
-        id:utilService.makeId(),
+        id: utilService.makeId(),
         txt: '',
         avgRate: null,
         category: {
@@ -87,7 +96,7 @@ function getReviewTemplate() {
             _id: '',
             fullname: '',
             imgUrl: '',
-            time:Date.now()
+            time: Date.now()
         }
     }
 }

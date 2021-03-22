@@ -104,12 +104,9 @@ export const stayStore = {
             else {
                 const idx = stay.favorites.findIndex(
                     (entity) => entity._id === user._id
-                );
+                );  
                 stay.favorites.splice(idx, 1);
             }
-            console.log(user)
-            console.log()
-
             try {
                 const updatedStay = await stayService.save(stay)
                 context.commit({ type: 'updateStays', updatedStay })
