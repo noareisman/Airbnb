@@ -174,6 +174,8 @@ export default {
     }
   },
   created() {
+    this.filterBy.location = this.$route.query.location;
+    
     window.onscroll = () => {
      this.checkOffset();
     };
