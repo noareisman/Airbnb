@@ -32,11 +32,6 @@ export default {
       userStatus: null,
     };
   },
-  methods: {
-    changeUserStatus(ev) {
-      this.userStatus = ev.target.value;
-    },
-  },
   computed: {
     userName() {
       return this.user.fullname;

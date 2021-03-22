@@ -26,8 +26,12 @@ async function query() {
     }
     return orders;
 }
+
 async function save(order) {
-    return storageService.put('order', order);
+    if (order._id) return storageService.put('order', order);
+    else return storageService.post('order', order);
+
+    
     // user = await httpService.put(`user/${user._id}`, user)
 
     // Handle case in which admin updates other user's details
@@ -37,7 +41,7 @@ async function save(order) {
 function getNewOrder() {
     return order = {
         _id: '',
-        createdAt:null,
+        createdAt: null,
         buyer: {
             _id: '',
             fullname: ''
