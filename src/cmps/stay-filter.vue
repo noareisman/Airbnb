@@ -45,12 +45,7 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-      
+ 
       <div v-if="isOpen" class="secondary wrapper">
       <span class="box">
         <div class="location">
@@ -185,7 +180,7 @@ export default {
   },
   destroyed(){
   },
-  computed: {},
+  
   components: {
     datePicker,
     AdvancedSearch,
