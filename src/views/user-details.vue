@@ -8,7 +8,7 @@
       <small>Joined in {{ userCreationTime }}</small>
     </section>
     <section class="user-back-office">
-       <el-tabs class="user-status-btns" v-model="userStatus" @tab-click="changeUserStatus">
+       <el-tabs class="user-status-btns" v-model="userStatus" >
           <el-tab-pane class="host" label="Host" name="host"></el-tab-pane>
 
           <el-tab-pane label="Traveler" name="traveler"></el-tab-pane>
@@ -32,14 +32,6 @@ export default {
       userStatus: null,
     };
   },
-<<<<<<< HEAD
-  methods: {
-    changeUserStatus(ev) {
-      // this.userStatus = ev.target.value;
-    },
-  },
-=======
->>>>>>> b1c1ebc55ae9999ae077f17bd897118ffe3ad68c
   computed: {
     userName() {
       return this.user.fullname;
