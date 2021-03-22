@@ -32,11 +32,14 @@ export default {
       userStatus: null,
     };
   },
+<<<<<<< HEAD
   methods: {
     changeUserStatus(ev) {
       // this.userStatus = ev.target.value;
     },
   },
+=======
+>>>>>>> b1c1ebc55ae9999ae077f17bd897118ffe3ad68c
   computed: {
     userName() {
       return this.user.fullname;
