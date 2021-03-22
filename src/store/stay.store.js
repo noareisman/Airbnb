@@ -12,14 +12,16 @@ export const stayStore = {
             return state.stays;
         },
         sortByPrice(state){
-            state.stays.sort((a,b) =>{
+            return state.stays.sort((a,b) =>{
                 return a.price - b.price
             })
         },
         sortByPopularity(state){
-            state.stays.sort((a,b) =>{
-                return  b.favorites.length -  a.favorites.length
+        const x =  state.stays.sort((a,b) =>{
+                return  b.reviews.length -  a.reviews.length
             })
+            console.log(x)
+            return x
         },
         getAllUserLike( state, getters ){
             const userId = getters.loggedinUser._id;
@@ -96,6 +98,7 @@ export const stayStore = {
             // const updatedStay= await stayService.addReview(newReview,currStay)
         },
         async toggleLike(context, { stay }) {
+            console.log(context)
             const user = context.getters.loggedinUser;
             if (!stay.favorites) stay.favorites = []; //initialize array of favorites
             const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
@@ -105,7 +108,7 @@ export const stayStore = {
             else {
                 const idx = stay.favorites.findIndex(
                     (entity) => entity._id === user._id
-                );
+                );  
                 stay.favorites.splice(idx, 1);
             }
 

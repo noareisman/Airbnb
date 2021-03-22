@@ -58,7 +58,12 @@ export default {
       Swal.fire('Its better to sign in :)')
         return
       }
-      await this.$store.dispatch({ type: "toggleLike", stay });
+      try{
+        await this.$store.dispatch({ type: "toggleLike", stay });
+      }
+      catch(err){
+        console.log(err)
+      }
     },
   },
   computed: {
