@@ -6,4 +6,12 @@
   @function em($pixels, $context: 16px) {
     @return ($pixels/$context) * 1em;
   }
+
+  // @function botton($clr1,$clr2,$gradient-dist){
+  //   .dynamic-clr-btn{ 
+  // background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%);
+  // --mouse-x:98.3125;
+  // --mouse-y:47.5407;
+  // }
+  // background-image: var(--dls19-brand-gradient-radial, radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% )) !important;
   

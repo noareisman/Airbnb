@@ -50,12 +50,15 @@
     <review-list :reviews="this.reviews" />
     <div>
       <h3>Add Your Review:</h3>
-      <el-input class="txt-input" type="textarea" :rows="2" placeholder="Please input"
+      <div class="flex">
+      <el-input class="txt-input" type="textarea" :rows="2" placeholder="Share your experience here..."
         v-model="review.reviewToAdd">
       </el-input>
+      <review-star-input/> 
       <button class="btn add-review-btn" @click="postReview()">
         Add Review
       </button>
+      </div>
     </div>
         </div>
 
@@ -96,6 +99,7 @@ import { stayService } from "../services/stay.service.js";
 // import { utilService } from "../services/util.service.js";
 import appChat from '../cmps/app-chat.vue';
 import popUp from '../cmps/pop-up.vue'
+import reviewStarInput from '../cmps/review-star-input.vue'
 
 export default {
   name: "stay-details",
@@ -127,17 +131,17 @@ export default {
     contactHost() {
       var msg = {
         txt: this.contactHostMsg,
-        buyerId: this.buyerId,
+        buyerId: this.buyer._id,
         hostId: this.stay.host_id,
         stayId: this.stay._id,
         date: Date.now(),
       };
       this.$store.dispatch({ type: "contactHost", msg });
     },
-    postReview() {
+    async postReview() {
       var review = {
         txt: this.review.reviewToAdd,
-        buyerId: this.buyerId,
+        buyer: this.buyer,
         hostId: this.stay.host._id,
         stay: this.stay,
         time: Date.now(),
@@ -151,9 +155,12 @@ export default {
           Accessibility: 3,
         }
       };
-      console.log('detail',review);
-      this.$store.dispatch({ type: "postReview",review });
-      this.reviews=this.stayService.getById(review.stay._id).reviews 
+      try{
+      const updatedStay= await this.$store.dispatch({ type: "postReview",review });
+      this.stay=updatedStay;
+      }catch(err){
+        console.log('could not update stay with new review:',err);
+      }
     },
     async toggleLike() {
       this.isLiked = !this.isLike;
@@ -189,7 +196,7 @@ export default {
       this.$store.dispatch({ type: "loadAllOrders", stayId: stay._id });
     }});
     if (this.$store.getters.loggedinUser) {
-      this.buyerId = this.$store.getters.loggedinUser._id;
+      this.buyer = this.$store.getters.loggedinUser;
     }
   },
   components: {
@@ -202,7 +209,8 @@ export default {
     starRating,
     stayAmenities,
     appChat,
-    popUp
+    popUp,
+    reviewStarInput
   },
 };
 </script>

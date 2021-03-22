@@ -9,12 +9,10 @@ export const stayService = {
     remove,
     save,
     getReviewTemplate,
-    addReview
 } 
 
-
  function query(filterBy = { location: '', guests: 0 }) {
-     console.log("🚀 ~ file: stay.service.js ~ line 17 ~ query ~ filterBy ", filterBy )
+    console.log("🚀 ~ file: stay.service.js ~ line 17 ~ query ~ filterBy ", filterBy )
     var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}`
     return httpService.get(`stay${queryStr}`)
 
@@ -49,7 +47,6 @@ function remove(stayId) {
 
 }
 
-
 async function save(stay) {
     if (stay._id) {
         return storageService.put('stay', stay)
@@ -62,16 +59,9 @@ async function save(stay) {
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
-async function addReview(review,stay){
-    var stayToUpdate=getById(stay._id)
-    stayToUpdate.reviews.unshift(review)
-    save(stay)
-    return
-}
-
-
 function getReviewTemplate() {
     return review = {
+        currStay:null,
         id:utilService.makeId(),
         txt: '',
         avgRate: null,
@@ -81,7 +71,7 @@ function getReviewTemplate() {
             Communication: null,
             Location: null,
             CheckIn: null,
-            accessibility: null
+            Accessibility: null
         },
         by: {
             _id: '',

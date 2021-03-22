@@ -6,7 +6,6 @@ export const stayStore = {
     state: {
         stays: [],
         filterBy: {},
-        // currStay
     },
     getters: {
         staysForDisplay(state) {
@@ -34,10 +33,7 @@ export const stayStore = {
             });
            });
             return stays
-           
-        },
- 
-        
+        }, 
     },
 
     mutations: {
@@ -67,10 +63,9 @@ export const stayStore = {
                 throw new Error('Cannot load stays');
             }
         },
-        postReview(context,{review}){
-            var newReview=stayService.getReviewTemplate
-            console.log(review);
-            newReview={
+        async postReview(context,{review}){
+            console.log(review)
+            var newReview={
                 currStay:review.stay,
                 id:utilService.makeId(),
                 txt: review.txt,
@@ -90,10 +85,16 @@ export const stayStore = {
                     time:Date.now()
                 }
             }
-            console.log(newReview);
-            stayService.addReview(newReview,currStay)
+            newReview.currStay.reviews.unshift(newReview)
+            try{
+                const updatedStay= await stayService.save(currStay)
+                commit({type:'updateStays',updatedStay})
+                return updatedStay
+            }catch (err){
+                throw err
+            }
+            // const updatedStay= await stayService.addReview(newReview,currStay)
         },
-        // loadStay?
         async toggleLike(context, { stay }) {
             const user = context.getters.loggedinUser;
             if (!stay.favorites) stay.favorites = []; //initialize array of favorites
@@ -107,8 +108,6 @@ export const stayStore = {
                 );
                 stay.favorites.splice(idx, 1);
             }
-            console.log(user)
-            console.log()
 
             try {
                 const updatedStay = await stayService.save(stay)
