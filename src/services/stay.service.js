@@ -15,7 +15,7 @@ export const stayService = {
     remove,
     save,
     getReviewTemplate,
-    addReview
+    // addReview
 }
 
 
@@ -70,10 +70,21 @@ async function save(stay) {
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
+// function getReviewTemplate() {
+//     return review = {
+//         currStay:null,
+//         id:utilService.makeId(),
+// async function addReview(review, stay) {
+//     var stayToUpdate = getById(stay._id)
+//   save(stay)
+//     return  stayToUpdate.reviews.unshift(review)
+    
+// }
+// 
+
 function getReviewTemplate() {
     return review = {
-        currStay:null,
-        id:utilService.makeId(),
+        id: utilService.makeId(),
         txt: '',
         avgRate: null,
         category: {
