@@ -5,7 +5,8 @@ export const userStore = {
     state: {
         // loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
         users: [],
-        user: userService.getLoggedinUser()
+        user: userService.getLoggedinUser(),
+        msg: ''
     },
     getters: {
         users(state) {
@@ -15,6 +16,9 @@ export const userStore = {
             // return state.loggedInUser;
             return state.user;
         },
+        msg(state){
+            return state.msg;
+        }
         // isAdmin(state) {
         //     return state.loggedInUser.isAdmin
         // },
@@ -32,15 +36,18 @@ export const userStore = {
         },
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
+        },
+        setMsg(state, { msg }){
+            state.msg = msg
         }
     },
     actions: {
         async login({ commit }, { userCred }) {
             try {
-                console.log( userCred);
                 const user = await userService.login(userCred);
-                commit({ type: 'setUser', user })
-                return user;
+                if (user._id) commit({ type: 'setUser', user })
+                else commit({ type: 'setMsg', msg: user })
+                return user
             } catch (err) {
                 console.log('userStore: Error in login', err)
                 throw err
@@ -50,7 +57,8 @@ export const userStore = {
             try {
                 userCred = JSON.parse(JSON.stringify(userCred))
                 const user = await userService.signup(userCred)
-                commit({ type: 'setUser', user })
+                if (user._id) commit({ type: 'setUser', user })
+                else commit({ type: 'setMsg', msg: user })
                 return user;
             } catch (err) {
                 console.log('userStore: Error in signup', err)
@@ -62,6 +70,7 @@ export const userStore = {
             try {
                 await userService.logout()
                 commit({ type: 'setUser', user: null })
+                commit({ type: 'setMsg', msg: '' })
             } catch (err) {
                 console.log('userStore: Error in logout', err)
                 throw err

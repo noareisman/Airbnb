@@ -36,6 +36,7 @@ export const stayStore = {
             return stays
            
         },
+ 
         
     },
 
@@ -118,20 +119,7 @@ export const stayStore = {
                 throw err
             }
         },
-        // getAllUserLike(context){
-        //     const userId = context.getters.loggedinUser._id;
-        //     console.log(userId)
-        //     const stays = []
-        //     context.state.stays.forEach(stay => {
-        //     stay.favorites.forEach(fav => {
-        //         if(fav.userId === userId){
-        //             stays.push(stay)
-        //         }
-        //     });
-        //    });
-        //     return stays
-           
-        // },
+    
         checkAvailability(context, stayId) {
 
         },

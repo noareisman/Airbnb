@@ -2,9 +2,9 @@ html {
     overflow: overlay;
 }
 
-.main-layout{
+.main-layout {
     display: grid;
-    grid-template-columns:minmax(2rem,1fr) minmax(auto,1100px) minmax( 2rem,1fr);
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1200px) minmax(2rem, 1fr);
 }
 
 .main-layout>.full {
@@ -15,18 +15,18 @@ html {
     grid-column: 2;
 }
 
-.hero{
+.hero {
     margin-bottom: 60px;
     height: 80vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,.123),rgba(0,0,0,.178)),url(https://cdn57.androidauthority.net/wp-content/uploads/2019/12/Home-available-on-BoutiqueHomes.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .123), rgba(0, 0, 0, .178)), url(https://cdn57.androidauthority.net/wp-content/uploads/2019/12/Home-available-on-BoutiqueHomes.jpg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     // background-attachment: fixed;
 }
 
-.filter-container{
+.filter-container {
     display: flex;
     // justify-content: center;
     // align-content: center;
@@ -34,10 +34,10 @@ html {
     cursor: pointer
 }
 
-.scroll-serarch{
-    transform-origin: 50% 0!important;
+.scroll-serarch {
+    transform-origin: 50% 0 !important;
     // transform: scale(.42,.69) translateY(-58px)!important;
-    transition: transform .25s ease,opacity 50ms ease 20ms,visibility 0ms .15s!important
+    transition: transform .25s ease, opacity 50ms ease 20ms, visibility 0ms .15s !important
 }
 
 .filter-container .wrapper {
@@ -46,7 +46,7 @@ html {
     display: flex;
     align-items: center;
 }
-    
+
 .filter-container .wrapper .box {
     line-height: 18px;
     padding: 10px;
@@ -55,7 +55,7 @@ html {
     padding-inline-start: 24px
 }
 
-.filter-container .wrapper .box:first-child{
+.filter-container .wrapper .box:first-child {
     // min-width: 250px;
     width: 250px;
 }
@@ -79,7 +79,7 @@ html {
     justify-content: center;
     align-items: end;
     height: 100%;
-    
+
 }
 
 .hero .h1-container h1 {
@@ -92,10 +92,10 @@ html {
     color: #f05;
     font-size: 4rem;
     font-family: serif;
-    
+
 }
 
-.justify-center{
+.justify-center {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -103,7 +103,7 @@ html {
 
 .filter-container .wrapper .box .title {
     font-weight: 800;
-    line-height: 16px;
+    line-height: 12px;
     padding-bottom: 2px;
     -webkit-padding-end: 60px;
     padding-inline-end: 60px;
@@ -120,7 +120,8 @@ html {
     font-size: 14px;
 }
 
-.filter-container .wrapper .box:first-child:after, .filter-container .wrapper .box:nth-child(2):after {
+.filter-container .wrapper .box:first-child:after,
+.filter-container .wrapper .box:nth-child(2):after {
     content: "";
     position: absolute;
     right: 0;
@@ -129,46 +130,48 @@ html {
 }
 
 
-.wrapper{
+.wrapper {
     display: flex;
-    height:80px;
+    height: 65px;
 }
 
-.dates , .guests , .location{
+.dates,
+.guests,
+.location {
     display: flex;
     flex-direction: column;
     padding: 1px 2px;
 }
 
-.box{
+.box {
     width: 250px;
 }
 
-.search-icon{
+.search-icon {
     justify-content: center;
     align-items: center;
     align-content: center;
     padding: 10px;
 }
 
-.btn-search{
-background-color: #ff385c;
-border-radius: 50%;
-width: 40px!important;
-height: 40px;
-display: flex;
-justify-content: center;
-align-items: center;
+.btn-search {
+    background-color: #ff385c;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.location-header{
+.location-header {
     font-size: 2rem;
     line-height: 2.25rem;
     color: #222;
     margin-bottom: 35px
 }
 
-.explore-crad{
+.explore-crad {
     grid: 2;
     display: flex;
     flex-wrap: wrap;
@@ -179,26 +182,26 @@ align-items: center;
     color: #222;
 }
 
-.card-container{
+.card-container {
     display: flex;
     justify-content: space-between;
 }
 
-.explore-img{
+.explore-img {
     width: 330px;
     height: 220px;
     border-radius: 13px;
     cursor: pointer;
 }
 
-.location-txt{
-    font-size:20px;
+.location-txt {
+    font-size: 20px;
     font-weight: 700;
     padding: 4px 0px 4px 4px;
     cursor: pointer;
 }
 
-.router{
+.router {
     text-decoration: none;
     color: rgb(41, 40, 40);
 }

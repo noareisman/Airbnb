@@ -6,14 +6,13 @@
     
     .user-profile{
         position: sticky;
-        top: 25%;
+        top: 22.6%;
         grid-column: 2 / 3;
-        grid-row: 1 / 2;
+        // grid-row: 1 / 2;
         padding: 3%;
         border: 1px solid gray;
         border-radius: 10px;
         height: fit-content;
-        margin-top: 20%;
         text-align: center;
         
         img {

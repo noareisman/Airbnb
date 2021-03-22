@@ -1,8 +1,8 @@
-import { storageService } from './async-storage.service'
+// import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
 // const gUsers = require('../../data/user.json');
-const gUsers = require ('../../data/airbnb.json')
+const gUsers = require('../../data/airbnb.json')
 
 
 
@@ -24,59 +24,72 @@ window.userService = userService
 // userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 100})
 
 async function getUsers() {
-    // return httpService.get(`user`)
-    let users = await storageService.query('user')
-    if (!users || !users.length) {
-        users = JSON.parse(JSON.stringify(gUsers.user))
-        storageService.save('user', users)
-    }
-    return users;
+    return httpService.get(`user`)
+    // let users = await storageService.query('user')
+    // if (!users || !users.length) {
+    //     users = JSON.parse(JSON.stringify(gUsers.user))
+    //     storageService.save('user', users)
+    // }
+    // return users;
 }
 
 async function getById(userId) {
-    // return httpService.get(`user/${userId}`)
-    const user = await storageService.get('user', userId);
-    return user;
+    return httpService.get(`user/${userId}`)
+    // const user = await storageService.get('user', userId);
+    // return user;
 }
 
 function remove(userId) {
-    // return httpService.delete(`user/${userId}`)
-    return storageService.remove('user', userId)
+    return httpService.delete(`user/${userId}`)
+    // return storageService.remove('user', userId)
 }
 
 async function update(user) {
-    return storageService.put('user', user)
-    // user = await httpService.put(`user/${user._id}`, user)
+    // return storageService.put('user', user)
+    user = await httpService.put(`user/${user._id}`, user)
 
     // Handle case in which admin updates other user's details
     // if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
 async function login(userCred) {
-    const users = await storageService.query('user');
-    const user = users.find(user => user.username === userCred.username);
-    return _saveLocalUser(user);
+    const user = await httpService.post('auth/login', userCred);
+    if (user) return _saveLocalUser(user);
+    else return 'Incorrect username or password.';
 
-    // const user = await httpService.post('auth/login', userCred)
-    // if (user) return _saveLocalUser(user)
+    // return
+    // const users = await storageService.query('user');
+    // const user = users.find(user => user.username === userCred.username && user.password === userCred.password);
+    // if (!user) return 'Incorrect username or password.';
+    // else return _saveLocalUser(user);
+
 }
 
 async function signup(userCred) {
-    const user = await storageService.post('user', userCred)
-    // const user = await httpService.post('auth/signup', userCred)
-    // TODO
-    user.myReservations = [];
-    user.saved = [];
-    user.imgProfileSrc = 'src';
-    user.isAdmin = false;
-    gUsers.user.push(user);
-    storageService.save('user', gUsers.user)
+
+
+    // const users = await storageService.query('user');
+    // gUsers.user.push(user);
+    // const msg = 'Username is alrady taken.'
+    // let user;
+    // users.forEach(u => {
+    //     if (u.username === userCred.username) {
+    //         user = msg
+    //         return;}
+    // });
+    // if (user === msg) return msg;
+    // const user = await storageService.post('user', userCred)
+    userCred.imgUrl = require(`@/assets/imgs/icons/userGuest.jpg`);
+    userCred.isAdmin = false;
+    userCred.messages = {};
+    const user = await httpService.post('auth/signup', userCred)
+    // storageService.save('user', gUsers.user)
     return _saveLocalUser(user)
 }
 
 async function logout() {
     sessionStorage.clear()
-    // return await httpService.post('auth/logout')
+    return await httpService.post('auth/logout')
 }
 
 function _saveLocalUser(user) {

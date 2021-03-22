@@ -1,6 +1,7 @@
 .wrapper {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     position: relative;
+    
 }
 
 .advanced-input {
@@ -86,4 +87,25 @@
 
 .title-sticky{
     margin-inline-start: 20px;
+}
+
+.out{
+    border: 1px solid red;
+}
+
+.el-date-editor .el-range__icon {
+    margin-left:-12p
+
+}
+.filter-container .wrapper .box .title{
+    margin-left: 3px;
+}
+
+
+.secondary{
+    position: fixed;
+    top:80px;
+    z-index: 1000;
+
+
 }

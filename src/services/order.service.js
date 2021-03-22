@@ -29,6 +29,7 @@ async function query() {
     // }
     // return orders;
 }
+
 async function save(order) {
     // return storageService.put('order', order);
     if (order._id) {
@@ -41,7 +42,7 @@ async function save(order) {
 function getNewOrder() {
     return order = {
         _id: '',
-        createdAt:null,
+        createdAt: null,
         buyer: {
             _id: '',
             fullname: ''

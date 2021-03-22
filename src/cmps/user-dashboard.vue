@@ -10,9 +10,15 @@
     <el-button title="Explore" type="primary" icon="el-icon-star-off" circle></el-button>
           </router-link>
    </section>
+   
     <el-row>
-      <el-col
-        :span="8"
+          <h2> sort By</h2>
+    <div class="sort-container"> 
+  <el-button class="sort-btn" @click="sortBy('price')" round>Price</el-button>
+  <el-button class="sort-btn" @click="sortBy('rate')" round>Popularity</el-button>
+  </div>
+      <el-col style="margin-bottom:20px"
+        :span="12"
         v-for="(stayLiked, index) in likes"
         :key="index"
         :offset="index > 0 ? 2 : 2"
@@ -61,6 +67,14 @@ export default {
       return likes;
     },
   },
+  methods:{
+      sortBy(sortBy){
+      if(sortBy === 'price')
+      this.$store.getters.sortByPrice
+      else if(sortBy ==='rate')  this.$store.getters.sortByPopularity
+
+    }
+  }
 };
 </script>
 
