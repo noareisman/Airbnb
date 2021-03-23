@@ -48,19 +48,8 @@
     <div class="review-section bottom-border">
     <review-categories :reviews="this.reviews" />
     <review-list :reviews="this.reviews" />
-    <div>
-      <h3>Add Your Review:</h3>
-      <div class="flex">
-      <el-input class="txt-input" type="textarea" :rows="2" placeholder="Share your experience here..."
-        v-model="review.reviewToAdd">
-      </el-input>
-      <review-star-input/> 
-      <button class="btn add-review-btn" @click="postReview()">
-        Add Review
-      </button>
-      </div>
+    <review-add @postReview="postReview"/>
     </div>
-        </div>
 
     <!-- <div>
       Contact host
@@ -99,7 +88,7 @@ import { stayService } from "../services/stay.service.js";
 // import { utilService } from "../services/util.service.js";
 import appChat from '../cmps/app-chat.vue';
 import popUp from '../cmps/pop-up.vue'
-import reviewStarInput from '../cmps/review-star-input.vue'
+import reviewAdd from '../cmps/review-add.vue'
 
 export default {
   name: "stay-details",
@@ -110,7 +99,6 @@ export default {
       stay: null,
       contactHostMsg: '',
       review: {
-        reviewToAdd: '',
         avgRate: null,
         category: {
           Cleanliness: null,
@@ -139,20 +127,21 @@ export default {
       this.$store.dispatch({ type: "contactHost", msg });
     },
     async postReview() {
+      console.log(reviewToAdd);
       var review = {
-        txt: this.review.reviewToAdd,
+        txt: this.reviewToAdd.reviewTxt,
         buyer: this.buyer,
         hostId: this.stay.host._id,
         stay: this.stay,
         time: Date.now(),
-        avgRate:3,
+        avgRate:this.reviewToAdd.userReviewAvgRate,
         category:{
-          Cleanliness: 3,
-          Accuracy: 3,
-          Communication: 3,
-          Location: 3,
-          CheckIn: 3,
-          Accessibility: 3,
+          Cleanliness: this.reviewToAdd.categoryMap.Cleanliness,
+          Accuracy: this.reviewToAdd.categoryMap.Accuracy,
+          Communication: this.reviewToAdd.categoryMap.Communication,
+          Location: this.reviewToAdd.categoryMap.Location,
+          CheckIn: this.reviewToAdd.categoryMap.CheckIn,
+          Accessibility: this.reviewToAdd.categoryMap.Accessibility,
         }
       };
       try{
@@ -210,7 +199,7 @@ export default {
     stayAmenities,
     appChat,
     popUp,
-    reviewStarInput
+    reviewAdd
   },
 };
 </script>

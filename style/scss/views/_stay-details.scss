@@ -13,6 +13,22 @@
     }
 }
 
+.txt-input{
+    max-width:50%;
+}
+
+.review-star-input>*{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 50px;
+    width: 550px;
+}
+
+.add-review-btn{
+    width: fit-content;
+}
+
 .review-card-grid{
     margin-bottom:35px;
 }
