@@ -11,31 +11,31 @@ export const stayStore = {
         staysForDisplay(state) {
             return state.stays;
         },
-        sortByPrice(state){
-            return state.stays.sort((a,b) =>{
+        sortByPrice(state) {
+            return state.stays.sort((a, b) => {
                 return a.price - b.price
             })
         },
-        sortByPopularity(state){
-        const x =  state.stays.sort((a,b) =>{
-                return  b.reviews.length -  a.reviews.length
+        sortByPopularity(state) {
+            const x = state.stays.sort((a, b) => {
+                return b.reviews.length - a.reviews.length
             })
             console.log(x)
             return x
         },
-        getAllUserLike( state, getters ){
+        getAllUserLike(state, getters) {
             const userId = getters.loggedinUser._id;
             console.log(userId)
             const stays = []
             state.stays.forEach(stay => {
-            stay.favorites.forEach(fav => {
-                if(fav.userId === userId){
-                    stays.push(stay)
-                }
+                stay.favorites.forEach(fav => {
+                    if (fav.userId === userId) {
+                        stays.push(stay)
+                    }
+                });
             });
-           });
             return stays
-        }, 
+        },
     },
 
     mutations: {
@@ -50,9 +50,10 @@ export const stayStore = {
             console.log(updatedStay)
         },
 
+
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 }}) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 } }) {
             try {
                 const stays = await stayService.query(filterBy)
                 commit({
@@ -65,11 +66,10 @@ export const stayStore = {
                 throw new Error('Cannot load stays');
             }
         },
-        async postReview(context,{review}){
-            console.log(review)
-            var newReview={
-                currStay:review.stay,
-                id:utilService.makeId(),
+        async postReview(context, { review }) {
+            var newReview = {
+                currStay: review.stay,
+                id: utilService.makeId(),
                 txt: review.txt,
                 avgRate: review.avgRate,
                 category: {
@@ -84,53 +84,59 @@ export const stayStore = {
                     _id: review.buyer._id,
                     fullname: review.buyer.fullname,
                     imgUrl: review.buyer.imgUrl,
-                    time:Date.now()
+                    time: Date.now()
                 }
             }
-            newReview.currStay.reviews.unshift(newReview)
-            try{
-                const updatedStay= await stayService.save(currStay)
-                commit({type:'updateStays',updatedStay})
-                return updatedStay
-            }catch (err){
-                throw err
-            }
-            // const updatedStay= await stayService.addReview(newReview,currStay)
-        },
-        async toggleLike(context, { stay }) {
-            console.log(context)
-            const user = context.getters.loggedinUser;
-            if (!stay.favorites) stay.favorites = []; //initialize array of favorites
-            const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
-                return element.userId === user._id;
-            });
-            if (!isLiked) stay.favorites.push({ userId: user._id }); 
-            else {
-                const idx = stay.favorites.findIndex(
-                    (entity) => entity._id === user._id
-                );  
-                stay.favorites.splice(idx, 1);
-            }
-
+            newReview.currStay.reviews.unshift(newReview)///////////////////////////////pointer???? is this OK?
             try {
-                const updatedStay = await stayService.save(stay)
+                const updatedStay = await stayService.save(currStay)
                 context.commit({ type: 'updateStays', updatedStay })
+                return updatedStay
+            } catch (err) {
+                console.log('from Store: Cannot post review', err);
+                throw new Error('Cannot post review');
             }
-            catch (err) {
-                console.log('cannt update stay')
-                throw err
-            }
-        },
-    
-        checkAvailability(context, stayId) {
-
-        },
-        sendMsgToHost(context, payload) {
-
-        },
-        addReview(context, payload) {
-
         }
+        // const updatedStay= await stayService.addReview(newReview,currStay)
+    },
+    async saveStay(context, { stay }) {
+        try {
+            const savededStay = await stayService.save(stay)
+            return savededStay
+        } catch (err) {
+            console.log('from Store: Cannot save stay', err);
+            throw new Error('Cannot post review');
+        }
+    },
+    async toggleLike(context, { stay }) {
+        console.log(context)
+        const user = context.getters.loggedinUser;
+        if (!stay.favorites) stay.favorites = []; //initialize array of favorites
+        const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
+            return element.userId === user._id;
+        });
+        if (!isLiked) stay.favorites.push({ userId: user._id });
+        else {
+            const idx = stay.favorites.findIndex(
+                (entity) => entity._id === user._id
+            );
+            stay.favorites.splice(idx, 1);
+        }
+        try {
+            const updatedStay = await stayService.save(stay)
+            context.commit({ type: 'updateStays', updatedStay })
+        }
+        catch (err) {
+            console.log('cannt update stay')
+            throw err
+        }
+    },
 
-    }
+    checkAvailability(context, stayId) {
+
+    },
+    sendMsgToHost(context, payload) {
+
+    },
+
 }

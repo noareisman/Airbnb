@@ -60,7 +60,6 @@ export default {
   },
   methods:{
       addReview(){
-        console.log('1',this.reviewToAdd)
       var sum=0;
       var keysCount=0;
       for (var category in this.reviewToAdd.categoryMap){
@@ -68,9 +67,7 @@ export default {
         sum+=this.reviewToAdd.categoryMap[category]
       }
       this.reviewToAdd.userReviewAvgRate=sum/keysCount;
-        console.log('2',this.reviewToAdd)
       this.$emit('postReview',this.reviewToAdd)
-        console.log('3',this.reviewToAdd)
       this.reviewToAdd={
         reviewTxt:'',
         categoryMap: {

@@ -15,6 +15,7 @@ export const stayService = {
     remove,
     save,
     getReviewTemplate,
+    getEmptyStay
     // addReview
 }
 
@@ -101,5 +102,30 @@ function getReviewTemplate() {
             imgUrl: '',
             time: Date.now()
         }
+    }
+}
+
+function getEmptyStay(){ 
+return stay= {
+    name: "",
+    imgUrls: [],
+    price: null,
+    summary: "",
+    capacity: 1,
+    favorites: [],
+    amenities: [],
+    host: {
+      _id: this.host._id,
+      fullname: this.host.fullname,
+      imgUrl: this.host.imgUrl,
+    },
+    loc: {
+      country: '',
+      countryCode: '',
+      address: '',
+      lat: null,
+      lng: null,
+    },
+    reviews: []
     }
 }
