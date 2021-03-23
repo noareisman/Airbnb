@@ -57,7 +57,7 @@ export default {
     navTo(ev) {
       switch (ev.target.textContent) {
         case "Messages":
-          // this.$router.push("/messages");
+          this.$router.push("/messages");
           break;
         case "Log-in":
           this.$router.push("/login");
@@ -67,7 +67,7 @@ export default {
           this.$store.dispatch({ type: "logout" });
           break;
         case "My profile":
-          this.$router.push("/user");
+          this.$router.push(`/user/${this.loggedInUser._id}`);
           break;
       }
     },
@@ -84,5 +84,8 @@ export default {
         return Object.keys(user.messages).length;
     },
   },
+  created(){
+    console.log(this.loggedInUser._id);
+  }
 };
 </script>
