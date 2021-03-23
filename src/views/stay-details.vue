@@ -48,7 +48,7 @@
     <div class="review-section bottom-border">
     <review-categories :reviews="this.reviews" />
     <review-list :reviews="this.reviews" />
-    <review-add @postReview="postReview"/>
+    <review-add @postReview="postReview"></review-add>
     </div>
 
     <!-- <div>
@@ -126,22 +126,21 @@ export default {
       };
       this.$store.dispatch({ type: "contactHost", msg });
     },
-    async postReview() {
-      console.log(reviewToAdd);
+     async postReview(postedReview) {
       var review = {
-        txt: this.reviewToAdd.reviewTxt,
+        txt: postedReview.reviewTxt,
         buyer: this.buyer,
         hostId: this.stay.host._id,
         stay: this.stay,
         time: Date.now(),
-        avgRate:this.reviewToAdd.userReviewAvgRate,
+        avgRate:postedReview.userReviewAvgRate,
         category:{
-          Cleanliness: this.reviewToAdd.categoryMap.Cleanliness,
-          Accuracy: this.reviewToAdd.categoryMap.Accuracy,
-          Communication: this.reviewToAdd.categoryMap.Communication,
-          Location: this.reviewToAdd.categoryMap.Location,
-          CheckIn: this.reviewToAdd.categoryMap.CheckIn,
-          Accessibility: this.reviewToAdd.categoryMap.Accessibility,
+          Cleanliness: postedReview.categoryMap.Cleanliness,
+          Accuracy: postedReview.categoryMap.Accuracy,
+          Communication: postedReview.categoryMap.Communication,
+          Location: postedReview.categoryMap.Location,
+          CheckIn: postedReview.categoryMap.CheckIn,
+          Accessibility: postedReview.categoryMap.Accessibility,
         }
       };
       try{
