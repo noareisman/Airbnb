@@ -13,22 +13,14 @@ export const userStore = {
             return state.users;
         },
         loggedinUser(state) {
-            // return state.loggedInUser;
             return state.user;
         },
         msg(state){
             return state.msg;
         }
-        // isAdmin(state) {
-        //     return state.loggedInUser.isAdmin
-        // },
-        // user(state) {
-        //     return state.user;
-        // }
     },
     mutations: {
         setUser(state, { user }) {
-            // state.loggedInUser = user
             state.user = user
         },
         setUsers(state, { users }) {
@@ -46,7 +38,10 @@ export const userStore = {
             try {
                 const user = await userService.login(userCred);
                 if (user._id) commit({ type: 'setUser', user })
-                else commit({ type: 'setMsg', msg: user })
+                else {
+                    console.log('user in else:',user);
+                    commit({ type: 'setMsg', msg: user })
+                }
                 return user
             } catch (err) {
                 console.log('userStore: Error in login', err)
@@ -70,7 +65,7 @@ export const userStore = {
             try {
                 await userService.logout()
                 commit({ type: 'setUser', user: null })
-                commit({ type: 'setMsg', msg: '' })
+                // commit({ type: 'setMsg', msg: '' })
             } catch (err) {
                 console.log('userStore: Error in logout', err)
                 throw err

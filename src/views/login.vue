@@ -18,14 +18,12 @@
         />
         <br />
         <button class="login-btn">Login</button>
-        <p
+        <!-- <p
           v-if="
             msg === 'Incorrect username or password.' ||
             msg === 'Please enter username and password.'
           "
-        >
-          {{ msg }}
-        </p>
+        > -->
       </form>
       <div class="middle-page flex">
         <div class="login-signup-supperline">
@@ -60,12 +58,7 @@
         />
         <br />
         <button>Signup</button>
-        <p
-          v-if="
-            msg === 'Please enter your fullname, username and password.' ||
-            msg === 'Username is alrady taken.'
-          "
-        >
+        <p>
           {{ msg }}
         </p>
       </form>
