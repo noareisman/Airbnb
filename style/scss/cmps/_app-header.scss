@@ -5,6 +5,22 @@
   background-color: white !important;
   position: sticky;
   top: 0;
+  .header-right-corner {
+    height: 100%;
+    align-items: center;
+
+    .new-host {
+      cursor: pointer;
+      font-weight: bolder;
+      padding: 13px;
+      border-radius: 25px;
+      margin-right: 10px;
+    }
+    
+    .new-host:hover {
+      background-color: rgb(228, 228, 228);
+    }
+  }
 }
 
 .logo {
