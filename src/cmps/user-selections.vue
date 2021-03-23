@@ -82,6 +82,20 @@ export default {
     numOfUserMesseges() {
         const user = this.loggedInUser;
         return Object.keys(user.messages).length;
+
+        //   const user = this.loggedInUser;
+        // // const user = await this.$store.getters.loggedinUser
+        // console.log(user, ' user')
+        // var sum = 0;
+        // for (const message in user.messages){
+        //   console.log(message, 'message')
+        //   message.forEach(element => {
+        //     if(element.status === 'unread'){
+        //       sum++;
+        //     }
+        //   });
+        // }
+        // return sum;
     },
   },
 };

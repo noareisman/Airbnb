@@ -1,13 +1,14 @@
 <template>
-  <div class="chat">
+  <div class="">
     <table v-if="messages">
-      <tr v-for="(massage, idx) in messages" :key="idx">
-        <td>from: {{ massage.from }} : {{ massage.txt }}</td>
+      <tr v-for="(messages, idx) in messages[topic]" :key="idx">
+        <td>from: {{ messages.from }} : {{ messages.txt }}</td>
       </tr>
-    </table>
-    <div class="user-chat">
+    </table> 
+    <div class="chat-container">
       <!-- <span v-if="isTyping"> User is typing..</span> -->
-      <input ref="input" type="text" v-model="msg.txt" />
+      <el-input ref="input" class="txt-input" type="textarea" :rows="8" placeholder="Your messege will be sent to the host..." v-model="msg.txt"/>
+      <!-- <input class="send-msg-input" ref="input" type="text"  /> -->
       <button @click="sendMsg">Send</button>
     </div>
   </div>
@@ -15,15 +16,16 @@
 
 <script>
 import { socketService } from "../services/socket.service.js";
+import {userService} from '../services/user.service.js'
 export default {
   name: "chatApp",
   props: {
-    stay: Object,
+    stay: Object, 
   },
   data() {
     return {
       messages: [],
-      msg: { from: "", txt: "" },
+      msg: { from: "", txt: "" , status:'read' },
       topic: "",
       // isTyping:false
     };
@@ -38,11 +40,28 @@ export default {
     focusInput() {
       this.$refs.input.focus();
     },
-    addMsg(msg) {
-      console.log("🚀 ~ file: app-chat.vue ~ line 42 ~ addMsg ~ msg", msg);
-      this.messages.push(msg);
-      this.$emit("updateUser", this.messages); //dispatch
+   async addMsg(msg) {
+      console.log(this.messages, 'this.messages')
+      console.log(this.topic , 'this.topic')
+      if(!this.messages[this.topic]) this.messages[this.topic] = []
+      this.messages[this.topic].unshift(msg);
+      const user = this.$store.getters.loggedinUser;
+      try{
+        await this.$store.dispatch({ type: "updateUser" , user });
+        if(this.stay.host._id === this.topic) return
+        const toUser = await userService.getById(this.stay.host._id)
+        if(!toUser.messages[this.topic]) toUser.messages[this.topic] = []
+        msg.status = 'unread';
+        toUser.messages[this.topic].unshift(msg)
+        console.log(toUser)
+         await this.$store.dispatch({ type: "updateUser" ,user:toUser });
+      }
+      catch(err){
+        console.log(err)
+      }
+      
     },
+
     // userTyping(istyping){
     //   this.isTyping = istyping
     // }
