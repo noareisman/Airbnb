@@ -6,6 +6,7 @@ import stayDetails from '../views/stay-details.vue'
 import stayEdit from '../views/stay-edit.vue'
 import userDetails from '../views/user-details.vue'
 import login from '../views/login.vue'
+import messages from '../views/messages.vue'
 
 Vue.use(VueRouter)
 
@@ -32,15 +33,18 @@ const routes = [
     component: stayEdit
   },
   {
-    // path: '/user/:id',
-    path: '/user',
+    path: '/user/:id',
     component: userDetails
   },
   {
     path: '/login',
     component: login
   },
-
+  {
+    path: '/messages',
+    component: messages
+  }
+  
 ]
 
 const router = new VueRouter({

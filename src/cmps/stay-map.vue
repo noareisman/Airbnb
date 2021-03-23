@@ -47,6 +47,7 @@ export default {
     },
   },
   created(){
+    console.log(this.position);
     this.position.lng=this.location.lng
     this.position.lat=this.location.lat
   }
