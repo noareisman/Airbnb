@@ -27,7 +27,9 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
-    <span v-if="loggedInUser && numOfUserMesseges" class="badge" title="New Message">{{numOfUserMesseges}}</span>
+        <router-link class="router" :to="`/messages`">
+    <span  v-if="loggedInUser && numOfUserMesseges " class="badge" title="New Message">{{numOfUserMesseges}}</span>
+        </router-link>
     </el-dropdown>
   </section>
 </template>

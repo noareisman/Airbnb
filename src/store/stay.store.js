@@ -33,12 +33,21 @@ export const stayStore = {
            });
             return stays
         }, 
+
+    
     },
 
     mutations: {
         setStays(state, { stays }) {
             state.stays = stays;
 
+        },
+        filterByPrice(state, {price}){
+        const staysToShow =  state.stays
+         const stays =  staysToShow.forEach(stay => {
+              return stay.price < price
+          }); 
+          return stays
         },
 
         updateStays(state, { updatedStay }) {
@@ -48,8 +57,9 @@ export const stayStore = {
 
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 }}) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0}}) {
             try {
+                console.log(filterBy)
                 const stays = await stayService.query(filterBy)
                 commit({
                     type: 'setStays',

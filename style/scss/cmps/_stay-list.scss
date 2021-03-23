@@ -11,7 +11,7 @@ img{
     gap: 15px;
     margin: 0;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .sort-container{
@@ -20,7 +20,27 @@ img{
   
 }
 .sort-btn{
-    width: 150px;
+    width: 100px;
+}
+
+.block-range{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;    
+    padding: 10px 20px;
+    color: rgb(175, 175, 175);
+
+    
+}
+
+.search-btn{
+    align-self: center;
+    color: rgb(175, 175, 175);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;    
+
 }
 
 
