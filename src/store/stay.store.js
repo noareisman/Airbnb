@@ -16,16 +16,13 @@ export const stayStore = {
                 return a.price - b.price
             })
         },
-        sortByPopularity(state) {
-            const x = state.stays.sort((a, b) => {
-                return b.reviews.length - a.reviews.length
+        sortByPopularity(state){
+        return state.stays.sort((a,b) =>{
+                return  b.reviews.length -  a.reviews.length
             })
-            console.log(x)
-            return x
         },
         getAllUserLike(state, getters) {
             const userId = getters.loggedinUser._id;
-            console.log(userId)
             const stays = []
             state.stays.forEach(stay => {
                 stay.favorites.forEach(fav => {
@@ -35,7 +32,9 @@ export const stayStore = {
                 });
             });
             return stays
-        },
+        }, 
+
+    
     },
 
     mutations: {
@@ -43,18 +42,25 @@ export const stayStore = {
             state.stays = stays;
 
         },
+        filterByPrice(state, {price}){
+        const staysToShow =  state.stays
+         const stays =  staysToShow.forEach(stay => {
+              return stay.price < price
+          }); 
+          return stays
+        },
 
         updateStays(state, { updatedStay }) {
             const idx = state.stays.findIndex(({ _id }) => _id === updatedStay._id);
             state.stays.splice(idx, 1, updatedStay);
-            console.log(updatedStay)
         },
 
 
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 } }) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0}}) {
             try {
+                console.log(filterBy)
                 const stays = await stayService.query(filterBy)
                 commit({
                     type: 'setStays',
@@ -87,7 +93,30 @@ export const stayStore = {
                     time: Date.now()
                 }
             }
-            newReview.currStay.reviews.unshift(newReview)///////////////////////////////pointer???? is this OK?
+            newReview.currStay.reviews.unshift(newReview)
+            try{
+                const updatedStay= await stayService.save(currStay)
+                commit({type:'updateStays',updatedStay})
+                return updatedStay
+            }catch (err){
+                throw err
+            }
+            // const updatedStay= await stayService.addReview(newReview,currStay)
+        },
+        async toggleLike(context, { stay }) {
+            const user = context.getters.loggedinUser;
+            if (!stay.favorites) stay.favorites = []; //initialize array of favorites
+            const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
+                return element.userId === user._id;
+            });
+            if (!isLiked) stay.favorites.push({ userId: user._id }); 
+            else {
+                const idx = stay.favorites.findIndex(
+                    (entity) => entity._id === user._id
+                );  
+                stay.favorites.splice(idx, 1);
+            }
+
             try {
                 const updatedStay = await stayService.save(currStay)
                 context.commit({ type: 'updateStays', updatedStay })

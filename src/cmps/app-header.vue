@@ -14,8 +14,12 @@
       </el-menu-item>
 
     </el-menu>
-
+    <div class="header-right-corner flex">
+      <div class="new-host">
+        Become a host
+      </div>
     <user-selections />
+    </div>
   </div>    
   </header>
 </template>

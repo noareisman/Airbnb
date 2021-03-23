@@ -51,8 +51,8 @@
     <review-add @postReview="postReview"></review-add>
     </div>
 
-    <!-- <div>
-      Contact host
+    <div> 
+      <!-- Contact host
       <el-input
         type="textarea"
         :rows="2"
@@ -64,14 +64,16 @@
         Send message
       </button> -->
 
-       <!-- <button class="call-to-action-btn" @click="chatModal">
+       <button class="call-to-action-btn" @click="chatModal">
         send message to
       </button>
-          <pop-up> -->
+          <pop-up> 
             <!-- @updateToy="updateToy"  -->
-      <!-- <app-chat :stay="stay" slot="main" v-if="onChat" />
-    </pop-up> -->
-    <!-- </div> -->
+      <app-chat :stay="stay" slot="main" v-if="onChat" />
+    </pop-up> 
+    </div>
+
+
     <stay-map :location="stay.loc" />
   </section>
 </template> 
@@ -142,7 +144,7 @@ export default {
           CheckIn: postedReview.categoryMap.CheckIn,
           Accessibility: postedReview.categoryMap.Accessibility,
         }
-      };
+      }; 
       try{
       const updatedStay= await this.$store.dispatch({ type: "postReview",review });
       this.stay=updatedStay;

@@ -1,0 +1,46 @@
+.msg-content{
+    margin:0px 0px 20px 0px;
+    background-color: rgb(245, 244, 244);
+    padding: 10px 10px 10px 25px;
+    font-size: 12px;
+    
+}
+
+.time-msg{
+    font-size: 8px;
+}
+
+.from-msg{
+    font-weight: bold;
+}
+
+.msg-txt{
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-title{
+    font-size: 12px;
+    margin-inline-start: 10px;
+    line-height: 40px ;
+}
+
+.msg-from{
+    padding-left: 25px;
+}
+
+.send-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reply-input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}

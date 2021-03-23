@@ -27,7 +27,9 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
-    <span v-if="loggedInUser && numOfUserMesseges" class="badge" title="New Message">{{numOfUserMesseges}}</span>
+        <router-link class="router" :to="`/messages`">
+    <span  v-if="loggedInUser && numOfUserMesseges " class="badge" title="New Message">{{numOfUserMesseges}}</span>
+        </router-link>
     </el-dropdown>
   </section>
 </template>
@@ -82,6 +84,20 @@ export default {
     numOfUserMesseges() {
         const user = this.loggedInUser;
         return Object.keys(user.messages).length;
+
+        //   const user = this.loggedInUser;
+        // // const user = await this.$store.getters.loggedinUser
+        // console.log(user, ' user')
+        // var sum = 0;
+        // for (const message in user.messages){
+        //   console.log(message, 'message')
+        //   message.forEach(element => {
+        //     if(element.status === 'unread'){
+        //       sum++;
+        //     }
+        //   });
+        // }
+        // return sum;
     },
   },
   created(){

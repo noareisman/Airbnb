@@ -1,20 +1,29 @@
 <template>
-  <div class="chat">
+  <div class="">
     <table v-if="messages">
-      <tr v-for="(massage, idx) in messages" :key="idx">
-        <td>from: {{ massage.from }} : {{ massage.txt }}</td>
+      <tr v-for="(messages, idx) in messages[topic]" :key="idx">
+        <td>from: {{ messages.from }} : {{ messages.txt }}</td>
       </tr>
     </table>
-    <div class="user-chat">
+    <div class="chat-container">
       <!-- <span v-if="isTyping"> User is typing..</span> -->
-      <input ref="input" type="text" v-model="msg.txt" />
-      <button @click="sendMsg">Send</button>
+      <el-input
+        ref="input"
+        class="txt-input"
+        type="textarea"
+        :rows="8"
+        placeholder="Your messege will be sent to the host..."
+        v-model="msg.txt"
+      />
+      <el-button @click.native="sendMsg" type="primary" plain icon="el-icon-message" circle ></el-button>
     </div>
   </div>
 </template> 
 
 <script>
 import { socketService } from "../services/socket.service.js";
+import { userService } from "../services/user.service.js";
+const Swal = require('sweetalert2')
 export default {
   name: "chatApp",
   props: {
@@ -23,7 +32,7 @@ export default {
   data() {
     return {
       messages: [],
-      msg: { from: "", txt: "" },
+      msg: { from: "", txt: "", status: "read" ,  createdAt:new Date()},
       topic: "",
       // isTyping:false
     };
@@ -38,11 +47,26 @@ export default {
     focusInput() {
       this.$refs.input.focus();
     },
-    addMsg(msg) {
-      console.log("🚀 ~ file: app-chat.vue ~ line 42 ~ addMsg ~ msg", msg);
-      this.messages.push(msg);
-      this.$emit("updateUser", this.messages); //dispatch
+    async addMsg(msg) {
+      msg.title = msg.txt.substring(0,10) + '...'
+      if (!this.messages[this.topic]) this.messages[this.topic] = [];
+      this.messages[this.topic].push(msg);
+      const user = this.$store.getters.loggedinUser;
+      try {
+        await this.$store.dispatch({ type: "updateUser", user });
+        if (this.stay.host._id === this.topic) return;
+        const toUser = await userService.getById(this.stay.host._id);
+        if (!toUser.messages[this.topic]) toUser.messages[this.topic] = [];
+        msg.status = "unread";
+        toUser.messages[this.topic].push(msg);
+        console.log(toUser);
+        await this.$store.dispatch({ type: "updateUser", user: toUser });
+        Swal.fire("your message has been sent successfully", "we will inform you when the host response", "success");
+      } catch (err) {
+        console.log(err);
+      }
     },
+
     // userTyping(istyping){
     //   this.isTyping = istyping
     // }

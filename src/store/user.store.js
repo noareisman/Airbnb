@@ -6,7 +6,7 @@ export const userStore = {
         // loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
         users: [],
         user: userService.getLoggedinUser(),
-        msg: ''
+        msg: '',
     },
     getters: {
         users(state) {
@@ -23,7 +23,7 @@ export const userStore = {
         setUser(state, { user }) {
             state.user = user
         },
-        setUsers(state, { users }) {
+        setUsers(state, { users }) { 
             state.users = users;
         },
         removeUser(state, { userId }) {

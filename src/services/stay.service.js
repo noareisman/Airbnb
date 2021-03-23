@@ -24,7 +24,7 @@ function query(filterBy = {
     location: '',
     guests: 0
 }) {
-    var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}`
+    var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}&price=${filterBy.price || 0}`
     return httpService.get(`stay${queryStr}`)
 
     // let stays = await storageService.query('stay')

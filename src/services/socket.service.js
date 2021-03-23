@@ -1,8 +1,8 @@
 import io from 'socket.io-client'
 
 const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
-// export const socketService = createSocketService()
-export const socketService = createDummySocketService()
+export const socketService = createSocketService()
+// export const socketService = createDummySocketService()
 
 window.socketService = socketService
 
@@ -11,7 +11,7 @@ function createSocketService() {
   var socket
   const socketService = {
     setup() {
-      socket = io(baseUrl)
+      socket = io(baseUrl) 
     },
     on(eventName, cb) {
       socket.on(eventName, cb)
@@ -62,10 +62,9 @@ function createDummySocketService() {
   return socketService
 }
 
-  socketService.on()
 
-// Basic Tests
-function cb(x=2) {console.log(x)}
-socketService.on('chat addMsg', cb)
-socketService.emit('chat addMsg', 'DATA')
-socketService.off('chat addMsg', cb)
+// // Basic Tests
+// function cb(x=2) {console.log(x)}
+// socketService.on('chat addMsg', cb)
+// socketService.emit('chat addMsg', 'DATA')
+// socketService.off('chat addMsg', cb)

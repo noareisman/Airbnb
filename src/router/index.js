@@ -44,7 +44,6 @@ const routes = [
     path: '/messages',
     component: messages
   }
-  
 ]
 
 const router = new VueRouter({

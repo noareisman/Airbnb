@@ -5,7 +5,7 @@
     >
       <stay-filter />
     </div>
-    <stay-list v-if="staysToShow" :stays="staysToShow" />
+    <stay-list v-if="staysToShow.length" :stays="staysToShow" />
         <img v-else :src="require(`@/assets/imgs/icons/load.gif`)">
   </section>
 </template>
