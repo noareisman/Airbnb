@@ -99,7 +99,32 @@ function _saveLocalUser(user) {
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem('loggedinUser'));
-    
-}  
+    let user = JSON.parse(sessionStorage.getItem('loggedinUser'));
+    console.log(user);
+    if (!user) {
+        user = {
+            "_id": "6058751c94789ab513f04f93",
+            "fullname": "Mor Levi",
+            "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
+            "isAdmin": false,
+            "username": "mor97",
+            "messages": {
+                "6058751c94789ab513f04f9c": [
+                    {
+                        "txt": "hello user101",
+                        "time": 12342141244,
+                        "sender": "user102"
+                    },
+                    {
+                        "txt": "hello to you to",
+                        "time": 123424141244.0,
+                        "from": "user101"
+                    }
+                ]
+            },
+            // "createdAt": 1234214185454
+        }
+    }
+    return user;
+}
 

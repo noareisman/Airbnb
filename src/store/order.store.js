@@ -63,13 +63,15 @@ export const orderStore = {
         commit({ type: 'setHost', host })
         const stays = await stayService.query(host);
         const orders = await orderService.query();
-        
+
         const hostOrders = orders.filter(order => {
-          return stays.filter(stay => {
+          return stays.find(stay => {
             return stay._id === order.stay._id;
           })
         })
-        console.log('hostOrders are:',hostOrders);
+        console.log('stays are:', JSON.parse(JSON.stringify(stays)));
+        console.log('orders are:', JSON.parse(JSON.stringify(orders)));
+        // console.log('hostOrders are:', JSON.parse(JSON.stringify(hostOrders)));
         commit({ type: 'setHostOrders', hostOrders: hostOrders })
       } catch (err) {
         console.log('orderStore: Error in loadHostOrders', err)
@@ -80,7 +82,7 @@ export const orderStore = {
       await orderService.save(order)
       dispatch({ type: "loadHostOrders", order });
     },
-    async setPendingOrder({dispatch}, { orderSettings }) {
+    async setPendingOrder({ dispatch }, { orderSettings }) {
       var host = orderSettings.currStay.host
       var newPendingOrder = {
         createdAt: Date.now(),
