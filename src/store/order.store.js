@@ -59,10 +59,11 @@ export const orderStore = {
       }
     },
     async loadHostOrders({ commit, state }, { host }) {
-      console.log(host)
       try {
+        const filterBy ={}
+        filterBy._id = host._id
         commit({ type: 'setHost', host })
-        const stays = await stayService.query(host);
+        const stays = await stayService.query(filterBy);
         const orders = await orderService.query();
 
         const hostOrders = orders.filter(order => {

@@ -20,10 +20,7 @@ export const stayService = {
 }
 
 
-function query(filterBy = { location: '', guests: 0}) {
-    if(filterBy._id){
-        console.log(filterBy)
-    }
+function query(filterBy = { location: '', guests: 0, _id:null}) {
     var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}&price=${filterBy.price || 0}&amenities=${filterBy.amenities}&_id=${filterBy._id||null}`
     return httpService.get(`stay${queryStr}`)
 

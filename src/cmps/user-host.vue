@@ -21,7 +21,7 @@
     </el-tabs>
 
     <div>
-      <host-orders v-if="hostCurrTab === 'inbox'" :hostOrders="host" />
+      <host-orders v-if="hostCurrTab === 'inbox'" :host="host" />
       <host-stays v-if="hostCurrTab === 'host-stays'" :host="host" />
       <!-- <single-stay-order v-if="hostCurrTab === 'reservations'" :singleStayOrder="stay" /> -->
       <add-stay v-if="hostCurrTab === 'add-stay'" :host="host" />
