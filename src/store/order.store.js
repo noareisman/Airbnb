@@ -63,12 +63,13 @@ export const orderStore = {
         commit({ type: 'setHost', host })
         const stays = await stayService.query(host);
         const orders = await orderService.query();
-
+        
         const hostOrders = orders.filter(order => {
-          return stays.find(stay => {
+          return stays.filter(stay => {
             return stay._id === order.stay._id;
           })
         })
+        console.log('hostOrders are:',hostOrders);
         commit({ type: 'setHostOrders', hostOrders: hostOrders })
       } catch (err) {
         console.log('orderStore: Error in loadHostOrders', err)
