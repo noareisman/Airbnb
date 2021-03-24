@@ -26,7 +26,7 @@
             <add-stay-amenities @updateAmenities="updateAmenities()"/>
             <!-- <div class="add-stay-address"/> -->
             <img-cld-upload class="upload-stay-img"/>
-            <button class="call-to-action-btn" @click="addStay()">Add Stay</button>
+            <button class="call-to-action-btn" @click="addStay()">Publish Listing</button>
         </form>
     </section>    
 </template>

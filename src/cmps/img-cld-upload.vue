@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
+  <div>
     <img-upload @save="saveImg" />
-    <img-list :imgUrls="imgUrls" @setAvatar="setAvatar" />
-    <!-- <user-avatar :imgUrl="userAvatar" /> -->
+    <!-- <img-list :imgUrls="imgUrls" @setAvatar="setAvatar" /> -->
   </div>
 </template>
 
@@ -10,7 +9,6 @@
 
 import imgUpload from '@/cmps/img-upload.cmp';
 import imgList from '@/cmps/img-list.cmp';
-import userAvatar from '@/cmps/user-avatar.cmp';
 export default {
   data() {
     return {
@@ -21,14 +19,14 @@ export default {
   methods: {
     saveImg(imgUrl) {
       this.imgUrls.push(imgUrl)
+      console.log(this.imgUrls);
     },
-    setAvatar(imgUrl) {
-      this.userAvatar = imgUrl;
-    }
+    // setAvatar(imgUrl) {
+    //   this.userAvatar = imgUrl;
+    // }
   },
   components: {
     imgUpload,
-    userAvatar,
     imgList
   }
 };
