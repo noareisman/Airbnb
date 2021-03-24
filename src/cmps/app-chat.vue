@@ -1,10 +1,5 @@
 <template>
-  <div class="">
-    <table v-if="messages">
-      <tr v-for="(messages, idx) in messages[topic]" :key="idx">
-        <td>from: {{ messages.from }} : {{ messages.txt }}</td>
-      </tr>
-    </table>
+  <div>
     <div class="chat-container">
       <!-- <span v-if="isTyping"> User is typing..</span> -->
       <el-input
@@ -15,7 +10,7 @@
         placeholder="Your messege will be sent to the host..."
         v-model="msg.txt"
       />
-      <el-button @click.native="sendMsg" type="primary" plain icon="el-icon-message" circle ></el-button>
+      <el-button  @click.native="sendMsg" type="primary" plain icon="el-icon-message" ></el-button>
     </div>
   </div>
 </template> 

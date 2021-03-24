@@ -12,11 +12,14 @@
         > Amenities</el-button
       >
     </div>
+    <div class="container-sss"> 
+
+
     <div v-if="isPrice" class="block-range">
       <span class="demonstration">Limit Price</span>
       <el-slider input-size="mini" :max="500" v-model="price"></el-slider>
       <button
-          class="save-btn save-price"
+          class="save-btn-list save-price"
         @click="seacrhByPrice"
         >Search</button>
     </div>
@@ -31,14 +34,14 @@
         <el-checkbox label="Pets allowed" ></el-checkbox>
         <el-checkbox label="Cooking basics" ></el-checkbox>
  <button
-        class="save-btn "
+        class="save-btn-list "
         @click="seacrhByAmenities"
         >Search</button>
     </el-checkbox-group>
 
 
 </div>
-
+</div> 
      </div>
 
     <ul v-if="stays" class="list-card-container">
