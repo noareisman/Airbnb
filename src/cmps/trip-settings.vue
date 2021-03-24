@@ -22,7 +22,7 @@
         </div>
         <button
           v-if="!isTotalPriceClalculable"
-          class="call-to-action-btn check-availability-btn"
+          class="check-availability-btn"
         >
           Check availability
         </button>

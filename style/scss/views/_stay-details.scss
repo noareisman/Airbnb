@@ -90,8 +90,39 @@
     width:100%;
 }
 .check-availability-btn{
-    width:100%
+    width:100%;
+    color: #f3f3f3;
+    background-color: #ca4e4e;
+    padding:1em;
+    border-radius: 5px;
+    appearance: none;
+    border:none;
+    cursor:pointer;
 }
+
+
+// background-image: var(--dls19-brand-gradient-radial, radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% )) !important;
+// }
+
+.mouse-pos {
+    background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%);
+    --mouse-x: 93.0614;
+    --mouse-y: 51.7101;
+}
+.special-btn {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 200px !important;
+    background-size: 200% 200% !important;
+    opacity: 0 !important;
+    transition: opacity 1.25s ease 0s !important;
+}
+
+
+
+
+
 .price{
     font-weight: 600;
     font-size: 22px;
@@ -155,4 +186,4 @@ margin-top: 5px;
     z-index: 2003;
     display: flex;
     flex-direction: column;
-}
+ }

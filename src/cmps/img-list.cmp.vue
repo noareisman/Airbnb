@@ -6,7 +6,6 @@
         :src="imgUrl"
         :key="idx"
         alt="img..."
-        @click="setAsAvatar(imgUrl)"
       />
     </div>
 </template>
@@ -21,11 +20,6 @@ export default {
       return (this.imgUrls && this.imgUrls.length) ? '<h2>Images List</h2><h3>Click an image to set as profile picture</h3>' : '<h2>No Images</h2>';
     }
   },
-  methods: {
-    setAsAvatar(imgUrl){
-      this.$emit('setAvatar', imgUrl)
-    }
-  }
 }
 </script>
 
