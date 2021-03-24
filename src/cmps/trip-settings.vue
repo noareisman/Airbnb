@@ -20,17 +20,16 @@
             @pickguests="setGuests"
           ></guest-settings>
         </div>
-        <button
-          v-if="!isTotalPriceClalculable"
-          class="check-availability-btn"
-        >
-          Check availability
+        <button v-if="!isTotalPriceClalculable" class="special-btn">
+          <span class="middle-level">
+            <span class="inner-level" @mousemove="mousemove" :style="mousePos">
+            </span>
+          </span>
+          <span class="special-btn-txt">Check availability</span>
         </button>
+
         <div v-else class="reservation-summary flex column center">
-          <button
-            class="call-to-action-btn check-availability-btn"
-            @click="sendOrderRequest()"
-          >
+          <button class="special-btn" @click="sendOrderRequest()">
             Reserve
           </button>
           <p>You won't be charged yet</p>
@@ -58,7 +57,7 @@
 import datePicker from "./date-picker.vue";
 import starRating from "./star-rating.vue";
 import guestSettings from "./guest-settings.vue";
-const Swal = require('sweetalert2')
+const Swal = require("sweetalert2");
 
 export default {
   props: {
@@ -66,7 +65,10 @@ export default {
   },
   data() {
     return {
-      serviceFee:10,
+      // mousePos:null,
+      mouseX: 0,
+      mouseY: 0,
+      serviceFee: 10,
       orderSettings: {
         requestedDates: [],
         guest: {},
@@ -75,46 +77,71 @@ export default {
         nightsNum: 5,
         currStay: this.stay,
       },
-      isTotalPriceClalculable:false
+      isTotalPriceClalculable: false,
     };
   },
   methods: {
     setDates(value) {
+      this.calcNightsNum(value)
       const startDate = value[0].split("-").join("/");
       const endDate = value[1].split("-").join("/");
-      this.orderSettings.requestedDates = value;
-      this.isTotalPriceClalculable=true;
+      this.orderSettings.requestedDates = [startDate,endDate];
+      this.isTotalPriceClalculable = true;
+    },
+    calcNightsNum(value){
+      var start = value[0].split("-")
+      var end = value[1].split("-")
+      start = (new Date(start[2], start[1] - 1, start[0])).getTime();
+      end = (new Date(end[2], end[1] - 1, end[0])).getTime();
+      this.orderSettings.nightsNum=Math.round((end-start)/1000/3600/24)
     },
     setGuests(value) {
       this.orderSettings.guest = value;
     },
     async sendOrderRequest() {
       // console.log('tripSettings', this.orderSettings);
-    try{ 
-      await this.$store.dispatch({ type: "setPendingOrder", orderSettings:this.orderSettings });
-      Swal.fire('Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. ')
-    }catch(err){
-      console.log('could not send order request',err);
-      Swal.fire('Failed to set reservation. Try again later. ')
-    }
+      try {
+        await this.$store.dispatch({
+          type: "setPendingOrder",
+          orderSettings: this.orderSettings,
+        });
+        Swal.fire(
+          "Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. "
+        );
+      } catch (err) {
+        console.log("could not send order request", err);
+        Swal.fire("Failed to set reservation. Try again later. ");
+      }
+    },
+    mousemove(e) {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+      // this.mousePos= `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`
+      // console.log(this.mouseX);
     },
   },
   computed: {
     nights() {
-      return this.orderSettings.nightsNum = 5;
-      // return this.requestedDates[1]-this.requestedDates[0]/////////////////////////////////////////////////////////////////////////////////////////////////////////
+      return (this.orderSettings.nightsNum = 5);
+    
     },
     price() {
-      return this.stay.price ;
+      return this.stay.price;
     },
     priceCalc() {
-      var priceCalc= this.stay.price * this.orderSettings.nightsNum;
-      this.orderSettings.totalPrice = priceCalc + this.serviceFee
-      return priceCalc
-      }
+      var priceCalc = this.stay.price * this.orderSettings.nightsNum;
+      this.orderSettings.totalPrice = priceCalc + this.serviceFee;
+      return priceCalc;
+    },
+    mousePos() {
+      console.log(
+        `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
+      );
+      return `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`;
+    },
   },
   created() {
-    this.orderSettings.buyer=this.$store.getters.loggedinUser;
+    this.orderSettings.buyer = this.$store.getters.loggedinUser;
   },
   components: {
     datePicker,
@@ -127,7 +154,7 @@ export default {
 <style>
 .el-dropdown-link {
   cursor: pointer;
-  color: #FF385C;
+  color: #ff385c;
 }
 .el-icon-arrow-down {
   font-size: 12px;
