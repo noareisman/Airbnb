@@ -2,7 +2,7 @@
   <div id="app">
     <img-upload @save="saveImg" />
     <img-list :imgUrls="imgUrls" @setAvatar="setAvatar" />
-    <user-avatar :imgUrl="userAvatar" />
+    <!-- <user-avatar :imgUrl="userAvatar" /> -->
   </div>
 </template>
 
@@ -34,13 +34,4 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
 

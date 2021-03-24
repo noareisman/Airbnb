@@ -1,6 +1,6 @@
 <template>
   <div class="img-upload-container">
-    <h1>Let's Upload Some Images!</h1>
+    <span>Add stay images</span>
     <template v-if="!isLoading">
       <!-- UPLOAD IMG -->
       <label
@@ -73,7 +73,7 @@ export default {
 }
 
 label img {
-  height: 100px;
+  width: 100px;
   cursor: pointer;
   transition: height 0.6s;
 }
@@ -86,7 +86,7 @@ input {
   color: grey;
   display: inline-block;
   padding: 30px 5px;
-  width: 220px;
+  width: 40px;
   border: 1px dashed gray;
   border-radius: 8px;
 }

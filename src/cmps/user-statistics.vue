@@ -3,6 +3,7 @@
 import { Bar } from "vue-chartjs";
 
 export default {
+  name:'user-statistics',
   extends: Bar,
   computed: {
     hostOrders() {

@@ -1,6 +1,6 @@
 <template>
     <section>
-        <form>
+        <form class="add-stay-form">
             <div>
                 <span>Stay Name:</span>
                 <el-input class="add-stay-name" placeholder="Name" v-model="stay.name"></el-input>
@@ -25,7 +25,7 @@
             </div>
             <add-stay-amenities @updateAmenities="updateAmenities()"/>
             <!-- <div class="add-stay-address"/> -->
-            <!-- <div class="upload-stay-img"/> -->
+            <img-cld-upload class="upload-stay-img"/>
             <button class="call-to-action-btn" @click="addStay()">Add Stay</button>
         </form>
     </section>    
@@ -34,6 +34,7 @@
 <script>
 import { stayService } from '../services/stay.service.js';
 import addStayAmenities from '../cmps/add-stay-amenities';
+import imgCldUpload from '../cmps/img-cld-upload';
 const Swal = require('sweetalert2')
 
 export default {
@@ -87,6 +88,7 @@ export default {
     },
     components: {
     addStayAmenities,
+    imgCldUpload
   },
 };
 </script>
@@ -98,5 +100,10 @@ export default {
 }
 .el-icon-arrow-down {
   font-size: 12px;
+}
+
+.add-stay-form>*{ 
+  margin-bottom:20px;
+  margin-right: 20px;
 }
 </style>
