@@ -83,12 +83,10 @@ export default {
       const startDate = value[0].split("-").join("/");
       const endDate = value[1].split("-").join("/");
       this.orderSettings.requestedDates = value;
-      console.log([startDate, endDate]);
       this.isTotalPriceClalculable=true;
     },
     setGuests(value) {
       this.orderSettings.guest = value;
-      console.log(this.orderSettings.guest);
     },
     async sendOrderRequest() {
       // console.log('tripSettings', this.orderSettings);

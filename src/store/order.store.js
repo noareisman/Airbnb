@@ -71,9 +71,6 @@ export const orderStore = {
             return stay._id === order.stay._id;
           })
         })
-        console.log('stays are:', JSON.parse(JSON.stringify(stays)));
-        console.log('orders are:', JSON.parse(JSON.stringify(orders)));
-        // console.log('hostOrders are:', JSON.parse(JSON.stringify(hostOrders)));
         commit({ type: 'setHostOrders', hostOrders: hostOrders })
       } catch (err) {
         console.log('orderStore: Error in loadHostOrders', err)

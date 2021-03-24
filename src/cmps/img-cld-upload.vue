@@ -19,7 +19,6 @@ export default {
   methods: {
     saveImg(imgUrl) {
       this.imgUrls.push(imgUrl)
-      console.log(this.imgUrls);
     },
     // setAvatar(imgUrl) {
     //   this.userAvatar = imgUrl;

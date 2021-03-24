@@ -59,11 +59,9 @@ export default {
         if (!toUser.messages[this.topic]) toUser.messages[this.topic] = [];
         msg.status = "unread";
         toUser.messages[this.topic].push(msg);
-        console.log(toUser);
         await this.$store.dispatch({ type: "updateUser", user: toUser });
         Swal.fire("your message has been sent successfully", "we will inform you when the host response", "success");
       } catch (err) {
-        console.log(err);
       }
     },
 

@@ -62,7 +62,6 @@ export default {
 
             const msgs = this.$store.getters.loggedinUser.messages;
             const user = this.$store.getters.loggedinUser
-            console.log(msgs)
             this.reply.from = this.$store.getters.loggedinUser.username
             msgs[this.currMsgId].push(this.reply);
              user.messages = msgs
@@ -77,7 +76,6 @@ export default {
     computed:{
         loggedInUserMessages(){
             const msgs = this.$store.getters.loggedinUser.messages;
-            console.log(msgs)
             const msgArray = [];
             for (const el in msgs){
                 this.currMsgId = el;

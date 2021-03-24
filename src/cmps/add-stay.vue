@@ -70,7 +70,6 @@ export default {
     },
     methods: {
       handleChange(value) {
-        console.log(value)
       },
       updateAmenities(amenities){
           this.stay.amenities=amenities;

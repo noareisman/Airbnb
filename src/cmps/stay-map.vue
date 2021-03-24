@@ -43,11 +43,9 @@ export default {
     centerMap(pos) {
       zoom: 4,
       this.$refs.gMap.panTo(pos);
-      console.log(pos)
     },
   },
   created(){
-    console.log(this.position);
     this.position.lng=this.location.lng
     this.position.lat=this.location.lat
   }

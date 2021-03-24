@@ -100,7 +100,6 @@ function _saveLocalUser(user) {
 
 function getLoggedinUser() {
     let user = JSON.parse(sessionStorage.getItem('loggedinUser'));
-    console.log(user);
     if (!user) {
         user = {
             "_id": "6058751c94789ab513f04f93",

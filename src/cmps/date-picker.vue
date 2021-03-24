@@ -53,7 +53,6 @@ export default {
       this.$emit("pick", this.value1);
     },
     print() {
-      console.log(this.stayOrders);
     },
   },
   computed:{

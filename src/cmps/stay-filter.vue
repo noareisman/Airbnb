@@ -162,13 +162,11 @@ export default {
     openSearch(){
        this.isSticky=false;
       this.isOpen = true;
-      console.log('open search')
     }
   },
   computed:{
     searchName(){
       const filter = this.$store.getters.currentFilter
-      console.log(filter)
       if(filter.location) return filter.location
       else return "Start Searching" 
     }

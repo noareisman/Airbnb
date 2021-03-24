@@ -61,7 +61,6 @@ export default {
   },
   methods: {
     async loadOrders() {
-      console.log(this.host)
       await this.$store.dispatch({
         type: "loadHostOrders",
         host: { ...this.host },

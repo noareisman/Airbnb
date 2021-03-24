@@ -86,7 +86,6 @@ export default {
     seacrhByPrice() {
       const filterBy = {};
       filterBy.price = this.price;
-      console.log(filterBy);
       this.$store.dispatch({ type: 'loadStays', filterBy });
     },
     seacrhByAmenities(){
@@ -95,7 +94,6 @@ export default {
       this.amenities.forEach(amenitie => {
         filterBy.amenities.push(amenitie);
       });
-      console.log(filterBy)
         this.$store.dispatch({ type: 'loadStays', filterBy });
     }
   },
