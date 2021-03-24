@@ -12,10 +12,10 @@
    </section>
    
     <el-row>
-          <h2> sort By</h2>
+          <h2>  sort By</h2>
     <div class="sort-container"> 
-  <el-button class="sort-btn" @click="sortBy('price')" round>Price</el-button>
-  <el-button class="sort-btn" @click="sortBy('rate')" round>Popularity</el-button>
+    <el-button class="sort-btn" @click="sortBy('price')" round>Price</el-button>
+    <el-button class="sort-btn" @click="sortBy('rate')" round>Popularity</el-button>
   </div>
       <el-col style="margin-bottom:20px"
         :span="12"

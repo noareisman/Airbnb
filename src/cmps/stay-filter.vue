@@ -3,7 +3,7 @@
     <div ref="wrapper" class="wrapper flex" :class="{out:isOpen}">
       <span class="box">
         <div class="location">
-          <span class="title">Location</span>
+          <span class="title title-location">Location</span>
           <advanced-search
             v-model="model"
             @input.native="copyData"
@@ -27,7 +27,7 @@
             v-model="filterBy.guests"
             type="text"
             placeholder="1 Guest"
-            class="desc"
+            class="desc guest-dd"
             @click="openGuests"
           />
           <el-input-number

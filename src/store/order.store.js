@@ -59,6 +59,7 @@ export const orderStore = {
       }
     },
     async loadHostOrders({ commit, state }, { host }) {
+      console.log(host)
       try {
         commit({ type: 'setHost', host })
         const stays = await stayService.query(host);

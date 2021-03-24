@@ -65,6 +65,7 @@ export default {
           this.$router.push("/login");
           break;
         case "Log-out":
+          console.log(this.$route)
           this.$router.push("/");
           this.$store.dispatch({ type: "logout" });
           break;
