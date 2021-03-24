@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns:minmax(2rem,1fr) minmax(auto,1100px) minmax( 2rem,1fr);
     
+    
 //     // @include for-narrow-layout {
 //     //     grid-template-columns:
 //     // }
@@ -14,6 +15,10 @@
 //     //     grid-template-columns:      
 //     // }
 
+}
+
+.full-height{
+    min-height: 83vh;
 }
 
 .two-column-grid{
@@ -42,4 +47,8 @@
         border-radius: 18px;
     }
 
+}
+
+.el-icon-date:before {
+margin-left: -11px;
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout">
+  <section class="main-layout full-height">
     <div
       class="filter-container flex justify-center align-center scroll-serarch"
     >

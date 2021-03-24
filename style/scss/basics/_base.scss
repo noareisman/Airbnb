@@ -9,9 +9,12 @@ html {
     font-family: Montserrat, sans-serif;
     line-height: 1.6;
     color: $dino-clr2;
+    scroll-behavior: smooth;
+
 }
 
 body {
+  scroll-behavior: smooth;
     margin: 0;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 14px;
