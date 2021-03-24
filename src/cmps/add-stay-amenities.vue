@@ -1,6 +1,6 @@
 <template>
     <section>
-    <ul class="amenities">
+    <ul class="amenities clean-list">
         <li>
             <el-checkbox @change="updateAmenities()" v-model="booleanAmenityMap.isWifi">Wifi</el-checkbox>
         </li>

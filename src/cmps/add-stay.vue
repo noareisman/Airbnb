@@ -21,7 +21,7 @@
             </div>
             <div>
                 <span>Capacity:</span>
-                <el-input-number v-model="capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
+                <el-input-number v-model="stay.capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
             </div>
             <add-stay-amenities @updateAmenities="updateAmenities()"/>
             <!-- <div class="add-stay-address"/> -->
@@ -32,12 +32,13 @@
 </template>
 
 <script>
-import { stayService } from '../services/stay.service';
+import { stayService } from '../services/stay.service.js';
+import addStayAmenities from '../cmps/add-stay-amenities';
 const Swal = require('sweetalert2')
 
 export default {
   name: "add-stay",
-  props: { host },
+  props: ['host' ],
   data() {
     return {
       stay: {

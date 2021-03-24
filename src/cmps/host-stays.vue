@@ -1,10 +1,10 @@
 <template>
   <section class="host-stays-headline">
     <!--REAM: FIND NEW NAME -->
-    <h2 class="ssets-title"> {{userName}} Assets :</h2>
+    <h2 class="assets-title"> {{userName}} Assets :</h2>
     <!--REAM: FIND NEW NAME -->
 
-    <ul class="host-stays">
+    <ul v-if="stays" class="host-stays">
       <li v-for="stay in stays" :key="stay._id" class="host-stay-and-orders">
         <div class="host-stay">
           <div class="host-stay-img">
@@ -23,9 +23,10 @@
 </template>
 
 <script>
-import singleStayOrder from "../cmps/single-stay-order.vue";
+import singleStayOrder from "../cmps/single-stay-order";
 
 export default {
+  name:'host-stays',
   props: ["host"],
   computed: {
     stays() {

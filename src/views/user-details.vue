@@ -10,7 +10,6 @@
     <section class="user-back-office">
        <el-tabs class="user-status-btns" v-model="userStatus" >
           <el-tab-pane class="host" label="Host" name="host"></el-tab-pane>
-
           <el-tab-pane label="Traveler" name="traveler"></el-tab-pane>
       </el-tabs>
       
@@ -27,6 +26,7 @@ import userHost from "../cmps/user-host.vue";
 import userDashboard from "../cmps/user-dashboard.vue";
 
 export default {
+  name:"user-details",
   data() {
     return {
       userStatus: null,
