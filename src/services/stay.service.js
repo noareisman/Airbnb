@@ -46,6 +46,18 @@ function query(filterBy = { location: '', guests: 0}) {
     // return toysForDisplay;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 async function getById(stayId) {
     // const stay = await storageService.get('stay', stayId)
     // return stay
@@ -79,7 +91,7 @@ async function save(stay) {
 //     var stayToUpdate = getById(stay._id)
 //   save(stay)
 //     return  stayToUpdate.reviews.unshift(review)
-    
+
 // }
 // 
 
@@ -105,27 +117,27 @@ function getReviewTemplate() {
     }
 }
 
-function getEmptyStay(){ 
-return stay= {
-    name: "",
-    imgUrls: [],
-    price: null,
-    summary: "",
-    capacity: 1,
-    favorites: [],
-    amenities: [],
-    host: {
-      _id: this.host._id,
-      fullname: this.host.fullname,
-      imgUrl: this.host.imgUrl,
-    },
-    loc: {
-      country: '',
-      countryCode: '',
-      address: '',
-      lat: null,
-      lng: null,
-    },
-    reviews: []
+function getEmptyStay() {
+    return stay = {
+        name: "",
+        imgUrls: [],
+        price: null,
+        summary: "",
+        capacity: 1,
+        favorites: [],
+        amenities: [],
+        host: {
+            _id: this.host._id,
+            fullname: this.host.fullname,
+            imgUrl: this.host.imgUrl,
+        },
+        loc: {
+            country: '',
+            countryCode: '',
+            address: '',
+            lat: null,
+            lng: null,
+        },
+        reviews: []
     }
 }

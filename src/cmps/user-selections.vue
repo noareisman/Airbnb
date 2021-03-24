@@ -52,7 +52,7 @@ export default {
           label: "Option3",
         },
       ],
-      value: "",
+      value: ""
     };
   },
   methods: {
@@ -65,8 +65,7 @@ export default {
           this.$router.push("/login");
           break;
         case "Log-out":
-          console.log(this.$route)
-          this.$router.push("/");
+          if (this.$route.path !== "/") this.$router.push("/");
           this.$store.dispatch({ type: "logout" });
           break;
         case "My profile":
@@ -100,9 +99,6 @@ export default {
         // }
         // return sum;
     },
-  },
-  created(){
-    console.log(this.loggedInUser._id);
   }
 };
 </script>
