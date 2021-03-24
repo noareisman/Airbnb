@@ -11,14 +11,14 @@
        <el-tabs class="user-status-btns" v-model="userStatus" >
           <el-tab-pane class="host" label="Host" name="host"></el-tab-pane>
           <el-tab-pane label="Traveler" name="traveler"></el-tab-pane>
-          <el-tab-pane label="Statistics" name="statistics"></el-tab-pane>
+          <!-- <el-tab-pane label="Statistics" name="statistics"></el-tab-pane> -->
 
       </el-tabs>
       
       <div>
         <user-host v-if="userStatus === 'host'" :host="user" />
         <user-dashboard v-if="userStatus === 'traveler'" :user="user" />
-        <user-statistics class="user-statistics" v-if="userStatus === 'statistics'" :user="user" />
+        <!-- <user-statistics class="user-statistics" v-if="userStatus === 'statistics'" :user="user" /> -->
       </div>
     </section>
   </section>

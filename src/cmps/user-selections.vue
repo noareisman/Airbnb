@@ -100,8 +100,5 @@ export default {
         // return sum;
     },
   },
-  created(){
-    console.log(this.loggedInUser._id);
-  }
 };
 </script>
