@@ -20,11 +20,11 @@ export const stayService = {
 }
 
 
-function query(filterBy = {
-    location: '',
-    guests: 0
-}) {
-    var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}&price=${filterBy.price || 0}`
+function query(filterBy = { location: '', guests: 0}) {
+    if(filterBy._id){
+        console.log(filterBy)
+    }
+    var queryStr = (!filterBy) ? '' : `?location=${filterBy.location ||''}&guests=${filterBy.guests || 0}&price=${filterBy.price || 0}&amenities=${filterBy.amenities}&_id=${filterBy._id||null}`
     return httpService.get(`stay${queryStr}`)
 
     // let stays = await storageService.query('stay')
@@ -45,6 +45,18 @@ function query(filterBy = {
 
     // return toysForDisplay;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 async function getById(stayId) {
     // const stay = await storageService.get('stay', stayId)
@@ -79,7 +91,7 @@ async function save(stay) {
 //     var stayToUpdate = getById(stay._id)
 //   save(stay)
 //     return  stayToUpdate.reviews.unshift(review)
-    
+
 // }
 // 
 
@@ -105,27 +117,27 @@ function getReviewTemplate() {
     }
 }
 
-function getEmptyStay(){ 
-return stay= {
-    name: "",
-    imgUrls: [],
-    price: null,
-    summary: "",
-    capacity: 1,
-    favorites: [],
-    amenities: [],
-    host: {
-      _id: this.host._id,
-      fullname: this.host.fullname,
-      imgUrl: this.host.imgUrl,
-    },
-    loc: {
-      country: '',
-      countryCode: '',
-      address: '',
-      lat: null,
-      lng: null,
-    },
-    reviews: []
+function getEmptyStay() {
+    return stay = {
+        name: "",
+        imgUrls: [],
+        price: null,
+        summary: "",
+        capacity: 1,
+        favorites: [],
+        amenities: [],
+        host: {
+            _id: this.host._id,
+            fullname: this.host.fullname,
+            imgUrl: this.host.imgUrl,
+        },
+        loc: {
+            country: '',
+            countryCode: '',
+            address: '',
+            lat: null,
+            lng: null,
+        },
+        reviews: []
     }
 }

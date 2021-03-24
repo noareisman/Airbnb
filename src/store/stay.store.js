@@ -58,7 +58,7 @@ export const stayStore = {
 
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0}}) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0, amenities:null }  }) {
             try {
                 console.log(filterBy)
                 const stays = await stayService.query(filterBy)
@@ -118,7 +118,7 @@ export const stayStore = {
             }
 
             try {
-                const updatedStay = await stayService.save(currStay)
+                const updatedStay = await stayService.save(stay)
                 context.commit({ type: 'updateStays', updatedStay })
                 return updatedStay
             } catch (err) {
@@ -137,29 +137,29 @@ export const stayStore = {
             throw new Error('Cannot post review');
         }
     },
-    async toggleLike(context, { stay }) {
-        console.log(context)
-        const user = context.getters.loggedinUser;
-        if (!stay.favorites) stay.favorites = []; //initialize array of favorites
-        const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
-            return element.userId === user._id;
-        });
-        if (!isLiked) stay.favorites.push({ userId: user._id });
-        else {
-            const idx = stay.favorites.findIndex(
-                (entity) => entity._id === user._id
-            );
-            stay.favorites.splice(idx, 1);
-        }
-        try {
-            const updatedStay = await stayService.save(stay)
-            context.commit({ type: 'updateStays', updatedStay })
-        }
-        catch (err) {
-            console.log('cannt update stay')
-            throw err
-        }
-    },
+    // async toggleLike(context, { stay }) {
+    //     console.log(context)
+    //     const user = context.getters.loggedinUser;
+    //     if (!stay.favorites) stay.favorites = []; //initialize array of favorites
+    //     const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
+    //         return element.userId === user._id;
+    //     });
+    //     if (!isLiked) stay.favorites.push({ userId: user._id });
+    //     else {
+    //         const idx = stay.favorites.findIndex(
+    //             (entity) => entity._id === user._id
+    //         );
+    //         stay.favorites.splice(idx, 1);
+    //     }
+    //     try {
+    //         const updatedStay = await stayService.save(stay)
+    //         context.commit({ type: 'updateStays', updatedStay })
+    //     }
+    //     catch (err) {
+    //         console.log('cannt update stay')
+    //         throw err
+    //     }
+    // },
 
     checkAvailability(context, stayId) {
 

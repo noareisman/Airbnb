@@ -35,11 +35,13 @@
 .advanced-search-input .advanced-input-container .advanced-input-section .label{
     color: #afafaf;
     letter-spacing: 1px;
+    
 
 }
 
 .advanced-search-input .search .options .row .option .title{
     font-style: 12px;
+
 }
 
 .el-date-editor .el-range-separator{
@@ -94,7 +96,7 @@
 }
 
 .el-date-editor .el-range__icon {
-    margin-left:-12p
+    margin-left:-12px;
 
 }
 .filter-container .wrapper .box .title{
@@ -108,4 +110,19 @@
     z-index: 1000;
 
 
+}
+
+.filter-by-guest{
+    border: none;
+}
+
+.guest-dd{
+    width: 30px;
+    height: 38px;
+}
+
+
+
+.title-location{
+    line-height: 19px;
 }
