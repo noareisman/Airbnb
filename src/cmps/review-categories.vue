@@ -8,7 +8,7 @@
     <ul class="two-column-grid-categories">
         <li v-for="(cat,idx) in categories" :key="idx" class="clean-list two-column-grid">
             <p>{{categories[idx][0]}}</p>
-            <div class="bar">
+            <div class="bar flex">
             <p class="score">{{(categories[idx][1]).toFixed(1)}}</p>
             <el-progress class="progress-bar" :show-text="false" color="#ca4c4c" :stroke-width="8" :percentage="starNum(idx)"></el-progress>
             </div>

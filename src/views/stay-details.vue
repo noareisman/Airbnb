@@ -25,9 +25,14 @@
             </div>
             <img class="thumb-img" :src="stay.host.imgUrl" />
           </div>
+          <div class="description-section flex column bottom-border">
+          <div class="description-txt">Come to discover my appartment in the middle of Paris. It is located in the 18th, near Montmartre and close to the Moulin Rouge.
+            This apartment can accommodate up to 8 people, it is on the 3rd floor (with a large lift) and is very well equipped.
+            This accommodation is surrounded by shops for shopping, bakeries, groceries but also restaurants and bars ... Do not hesitate any more!</div>
+           <a href="#msg" class="contact-host-btn underline">Contact Host</a>
+          </div>
           <div>
           <stay-amenities :stay="stay" />
-           <a href="#msg" class="contact-host-btn underline">Contact Host</a>
            <!-- <button @click="chatModal" class="contact-host-btn underline">Contact Host</button> -->
           </div>
         </div>
@@ -70,7 +75,7 @@
       </button> -->
           <pop-up> 
             <!-- @updateToy="updateToy"  -->
-      <app-chat id="msg" :stay="stay" slot="main" />
+      <!-- <app-chat id="msg" :stay="stay" slot="main" /> -->
     </pop-up> 
     </div>
 

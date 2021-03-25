@@ -114,8 +114,8 @@ export default {
       }
     },
     mousemove(e) {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
+      this.mouseX = e.offsetX;
+      this.mouseY = e.offsetY;
       // this.mousePos= `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`
       // console.log(this.mouseX);
     },
@@ -134,10 +134,11 @@ export default {
       return priceCalc;
     },
     mousePos() {
-      console.log(
-        `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
-      );
-      return `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`;
+      // console.log(
+      //   `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
+      // );
+      return {backgroundPosition: `${this.mouseX * 100}% ${this.mouseY * 100}% `}
+      // return {backgroundPosition: `calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`}
     },
   },
   created() {
