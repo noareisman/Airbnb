@@ -73,3 +73,31 @@
         }
     }
 }
+
+@media all and(max-width:400px){
+    .reservations-title{
+        font-size: 2rem;
+    }
+
+    .host-order {
+        display: flex !important;
+        flex-direction: column;
+
+        
+        .host-order-bio {
+            text-align: center !important;
+            h3 {
+                margin: 0 auto;
+            }
+        }
+        .host-order-btns {
+            button {
+                font-size: 2rem;
+            }
+            button:hover {
+                background-color: unset;
+            }
+        }
+
+    }
+}

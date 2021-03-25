@@ -1,5 +1,5 @@
 <template>
-<section class="googl-map">
+<section class="stay-google-map">
 <h2>Location</h2>
   <GmapMap
     class="google-map"
