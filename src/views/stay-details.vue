@@ -27,7 +27,8 @@
           </div>
           <div>
           <stay-amenities :stay="stay" />
-          <button class="contact-host-btn underline">Contact Host</button>
+           <a href="#msg" class="contact-host-btn underline">Contact Host</a>
+           <!-- <button @click="chatModal" class="contact-host-btn underline">Contact Host</button> -->
           </div>
         </div>
 
@@ -64,12 +65,12 @@
         Send message
       </button> -->
 
-       <button class="call-to-action-btn" @click="chatModal">
+       <!-- <button class="call-to-action-btn" @click="chatModal">
         send message to
-      </button>
+      </button> -->
           <pop-up> 
             <!-- @updateToy="updateToy"  -->
-      <app-chat :stay="stay" slot="main" v-if="onChat" />
+      <app-chat id="msg" :stay="stay" slot="main" />
     </pop-up> 
     </div>
 
