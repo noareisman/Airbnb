@@ -86,11 +86,14 @@ html {
     padding: 20px;
     -webkit-padding-start: 0;
     padding-inline-start: 0;
+    font-size: 6rem;
+    line-height: 65px;
+    font-family: sans-serif;
 }
 
 .hero .h1-container h1 .dot {
     color: #f05;
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: serif;
 
 }
@@ -167,7 +170,7 @@ html {
 .location-header {
     font-size: 2rem;
     line-height: 2.25rem;
-    color: #222;
+    color: #484848;
     margin-bottom: 35px
 }
 
@@ -199,6 +202,7 @@ html {
     font-weight: 700;
     padding: 4px 0px 4px 4px;
     cursor: pointer;
+    color: #484848;
 }
 
 .router {

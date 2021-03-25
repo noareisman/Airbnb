@@ -1,38 +1,44 @@
 <template>
-
   <section class="preview-card space-preview">
-      <el-carousel :autoplay="false" height="200px" indicator-position="none">
-        <el-carousel-item
-          style="background-color: #fff"
-          v-for="(item, idx) in stay.imgUrls"
-          :key="item"
-        >
-    <router-link class="router" :to="`/stay/${stay._id}`">
+    <el-carousel :autoplay="false" height="200px" indicator-position="none">
+      <el-carousel-item
+        style="background-color: #fff"
+        v-for="(item, idx) in stay.imgUrls"
+        :key="item"
+      >
+        <router-link class="router" :to="`/stay/${stay._id}`">
           <img
             class="stay-img-prev"
             :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[idx]}.jpg`)"
           />
-    </router-link>
-        </el-carousel-item>
-      </el-carousel>
+        </router-link>
+      </el-carousel-item>
+    </el-carousel>
 
     <div class="card-info">
       <img
-        v-if="!isLiked" title="Save To Favorites"
+        v-if="!isLiked"
+        title="Save To Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
-        src="../assets/imgs/icons/heart.png" 
+        src="../assets/imgs/icons/heart.png"
       />
       <img
-        v-else title="Remove From Favorites"
+        v-else
+        title="Remove From Favorites"
         @click="ToggleLike(stay)"
         class="like-btn"
         src="../assets/imgs/icons/fillheart.png"
       />
       <star-rating :reviews="stay.reviews" />
-      <span> {{ stay.name }} - <span class=stay-address>  {{stay.loc.address}} </span> </span>
-      <span> {{ summary }}</span>
-      <span> {{ price }}</span>
+      <span>
+        {{ stay.name }} -
+        <span class="stay-address"> {{ stay.loc.address }} </span>
+      </span>
+      <span class="summery-txt"> {{ summary }}</span>
+      <span>
+        <span class="price-bold"> {{ price }} </span> /Night</span
+      >
     </div>
   </section>
 </template>
@@ -40,7 +46,7 @@
 <script>
 import slideImg from "../cmps/slide-img.vue";
 import starRating from "../cmps/star-rating.vue";
-const Swal = require('sweetalert2')
+const Swal = require("sweetalert2");
 
 export default {
   name: "stay-preview",
@@ -54,15 +60,14 @@ export default {
   },
   methods: {
     async ToggleLike(stay) {
-        if (!this.$store.getters.loggedinUser) {
-      Swal.fire('Its better to sign in :)')
-        return
+      if (!this.$store.getters.loggedinUser) {
+        Swal.fire("Its better to sign in :)");
+        return;
       }
-      try{
+      try {
         await this.$store.dispatch({ type: "toggleLike", stay });
-      }
-      catch(err){
-        console.log(err)
+      } catch (err) {
+        console.log(err);
       }
     },
   },
@@ -71,11 +76,11 @@ export default {
       return this.stay.summary.substring(0, 25) + `...`;
     },
     price() {
-      return "$" + this.stay.price + "/ Night";
+      return "$" + this.stay.price;
     },
     isLiked() {
       const user = this.$store.getters.loggedinUser;
-      if(!user) return
+      if (!user) return;
       return this.stay.favorites.some((element) => {
         return element.userId === user._id;
       });

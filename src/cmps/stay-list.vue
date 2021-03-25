@@ -13,8 +13,7 @@
       >
     </div>
     <div class="container-sss"> 
-
-
+      
     <div v-if="isPrice" class="block-range">
       <span class="demonstration">Limit Price</span>
       <el-slider input-size="mini" :max="500" v-model="price"></el-slider>
@@ -34,7 +33,7 @@
         <el-checkbox label="Pets allowed" ></el-checkbox>
         <el-checkbox label="Cooking basics" ></el-checkbox>
  <button
-        class="save-btn-list "
+        class="save-btn-list save-btn-amenities "
         @click="seacrhByAmenities"
         >Search</button>
     </el-checkbox-group>

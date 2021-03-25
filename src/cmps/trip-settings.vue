@@ -20,9 +20,11 @@
             @pickguests="setGuests"
           ></guest-settings>
         </div>
+
         <button v-if="!isTotalPriceClalculable" class="special-btn">
           <span class="middle-level">
             <span class="inner-level" @mousemove="mousemove" :style="mousePos">
+              {{mousePos}}
             </span>
           </span>
           <span class="special-btn-txt">Check availability</span>
@@ -32,6 +34,7 @@
           <button class="special-btn" @click="sendOrderRequest()">
             Reserve
           </button>
+
           <p>You won't be charged yet</p>
           <div class="price-calc flex space-between">
             <span class="underline"
@@ -116,6 +119,8 @@ export default {
     mousemove(e) {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
+      console.log(e.target.getBoundingClientRect())
+      console.log(e.offsetX)
       // this.mousePos= `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`
       // console.log(this.mouseX);
     },
@@ -137,7 +142,7 @@ export default {
       console.log(
         `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
       );
-      return `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`;
+      return { backgroundPosition: `${this.mouseX}% ${this.mouseY}% `};
     },
   },
   created() {
