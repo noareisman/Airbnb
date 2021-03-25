@@ -7,7 +7,8 @@
           <span class="logo txt"> HomeAway </span>
         </router-link>
       </el-menu-item>
-      <el-menu-item index="4" >
+
+      <el-menu-item class="explore" index="4" >
         <router-link class="router" :to="`/stay`">
           <span @click="reloadStays" class="txt"> Explore </span>
         </router-link>
