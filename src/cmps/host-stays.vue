@@ -15,7 +15,6 @@
           </div>
           <h2>{{ stay.name }}</h2>
         </div>
-
         <single-stay-order :stay="stay" />
       </li>
     </ul>

@@ -1,0 +1,61 @@
+.add-stay-form{
+    .el-dropdown-link {
+        cursor: pointer;
+        color: #FF385C;
+    }
+
+    .el-icon-arrow-down {
+        font-size: 12px;
+    }
+    
+    .el-input-number {
+        margin-left: 9%;
+    }   
+}
+
+.add-stay-form>*{ 
+    margin-bottom:20px;
+    margin-right: 20px;
+}
+
+@media all and(max-width:400px){
+    .add-stay-form>*{ margin-right: unset;}
+    
+    .add-stay-form{
+        text-align: center;
+        font-size: 2rem;
+        
+        .el-input-number {
+            margin-left: unset;
+        }
+
+        .capacity {
+            display: block;
+        }
+        
+        .el-checkbox__label {
+            font-size: 1.5rem;
+        }
+       
+        textarea {
+            font-size: 1.5rem;
+        }
+       
+        button {
+            font-size: 1.5rem;
+        }
+       
+        input {
+            font-size: 1.5rem;
+        }
+       
+        img {
+            width: 200px;
+        }
+        
+        .el-checkbox__inner{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

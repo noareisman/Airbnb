@@ -20,7 +20,7 @@
                 <el-input class="add-stay-price" placeholder="Enter price" v-model="stay.name"></el-input>
             </div>
             <div>
-                <span>Capacity:</span>
+                <span class="capacity">Capacity:</span>
                 <el-input-number v-model="stay.capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
             </div>
             <add-stay-amenities @updateAmenities="updateAmenities()"/>
@@ -91,18 +91,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.el-dropdown-link {
-  cursor: pointer;
-  color: #FF385C;
-}
-.el-icon-arrow-down {
-  font-size: 12px;
-}
-
-.add-stay-form>*{ 
-  margin-bottom:20px;
-  margin-right: 20px;
-}
-</style>
