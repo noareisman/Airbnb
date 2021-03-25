@@ -1,6 +1,5 @@
 <template>
   <header class="full main-layout header-container">
-<<<<<<< HEAD
     <div class="nav-container">
       <el-menu
         class="el-menu-demo menu-flex"
@@ -15,21 +14,6 @@
         </el-menu-item>
         <el-menu-item index="4"> </el-menu-item>
       </el-menu>
-=======
-    <div class="nav-container">  
-    <el-menu class="el-menu-demo" style="border:none; border:none"  mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">
-        <router-link class="router" :to="`/`">
-          <span class="logo txt"> HomeAway </span>
-        </router-link>
-      </el-menu-item>
-
-      <el-menu-item class="explore" index="4" >
-        <router-link class="router" :to="`/stay`">
-          <span @click="reloadStays" class="txt"> Explore </span>
-        </router-link>
-      </el-menu-item>
->>>>>>> a3c4438c279479ed59a221623d86a49738d45e1a
 
       <div class="header-right-corner flex">
       <router-link class="router explore-nav" :to="`/stay`">
