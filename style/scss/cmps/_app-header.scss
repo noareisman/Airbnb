@@ -108,6 +108,23 @@
 
 
 #line-chart{
-  // width: 80% !important;
-  
+  // width: 80% !important; 
 }
+
+.menu-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.explore-nav{
+  cursor: pointer;
+  padding:13px;
+  border-radius: 25px;
+  margin-left: -2px;
+  font-weight: bolder;
+}
+
+.explore-nav:hover {
+  background-color: rgb(228, 228, 228);
+}
+

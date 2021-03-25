@@ -16,7 +16,7 @@
       
     <div v-if="isPrice" class="block-range">
       <span class="demonstration">Limit Price</span>
-      <el-slider input-size="mini" :max="500" v-model="price"></el-slider>
+      <el-slider  input-size="mini" :max="500" v-model="price"></el-slider>
       <button
           class="save-btn-list save-price"
         @click="seacrhByPrice"

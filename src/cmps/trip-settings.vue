@@ -137,18 +137,11 @@ export default {
       return priceCalc;
     },
     mousePos() {
-<<<<<<< HEAD
-      console.log(
-        `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
-      );
-      return { backgroundPosition: `${this.mouseX}% ${this.mouseY}% `};
-=======
       // console.log(
       //   `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
       // );
       return {backgroundPosition: `${this.mouseX * 100}% ${this.mouseY * 100}% `}
       // return {backgroundPosition: `calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`}
->>>>>>> 9d00319d0b9d3f65c41d39e68cc65353117be79b
     },
   },
   created() {

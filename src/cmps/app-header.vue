@@ -1,30 +1,32 @@
 <template>
   <header class="full main-layout header-container">
-    <div class="nav-container">  
-    <el-menu class="el-menu-demo" style="border:none; border:none"  mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">
-        <router-link class="router" :to="`/`">
-          <span class="logo txt"> HomeAway </span>
-        </router-link>
-      </el-menu-item>
-      <el-menu-item index="4" >
-        <router-link class="router" :to="`/stay`">
-          <span @click="reloadStays" class="txt"> Explore </span>
-        </router-link>
-      </el-menu-item>
+    <div class="nav-container">
+      <el-menu
+        class="el-menu-demo menu-flex"
+        style="border: none; border: none"
+        mode="horizontal"
+        @select="handleSelect"
+      >
+        <el-menu-item index="1">
+          <router-link class="router" :to="`/`">
+            <span class="logo txt"> HomeAway </span>
+          </router-link>
+        </el-menu-item>
+        <el-menu-item index="4"> </el-menu-item>
+      </el-menu>
 
-    </el-menu>
-    <div class="header-right-corner flex">
-      <div class="new-host">
-        Become a host
+      <div class="header-right-corner flex">
+      <router-link class="router explore-nav" :to="`/stay`">
+        <span @click="reloadStays" class="txt"> Explore </span>
+      </router-link>
+        <div class="new-host">Become a host</div>
+        <user-selections />
       </div>
-    <user-selections />
     </div>
-  </div>    
   </header>
 </template>
 <script>
-import userSelections from '../cmps/user-selections.vue'
+import userSelections from "../cmps/user-selections.vue";
 export default {
   name: "app-header",
   data() {
@@ -34,16 +36,13 @@ export default {
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-        
+    handleSelect(key, keyPath) {},
+    async reloadStays() {
+      await this.$store.dispatch({ type: "loadStays" });
     },
- async reloadStays(){
-    await  this.$store.dispatch({ type: "loadStays" });
-
-  }
   },
-  components:{
-    userSelections
-  }
+  components: {
+    userSelections,
+  },
 };
 </script>
