@@ -14,7 +14,7 @@
         <host-stays v-if="hostCurrTab === 'host-stays'" :host="host" />
         <!-- <single-stay-order v-if="hostCurrTab === 'reservations'" :singleStayOrder="stay" /> -->
         <add-stay v-if="hostCurrTab === 'add-stay'" :host="host" />
-        <user-statistics v-if="hostCurrTab === 'user-statistics'" />
+        <user-statistics class="user-statistics" v-if="hostCurrTab === 'user-statistics'" />
       </div>
   </section>
 </template>
