@@ -31,3 +31,33 @@
         width: 40.4%;
     }    
 }
+@media all and(max-width:700px){
+    .user-details {
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        .user-profile{
+            position: unset;
+            top: unset;
+            margin: 3% 0;
+            // padding: unset;
+            width: 60%;
+            align-self: center;            
+        }
+        .el-tabs__item {
+            padding: 0px 9px;
+            font-size: 21px;
+        }
+        .user-back-office{
+            margin: 0 4%;
+        }
+    }
+    
+}
+// @media
+
+// BREAKEPOINT 1
+// 980
+// BREAKEPOINT 2
+// 700
