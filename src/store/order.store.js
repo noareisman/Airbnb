@@ -11,8 +11,13 @@ export const orderStore = {
   },
   getters: {
     getHostOrders(state) {
-      return state.hostOrders;
-    },
+     return state.hostOrders;
+    }, 
+    pendingOrders(state) {
+    return state.hostOrders.filter(order =>{
+      return order.status === 'pending'
+    });
+    }, 
     getAllOrders(state) {
       return state.allOrders
     },
@@ -61,11 +66,12 @@ export const orderStore = {
     async loadHostOrders({ commit, state }, { host }) {
       try {
         const filterBy ={}
+        console.log(host);
         filterBy._id = host._id
         commit({ type: 'setHost', host })
         const stays = await stayService.query(filterBy);
         const orders = await orderService.query();
-
+        
         const hostOrders = orders.filter(order => {
           return stays.find(stay => {
             return stay._id === order.stay._id;
@@ -81,40 +87,49 @@ export const orderStore = {
       await orderService.save(order)
       dispatch({ type: "loadHostOrders", order });
     },
-    // async setPendingOrder({ dispatch }, { orderSettings }) {
-    //   var host = orderSettings.currStay.host
-    //   //TODO: move to service
-    //   var newPendingOrder = {
-    //     createdAt: Date.now(),
-    //     buyer: {
-    //       _id: orderSettings.buyer._id,
-    //       fullname: orderSettings.buyer.fullname
-    //     },
-    //     totalPrice: orderSettings.totalPrice,
-    //     startDate: orderSettings.requestedDates[0],
-    //     endDate: orderSettings.requestedDates[1],
-    //     guests: {
-    //       adults: orderSettings.guest.adultsNum,
-    //       kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
-    //     },
-    //     stay: {
-    //       _id: orderSettings.currStay._id,
-    //       name: orderSettings.currStay.name,
-    //       price: orderSettings.currStay.price
-    //     },
-    //     status: 'pending'
-    //   }//
-    //   await orderService.save(newPendingOrder)
-    //   // dispatch({ type: "loadHostOrders", host });
-    //   //socketService.emit('load orders',)
-    // },
     async setPendingOrder({ dispatch }, { orderSettings }) {
+      console.log(orderSettings)
       var host = orderSettings.currStay.host
-      var newPendingOrder= await orderService.save(orderSettings)
+      //TODO: move to service
+      var newPendingOrder = {
+        createdAt: Date.now(),
+        buyer: {
+          _id: orderSettings.buyer._id,
+          fullname: orderSettings.buyer.fullname
+        },
+        totalPrice: orderSettings.totalPrice,
+        startDate: orderSettings.requestedDates[0],
+        endDate: orderSettings.requestedDates[1],
+        guests: {
+          adults: orderSettings.guest.adultsNum,
+          kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
+        },
+        stay: {
+          _id: orderSettings.currStay._id,
+          name: orderSettings.currStay.name,
+          price: orderSettings.currStay.price
+        },
+        status: 'pending'
+      }//
+      await orderService.save(newPendingOrder)
       // dispatch({ type: "loadHostOrders", host });
-      socketService.emit('loadOrders',(newPendingOrder))
-    }
-  }
+      console.log('110!!!!!!!!!!!')
+      socketService.emit('renderOrders',host )
+    },
+  
 }
+}
+
+
+
+
+  //   async setPendingOrder({ dispatch }, { orderSettings }) {
+  //     var host = orderSettings.currStay.host
+  //     var newPendingOrder= await orderService.save(orderSettings)
+  //     socketService.emit('test', newPendingOrder)
+  //     // dispatch({ type: "loadHostOrders", host });
+  //     // socketService.emit('loadOrders',(newPendingOrder))
+  //   }
+  // }
 
 

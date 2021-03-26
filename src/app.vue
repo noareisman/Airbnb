@@ -5,7 +5,7 @@
     <my-footer />
   </div>
 </template>
-
+ 
 <script>
 import myHeader from "./cmps/app-header.vue";
 import myFooter from "./cmps/app-footer.vue";
@@ -15,13 +15,24 @@ export default {
   data() {
     return {};
   },
+  methods:{
+    async loadOrder(){
+      console.log( 'line 22 is back')
+      debugger; 
+      const host = this.$store.getters.loggedinUser
+      await this.$store.dispatch({type:'loadHostOrders' ,host })
+    }
+  },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
     await this.$store.dispatch({ type: "login", userCred: { username: "mor97", password: "secret" }});
     await this.$store.dispatch({ type: "loadStays" });
   socketService.setup();
-  // socketService.on('loadOrders',)
-  socketService.emit('test','hi')
+    
+  // socketService.on(, this.loadOrder)
+
+  socketService.on('loadOrders', this.loadOrder)
+  
   },
   // destroyed(){
   //   socketService.off('loadOrders',)

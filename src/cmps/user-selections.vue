@@ -39,12 +39,12 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
-      <router-link class="router" :to="`/notifications`">
+      <router-link class="router" :to="`/user/${loggedInUser._id}`">
         <span
-          v-if="loggedInUser && numOfUserMesseges"
+          v-if="loggedInUser && numOfUserMsgs"
           class="badge"
           title="New Message"
-          >{{ numOfUserMesseges }}</span
+          >{{ numOfUserMsgs }}</span
         >
       </router-link>
     </el-dropdown>
@@ -105,9 +105,9 @@ export default {
     userPic() {
       return this.$store.getters.loggedinUser.imgUrl;
     },
-    numOfUserMesseges() {
-      const user = this.loggedInUser;
-      return Object.keys(user.notifications).length;
+    numOfUserMsgs() {
+      console.log(this.$store.getters.pendingOrders.length)
+      return this.$store.getters.pendingOrders.length
 
       //   const user = this.loggedInUser;
       // // const user = await this.$store.getters.loggedinUser

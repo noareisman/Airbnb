@@ -85,6 +85,7 @@ export default {
   },
   methods: {
     setDates(value) {
+      console.log(value)
       this.calcNightsNum(value)
       const startDate = value[0].split("-").join("/");
       const endDate = value[1].split("-").join("/");
@@ -104,6 +105,7 @@ export default {
     async sendOrderRequest() {
       // console.log('tripSettings', this.orderSettings);
       try {
+        console.log(this.orderSettings, 'this.orderSettings')
         await this.$store.dispatch({
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
