@@ -11,10 +11,10 @@
 
     .new-host {
       cursor: pointer;
-      font-weight: bolder;
       padding: 13px;
       border-radius: 25px;
       margin-right: 10px;
+      color: unset !important;
     }
 
     .new-host:hover {
@@ -107,7 +107,74 @@
 }
 
 
-#line-chart{
-  // width: 80% !important;
-  
+.menu-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.explore-nav{
+  cursor: pointer;
+  padding:13px;
+  border-radius: 25px;
+  margin-left: -2px;
+}
+
+.explore-nav:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+// width: 80% !important;
+
+
+
+@media all and(max-width:400px){
+  .nav-container {
+    // background-color: red;
+    .explore-nav {
+      // display: none;
+      font-size: 1.2rem;
+    }
+    .explore-nav:hover {
+      background-color: unset;
+    }
+    .new-host {
+      display: none;
+    }
+    .logo{
+      // background-color: red;
+      font-size: 1.5rem;
+    }
+    .el-menu-item{
+      padding: unset;
+    }
+    .user-select{
+      border: unset;
+      .el-dropdown{
+        padding: unset;
+      }
+
+      .badge {
+        top: -8px;
+        right: -6px;
+      }
+    }
+    .user-menu-img{
+      width: 41px;
+      height: 38px;
+    }
+    .user-menu-img.burger{
+      display: none;
+    }
+  }
+
+  .el-dropdown-menu__item {
+    font-size: 25px !important;
+    margin: 5% 0 !important;
+  }
+  .el-dropdown-menu__item:hover {
+    background-color: unset !important;
+  }
+  .el-dropdown-menu.el-popper{
+    border-radius: 25px;
+  }
 }

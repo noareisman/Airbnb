@@ -19,7 +19,7 @@
 
 .stay-img-prev{
     height: 200px;
-    border-radius: 18px;
+    border-radius: 12px;
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -36,6 +36,7 @@
 .card-info{
     display: flex;
     flex-direction: column;
+    padding: 5px 0px 5px 0px;
 }
 
 .img-btn{
@@ -59,6 +60,14 @@
 
 }
 
+.summery-txt{
+    padding: 1px 0px;
+}
+
+.price-bold{
+    font-weight: bold;
+}
+
 .prev-img{
     top: 34%;
     left: 2%;
@@ -80,9 +89,9 @@
     z-index: 10;
     position: absolute;
     top: 7px;
-    left: 7px;
-    width: 25px;
-    height: 25px;
+    right: 7px;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }
 

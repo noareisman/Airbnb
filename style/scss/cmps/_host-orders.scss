@@ -23,7 +23,7 @@
     
     .host-order {
         display: grid;
-        grid-template-columns: 32% 28% 28% 12%;
+        grid-template-columns: 32% 25% 25% 18%;
         list-style-type: none;
         padding: 1%;
         border-bottom: 2px solid lightgray;
@@ -56,20 +56,19 @@
             border: unset ;
             cursor: pointer;
             border-radius: 5px;
-            font-weight: bolder;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
         }
 
         button:hover {
             background-color: rgb(218, 218, 218);
         }
-
-        .reject{
-            color: red;
+        
+        .reject {
+            color: #ff385c;
         }
-
+        
         .approve{
-            color: rgba(27, 251, 65, 0.657);
+            color: #00a549;
         }
     }
 }
@@ -92,8 +91,9 @@
         }
         .host-order-btns {
             button {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
+            
             button:hover {
                 background-color: unset;
             }

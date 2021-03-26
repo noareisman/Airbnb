@@ -6,10 +6,12 @@
 .stay-title-secondary{
     padding-top: 10px;
     .left>*{
-       margin-right: 10px;
+        outline: none;
+        margin-right: 10px;
     }
     .right>*{
-       margin-left: 12px;
+        margin-left: 12px;
+        outline: none;
     }
 }
 
@@ -27,6 +29,7 @@
 
 .add-review-btn{
     width: fit-content;
+    outline: none;
 }
 
 .review-card-grid{

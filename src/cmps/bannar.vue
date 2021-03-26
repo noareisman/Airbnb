@@ -1,7 +1,7 @@
 <template>
   <section class="home-bannar-container">
       <div class="bannar-content">
-          <h2>home is where our story begins...</h2>
+          <h2 class="bannar-txt-one">Home is where our story begins...</h2>
             <router-link class="router" :to="`/stay`">
           <button 
            class="exp-btn">Explore</button>

@@ -20,9 +20,11 @@
             @pickguests="setGuests"
           ></guest-settings>
         </div>
+
         <button v-if="!isTotalPriceClalculable" class="special-btn">
           <span class="middle-level">
             <span class="inner-level" @mousemove="mousemove" :style="mousePos">
+              {{mousePos}}
             </span>
           </span>
           <span class="special-btn-txt">Check availability</span>
@@ -32,6 +34,7 @@
           <button class="special-btn" @click="sendOrderRequest()">
             Reserve
           </button>
+
           <p>You won't be charged yet</p>
           <div class="price-calc flex space-between">
             <span class="underline"

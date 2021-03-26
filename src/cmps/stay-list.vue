@@ -1,7 +1,7 @@
 <template>
   <section class="list-container">
-    <h1 v-if="place">Places to stay for you in {{ place }}</h1>
-    <h1 v-else>Places to stay for you</h1>
+    <h1 class="places-headline" v-if="place">Places to stay for you in {{ place }}</h1>
+    <h1 class="places-headline" v-else>Places to stay for you</h1>
     <!-- <price-range/> -->
     <div class="filter-list-container"> 
     <div class="sort-container">
@@ -13,11 +13,10 @@
       >
     </div>
     <div class="container-sss"> 
-
-
+      
     <div v-if="isPrice" class="block-range">
       <span class="demonstration">Limit Price</span>
-      <el-slider input-size="mini" :max="500" v-model="price"></el-slider>
+      <el-slider  input-size="mini" :max="500" v-model="price"></el-slider>
       <button
           class="save-btn-list save-price"
         @click="seacrhByPrice"
@@ -34,7 +33,7 @@
         <el-checkbox label="Pets allowed" ></el-checkbox>
         <el-checkbox label="Cooking basics" ></el-checkbox>
  <button
-        class="save-btn-list "
+        class="save-btn-list save-btn-amenities "
         @click="seacrhByAmenities"
         >Search</button>
     </el-checkbox-group>

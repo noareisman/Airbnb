@@ -1,6 +1,6 @@
 <template>
   <section class="main-layout footer-container">
-      <div class="footer-contant"> 
+      <div class="footer-content"> 
           <p class="logo"> HomeAway </p>
  <div class="rights-container"> 
           <p> © 2020 HomeAway, Inc. All rights reserved </p>
