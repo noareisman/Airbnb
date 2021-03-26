@@ -1,10 +1,11 @@
 <template>
+
   <section class="home main-layout">
 
     <section class="hero full main-layout">
       <hero />
     </section>
-    <h2 class="location-header">Populate locations</h2>
+    <h2 class="location-header">Populate Locations</h2>
     <div class="card-container">
       <div class="location">
         <router-link class="router" :to="`/stay/?location=Barcelona`">
@@ -34,7 +35,7 @@
         </router-link>
       </div>
     </div>
-      <h1 class="location-header Populate-header"> Populate Location</h1>
+      <h1 class="location-header Populate-header"> Top Rated</h1>
     <div v-if="staysPop" class="top-location"> 
 
       <div class="home-pop" v-for="stay in staysPop" :key="stay._id" :stay="stay" > 

@@ -23,6 +23,7 @@ Vue.use(VueGoogleMaps, {
   load: {
       key: GOOGLE_API_KEY,
       libraries: 'places',
+      language:'en'
   },
 });
 
