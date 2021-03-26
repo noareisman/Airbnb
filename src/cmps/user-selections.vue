@@ -30,7 +30,7 @@
           class="user-option"
           v-if="loggedInUser"
           @click.native="navTo"
-          >Messages</el-dropdown-item
+          >Notifications</el-dropdown-item
         >
         <el-dropdown-item
           class="user-option"
@@ -39,7 +39,7 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
-      <router-link class="router" :to="`/messages`">
+      <router-link class="router" :to="`/notifications`">
         <span
           v-if="loggedInUser && numOfUserMesseges"
           class="badge"
@@ -75,9 +75,9 @@ export default {
   methods: {
     navTo(ev) {
       switch (ev.target.textContent) {
-        case "Messages":
-          if (this.$route.path !== "/messages") {
-            this.$router.push("/messages");
+        case "Notifications":
+          if (this.$route.path !== "/notifications") {
+            this.$router.push("/notifications");
           }
           break;
         case "Log-in":
@@ -107,13 +107,13 @@ export default {
     },
     numOfUserMesseges() {
       const user = this.loggedInUser;
-      return Object.keys(user.messages).length;
+      return Object.keys(user.notifications).length;
 
       //   const user = this.loggedInUser;
       // // const user = await this.$store.getters.loggedinUser
       // console.log(user, ' user')
       // var sum = 0;
-      // for (const message in user.messages){
+      // for (const message in user.notifications){
       //   console.log(message, 'message')
       //   message.forEach(element => {
       //     if(element.status === 'unread'){

@@ -1,9 +1,9 @@
 <template>
-<section class="messages flex">
-    <div class="messages-address">
-        <h3 class="messages-address-headline flex">Messages</h3>
-        <ul v-if="loggedInUserMessages.length" class="list-of-messages">
-            <li  v-for="(message, idx) in loggedInUserMessages" :key="message.sender">
+<section class="notifications flex">
+    <div class="notifications-address">
+        <h3 class="notifications-address-headline flex">Notifications</h3>
+        <ul v-if="loggedInUserNotifications.length" class="list-of-notifications">
+            <li  v-for="(message, idx) in loggedInUserNotifications" :key="message.sender">
                 <div @click="showAllMsg(idx)" class="msg-prev">
                <span class="msg-from"> {{message[0].from}}</span> 
                <span class="msg-title"> {{message[0].title}}</span> 
@@ -13,7 +13,7 @@
     </div>
 
     <div class="message-content">
-        <h3 class="messages-content-headline flex"> Chat</h3>
+        <h3 class="notifications-content-headline flex"> Chat</h3>
          <div v-if="currMsg" class="currMsg-container"> 
              <section v-for="(message,idx) in currMsg" :key="idx">  
                  <div class="msg-content">    
@@ -60,22 +60,22 @@ export default {
 
       async  sbmitReply(){
 
-            const msgs = this.$store.getters.loggedinUser.messages;
+            const msgs = this.$store.getters.loggedinUser.notifications;
             const user = this.$store.getters.loggedinUser
             this.reply.from = this.$store.getters.loggedinUser.username
             msgs[this.currMsgId].push(this.reply);
-             user.messages = msgs
+             user.notifications = msgs
              await this.$store.dispatch({ type: "updateUser", user });
              this.showAllMsg(this.index)
              const sendTo = await userService.getById(this.currMsgId)
-             sendTo.messages[this.currMsgId].push(this.reply)
+             sendTo.notifications[this.currMsgId].push(this.reply)
              this.reply.txt = ''
         }
     },
 
     computed:{
-        loggedInUserMessages(){
-            const msgs = this.$store.getters.loggedinUser.messages;
+        loggedInUserNotifications(){
+            const msgs = this.$store.getters.loggedinUser.notifications;
             const msgArray = [];
             for (const el in msgs){
                 this.currMsgId = el;
@@ -86,7 +86,7 @@ export default {
             return msgArray;
 
             
-            // return this.$store.getters.loggedinUser.messages;
+            // return this.$store.getters.loggedinUser.notifications;
         },
   
     },

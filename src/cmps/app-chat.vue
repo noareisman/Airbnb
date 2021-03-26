@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      messages: [],
+      notifications: [],
       msg: { from: "", txt: "", status: "read" ,  createdAt:new Date()},
       topic: "",
       // isTyping:false
@@ -36,7 +36,7 @@ export default {
     sendMsg() {
       this.msg.from = this.$store.getters.loggedinUser.username;
       socketService.emit("chat newMsg", this.msg);
-      // this.messages.push(this.msg);
+      // this.notifications.push(this.msg);
     },
 
     focusInput() {
@@ -44,16 +44,16 @@ export default {
     },
     async addMsg(msg) {
       msg.title = msg.txt.substring(0,10) + '...'
-      if (!this.messages[this.topic]) this.messages[this.topic] = [];
-      this.messages[this.topic].push(msg);
+      if (!this.notifications[this.topic]) this.notifications[this.topic] = [];
+      this.notifications[this.topic].push(msg);
       const user = this.$store.getters.loggedinUser;
       try {
         await this.$store.dispatch({ type: "updateUser", user });
         if (this.stay.host._id === this.topic) return;
         const toUser = await userService.getById(this.stay.host._id);
-        if (!toUser.messages[this.topic]) toUser.messages[this.topic] = [];
+        if (!toUser.notifications[this.topic]) toUser.notifications[this.topic] = [];
         msg.status = "unread";
-        toUser.messages[this.topic].push(msg);
+        toUser.notifications[this.topic].push(msg);
         await this.$store.dispatch({ type: "updateUser", user: toUser });
         Swal.fire("your message has been sent successfully", "we will inform you when the host response", "success");
       } catch (err) {
@@ -69,7 +69,7 @@ export default {
   },
   created() {
     const user = this.$store.getters.loggedinUser;
-    this.messages = user.messages || [];
+    this.notifications = user.notifications || [];
     // const _id = this.$route.params.toyId;
     this.topic = user._id;
     socketService.setup();

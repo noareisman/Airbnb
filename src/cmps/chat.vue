@@ -43,7 +43,7 @@ export default {
     this.bounce = utilService.debounce(this.clearTyping, 1000);
     /////////////////ERAN////////////////////////////
     //     const user = this.$store.getters.loggedinUser;
-    // this.messages = user.messages || [];
+    // this.notifications = user.notifications || [];
     // // const _id = this.$route.params.toyId;*********************************88
     // this.topic = user._id;
     // socketService.setup();

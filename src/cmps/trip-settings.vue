@@ -105,6 +105,7 @@ export default {
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
         });
+        
         Swal.fire(
           "Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. "
         );

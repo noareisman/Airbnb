@@ -81,30 +81,38 @@ export const orderStore = {
       await orderService.save(order)
       dispatch({ type: "loadHostOrders", order });
     },
+    // async setPendingOrder({ dispatch }, { orderSettings }) {
+    //   var host = orderSettings.currStay.host
+    //   //TODO: move to service
+    //   var newPendingOrder = {
+    //     createdAt: Date.now(),
+    //     buyer: {
+    //       _id: orderSettings.buyer._id,
+    //       fullname: orderSettings.buyer.fullname
+    //     },
+    //     totalPrice: orderSettings.totalPrice,
+    //     startDate: orderSettings.requestedDates[0],
+    //     endDate: orderSettings.requestedDates[1],
+    //     guests: {
+    //       adults: orderSettings.guest.adultsNum,
+    //       kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
+    //     },
+    //     stay: {
+    //       _id: orderSettings.currStay._id,
+    //       name: orderSettings.currStay.name,
+    //       price: orderSettings.currStay.price
+    //     },
+    //     status: 'pending'
+    //   }//
+    //   await orderService.save(newPendingOrder)
+    //   // dispatch({ type: "loadHostOrders", host });
+    //   //socketService.emit('load orders',)
+    // },
     async setPendingOrder({ dispatch }, { orderSettings }) {
       var host = orderSettings.currStay.host
-      var newPendingOrder = {
-        createdAt: Date.now(),
-        buyer: {
-          _id: orderSettings.buyer._id,
-          fullname: orderSettings.buyer.fullname
-        },
-        totalPrice: orderSettings.totalPrice,
-        startDate: orderSettings.requestedDates[0],
-        endDate: orderSettings.requestedDates[1],
-        guests: {
-          adults: orderSettings.guest.adultsNum,
-          kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
-        },
-        stay: {
-          _id: orderSettings.currStay._id,
-          name: orderSettings.currStay.name,
-          price: orderSettings.currStay.price
-        },
-        status: 'pending'
-      }
-      await orderService.save(newPendingOrder)
-      dispatch({ type: "loadHostOrders", host });
+      var newPendingOrder= await orderService.save(orderSettings)
+      // dispatch({ type: "loadHostOrders", host });
+      socketService.emit('loadOrders',(newPendingOrder))
     }
   }
 }

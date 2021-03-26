@@ -82,7 +82,7 @@ async function signup(userCred) {
     // const user = await storageService.post('user', userCred)
     userCred.imgUrl = require(`@/assets/imgs/icons/userGuest.jpg`);
     userCred.isAdmin = false;
-    userCred.messages = {};
+    userCred.notifications = {};
     const user = await httpService.post('auth/signup', userCred)
     // storageService.save('user', gUsers.user)
     return _saveLocalUser(user)
@@ -107,19 +107,9 @@ function getLoggedinUser() {
             "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg",
             "isAdmin": false,
             "username": "mor97",
-            "messages": {
-                "6058751c94789ab513f04f9c": [
-                    {
-                        "txt": "hello user101",
-                        "time": 12342141244,
-                        "sender": "user102"
-                    },
-                    {
-                        "txt": "hello to you to",
-                        "time": 123424141244.0,
-                        "from": "user101"
-                    }
-                ]
+            "notifications": {
+                "orders":{},
+                "msgs":{}
             },
             // "createdAt": 1234214185454
         }

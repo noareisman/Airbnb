@@ -6,7 +6,7 @@ import stayDetails from '../views/stay-details.vue'
 import stayEdit from '../views/stay-edit.vue'
 import userDetails from '../views/user-details.vue'
 import login from '../views/login.vue'
-import messages from '../views/messages.vue'
+// import notifications from '../views/notifications.vue'
 
 Vue.use(VueRouter)
 
@@ -40,10 +40,10 @@ const routes = [
     path: '/login',
     component: login
   },
-  {
-    path: '/messages',
-    component: messages
-  }
+  // {
+  //   path: '/notifications',
+  //   component: notifications
+  // }
 ]
 
 const router = new VueRouter({
