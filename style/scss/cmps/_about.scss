@@ -22,3 +22,29 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+@media (max-width:400px){
+    .about-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-section-title {
+        font-size: 32px;
+    }
+
+    .Populate-header{
+        font-size: 32px;
+    }
+
+    .home-bannar-container {
+        grid-column: 1/-1;
+
+    }
+
+    .about-card-homeaway{
+        margin-bottom: 15px;
+    }
+
+}

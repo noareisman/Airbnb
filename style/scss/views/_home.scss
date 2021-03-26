@@ -213,7 +213,6 @@ html {
 
 .top-location{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     margin: 10px 0px
 }
@@ -226,4 +225,24 @@ html {
 .Populate-header{
     margin-top: 35px;
     margin-bottom:25px
+}
+
+
+@media (max-width:400px){
+
+.card-container{
+    flex-direction: column;
+}
+.top-location{
+    flex-direction: column;
+}
+
+.hero .h1-container h1{
+    font-size: 3rem;
+}
+
+.hero .h1-container h1 .dot{
+    font-size: 3rem;
+}
+
 }
