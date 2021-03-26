@@ -1,5 +1,6 @@
 <template>
   <section>
+    
     <div ref="wrapper" class="wrapper flex" :class="{out:isOpen}">
       <span class="box">
         <div class="location">
@@ -102,6 +103,7 @@
         </div>
       </div>
       </div>
+
 
   </section>
 </template>

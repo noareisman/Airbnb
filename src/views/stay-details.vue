@@ -159,14 +159,28 @@ export default {
       }
     },
     async toggleLike() {
-      this.isLiked = !this.isLike;
+      this.isLiked = !this.isLiked;
+      console.log(this.isLiked )
       if (this.isLiked) {
         this.class = "save-btn btn fas fa-heart";
       } else {
         this.class = "save-btn btn far fa-heart";
       }
-      await this.$store.dispatch({ type: "toggleLike", stay });
+      await this.$store.dispatch({ type: "toggleLike", stay: this.stay });
     },
+
+    //   async ToggleLike(stay) {
+    //   if (!this.$store.getters.loggedinUser) {
+    //     Swal.fire("Its better to sign in :)");
+    //     return;
+    //   }
+    //   try {
+    //     await this.$store.dispatch({ type: "toggleLike", stay });
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
+
   chatModal(){
     this.onChat = !this.onChat
   }

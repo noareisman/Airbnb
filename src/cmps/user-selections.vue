@@ -1,6 +1,6 @@
 <template>
   <section class="user-select">
-    <el-dropdown>
+    <el-dropdown> 
       <span class="el-dropdown-link">
         <img
           class="user-menu-img burger"
@@ -39,7 +39,7 @@
           >Log-out</el-dropdown-item
         >
       </el-dropdown-menu>
-      <router-link class="router" :to="`/user/${loggedInUser._id}`">
+      <router-link v-if="loggedInUser" class="router" :to="`/user/${loggedInUser._id}`">
         <span
           v-if="loggedInUser && numOfUserMsgs"
           class="badge"
