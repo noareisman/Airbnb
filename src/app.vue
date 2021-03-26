@@ -17,8 +17,6 @@ export default {
   },
   methods:{
     async loadOrder(){
-      console.log( 'line 22 is back')
-      debugger; 
       const host = this.$store.getters.loggedinUser
       await this.$store.dispatch({type:'loadHostOrders' ,host })
     }
