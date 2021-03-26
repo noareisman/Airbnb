@@ -1,7 +1,7 @@
 <template>
   <section class="list-container">
-    <h1 v-if="place">Places to stay for you in {{ place }}</h1>
-    <h1 v-else>Places to stay for you</h1>
+    <h1 class="places-headline" v-if="place">Places to stay for you in {{ place }}</h1>
+    <h1 class="places-headline" v-else>Places to stay for you</h1>
     <!-- <price-range/> -->
     <div class="filter-list-container"> 
     <div class="sort-container">

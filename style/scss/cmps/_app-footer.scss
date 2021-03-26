@@ -48,25 +48,28 @@ cursor: pointer;
     margin: 0;
     padding: 0;
     list-style-type: none;
-  }
-  
-  @media all and(max-width:400px){
-    .footer-container{
-      .footer-content{
-        font-size: 1rem;
-        display: flex;
-        flex-direction: column !important;
-        align-items: center;
-        padding: 5% unset;
-        .logo{
-          font-size: 2rem !important;
-        }
-        .social-links>*:nth-child(2) {
-          margin: 0 35px;
-        }
+}
+
+@media all and(max-width:400px){
+  .footer-container{
+    .footer-content{
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column !important;
+      align-items: center;
+      padding: 5% unset;
+ 
+      .logo{
+        font-size: 2rem !important;
       }
-      .footer-content >*:not(:first-child){
-        margin-top: 10%;
+ 
+      .social-links>*:nth-child(2) {
+        margin: 0 35px;
       }
     }
+ 
+    .footer-content >*:not(:first-child){
+      margin-top: 10%;
+    }
   }
+}

@@ -127,3 +127,10 @@
 .title-location{
     line-height: 19px;
 }
+
+
+@media all and(max-width:400px){
+    .wrapper {
+        display: none;
+    }
+}

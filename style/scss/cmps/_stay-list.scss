@@ -114,3 +114,23 @@ img {
 .save-btn-amenities{
     margin: 10px 18px
 }
+
+
+@media all and(max-width:400px){
+    .filter-list-container {
+        flex-wrap: wrap;
+    }
+    .list-container {
+        .places-headline {
+            font-size: 2rem !important;
+
+        }
+        .list-card-container {
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+    
+}

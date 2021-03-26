@@ -7,6 +7,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-height: 72vh;
+    .el-col{
+        margin: unset ;
+    }
+    .el-card.is-always-shadow {
+        width: 91%;
+    }
 }
 
 .dash-details {
