@@ -61,7 +61,6 @@ function createDummySocketService() {
     },
     on(eventName, cb) {
       listenersMap[eventName] = [...(listenersMap[eventName]) || [], cb]
-
     },
     off(eventName, cb) {
       if (!listenersMap[eventName]) return
