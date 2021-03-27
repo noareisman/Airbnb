@@ -3,7 +3,8 @@
 
       <el-tabs class="user-status-btns" v-model="hostCurrTab" >
           <el-tab-pane  class="inbox" label="Inbox" name="inbox"></el-tab-pane>
-          <el-tab-pane class="host-stays" label="Listing" name="host-stays"></el-tab-pane>
+          <el-tab-pane class="host-stays" label="Bookings" name="host-stays"></el-tab-pane>
+          <!-- <el-tab-pane class="host-stays" label="Listings" name="host-stays"></el-tab-pane> -->
           <!-- <el-tab-pane  class="reservations" label="Reservations" name="reservations"></el-tab-pane> -->
           <el-tab-pane class="add-stay" label="Add a list" name="add-stay"></el-tab-pane>
           <el-tab-pane class="statistics" label="Statistics" name="user-statistics"></el-tab-pane> 

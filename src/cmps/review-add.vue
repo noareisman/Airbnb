@@ -2,8 +2,9 @@
   <section>
     <h3>Add Your Review:</h3>
     <div class="add-review-inputs flex column">
-        <div class="user-review-inputs flex justify-content">
-          <el-input class="txt-input" type="textarea" :rows="8" placeholder="Share your experience here..." v-model="reviewToAdd.reviewTxt"/>
+        <div class="flex justify-content user-review-inputs">
+          <el-input class="txt-input" type="textarea" :rows="8" 
+          placeholder="Share your experience here..." v-model="reviewToAdd.reviewTxt"/>
           <ul class="clean-list review-star-input flex column">
             <li>
               <span class="category">{{ categoryName[0] }}</span>
@@ -31,10 +32,10 @@
             </li>
           </ul>
         </div>
+    </div>
         <button class="btn add-review-btn" @click="addReview()">
           Add Review
         </button>
-    </div>
   </section>
 </template>
 

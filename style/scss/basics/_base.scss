@@ -1,8 +1,7 @@
 * {
     box-sizing: border-box;
     -webkit-text-size-adjust: 100%;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; 
 }
 
 html {
@@ -79,6 +78,9 @@ color: #ca4c4c;
       appearance: none;
       border:none;
       cursor: pointer;
+    }
+    .action-btn:hover{ 
+    background-color: rgb(228, 228, 228);
     }
     
   .action-btn :nth-child(2){

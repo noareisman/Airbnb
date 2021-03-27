@@ -1,6 +1,6 @@
 <template>
   <div class="img-upload-container">
-    <span>Add stay images</span>
+
     <template v-if="!isLoading">
       <!-- UPLOAD IMG -->
       <label

@@ -8,24 +8,41 @@
             <div>
                 <span>Stay Summary:</span>
                 <el-input
-                    class="add-stay-summary"
                     type="textarea"
-                    :rows="2"
                     placeholder="Enter summary here..."
-                    v-model="stay.summary">
+                    v-model="stay.summary"
+                    maxlength="70"
+                    show-word-limit
+                  >
                 </el-input>
             </div>
             <div>
-                <span>Price:</span>
-                <el-input class="add-stay-price" placeholder="Enter price" v-model="stay.name"></el-input>
+                <span>Stay Description:</span>
+                <el-input
+                    class="add-stay-summary"
+                    type="textarea"
+                    :rows="4"
+                    placeholder="Enter description here..."
+                    v-model="tempDescription">
+                </el-input>
+            </div>
+            <div class="flex align-center">
+                <span>Price per night:</span>
+                <el-input class="add-stay-price" placeholder="Enter price" size=small v-model="stay.name"></el-input>
             </div>
             <div>
                 <span class="capacity">Capacity:</span>
-                <el-input-number v-model="stay.capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
+                <el-input-number size=small v-model="stay.capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
             </div>
-            <add-stay-amenities @updateAmenities="updateAmenities()"/>
+            <div>
+              <span class="add-amen"> Choose amenities:</span>
+              <add-stay-amenities @updateAmenities="updateAmenities()"/>
+            </div>
             <!-- <div class="add-stay-address"/> -->
+            <div>
+            <span>Upload stay images:</span>
             <img-cld-upload class="upload-stay-img"/>
+            </div>
             <button class="call-to-action-btn" @click="addStay()">Publish Listing</button>
         </form>
     </section>    
@@ -42,6 +59,7 @@ export default {
   props: ['host' ],
   data() {
     return {
+      tempDescription:'',
       stay: {
         name: "",
         imgUrls: ["1.1","1.2a","1.2b","1.2c","1.2d"],////////////////////////////////////FIX (temp)
@@ -91,3 +109,9 @@ export default {
   },
 };
 </script>
+<style>
+.add-stay-price{
+  max-width:130px;
+  margin-inline-start: 26px;
+}
+</style>

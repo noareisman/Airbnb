@@ -8,27 +8,45 @@
       />
       <div class="review-txt-section">
         <h3>{{review.by.fullname}}</h3>
-        <!-- <p>{{date}}</p> -->
+        <span class="review-date">{{date}}</span>
       </div>
       </div>
-      <div>{{ review.txt }}</div>
+      <div>{{ reviewPrevTxt}}</div>
     </div>
   </section>
 </template>
             
 <script>
+// import moment from 'moment'
+const moment = require("moment");
+
 export default {
   name: "review-preview",
   props: {
     review: Object,
   },
-  // computed: {
-  //   date() {
-  //     var date=this.review.time
-  //     var strDate=date.toString()
-  //     return moment(strDate,"YYYYMMDD").fromNow()
-  //   },
-  // },
+  data(){
+    return{
+      reviewTxt:'',
+      isReadMore:false,
+      isShowMoreReviews:false
+    }
+  },
+  computed: {
+    date() {
+      var date=moment(this.review.by.time).format ("MMMM YYYY")
+      // var strDate=date.toString()
+      return date
+    },
+  reviewPrevTxt(){
+    if (this.review.txt.split(' ').length<45) {
+      return this.review.txt
+    }else{
+      return this.review.txt.split(' ').splice(0,45).join(' ')+' ...'
+    }
+
+  }
+  },
 };
 </script>
 

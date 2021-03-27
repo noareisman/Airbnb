@@ -21,19 +21,7 @@
     min-height: 83vh;
 }
 
-.two-column-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 27px;
-    column-gap: 100px;
-}
 
-.two-column-grid-categories{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 27px;
-    column-gap: 100px;
-}
 
 .card-grid {
     display: grid;
