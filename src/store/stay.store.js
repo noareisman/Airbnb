@@ -32,9 +32,7 @@ export const stayStore = {
                 });
             });
             return stays
-        }, 
-
-    
+        },     
     },
 
     mutations: {

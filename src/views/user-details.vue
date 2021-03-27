@@ -6,6 +6,10 @@
       </div>
       <h2>{{ userName }}</h2>
       <small>Joined in {{ userCreationTime }}</small>
+      <div class="dashboard-status flex column">
+      <h4>You manage <span class="clr-num">{{ stays.length }}</span> assets</h4>
+      <h4><span class="clr-num">{{ pendingOrders.length }}</span> pending reservations</h4>
+      </div>
     </section>
     <section class="user-back-office">
        <el-tabs class="user-status-btns" v-model="userStatus" >
@@ -37,6 +41,15 @@ export default {
     };
   },
   computed: {
+        stays() {
+      //TODO do filter in store
+      return this.$store.getters.staysForDisplay.filter((stay) => {
+        return stay.host._id === this.user._id;
+      })
+        },
+    pendingOrders(){ 
+    return this.$store.getters.pendingOrders
+    },
     userName() {
       return this.user.fullname;
     },

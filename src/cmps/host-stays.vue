@@ -6,16 +6,18 @@
 
     <ul v-if="stays" class="host-stays">
       <li v-for="stay in stays" :key="stay._id" class="host-stay-and-orders">
-        <div class="host-stay">
-          <div class="host-stay-img">
-            <img
-              :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
-              alt="img not find"
-            />
-          </div>
+        <div class="host-stay flex">
+            <div>
+              <img class="host-stay-img"
+                :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
+                alt="img not found"
+              />
+            </div>
+            <div class="host-stay-txt">
           <h2>{{ stay.name }}</h2>
+          <single-stay-order :stay="stay" />
         </div>
-        <single-stay-order :stay="stay" />
+        </div>
       </li>
     </ul>
   </section>
