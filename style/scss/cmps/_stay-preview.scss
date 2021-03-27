@@ -104,3 +104,14 @@
     font-size: 14px;
     font-style: italic  ;
 }
+
+@media (max-width:400px){
+    .card-info {
+        font-size: 1.5rem;
+    }
+
+    .card-info >*:not(:last-child) {
+        // background-color: red !important;
+        margin-bottom: 1%;
+    }
+}

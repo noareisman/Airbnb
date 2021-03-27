@@ -101,6 +101,7 @@
 
 }
 .filter-container .wrapper .box .title{
+    
     margin-left: 3px;
 }
 
@@ -130,6 +131,27 @@
 
 
 @media (max-width:400px){
+    .filter-container {
+        // background-color: blue;
+        width: fit-content;
+    }
+
+    .advanced-search-input .advanced-input-container .advanced-input-section .label {
+        font-size: 1.1rem !important;
+    }
+    .advanced-search-input .advanced-input-container .advanced-input-section .advanced-input, .advanced-search-input .advanced-input-container .advanced-input-section .label {
+        font-size: 27px;
+    }
+    
+    
+    .title-sticky {
+        font-size: 1.5rem !important;
+    }
+
+    .filter-container .wrapper .box .title{ 
+        font-size: 1.3rem !important;
+    }
+
     .filter-container .wrapper .box:nth-child(2){
         display: none;
     }
@@ -138,32 +160,31 @@
     }
 
     .search-btn-sticky{
-    display: flex;
-    align-items: center;
-    z-index: 10000000;
-    transition: .15s ease-in-out;
-    min-width: 350px;
-    background-color: #fff;
-    border-radius: 200px;
-    padding: 0px, 10px, 0px, 5px ;
-    margin-top: 6px;
-    border: 1px solid rgb(235, 229, 229);
-    justify-content: space-between;
-    cursor: pointer;
-    outline: none;
-    color: rgb(185, 184, 184);
-}
+        display: none;
+        // display: flex;
+        align-items: center;
+        z-index: 10000000;
+        transition: .15s ease-in-out;
+        min-width: 350px;
+        background-color: #fff;
+        border-radius: 200px;
+        padding: 0px, 10px, 0px, 5px ;
+        margin-top: 6px;
+        border: 1px solid rgb(235, 229, 229);
+        justify-content: space-between;
+        cursor: pointer;
+        outline: none;
+        color: rgb(185, 184, 184);
+    }
 
-.search-btn-sticky {
-    top: 10%;
-    left: 3%;
-}
+    .search-btn-sticky {
+        top: 10%;
+        left: 3%;
+    }
 
-.mobail-container{
-    width: 100%;
-    background-color: red;
-}
-
-
+    .mobail-container{
+        width: 100%;
+        background-color: red;
+    }
 
 }

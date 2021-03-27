@@ -53,3 +53,8 @@
 margin-left: -11px;
 }
 
+@media screen and(max-width:400px){
+    .main-layout {
+        grid-template-columns: minmax(2rem, 1fr) minmax(auto, 312.3px) minmax(2rem, 1fr) !important;
+    }
+}

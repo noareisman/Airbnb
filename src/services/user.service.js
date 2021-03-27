@@ -54,7 +54,6 @@ async function update(user) {
 
 async function login(userCred) {
     const user = await httpService.post('auth/login', userCred);
-    // console.log('user im somewhere lol', user);
     if (user) return _saveLocalUser(user);
     else return 'Incorrect username or password.';
 
