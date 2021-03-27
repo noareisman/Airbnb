@@ -32,14 +32,15 @@
               }}
             </p>
           </div>
-          <div class="host-order-btns">
-            <button @click="changeOrderStat($event, order)" class="reject">
-              Reject
-              <!-- ❌ -->
-            </button>
+          <div class="host-order-btns flex">
             <button @click="changeOrderStat($event, order)" class="approve">
               Approve
               <!-- ✔️ -->
+            </button>
+            <!-- <p class="slash">/</p> -->
+            <button @click="changeOrderStat($event, order)" class="reject">
+              Reject
+              <!-- ❌ -->
             </button>
           </div>
         </li>
