@@ -112,22 +112,27 @@ export default {
           orderSettings: this.orderSettings,
         });
         this.open1()
-        // Swal.fire(
-        //   "Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. "
-        // );
       } catch (err) {
         console.log("could not send order request", err);
-        Swal.fire("Failed to set reservation. Try again later. ");
+        this.open4();
       }
     },
     open1() {
         this.$notify({
           title: 'Reservation sent successfully',
-          message: 'Your order was sent to the host',
+          message: 'Final order confirmation will be sent by mail',
           type: 'success',
           position:'bottom-right'
         });
       },
+      
+      open4() {
+        this.$notify.error({
+          title: 'Error',
+          message: 'Please Try Again later'
+        });
+      },
+    
     mousemove(e) {
       this.mouseX = e.offsetX;
       this.mouseY = e.offsetY;
