@@ -92,7 +92,7 @@
       </div>
     </div>
 
-    <div @click="openSearch" class="search-btn-sticky" v-if="isSticky">
+    <div @click.stop="openSearch" class="search-btn-sticky" v-if="isSticky">
       <span v-if="filterBy.location" class="title-sticky">
         {{ filterBy.location }}
       </span>
@@ -114,6 +114,7 @@ export default {
   name: "stayFilter",
   data() {
     return {
+      count: 0,
       isSticky: false,
       isOpen: false,
       filterBy: {
@@ -149,6 +150,8 @@ export default {
       this.filterBy.location = ev.target.value;
     },
     checkOffset() {
+      this.count++;
+      if (this.count % 11) return;
       if (!this.$refs.wrapper) return;
       const sticky = this.$refs.wrapper.offsetTop;
       if (window.pageYOffset > sticky) {
@@ -185,5 +188,6 @@ export default {
   },
 };
 </script>
-<style src="vue-advanced-search/dist/AdvancedSearch.css">
+<style
+ src="vue-advanced-search/dist/AdvancedSearch.css">
 </style>

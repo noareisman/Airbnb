@@ -238,9 +238,13 @@ html {
     .top-location{
         flex-direction: column;
     }
+    .hero .h1-container {
+        height: 90%;
+    }
 
     .hero .h1-container h1{
         font-size: 3rem;
+        line-height: 56px;
     }
 
     .hero .h1-container h1 .dot{
