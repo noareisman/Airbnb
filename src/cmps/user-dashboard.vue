@@ -16,8 +16,7 @@
       </router-link>
     </section>
 
-    <el-row>
-      <h2>sort By</h2>
+    <el-row v-else>
       <div class="sort-container">
         <el-button class="sort-btn" @click="sortBy('price')" round
           >Price</el-button
@@ -26,62 +25,71 @@
           >Popularity</el-button
         >
       </div>
-      <el-col
-        style="margin-bottom: 20px"
-        :span="12"
-        v-for="(stayLiked, index) in likes"
-        :key="index"
-        :offset="index > 0 ? 2 : 2"
-      >
-        <el-card :body-style="{ padding: '0px', width: '400px' }">
-          <el-carousel
-            :autoplay="false"
-            height="200px"
-            indicator-position="none"
-          >
-            <el-carousel-item
-              style="background-color: #fff"
-              v-for="(item, idx) in stayLiked.imgUrls"
-              :key="item"
-            >
-              <img
-                class="stay-img-card"
-                :src="
-                  require(`@/assets/imgs/airbnb-imgs/${stayLiked.imgUrls[idx]}.jpg`)
-                "
-              />
-            </el-carousel-item>
-          </el-carousel>
 
-          <div style="padding: 14px" class="dash-details">
-            <span>{{ stayLiked.name }}</span>
-            <span><b>{{ stayLiked.price }}</b> /$ Night</span>
-            <div class="bottom clearfix">
-              <router-link class="router" :to="`/stay/${stayLiked._id}`">
-                <span class="bottom clearfix"> View </span></router-link
-              >
-            </div>
+      <div class="home-pop" v-for="stay in likes" :key="stay._id" :stay="stay">
+        <section class="preview-card space-preview">
+          <router-link class="router" :to="`/stay/${stay._id}`">
+            <img
+              class="explore-img"
+              :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
+            />
+          </router-link>
+
+          <img
+            title="Remove From Favorites"
+            @click="ToggleLike(stay)"
+            class="like-btn"
+            src="../assets/imgs/icons/fillheart.png"
+          />
+
+          <div class="card-info">
+            <star-rating :reviews="stay.reviews" />
+            <span>
+              {{ stay.name }} -
+              <span class="stay-address"> {{ stay.loc.address }} </span>
+            </span>
+
+            <span>
+              <span class="price-bold"> {{ stay.price }} </span> /Night</span
+            >
           </div>
-        </el-card>
-      </el-col>
+        </section>
+      </div>
     </el-row>
   </section>
 </template>
 
 <script>
+import starRating from "../cmps/star-rating.vue";
 export default {
   props: ["user"],
+
+  methods: {
+    async ToggleLike(stay) {
+      if (!this.$store.getters.loggedinUser) {
+        Swal.fire("Its better to sign in :)");
+        return;
+      }
+      try {
+        await this.$store.dispatch({ type: "toggleLike", stay });
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    sortBy(sortBy) {
+      if (sortBy === "price") this.$store.getters.sortByPrice;
+      else if (sortBy === "rate") this.$store.getters.sortByPopularity;
+    },
+  },
+
   computed: {
     likes() {
       const likes = this.$store.getters.getAllUserLike;
       return likes;
     },
   },
-  methods: {
-    sortBy(sortBy) {
-      if (sortBy === "price") this.$store.getters.sortByPrice;
-      else if (sortBy === "rate") this.$store.getters.sortByPopularity;
-    },
+  components: {
+    starRating,
   },
 };
 </script>

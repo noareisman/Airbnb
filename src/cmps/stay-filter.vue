@@ -1,7 +1,6 @@
 <template>
   <section>
-    
-    <div ref="wrapper" class="wrapper flex" :class="{out:isOpen}">
+    <div ref="wrapper" class="wrapper flex" :class="{ out: isOpen }">
       <span class="box">
         <div class="location">
           <span class="title title-location">Location</span>
@@ -46,8 +45,8 @@
         </div>
       </div>
     </div>
- 
-      <div v-if="isOpen" class="secondary wrapper">
+
+    <div v-if="isOpen" class="secondary wrapper">
       <span class="box">
         <div class="location">
           <span class="title">Location</span>
@@ -93,18 +92,17 @@
       </div>
     </div>
 
-      <div @click="openSearch" class="search-btn-sticky" v-if="isSticky">
-         <span v-if="filterBy.location" class="title-sticky"> 
-           {{filterBy.location}} </span>  
-           <span v-else class="title-sticky"> Start Searching</span>
-       <div  class="search-icon sticy-search-icon">
+    <div @click="openSearch" class="search-btn-sticky" v-if="isSticky">
+      <span v-if="filterBy.location" class="title-sticky">
+        {{ filterBy.location }}
+      </span>
+      <span v-else class="title-sticky"> Start Searching</span>
+      <div class="search-icon sticy-search-icon">
         <div class="btn-search">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
       </div>
-      </div>
-
-
+    </div>
   </section>
 </template>
 
@@ -117,7 +115,7 @@ export default {
   data() {
     return {
       isSticky: false,
-      isOpen:false,
+      isOpen: false,
       filterBy: {
         location: "",
         startDate: "",
@@ -151,38 +149,36 @@ export default {
       this.filterBy.location = ev.target.value;
     },
     checkOffset() {
-      if(!this.$refs.wrapper) return
-      const sticky = this.$refs.wrapper.offsetTop
+      if (!this.$refs.wrapper) return;
+      const sticky = this.$refs.wrapper.offsetTop;
       if (window.pageYOffset > sticky) {
-        this.isSticky=true;
+        this.isSticky = true;
       } else {
-        this.isSticky=false;
+        this.isSticky = false;
       }
-         this.isOpen = false;
-
+      this.isOpen = false;
     },
-    openSearch(){
-       this.isSticky=false;
+    openSearch() {
+      this.isSticky = false;
       this.isOpen = true;
-    }
+    },
   },
-  computed:{
-    searchName(){
-      const filter = this.$store.getters.currentFilter
-      if(filter.location) return filter.location
-      else return "Start Searching" 
-    }
+  computed: {
+    searchName() {
+      const filter = this.$store.getters.currentFilter;
+      if (filter.location) return filter.location;
+      else return "Start Searching";
+    },
   },
   created() {
     this.filterBy.location = this.$route.query.location;
-    
+
     window.onscroll = () => {
-     this.checkOffset();
+      this.checkOffset();
     };
   },
-  destroyed(){
-  },
-  
+  destroyed() {},
+
   components: {
     datePicker,
     AdvancedSearch,
