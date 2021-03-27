@@ -23,7 +23,7 @@
     
     .host-order {
         display: grid;
-        grid-template-columns: 32% 25% 25% 18%;
+        grid-template-columns: 30% 25% 20% 25%;
         list-style-type: none;
         padding: 1%;
         border-bottom: 2px solid lightgray;
@@ -47,7 +47,14 @@
 
         .host-order-btns{
             margin: auto auto;
+            // order:reverse;
+            width: 100%;
         }
+        .slash{
+            font-size: 2em;
+            margin: auto 0;
+            font-weight: 10; 
+            }
 
         button {
             outline: unset !important;
@@ -56,7 +63,8 @@
             border: unset ;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding: 0.8em;
         }
 
         button:hover {
@@ -64,11 +72,12 @@
         }
         
         .reject {
-            color: #ff385c;
+            color: #6d696a;
         }
         
         .approve{
-            color: #00a549;
+            color: #f86792;
+            font-weight:600;
         }
     }
 }
