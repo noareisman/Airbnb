@@ -31,7 +31,8 @@
         width: 40.4%;
     }    
 }
-@media all and(max-width:400px){
+@media screen and(max-width:400px){
+
     .user-details {
         padding: 1%;
         display: flex;
@@ -39,6 +40,9 @@
         font-size: 1.5rem;
        
         .user-profile{
+            //?? 
+            display: none;
+            //?? 
             position: unset;
             top: unset;
             margin: 3% 0;
@@ -47,8 +51,8 @@
         }
        
         .el-tabs__item {
-            padding: 0px 9px;
-            font-size: 21px;
+            padding: 0px 5px;
+            font-size: 19px;
         }
        
         .user-back-office{

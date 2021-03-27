@@ -229,20 +229,28 @@ html {
 
 
 @media (max-width:400px){
+    .filter-container {
+        margin-bottom: 6vh;
+    }
+    .card-container{
+        flex-direction: column;
+    }
+    .top-location{
+        flex-direction: column;
+    }
 
-.card-container{
-    flex-direction: column;
-}
-.top-location{
-    flex-direction: column;
-}
+    .hero .h1-container h1{
+        font-size: 3rem;
+    }
 
-.hero .h1-container h1{
-    font-size: 3rem;
-}
+    .hero .h1-container h1 .dot{
+        font-size: 3rem;
+    }
+    .location-txt {
+        font-size: 1.8rem;
+    }
 
-.hero .h1-container h1 .dot{
-    font-size: 3rem;
-}
-
+    .explore-img {
+        width:  100% !important;
+    }
 }

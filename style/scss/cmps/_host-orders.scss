@@ -73,9 +73,13 @@
     }
 }
 
-@media all and(max-width:400px){
+@media screen and(max-width:400px){
     .reservations-title{
         font-size: 2rem;
+    }
+
+    .NoReserv{
+        font-size:20px
     }
 
     .host-order {

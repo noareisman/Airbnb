@@ -2,13 +2,13 @@
   <section class="host-order-container">
     <h2 class="reservations-title">Pending / Accepted reservations:</h2>
     <section class="host-orders">
-      <h2
+      <h2 class="NoReserv"
         v-if="
           !orders.filter((order) => order.status === 'pending') ||
           !orders.filter((order) => order.status === 'pending').length
         "
       >
-        No reservations to show...
+       No reservations at the moment
       </h2>
       <ul>
         <li

@@ -116,7 +116,7 @@ img {
 }
 
 
-@media all and(max-width:400px){
+@media screen and(max-width:400px){
     .filter-list-container {
         flex-wrap: wrap;
     }
