@@ -110,7 +110,7 @@ export default {
       return this.$store.getters.loggedinUser.imgUrl;
     },
     numOfUserMsgs() {
-      console.log(this.$store.getters.pendingOrders.length);
+      // console.log(this.$store.getters.pendingOrders.length);
       return this.$store.getters.pendingOrders.length;
 
       //   const user = this.loggedInUser;
@@ -127,6 +127,6 @@ export default {
       // }
       // return sum;
     },
-  },
+  }
 };
 </script>

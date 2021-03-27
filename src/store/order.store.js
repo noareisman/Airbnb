@@ -14,9 +14,9 @@ export const orderStore = {
      return state.hostOrders;
     }, 
     pendingOrders(state) {
-    return state.hostOrders.filter(order =>{
-      return order.status === 'pending'
-    });
+      return state.hostOrders.filter(order => {
+        return order.status === 'pending'
+      });
     }, 
     getAllOrders(state) {
       return state.allOrders
@@ -65,9 +65,9 @@ export const orderStore = {
     },
     async loadHostOrders({ commit, state }, { host }) {
       try {
-        const filterBy ={}
-        console.log(host);
+        const filterBy = {}
         filterBy._id = host._id
+
         commit({ type: 'setHost', host })
         const stays = await stayService.query(filterBy);
         const orders = await orderService.query();
