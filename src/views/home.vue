@@ -50,7 +50,7 @@
 
     <div class="card-info">
       <star-rating :reviews="stay.reviews" />
-      <span>
+      <span class="stay-name-home">
         {{ stay.name }} -
         <span class="stay-address"> {{ stay.loc.address }} </span>
       </span>

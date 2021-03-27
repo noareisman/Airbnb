@@ -1,7 +1,7 @@
 <template>
   <section v-if="reviews" class="star-rating">
     <span class="star-container">  
-      <p><i class="fas fa-star"></i> 
+      <p class="star-txt"><i class="fas fa-star"></i> 
           {{avgRateFromAllReviewers}}
           ({{ reviews.length }})
       </p>
