@@ -8,8 +8,8 @@
       >
         <router-link class="router" :to="`/stay/${stay._id}`">
           <img
-            class="stay-img-prev"
-            :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[idx]}.jpg`)"
+            class="stay-img-prev"  
+            :src= imgLink(stay.imgUrls[idx])
           />
         </router-link>
       </el-carousel-item>
@@ -31,7 +31,7 @@
         src="../assets/imgs/icons/fillheart.png"
       />
       <star-rating :reviews="stay.reviews" />
-      <span>
+      <span class="stay-prev-info">
         {{ stay.name }} -
         <span class="stay-address"> {{ stay.loc.address }} </span>
       </span>
@@ -70,6 +70,13 @@ export default {
         console.log(err);
       }
     },
+        imgLink(img){
+      if (img.startsWith('http')) {
+        return imgUrl
+      }else{
+        return require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)
+      }
+    }
   },
   computed: {
     summary() {

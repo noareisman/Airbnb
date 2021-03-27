@@ -30,8 +30,8 @@
         <section class="preview-card space-preview">
           <router-link class="router" :to="`/stay/${stay._id}`">
             <img
-              class="explore-img"
-              :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
+              class="explore-img" 
+              :src= imgLink(stay.imgUrls[0])
             />
           </router-link>
 
@@ -80,6 +80,13 @@ export default {
       if (sortBy === "price") this.$store.getters.sortByPrice;
       else if (sortBy === "rate") this.$store.getters.sortByPopularity;
     },
+    imgLink(img){
+      if (img.startsWith('http')) {
+        return imgUrl
+      }else{
+        return require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)
+      }
+    }
   },
 
   computed: {

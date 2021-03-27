@@ -100,6 +100,8 @@ export default {
       });
       this.$store.dispatch({ type: "loadStays", filterBy });
     },
+
+
   },
   mounted() {},
   created() {

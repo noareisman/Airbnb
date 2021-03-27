@@ -105,6 +105,12 @@
     font-style: italic  ;
 }
 
+.stay-prev-info{
+    overflow: hidden;
+    max-height: 20px
+}
+
+
 @media (max-width:400px){
     .card-info {
         font-size: 1.5rem;

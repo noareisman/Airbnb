@@ -24,7 +24,7 @@
         <button v-if="!isTotalPriceClalculable" class="special-btn">
           <span class="middle-level">
             <span class="inner-level" @mousemove="mousemove" :style="mousePos">
-              {{mousePos}}
+              {{ mousePos }}
             </span>
           </span>
           <span class="special-btn-txt">Check availability</span>
@@ -68,6 +68,7 @@ export default {
   },
   data() {
     return {
+      msg:false,
       // mousePos:null,
       mouseX: 0,
       mouseY: 0,
@@ -110,15 +111,23 @@ export default {
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
         });
-        
-        Swal.fire(
-          "Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. "
-        );
+        this.open1()
+        // Swal.fire(
+        //   "Your reservation was sent to the host for approval. Final order confirmation will be sent by mail. "
+        // );
       } catch (err) {
         console.log("could not send order request", err);
         Swal.fire("Failed to set reservation. Try again later. ");
       }
     },
+    open1() {
+        this.$notify({
+          title: 'Reservation sent successfully',
+          message: 'Your order was sent to the host',
+          type: 'success',
+          position:'bottom-right'
+        });
+      },
     mousemove(e) {
       this.mouseX = e.offsetX;
       this.mouseY = e.offsetY;

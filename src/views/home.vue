@@ -44,7 +44,8 @@
         <router-link class="router" :to="`/stay/${stay._id}`">
           <img
             class="explore-img"
-            :src="require(`@/assets/imgs/airbnb-imgs/${stay.imgUrls[0]}.jpg`)"
+
+            :src= imgLink(stay.imgUrls[0])
           />
         </router-link>
 
@@ -84,14 +85,14 @@ export default {
       staysPop:null
     }
   },
-  computed:{
-  //  async staysPop(){
-  //     const filterBy = {}
-  //     const stays = await this.$store.dispatch({ type: "loadStays", filterBy });
-  //     console.log(stays)
-  //     return stays.splice(0,3)
-  //     console.log(stays)
-  //   }
+  methods:{
+      imgLink(img){
+      if (img.startsWith('http')) {
+        return imgUrl
+      }else{
+        return require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)
+      }
+    }
   },
  async created(){
    const filterBy = {}
