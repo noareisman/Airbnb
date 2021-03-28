@@ -1,5 +1,18 @@
 <template>
   <section class="img-grid-container">
+      
+    <el-carousel class="stay-details-img-carousel-container" :autoplay="false" height="200px" indicator-position="none">
+      <el-carousel-item
+        style="background-color: #fff"
+        v-for="(img, idx) in imgs"
+        :key="idx"
+      >
+          <img
+            class="stay-img-prev"  
+            :src= imgLink(img)
+          />
+      </el-carousel-item>
+    </el-carousel>
       <ul class="stay-details-img-grid-container">
         <img v-for="(img,idx) in imgs" :key="idx" class="stay-img"
             :src="imgLink(img)">

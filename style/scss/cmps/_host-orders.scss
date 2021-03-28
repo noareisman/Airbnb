@@ -27,45 +27,46 @@
         list-style-type: none;
         padding: 1%;
         border-bottom: 2px solid lightgray;
+        max-width: 100%;
         
-        .host-order-bio {
-            display: grid;
-            grid-template-rows: 50% 50%;
-            text-align: left;
-            padding: 3px;
-            p {
-                padding: 1%;
-            }
+        // .host-order-bio {
+        //     display: grid;
+        //     grid-template-rows: 50% 50%;
+        //     text-align: left;
+        //     padding: 3px;
+        //     p {
+        //         padding: 1%;
+        //     }
             
-            h3 {
-                padding: 1%;
-                width: fit-content;
-                padding-bottom: 1%;
-                margin-bottom: 1%;
-            }
-        }
+        //     h3 {
+        //         padding: 1%;
+        //         width: fit-content;
+        //         padding-bottom: 1%;
+        //         margin-bottom: 1%;
+        //     }
+        // }
 
         .host-order-btns{
             margin: auto auto;
             // order:reverse;
             width: 100%;
         }
-        .slash{
-            font-size: 2em;
-            margin: auto 0;
-            font-weight: 10; 
-            }
+        // .slash{
+        //     font-size: 2em;
+        //     margin: auto 0;
+        //     font-weight: 10; 
+        //     }
 
-        button {
-            outline: unset !important;
-            height: fit-content;
-            background-color: unset;
-            border: unset ;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-            padding: 0.8em;
-        }
+        // button {
+        //     outline: unset !important;
+        //     height: fit-content;
+        //     background-color: unset;
+        //     border: unset ;
+        //     cursor: pointer;
+        //     border-radius: 5px;
+        //     font-size: 1rem;
+        //     padding: 0.8em;
+        // }
 
         button:hover {
             background-color: rgb(218, 218, 218);
