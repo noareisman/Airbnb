@@ -10,15 +10,15 @@
       >
        No reservations at the moment
       </h2>
-      <ul>
+      <ul class="all-host-orders">
         <li
           v-for="order in orders.filter((order) => order.status === 'pending')"
           :key="order.id"
-          class="host-order"
+          class="host-order flex space-between"
         >
-          <h3 class="respons-buyer">{{ order.buyer.fullname }}</h3>
+          <h3 class="order-respons-buyer">{{ order.buyer.fullname }}</h3>
           <div class="host-order-bio cell-1">
-            <h3 class="order-respons-buyer">{{ order.buyer.fullname }}</h3>
+            <h3 class="order-buyer">{{ order.buyer.fullname }}</h3>
             <h3 class="respons-dates">Dates:</h3>
             <p>{{ order.startDate }}-{{ order.endDate }}</p>
           </div>
