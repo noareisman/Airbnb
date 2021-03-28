@@ -16,24 +16,24 @@
           :key="order.id"
           class="host-order flex space-between"
         >
-        <!-- <div class="pending-order-details"> -->
-              <div class="host-order-bio cell-1">
-                <h3>{{ order.buyer.fullname }}</h3>
-                <p>{{ order.startDate }}-{{ order.endDate }}</p>
-              </div>
-              <div class="host-order-bio cell-2">
-                <h3>Stay at:&nbsp;</h3>
-                <p>"{{ order.stay.name }}"</p>
-              </div>
-              <div class="host-order-bio cell-3">
-                <h3>Guests:</h3>
-                <p>
-                  Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
-                    order.guests.kids
-                  }}
-                </p>
-              </div>
-          <!-- </div> -->
+          <h3 class="order-respons-buyer">{{ order.buyer.fullname }}</h3>
+          <div class="host-order-bio cell-1">
+            <h3 class="order-buyer">{{ order.buyer.fullname }}</h3>
+            <h3 class="respons-dates">Dates:</h3>
+            <p>{{ order.startDate }}-{{ order.endDate }}</p>
+          </div>
+          <div class="host-order-bio cell-2">
+            <h3>Stay at:&nbsp;</h3>
+            <p>"{{ order.stay.name }}"</p>
+          </div>
+          <div class="host-order-bio cell-3">
+            <h3>Guests:</h3>
+            <p>
+              Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
+                order.guests.kids
+              }}
+            </p>
+          </div>
           <div class="host-order-btns flex">
             <button @click="changeOrderStat($event, order)" class="approve">
               Approve
