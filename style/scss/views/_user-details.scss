@@ -44,6 +44,7 @@
     font-weight:700;
     font-size:1.2em;
 }
+
 @media screen and(max-width:700px){
 
     .user-details {
@@ -65,10 +66,17 @@
         }
        
         .el-tabs__item {
-            padding: 0px 5px;
-            font-size: 19px;
+            padding: 0px 9px;
+            font-size: 17px;
         }
-       
+        
+        .el-tabs__nav-prev {
+            display: none;
+        }
+
+        .el-tabs__nav-next {
+            display: none;
+        }
         .user-back-office{
             margin: 0 4%;
         }
