@@ -10,7 +10,7 @@
             :options="options"
             style="border: none"
             class="advanced-input-section desc"
-            placeholder="Where are we going?"
+            :placeholder= filterBy.location
           />
         </div>
       </span>
@@ -175,6 +175,7 @@ export default {
   },
   created() {
     this.filterBy.location = this.$route.query.location;
+    this.model = this.$route.query.location;
 
     window.onscroll = () => {
       this.checkOffset();

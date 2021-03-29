@@ -6,6 +6,9 @@
       <hero />
     </section>
     <h2 class="location-header">Popular Locations</h2>
+        <router-link class="router" :to="`/stay`">
+            <span class="see-more"> See More >> </span>
+          </router-link>
     <div class="card-container">
       <div class="location">
         <router-link class="router" :to="`/stay/?location=Barcelona`">
@@ -36,8 +39,10 @@
       </div>
     </div>
       <h1 class="location-header Populate-header"> Top Rated</h1>
+      <router-link class="router" :to="`/stay`">
+            <span class="see-more"> See More >></span>
+          </router-link>
     <div v-if="staysPop" class="top-location"> 
-
       <div class="home-pop" v-for="stay in staysPop" :key="stay._id" :stay="stay" > 
         
          <section class="preview-card space-preview">
