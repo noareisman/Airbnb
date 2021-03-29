@@ -47,6 +47,7 @@
 
 .el-date-editor .el-range-separator {
     padding: 0;
+    display: none !important;
 }
 
 .sticky {
@@ -99,7 +100,7 @@
 }
 
 .filter-container .wrapper .box .title {
-
+    
     margin-left: 3px;
 }
 
@@ -117,7 +118,7 @@
 }
 
 .guest-dd {
-    width: 30px;
+    width: 90px;
     height: 38px;
 }
 

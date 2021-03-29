@@ -4,6 +4,7 @@
   background-color: white !important;
   position: sticky;
   top: 0;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
   .header-right-corner {
     height: 100%;
@@ -35,7 +36,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
   .el-menu-item{
     padding-left: unset ;
@@ -120,7 +120,7 @@
 }
 
 .explore-nav:hover {
-  background-color: rgb(228, 228, 228);
+  background-color: #f9f9f9;
 }
 
 @media screen and(max-width:400px){
@@ -182,4 +182,9 @@
   .el-dropdown-menu.el-popper{
     border-radius: 25px;
   }
+}
+
+.header-container .header-right-corner .new-host:hover{
+  background-color: #f9f9f9 !important;
+
 }

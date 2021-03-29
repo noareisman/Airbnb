@@ -1,6 +1,6 @@
 <template>
   <section class="host-order-container">
-    <h2 class="reservations-title">Pending / Accepted reservations:</h2>
+    <h2 class="reservations-title">Pending reservations</h2>
     <section class="host-orders">
       <h2 class="NoReserv"
         v-if="
@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     async loadOrders() {
+      console.log(this.host)
       await this.$store.dispatch({
         type: "loadHostOrders",
         host: { ...this.host },

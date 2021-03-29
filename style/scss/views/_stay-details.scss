@@ -247,8 +247,8 @@
     display:none;
 }
 
-
-@media (max-width :740px){
+@media (max-width:500px){
+// @media (max-width :740px){
     .main-layout{ 
         display: grid;
         grid-template-columns:minmax(2rem,1fr) minmax(360px,auto) minmax( 2rem,1fr);
