@@ -132,7 +132,7 @@ export const stayStore = {
 
     async toggleLike(context, { stay }) {
         const user = context.getters.loggedinUser; 
-        const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); //ולאחר מכן
+        const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
         if (favIdx >= 0) stay.favorites.splice(favIdx, 1); 
         else stay.favorites = [{userId: user._id}]; 
         try {
