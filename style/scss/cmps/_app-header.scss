@@ -125,7 +125,7 @@
 
 @media screen and(max-width:400px){
   .nav-container {
-    padding: 0px 3% !important;
+    padding: unset !important;
 
     .explore-nav {
       font-size: 1.2rem;

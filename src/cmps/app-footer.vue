@@ -3,7 +3,7 @@
       <div class="footer-content"> 
           <p class="logo"> HomeAway </p>
  <div class="rights-container"> 
-          <p> © 2020 HomeAway, Inc. </p>
+          <p> © 2021 HomeAway, Inc. </p>
       </div>
    <ul class="social-links clean-list">
         <li>
