@@ -142,6 +142,15 @@ html {
     height: 65px;
 }
 
+.see-more{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 8px 0px 0px;
+    font-size: 11px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #afadad;
+}
+
 .dates,
 .guests,
 .location {
@@ -223,7 +232,7 @@ html {
 .top-location{
     display: flex;
     justify-content: space-between;
-    margin: 10px 0px
+    margin: 2px 0px
 }
 
 .home-stay-img{

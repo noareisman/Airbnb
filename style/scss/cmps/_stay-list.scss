@@ -28,7 +28,10 @@ img {
 
 .block-range {
     position: absolute;
-    z-index: 100000;
+    opacity: 0.95;
+    left:-220px;
+    top:60px;
+    z-index: 10;
     background-color: #fff;
     border-radius: 18px;
     width: 190px;
@@ -52,6 +55,9 @@ img {
 
 .amenities-container {
     position: absolute;
+    opacity: 0.95;
+    top:60px;
+    left:-38px;
     z-index: 100000;
     background-color: #fff;
     border-radius: 18px;
@@ -101,14 +107,20 @@ img {
 
 .el-button.is-round {
     height: 40px;
+    padding: 12px 18px !important;
 }
 
 .container-sss {
     position: relative;
     width: 500px;
     background-color: #fff;
-    
-    
+
+}
+
+.el-button:focus, .el-button:hover{
+    color: inherit !important;
+    border-color:lightgrey !important;
+    background-color:#f0f2f5 !important;
 }
 
 .save-btn-amenities{
