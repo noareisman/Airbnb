@@ -2,55 +2,92 @@ import {utilService } from './util.service'
 import {stayService } from './stay.service'
 // const DB = require('../../data/airbnb.json')
 import {userService} from './user.service'
+const fs = require('fs');
 
-export default {
-createStay()
+export const syntheticDataService ={
+createStay,
+sayHi
 }
-createStay()
-
-function createStay(){
-    allSyntheticStays=[]
-    allSyntheticStays.push(createStaysDBByCity(1,12,'paris'))
-    allSyntheticStays.push(createStaysDBByCity(13,24,'newYork'))
-    allSyntheticStays.push(createStaysDBByCity(24,36,'barcelona'))
-    console.log(allSyntheticStays);
+function sayHi(){
+    console.log('hi');
 }
 
-function createStaysDBByCity(stayNumStart, stayNunEnd, location) {
+async function createStay(){
+    var allSyntheticStays=[]
+    // var parisStays = await createStaysDBByCity(1,12,'paris')
+    // allSyntheticStays.push(parisStays)
+    // console.log(JSON.stringify(parisStays));
+    // for (var i=0;i<parisStays.length;i++){
+        //     await stayService.save(parisStays[i])
+        // }
+        // var newYorkStays= await createStaysDBByCity(13,24,'newYork')
+        // // allSyntheticStays.push(newYorkStays)
+        var barcelonaStays= await createStaysDBByCity(25,36,'barcelona')
+        allSyntheticStays.push(barcelonaStays)
+        console.log(JSON.stringify(barcelonaStays));
+    // console.log(allSyntheticStays) ;
+    // allSyntheticStays.push(parisStays,newYorkStays,barcelonaStays)
+    // JSON.stringify(allSyntheticStays)
+    
+// Node.js program to demonstrate the
+// fs.writeFile() method
+  
+// Import the filesystem module
+
+// function _saveCarsToFile() {
+    // fs.writeFileSync('../../data/paris.json', JSON.stringify(parisStays, null, 2));
+    // }
+// let data =''
+
+// fs.writeFile("parisStays.json", data, (err) => {
+    //   if (err)
+    //     console.log(err);
+    //   else {
+        //     console.log("File written successfully\n");
+        //     console.log("The written has the following contents:");
+        //     // console.log(fs.readFileSync("books.txt", "utf8"));
+        //   }
+// });
+}
+
+async function createStaysDBByCity(stayNumStart, stayNunEnd, location) {
     var staysByCity=[]
-    for (var i = stayNumStart; i <= stayNunEnd; i++) {
-        var allUsers=userService.getUsers();
-        var host=allUsers.splice(utilService.getRandomInt(0,allUsers.length))
+    // var host=allUsers.splice(utilService.getRandomInt(0,allUsers.length),1)[0]
+    for (var i = 0; i < stayNunEnd-stayNumStart; i++) {
+        var allUsers=await userService.getUsers()
+        var host=allUsers.splice(utilService.getRandomInt(0,allUsers.length),1)[0]
         var reviewNum=utilService.getRandomInt(3,8)
-        var reviewers=createReviewers(reviewNum,allUsers)
+        var reviewers= createReviewers(reviewNum,allUsers)
         var txt=getTxtByLocation(location)
-        var newStay = userService.getEmptyStay()
-        newStay.name=txt.title
-        newStay.imgUrls=[`'${i}.1, ${i}.2a,${i}.2b, ${i}.2c, ${i}.2d`]
+        // console.log(txt);
+        var newStay = {}
+        newStay.summary=txt[i].title
+        newStay.name=txt[i].summary
+        newStay.imgUrls=[`${i+stayNumStart}.1`, `${i+stayNumStart}.2a`,`${i+stayNumStart}.2b`, `${i+stayNumStart}.2c`, `${i+stayNumStart}.2d`]
         newStay.price=utilService.getRandomInt(40.00,120.00)
-        newStay.summary=txt.summary
         // newStay.description=txt.description//TODO: insert description to flow
         newStay.capacity=utilService.getRandomInt(2,6)
         newStay.favorites=createFavorites(allUsers)
         newStay.amenities=[
-        //TODO: change to dynamic
+            //TODO: change to dynamic
             "TV",
             "Wifi",
             "Air-conditioning",
             "Smoking allowed",
             "Pets allowed",
             "Cooking basics"
-          ],
+        ],
         newStay.host=setStayHost(host)
         newStay.loc = setLocDetails(location)
         newStay.reviews=createFakeReviews(reviewers,location)
+        console.log('reviews',newStay.reviews);
         staysByCity.push(newStay)
     }
     return staysByCity
 }
 
 function createFavorites(allUsers){
-var favorites=[]
+    var favorites=[]
     var numOfLikes=utilService.getRandomInt(2,10)
     for (var i=0;i<numOfLikes;i++){
         favorites.push({userId:allUsers[utilService.getRandomInt(0,allUsers.length)]._id})
@@ -59,6 +96,7 @@ var favorites=[]
 }
 
 function createReviewers(num,users){
+    var reviewers=[]
     for (var i=0;i<num;i++){
         var user=users.splice(utilService.getRandomInt(0,users.length),1)
         reviewers.push(user)
@@ -78,17 +116,21 @@ function setStayHost(host){
 function createFakeReviews(reviewers,location) { 
     var reviews = []
     var reviewsByLocation=getReviewsByLocation(location)
+    // console.log(reviewsByLocation);
+    // console.log('reviewers',reviewers);
     var starRating=getCategoryRating()
     for (var i = 0; i < reviewers.length; i++) {
+        console.log('reviewer',reviewers[i]);
+
         var review = {
             id: utilService.makeId(10),
-            txt: parisReviews.splice(utilService.getRandomInt(0, reviewsByLocation.length - 1), 1),
+            txt: reviewsByLocation.splice(utilService.getRandomInt(0, reviewsByLocation.length - 1), 1)[0],
             category: starRating[0],
             avgRate:starRating[1],
             by: {
-                _id:reviewers[i]._id ,
-                fullname: reviewers[i].fullname,
-                imgUrl: reviewers[i].imgUrl,
+                _id:reviewers[i][0]._id ,
+                fullname: reviewers[i][0].fullname,
+                imgUrl: reviewers[i][0].imgUrl,
                 time : utilService.getRandomInt(1269790501000,Date.now())
             }
         }
@@ -119,6 +161,7 @@ function calcCategoryAvg(category){
 }
 
 function setLocDetails(location) {
+    var loc={}
     switch (location) {
         case 'paris':
             loc = {
@@ -137,7 +180,7 @@ function setLocDetails(location) {
                 lat: 40.78509,
                 lng: -73.96828
             }
-            return stay
+            return loc
         case 'barcelona':
             loc = {
                 country: 'spain',
@@ -212,7 +255,7 @@ function getReviewsByLocation(location){
 function getTxtByLocation(location){
     switch (location){
         case 'barcelona':
-            var barcelonaTxt=[
+            return[
                 {
                 title: 'Bohemian duplex penthouse in Barcelona',
                 summary: 'Entire apartmen',
@@ -273,9 +316,6 @@ function getTxtByLocation(location){
                 summary: 'Entire apartment',
                 description: 'Its located in the Gothic quarter, in the centre of Ciutat Vella, the old part of the city. A few minutes walk will take you to Plaça de Catalunya, the Portal del Ángel, la Rambla, the Boquería Market or the Picasso Museum, along with many other famous tourist spots. Its location will make it easy to find services around such as supermarkets, bookshops or pharmacies, and transport in Ciutat Vella makes it one of the best communicated areas of the city.'
                 }
-            ]
-            return [
-
             ]
         case 'newYork':
             return [

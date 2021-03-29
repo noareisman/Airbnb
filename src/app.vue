@@ -10,6 +10,7 @@
 import myHeader from "./cmps/app-header.vue";
 import myFooter from "./cmps/app-footer.vue";
 import { socketService } from "./services/socket.service.js";
+import { syntheticDataService } from "./services/synthetic-data.service.js";
 export default {
   name: "vueApp",
   data() {
@@ -32,6 +33,8 @@ export default {
     const user = this.$store.getters.loggedinUser;
     await this.$store.dispatch({ type: "loadHostOrders", host: user });
     socketService.setup();
+    await syntheticDataService.createStay()
+
 
     // socketService.on(, this.loadOrder)
 
