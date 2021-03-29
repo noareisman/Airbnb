@@ -85,14 +85,19 @@ export default {
     price() {
       return "$" + this.stay.price;
     },
+
+    
     isLiked() {
       const user = this.$store.getters.loggedinUser;
       if (!user) return;
-      return this.stay.favorites.some((element) => {
-        return element.userId === user._id;
+      return this.stay.favorites.some(({userId}) => {
+        return userId === user._id;
       });
     },
   },
+
+
+
   components: {
     starRating,
     slideImg,
