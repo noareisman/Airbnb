@@ -1,7 +1,7 @@
 <template>
   <section class="list-container">
     <h1 class="places-headline" v-if="place">
-      Places to stay for you in {{ place }}
+      Places to stay for you in <span class="destination">{{ place }}</span>
     </h1>
     <h1 class="places-headline" v-else>Places to stay for you</h1>
     <!-- <price-range/> -->
@@ -113,3 +113,8 @@ export default {
   },
 };
 </script>
+<style>
+.destination{
+text-transform: capitalize;
+}
+</style>

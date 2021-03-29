@@ -75,7 +75,11 @@ export default {
       serviceFee: 10,
       orderSettings: {
         requestedDates: [],
-        guest: {},
+        guest:{
+            adultsNum:1,
+            childrenNum:0,
+            infantsNum:0,
+        },
         buyer: null,
         totalPrice: 0,
         nightsNum: 5,
