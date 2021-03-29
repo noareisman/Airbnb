@@ -6,7 +6,7 @@
           <span class="title title-location">Location</span>
           <advanced-search
             v-model="model"
-            @input.native="copyData"
+            @input.native="copyData" 
             :options="options"
             style="border: none"
             class="advanced-input-section desc"
@@ -180,7 +180,7 @@ export default {
       this.checkOffset();
     };
   },
-  destroyed() {},
+  destroyed() {}, 
 
   components: {
     datePicker,

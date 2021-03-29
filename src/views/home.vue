@@ -5,7 +5,7 @@
     <section class="hero full main-layout">
       <hero />
     </section>
-    <h2 class="location-header">Populate Locations</h2>
+    <h2 class="location-header">Popular Locations</h2>
     <div class="card-container">
       <div class="location">
         <router-link class="router" :to="`/stay/?location=Barcelona`">
@@ -98,6 +98,8 @@ export default {
    const filterBy = {}
     const stays = await this.$store.dispatch({ type: "loadStays", filterBy }); 
     this.staysPop = stays.splice(0,3)
+    console.log(this.staysPop)
+
   },
   components: {
     hero,

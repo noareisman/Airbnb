@@ -50,7 +50,7 @@
             </span>
 
             <span>
-              <span class="price-bold"> {{ stay.price }} </span> /Night</span
+              <span class="price-bold"> ${{ stay.price }} </span> /Night</span
             >
           </div>
         </section>

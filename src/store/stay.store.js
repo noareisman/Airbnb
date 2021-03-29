@@ -104,32 +104,6 @@ export const stayStore = {
 
 
 
-    //     async toggleLike(context, { stay }) {
-    //         const user = context.getters.loggedinUser;
-            
-    //         const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
-    //             return element.userId === user._id;
-    //         });
-    //         if (!isLiked) stay.favorites.push({ userId: user._id }); 
-    //         else {
-    //             const idx = stay.favorites.findIndex(
-    //                 (entity) => entity._id === user._id
-    //             );  
-    //             stay.favorites.splice(idx, 1);
-    //         }
-
-    //         try {
-    //             const updatedStay = await stayService.save(stay)
-    //             context.commit({ type: 'updateStays', updatedStay })
-    //             return updatedStay
-    //         } catch (err) {
-    //             console.log('from Store: Cannot toggleLike', err);
-    //             throw new Error('Cannot toggleLike');
-    //         }
-    //     }
-    // },
-
-
     async toggleLike(context, { stay }) {
         const user = context.getters.loggedinUser; 
         const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
@@ -145,32 +119,6 @@ export const stayStore = {
         }
     }
 },
-
-
-//     async toggleLike(context, { stay }) {
-//         const user = context.getters.loggedinUser;
-//         if (!stay.favorites) stay.favorites = []; //initialize array of favorites
-//         const isLiked = stay.favorites.some((element) => { //help to decide if to push the like or splice 
-//             return element.userId === user._id;
-//         });
-//         if (!isLiked) stay.favorites.push({ userId: user._id }); 
-//         else {
-//             const idx = stay.favorites.findIndex(
-//                 (entity) => entity._id === user._id
-//             );  
-//             stay.favorites.splice(idx, 1);
-//         }
-
-//         try {
-//             const updatedStay = await stayService.save(stay)
-//             context.commit({ type: 'updateStays', updatedStay })
-//             return updatedStay
-//         } catch (err) {
-//             console.log('from Store: Cannot toggleLike', err);
-//             throw new Error('Cannot toggleLike');
-//         }
-//     }
-// },
 
 
 
