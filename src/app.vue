@@ -23,10 +23,10 @@ export default {
   },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
-    await this.$store.dispatch({
-      type: "login",
-      userCred: { username: "mor97", password: "secret" },
-    });
+    // await this.$store.dispatch({
+    //   type: "login",
+    //   userCred: { username: "mor97", password: "secret" },
+    // });
     await this.$store.dispatch({ type: "loadStays" });
     
     const user = this.$store.getters.loggedinUser;

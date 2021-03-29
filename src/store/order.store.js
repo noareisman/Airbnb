@@ -85,7 +85,7 @@ export const orderStore = {
     },
     async updateOrderStatus({ dispatch, state }, { order }) {
       await orderService.save(order)
-      dispatch({ type: "loadHostOrders", order });
+      dispatch({ type: "loadHostOrders", host: order.host });
     },
     async setPendingOrder({ dispatch }, { orderSettings }) {
       console.log(orderSettings)
