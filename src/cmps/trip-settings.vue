@@ -113,6 +113,7 @@ export default {
         });
         this.open1()
       } catch (err) {
+        console.log(this.orderSettings, 'this.orderSettings')
         console.log("could not send order request", err);
         this.open4();
       }

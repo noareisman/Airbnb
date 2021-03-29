@@ -6,7 +6,7 @@
         <div class="left flex space-between">
           <star-rating :reviews="this.reviews" /> <span> · </span>
           <!-- TODO: finish routerLink -->
-          <router-link to="/stay/:id:location?">{{
+          <router-link class="link" to="/stay/:id:location?">{{
             stay.loc.address
           }}</router-link>
         </div>

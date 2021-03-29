@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      zoom: 10,
+      zoom: 12,
       // markers:[ 
       //   {      
         position: { 

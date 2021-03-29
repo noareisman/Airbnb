@@ -30,14 +30,14 @@
         class="like-btn"
         src="../assets/imgs/icons/fillheart.png"
       />
-      <star-rating :reviews="stay.reviews" />
+      <star-rating class="star-rating" :reviews="stay.reviews" />
       <span class="stay-prev-info">
         {{ stay.name }} -
         <span class="stay-address"> {{ stay.loc.address }} </span>
       </span>
-      <span class="summery-txt"> {{ summary }}</span>
+      <span class="summary-txt"> {{ summary }}</span>
       <span>
-        <span class="price-bold"> {{ price }} </span> /Night</span
+        <span class="price-bold"> {{ price }} </span> / night</span
       >
     </div>
   </section>
@@ -118,6 +118,7 @@ export default {
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
 }
+
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
