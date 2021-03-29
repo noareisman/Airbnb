@@ -68,14 +68,15 @@
             outline: unset !important;
             height: fit-content;
             background-color: unset;
-            border: unset ;
             cursor: pointer;
             border-radius: 5px;
             font-size: 1rem;
             padding: 0.8em;
+            border: 1px solid lightgray;
         }
-
+        
         button:hover {
+            // border: unset !important;
             background-color: rgb(218, 218, 218);
         }
         
@@ -86,6 +87,7 @@
         .approve{
             color: #f86792;
             font-weight:600;
+            margin-right: 10%;
         }
     }
 }
