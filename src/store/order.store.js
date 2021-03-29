@@ -66,7 +66,9 @@ export const orderStore = {
     async loadHostOrders({ commit, state }, { host }) {
       try {
         const filterBy = {}
+        console.log(host._id,'host.id')
         filterBy._id = host._id
+        console.log( filterBy._id,' filterBy.id')
 
         commit({ type: 'setHost', host })
         const stays = await stayService.query(filterBy);
@@ -85,7 +87,7 @@ export const orderStore = {
     },
     async updateOrderStatus({ dispatch, state }, { order }) {
       await orderService.save(order)
-      dispatch({ type: "loadHostOrders", order });
+      dispatch({ type: "loadHostOrders", host:order.buyer });
     },
     async setPendingOrder({ dispatch }, { orderSettings }) {
       console.log(orderSettings)

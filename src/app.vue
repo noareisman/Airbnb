@@ -24,19 +24,15 @@ export default {
   },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
-    await this.$store.dispatch({
-      type: "login",
-      userCred: { username: "mor97", password: "secret" },
-    });
+    // await this.$store.dispatch({
+    //   type: "login",
+    //   userCred: { username: "mor97", password: "secret" },
+    // });
     await this.$store.dispatch({ type: "loadStays" });
     
     const user = this.$store.getters.loggedinUser;
     await this.$store.dispatch({ type: "loadHostOrders", host: user });
     socketService.setup();
-    await syntheticDataService.createStay()
-
-
-    // socketService.on(, this.loadOrder)
 
     socketService.on("loadOrders", this.loadOrder);
   },
