@@ -32,6 +32,7 @@ export default {
     this.$store.dispatch({ type: "loadStays", filterBy });
     
   },
+
   components: {
     stayList,
     stayFilter,

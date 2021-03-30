@@ -36,7 +36,7 @@
           </button>
         </div>
         <div v-else class="reservation-summary flex column center">
-          <button class="special-btn-reserved" @click="sendOrderRequest()">
+          <button class="special-btn-reserved">
             Reserved
           </button>
 

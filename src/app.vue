@@ -38,9 +38,9 @@ export default {
     socketService.on("loadOrders", this.loadOrder);
     
   },
-  // destroyed(){
-  //   socketService.off('loadOrders',)
-  // },
+  destroyed(){
+    socketService.off('loadOrders')
+  },
   components: {
     myHeader,
     myFooter,
