@@ -5,17 +5,18 @@
         <div class="location">
           <span class="title title-location">Location</span>
           <advanced-search
-            v-model="model"
-            @input.native="copyData" 
+            @input.native="copyData"
+            @select="copyData"
             :options="options"
+            v-model="model"
             style="border: none"
             class="advanced-input-section desc"
-            :placeholder= filterBy.location
+            :placeholder="filterBy.location || 'Search'"
           />
         </div>
       </span>
       <span class="box">
-        <div class="location">
+        <div class="">
           <span class="title">Dates</span>
           <date-picker @pick="datePick" />
         </div>
@@ -40,9 +41,11 @@
       </span>
 
       <div @click="submitSearch" class="search-icon">
+      <!-- <router-link class="search-icon" :to="`/stay/${filterBy.location}`"> -->
         <div class="btn-search">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
+      <!-- </router-link> -->
       </div>
     </div>
 
@@ -53,6 +56,7 @@
           <advanced-search
             v-model="model"
             @input.native="copyData"
+            @select="copyData"
             :options="options"
             style="border: none"
             class="advanced-input-section desc"
@@ -124,7 +128,7 @@ export default {
         guests: 1,
       },
       isGuests: false,
-      model: [],
+      model: "",
       options: [
         { label: "barcelona", value: "barcelona" },
         { label: "paris", value: "paris" },
@@ -143,11 +147,14 @@ export default {
     },
     async submitSearch() {
       const filterBy = JSON.parse(JSON.stringify(this.filterBy));
-      if (this.$route.path === "/") await this.$router.push("/stay");
+      if (this.$route.path !== "/stay") await this.$router.push(`/stay/?location=${this.filterBy.location}`);
       await this.$store.dispatch({ type: "loadStays", filterBy });
     },
     copyData(ev) {
-      this.filterBy.location = ev.target.value;
+      console.log(ev);
+      var location = ev.target?.value || ev;
+      if(typeof location !== 'string') location = ''
+      this.filterBy.location = location;
     },
     checkOffset() {
       this.count++;
@@ -181,7 +188,7 @@ export default {
       this.checkOffset();
     };
   },
-  destroyed() {}, 
+  destroyed() {},
 
   components: {
     datePicker,

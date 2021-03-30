@@ -55,7 +55,7 @@
         </router-link>
 
     <div class="card-info">
-      <star-rating :reviews="stay.reviews" />
+      <star-rating :reviews="stay.reviews" :incRate="incRate" />
       <span class="stay-name-home">
         {{ stay.name }} -
         <span class="stay-address"> {{ stay.loc.address }} </span>
@@ -87,6 +87,7 @@ export default {
   name: "home",
   data(){
     return{
+      incRate:27,
       staysPop:null
     }
   },

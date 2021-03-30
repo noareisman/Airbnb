@@ -145,10 +145,12 @@ html {
 .see-more{
     display: flex;
     justify-content: flex-end;
-    margin: 0px 8px 0px 0px;
-    font-size: 11px;
+    margin: -5px 8px 2px 0px;
+    font-size: 13px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #afadad;
+    text-decoration: underline;
+    
 }
 
 .dates,

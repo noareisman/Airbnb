@@ -1,6 +1,6 @@
 <template>
   <section class="preview-card space-preview">
-    <el-carousel :autoplay="false" height="200px" indicator-position="none">
+    <el-carousel :autoplay="false" height="175px" indicator-position="none">
       <el-carousel-item
         style="background-color: #fff"
         v-for="(item, idx) in stay.imgUrls"
