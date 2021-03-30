@@ -30,13 +30,11 @@
           <span class="special-btn-txt">Check availability</span>
         </button>
 
-        <div v-else-if="isTotalPriceClalculable && !isReserved" class="reservation-summary flex column center">
-          <button class="special-btn" @click="sendOrderRequest()">
+        <div v-else class="reservation-summary flex column center">
+          <button v-if="!isReserved" class="special-btn" @click="sendOrderRequest()">
             Reserve
           </button>
-        </div>
-        <div v-else class="reservation-summary flex column center">
-          <button class="special-btn-reserved" @click="sendOrderRequest()">
+          <button v-else class="special-btn-reserved">
             Reserved
           </button>
 
@@ -56,6 +54,9 @@
             <span>${{ orderSettings.totalPrice }}</span>
           </div>
         </div>
+
+
+
       </div>
     </form>
   </section>
@@ -73,8 +74,8 @@ export default {
   },
   data() {
     return {
-      isReserved:false,
       msg:false,
+      isReserved:false,
       // mousePos:null,
       mouseX: 0,
       mouseY: 0,
@@ -121,7 +122,7 @@ export default {
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
         });
-        this.isReserved = true
+        this.isReserved = true;
         this.open1()
       } catch (err) {
         console.log(this.orderSettings, 'this.orderSettings')
