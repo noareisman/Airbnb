@@ -24,7 +24,6 @@
         <button v-if="!isTotalPriceClalculable" class="special-btn">
           <span class="middle-level">
             <span class="inner-level" @mousemove="mousemove" :style="mousePos">
-              {{ mousePos }}
             </span>
           </span>
           <span class="special-btn-txt">Check availability</span>
@@ -167,12 +166,12 @@ export default {
       return priceCalc;
     },
     mousePos() {
-      // console.log(
-      //   `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
-      // );
-      return {backgroundPosition: `${this.mouseX * 100}% ${this.mouseY * 100}% `}
+      console.log(
+        `${this.mouseX/3 }% ${this.mouseY *2}% `
+      );
+      return {backgroundPosition: `${100-this.mouseX/3}% ${100-this.mouseY*2}% `}
       // return {backgroundPosition: `calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`}
-    },
+    }, 
   },
   created() {
     this.orderSettings.buyer = this.$store.getters.loggedinUser;
