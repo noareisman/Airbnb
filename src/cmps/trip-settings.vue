@@ -24,16 +24,24 @@
         <button v-if="!isTotalPriceClalculable" class="special-btn">
           <span class="middle-level">
             <span class="inner-level" @mousemove="mousemove" :style="mousePos">
-              {{ mousePos }}
             </span>
           </span>
           <span class="special-btn-txt">Check availability</span>
         </button>
 
+
         <div v-else class="reservation-summary flex column center">
-          <button v-if="!isReserved" class="special-btn" @click="sendOrderRequest()">
+
+       <button v-if="!isReserved" class="special-btn" @click="sendOrderRequest()">
+          <span class="middle-level">
+            <span class="inner-level" @mousemove="mousemove" :style="mousePos">
+            </span>
+          </span>
+          <span class="special-btn-txt">Reserve</span>
+        </button>
+          <!-- <button v-if="!isReserved" class="special-btn" @click="sendOrderRequest()">
             Reserve
-          </button>
+          </button> -->
           <button v-else class="special-btn-reserved">
             Reserved
           </button>
@@ -167,12 +175,12 @@ export default {
       return priceCalc;
     },
     mousePos() {
-      // console.log(
-      //   `background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`
-      // );
-      return {backgroundPosition: `${this.mouseX * 100}% ${this.mouseY * 100}% `}
+      console.log(
+        `${this.mouseX/3 }% ${this.mouseY *2}% `
+      );
+      return {backgroundPosition: `${100-this.mouseX/3}% ${100-this.mouseY*2}% `}
       // return {backgroundPosition: `calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`}
-    },
+    }, 
   },
   created() {
     this.orderSettings.buyer = this.$store.getters.loggedinUser;

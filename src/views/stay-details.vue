@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="stay-details-container main-layout">
-    <div class="stay-details-title flex column">
+    <div  class="stay-details-title flex column">
       <div class="stay-title-primary">{{ stay.summary }}</div>
       <div class="stay-title-secondary flex space-between center">
         <div class="left flex space-between">

@@ -12,6 +12,7 @@
       :picker-options="pickerOptions"
       unlink-panels
       align="right"
+      range-separator=" "
       prefix-icon="false"
     >
     </el-date-picker>

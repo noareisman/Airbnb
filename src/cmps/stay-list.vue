@@ -49,6 +49,7 @@
     <ul v-if="stays" class="list-card-container">
       <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay" />
     </ul>
+
     <!-- <button @click="changePage(1)">></button>
     <button @click="changePage(-1)">></button> -->
   </section>
