@@ -92,7 +92,7 @@
     line-height: 20px !important;
     font-size: 14px;
     font-weight: 500 !important;
-    border-radius: 8px;
+    border-radius: 8px !important;
     padding: 14px 24px !important;
     width:100%;
     color: #f3f3f3;
@@ -129,7 +129,8 @@
         min-width: 200px !important;
         background-size:200% 200% !important;
         // opacity:0 !important;
-        transition: opacity 1.25s ease 0s !important;            
+        transition: opacity 1.25s ease 0s !important; 
+        border-radius: 8px;           
     }
     .inner-level :hover{
         opacity: 1 !important;
@@ -179,7 +180,7 @@
     border-bottom: hidden;
     margin-bottom:0;
     min-width:100%;
-    padding:5px;
+    height: 50px;
     // display:flex;
     // vertical-align: middle;
     // align-items: center;
@@ -190,6 +191,34 @@
     align-items: center;
     margin-left: 1px;//place at center please
     padding:0px;
+    height: 100%;
+    width:100%;
+
+}
+.el-range-separator{
+    border-right:1px solid rgb(221,221,221);
+    // font-size:0px;
+    display: block !important;
+    // color:transparent;
+
+}
+
+.el-range-editor.el-input__inner {
+    padding: 0px 10px !important;
+}
+
+
+.el-date-editor .el-range-separator{
+    display: block !important;
+    border-right:1px solid rgb(221,221,221);
+    height: 100%;
+
+}
+
+
+.el-range-editor.el-input__inner{
+    padding:0px;
+    height:100%;
 }
 
 
@@ -430,4 +459,10 @@ margin-right: 10px;
 .el-notification{
     width: 450px !important;
 }
+
+
+
+
+
+
 
