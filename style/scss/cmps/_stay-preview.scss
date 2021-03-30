@@ -116,8 +116,12 @@
 
 
 @media (max-width:400px){
-    .card-info {
-        font-size: 1.5rem;
+    // .card-info {
+    //     font-size: 1.5rem;
+    // }
+    .advanced-search-input .advanced-input-container .advanced-input-section .advanced-input, .advanced-search-input .advanced-input-container .advanced-input-section .label {
+       font-size: 18px;
+       background-color: transparent;
     }
 
     .card-info >*:not(:last-child) {

@@ -199,8 +199,26 @@
     border-right:1px solid rgb(221,221,221);
     // font-size:0px;
     display: block !important;
-    // color:transparent;
+    margin-right: 7px !important;
 
+    // color:transparent;
+}
+
+.el-date-editor .el-range-separator {
+    width: 9% !important;
+}
+
+.el-range-editor .el-range-input {
+    padding-left: 8px;
+}
+
+.guest-picker .guests-picker-btn .el-button{
+    height: 50px !important;
+}
+
+
+.el-date-editor .el-range-input {
+width: 100% !important;
 }
 
 .el-range-editor.el-input__inner {
@@ -437,7 +455,7 @@ margin-right: 10px;
 }
 
 .special-btn-reserved{
-    background: linear-gradient(to right, #67e61e 0%, #44e31c 50%, #7ffb9e 100%) !important;
+    background: rgb(175, 175, 175) !important;
     cursor:pointer;
     display: inline-block !important;
     margin:0;

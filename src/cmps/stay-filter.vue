@@ -17,7 +17,7 @@
       </span>
       <span class="box">
         <div class="">
-          <span class="title">Dates</span>
+          <span class="title date-title">Dates</span>
           <date-picker class="filter-date-picker" @pick="datePick" />
         </div>
       </span>
@@ -66,7 +66,7 @@
       </span>
       <span class="box">
         <div class="location">
-          <span class="title">Dates</span>
+          <span class="title date-title-sec">Dates</span>
           <date-picker @pick="datePick" />
         </div>
       </span>

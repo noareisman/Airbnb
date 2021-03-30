@@ -105,7 +105,6 @@ export default {
   },
   methods: {
     setDates(value) {
-      console.log(value)
       this.calcNightsNum(value)
       const startDate = value[0].split("-").join("/");
       const endDate = value[1].split("-").join("/");
@@ -125,7 +124,6 @@ export default {
     async sendOrderRequest() {
       // console.log('tripSettings', this.orderSettings);
       try {
-        console.log(this.orderSettings, 'this.orderSettings')
         await this.$store.dispatch({
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
@@ -175,9 +173,6 @@ export default {
       return priceCalc;
     },
     mousePos() {
-      console.log(
-        `${this.mouseX/3 }% ${this.mouseY *2}% `
-      );
       return {backgroundPosition: `${100-this.mouseX/3}% ${100-this.mouseY*2}% `}
       // return {backgroundPosition: `calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)`}
     }, 
