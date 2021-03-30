@@ -109,7 +109,6 @@ export default {
   },
   watch: {
     '$route.query.location'(){
-      console.log('sdsdsdsdsdsdsddssdsdsd')
       this.place = this.$route.query.location;
     }
   },

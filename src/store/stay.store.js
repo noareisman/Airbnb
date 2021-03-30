@@ -58,7 +58,6 @@ export const stayStore = {
     actions: {
         async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0, amenities:null }  }) {
             try {
-                console.log(filterBy)
                 const stays = await stayService.query(filterBy)
                 commit({
                     type: 'setStays',
