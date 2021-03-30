@@ -404,3 +404,23 @@ margin-right: 10px;
         margin-bottom:10px;
     }
 }
+
+.special-btn-reserved{
+    background: linear-gradient(to right, #67e61e 0%, #44e31c 50%, #7ffb9e 100%) !important;
+    cursor:pointer;
+    display: inline-block !important;
+    margin:0;
+    margin-bottom: 16px;
+    position: relative !important;
+    text-align: center !important;
+    line-height: 20px !important;
+    font-size: 14px;
+    font-weight: 500 !important;
+    border-radius: 8px;
+    padding: 14px 24px !important;
+    width:100%;
+    color: #f3f3f3;
+    border:none;
+    outline:none !important;
+    cursor: not-allowed;
+}
