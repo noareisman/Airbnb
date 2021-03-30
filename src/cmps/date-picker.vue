@@ -1,7 +1,7 @@
 <template>
   <section>
     <el-date-picker
-      style="width: 220px"
+      style="width: 100%"
       @change="changed"
       v-model="value1"
       type="daterange"
@@ -10,6 +10,10 @@
       start-placeholder="Check In"
       end-placeholder=" Check Out"
       :picker-options="pickerOptions"
+      unlink-panels
+      align="right"
+      prefix-icon="false"
+
     >
     </el-date-picker>
     <!-- <button @click="print()"></button> -->
@@ -33,17 +37,17 @@ export default {
           }))
 
           )},
-        shortcuts: [
-          {
-            text: "",
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit("pick", [start, end]);
-            },
-          },
-        ],
+        // shortcuts: [
+        //   {
+        //     text: "",
+        //     onClick(picker) {
+        //       const end = new Date();
+        //       const start = new Date();
+        //       start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+        //       picker.$emit("pick", [start, end]);
+        //     },
+        //   },
+        // ],
       },
       value1: "",
     };

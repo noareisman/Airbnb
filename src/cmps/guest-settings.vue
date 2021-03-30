@@ -1,6 +1,7 @@
 <template>
   <section>
-    <el-popover placement="right" width="210" trigger="click" class="guests-picker">
+    <div class="guest-btn-frame flex center">
+    <el-popover placement="right" trigger="click" class="guests-picker-btn">
       <span> Adults: </span
       ><el-input-number
         v-model="guest.adultsNum"
@@ -27,6 +28,7 @@
       >
       <el-button slot="reference">{{ guestCount }}</el-button>
     </el-popover>
+  </div>
   </section>
 </template>
 

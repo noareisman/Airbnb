@@ -11,7 +11,7 @@
         </div>
         <div class="settings flex column align-center">
           <date-picker
-            class="date-picker"
+            class="date-picker flex center"
             :stayId="stay._id"
             @pick="setDates"
           ></date-picker>
