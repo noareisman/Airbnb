@@ -73,7 +73,6 @@ export default {
   },
   data() {
     return {
-      isReserved:false,
       msg:false,
       // mousePos:null,
       mouseX: 0,
@@ -121,7 +120,6 @@ export default {
           type: "setPendingOrder",
           orderSettings: this.orderSettings,
         });
-        this.isReserved = true
         this.open1()
       } catch (err) {
         console.log(this.orderSettings, 'this.orderSettings')
