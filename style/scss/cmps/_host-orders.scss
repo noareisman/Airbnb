@@ -27,7 +27,10 @@
         list-style-type: none;
         padding: 1%;
         border-bottom: 2px solid lightgray;
-        
+
+        .br {
+            display: none;
+        }
         .order-respons-buyer{
             display: none;
         }
@@ -92,7 +95,26 @@
     }
 }
 
-@media screen and(max-width:400px){
+@media screen and(max-width:700px) {
+    .host-order{
+        // background-color: red;
+        font-size: 0.9rem;
+        grid-template-columns: 30% 25% 18% 27% !important;
+
+        .host-order-btns {
+            justify-content: center;
+
+            button {
+                font-size: 0.8rem;
+            }
+            
+        }
+        .br {
+            display: unset !important;
+        }
+    }
+}
+@media screen and(max-width:400px) {
     .reservations-title{
         font-size: 2rem;
     }
@@ -105,7 +127,10 @@
         display: flex !important;
         flex-direction: column;
         font-size: 1.1rem;
-        
+
+        .br {
+            display: none !important;
+        }
         .order-buyer {
             display: none;
         }
@@ -130,9 +155,9 @@
 
         .host-order-btns {
             justify-content: center;
-
+            margin-bottom: 3% !important;
             button {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
             }
             
             button:hover {

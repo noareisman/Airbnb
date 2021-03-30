@@ -3,7 +3,7 @@
 import { Bar } from "vue-chartjs";
 
 export default {
-  name:'user-statistics',
+  name: "user-statistics",
   extends: Bar,
   computed: {
     hostOrders() {
@@ -93,21 +93,21 @@ export default {
         {
           label: "Places orders:",
           backgroundColor: "#f87979",
-          //   data: [40 * 1.5, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11],
-          data: [
-            janOrders,
-            febOrders,
-            marchOrders,
-            aprilOrders,
-            mayOrders,
-            juneOrders,
-            julyOrders,
-            augustOrders,
-            sepOrders,
-            octOrders,
-            novOrders,
-            decOrders,
-          ],
+          data: [3, 2, 4, 7, 5, 3, 2, 0, 0, 1, 2, 0],
+          // data: [
+          //   janOrders,
+          //   febOrders,
+          //   marchOrders,
+          //   aprilOrders,
+          //   mayOrders,
+          //   juneOrders,
+          //   julyOrders,
+          //   augustOrders,
+          //   sepOrders,
+          //   octOrders,
+          //   novOrders,
+          //   decOrders,
+          // ],
         },
       ],
     });
