@@ -82,6 +82,7 @@ cursor: pointer;
 
 .logo-img-footer{
   width: 150px;
-  height: 40px;
-  margin-left: -38px
+  // height: 40px;
+  object-fit: cover;
+  // margin-left: -38px
 }

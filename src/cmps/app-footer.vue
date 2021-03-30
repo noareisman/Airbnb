@@ -1,24 +1,23 @@
 <template>
   <section class="main-layout footer-container">
       <div class="footer-content"> 
-          <img class="logo-img-footer"
-                :src="require(`@/assets/imgs/icons/HomeAwaylogo.png`)"
+           <img class="logo-img"
+                :src="require(`@/assets/imgs/icons/HomeAwaylogo.svg`)"
                 alt="img not found"
               />
+
  <div class="rights-container"> 
           <p> © 2021 HomeAway, Inc. </p>
       </div>
    <ul class="social-links clean-list">
         <li>
-          <a class="facebook" href="https://www.facebook.com/eran.sevil/">
-            <button class="outline"><img class="footer-img" src="../assets/imgs/icons/facebook-icon.svg" /></button></a>
+            <img class="footer-img" src="../assets/imgs/icons/facebook-icon.svg" />
         </li>
         <li>
-          <a class="twitter" href="https://www.linkedin.com/in/eran-sevil-68ba43171/"><button class="outline"><img class="footer-img" src="../assets/imgs/icons/twitter-icon.svg" /></button></a>
+          <img class="footer-img" src="../assets/imgs/icons/twitter-icon.svg" />
         </li>
         <li>
-          <a class="linkedin" href="https://twitter.com/EranSevil"><button class="outline"><img class="footer-img" src="../assets/imgs/icons/linkedin-icon.svg" /></button>
-          </a>
+          <img class="footer-img" src="../assets/imgs/icons/linkedin-icon.svg" />
         </li>
       </ul>
       
@@ -33,3 +32,8 @@ export default {
 }
 </script>
 
+<style>
+.airbnb-font-logo{
+  font-size: 30px;
+}
+</style>

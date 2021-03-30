@@ -10,7 +10,7 @@
         <el-menu-item index="1">
           <router-link class="router" :to="`/`">
            <img class="logo-img"
-                :src="require(`@/assets/imgs/icons/HomeAwaylogo.png`)"
+                :src="require(`@/assets/imgs/icons/HomeAwaylogo.svg`)"
                 alt="img not found"
               />
             <!-- <span class="logo txt"> HomeAway </span> -->
