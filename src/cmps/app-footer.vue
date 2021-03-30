@@ -1,7 +1,10 @@
 <template>
   <section class="main-layout footer-container">
       <div class="footer-content"> 
-          <p class="logo"> HomeAway </p>
+          <img class="logo-img-footer"
+                :src="require(`@/assets/imgs/icons/HomeAwaylogo.png`)"
+                alt="img not found"
+              />
  <div class="rights-container"> 
           <p> © 2021 HomeAway, Inc. </p>
       </div>

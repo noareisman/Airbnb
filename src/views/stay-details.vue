@@ -118,11 +118,13 @@ import { stayService } from "../services/stay.service.js";
 import appChat from "../cmps/app-chat.vue";
 import popUp from "../cmps/pop-up.vue";
 import reviewAdd from "../cmps/review-add.vue";
+import { socketService } from "../services/socket.service.js";
 
 export default {
   name: "stay-details",
   data() {
     return {
+      first:true,
       reviews: null,
       onChat: false,
       stay: null,
@@ -145,6 +147,17 @@ export default {
     };
   },
   methods: {
+     open1() {
+       if(this.first === false) return
+       this.first = false;
+        this.$notify({
+          title: 'Reservation ACCEPTED',
+          message: 'Enjoy your trip :)',
+          type: 'success',
+          position:'top-left',
+          duration:20000
+        });
+      },
     contactHost() {
       var msg = {
         txt: this.contactHostMsg,
@@ -231,6 +244,11 @@ export default {
     if (this.$store.getters.loggedinUser) {
       this.buyer = this.$store.getters.loggedinUser;
     }
+        socketService.on("updatedAns", this.open1);
+
+  },
+    destroyed(){
+    socketService.off('updatedAns')
   },
   components: {
     stayImgGallery,

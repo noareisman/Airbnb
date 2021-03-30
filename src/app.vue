@@ -21,6 +21,7 @@ export default {
       const host = this.$store.getters.loggedinUser;
       await this.$store.dispatch({ type: "loadHostOrders", host });
     },
+  
   },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
@@ -35,6 +36,7 @@ export default {
     socketService.setup();
 
     socketService.on("loadOrders", this.loadOrder);
+    
   },
   // destroyed(){
   //   socketService.off('loadOrders',)

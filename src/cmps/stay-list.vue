@@ -104,8 +104,14 @@ export default {
 
   },
   mounted() {},
-  created() {
+  created(){
     this.place = this.$route.query.location;
+  },
+  watch: {
+    '$route.query.location'(){
+      console.log('sdsdsdsdsdsdsddssdsdsd')
+      this.place = this.$route.query.location;
+    }
   },
   components: {
     stayPreview,

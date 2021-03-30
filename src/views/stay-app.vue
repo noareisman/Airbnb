@@ -23,6 +23,7 @@ export default {
   created() {
     var filterBy = {};
     if (this.$route.query) {
+      console.log(this.$route.query)
       filterBy.location = this.$route.query.location;
       // filterBy.startDate = this.$route.query.startDate
       // filterBy.endDate = this.$route.query.endDate

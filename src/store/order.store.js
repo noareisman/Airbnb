@@ -114,7 +114,7 @@ export const orderStore = {
       await orderService.save(newPendingOrder)
       // dispatch({ type: "loadHostOrders", host });
       console.log('110!!!!!!!!!!!')
-      socketService.emit('renderOrders',host )
+     await socketService.emit('renderOrders',host )
     },
   
 }

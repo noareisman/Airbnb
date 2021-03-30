@@ -4,7 +4,7 @@
       <p class="star-txt">
         <i class="fas fa-star"></i> 
         <span class="avg-rate">{{avgRateFromAllReviewers}}</span>
-        <span class="review-num">(1{{ reviews.length }})</span>
+        <span class="review-num"> ({{incRate*reviews.length }})</span>
       </p>
       </span>
   </section>
@@ -15,7 +15,10 @@ export default {
   name: "star-rating",
   props: {
     reviews: Array,
-    add:String
+    incRate:{
+      type:Number,
+      default:1
+    }
   },
   computed: {
     avgRateFromAllReviewers() {

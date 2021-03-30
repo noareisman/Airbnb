@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { socketService } from "../services/socket.service.js";
 export default {
   props: ["host"],
   // data() {
@@ -86,8 +87,10 @@ export default {
           await this.$store.dispatch({ type: "updateOrderStatus", order });
           break;
       }
-      this.loadOrders();
       this.$emit("reloadStays");
+      this.loadOrders();
+        socketService.emit("updateAns", order);
+
     },
   },
   

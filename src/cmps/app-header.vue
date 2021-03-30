@@ -9,7 +9,11 @@
       >
         <el-menu-item index="1">
           <router-link class="router" :to="`/`">
-            <span class="logo txt"> HomeAway </span>
+           <img class="logo-img"
+                :src="require(`@/assets/imgs/icons/HomeAwaylogo.png`)"
+                alt="img not found"
+              />
+            <!-- <span class="logo txt"> HomeAway </span> -->
           </router-link>
         </el-menu-item>
         <el-menu-item index="4"> </el-menu-item>
