@@ -151,7 +151,6 @@ export default {
       await this.$store.dispatch({ type: "loadStays", filterBy });
     },
     copyData(ev) {
-      console.log(ev);
       var location = ev.target?.value || ev;
       if(typeof location !== 'string') location = ''
       this.filterBy.location = location;

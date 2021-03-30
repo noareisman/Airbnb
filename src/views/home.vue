@@ -87,7 +87,7 @@ export default {
   name: "home",
   data(){
     return{
-      incRate:27,
+      incRate:47,
       staysPop:null
     }
   },
@@ -104,7 +104,6 @@ export default {
    const filterBy = {}
     const stays = await this.$store.dispatch({ type: "loadStays", filterBy }); 
     this.staysPop = stays.splice(0,3)
-    console.log(this.staysPop)
 
   },
   components: {

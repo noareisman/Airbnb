@@ -29,7 +29,7 @@
           <div class="host-order-bio cell-3">
             <h3>Guests:</h3>
             <p>
-              Adults:&nbsp; {{ order.guests.adults }}, Kids:&nbsp;{{
+              Adults:&nbsp; {{ order.guests.adults }},<br class="br" /> Kids:&nbsp;{{
                 order.guests.kids
               }}
             </p>

@@ -197,7 +197,6 @@ export default {
     },
     async toggleLike() {
       this.isLiked = !this.isLiked;
-      console.log(this.isLiked);
       if (this.isLiked) {
         this.class = "save-btn btn fas fa-heart";
       } else {

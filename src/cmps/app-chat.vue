@@ -83,25 +83,5 @@ export default {
     socketService.terminate();
   },
 
-  //     watch: {
-  //     msg:  {
-  //        handler(val){
-  //          console.log('watch?????')
-  //             if(this.msg.txt.length >1) {
-  //           socketService.emit('user is typing', true)
-  //           }else{
-  //             socketService.emit('user is typing', false)
-  //           }
-  //         // setTimeout(() => {
-  //         //   socketService.emit('user is typing', false)
-
-  //         // }, 1000);
-
-  //      },
-  //            deep: true
-
-  //     },
-
-  // }
 };
 </script>
