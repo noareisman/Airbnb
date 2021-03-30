@@ -93,9 +93,9 @@ export default {
       return this.stay.favorites.some(({userId}) => {
         return userId === user._id;
       });
-    },
+    }, 
   },
-
+ 
 
 
   components: {

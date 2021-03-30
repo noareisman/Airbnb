@@ -18,7 +18,7 @@
       <span class="box">
         <div class="">
           <span class="title">Dates</span>
-          <date-picker @pick="datePick" />
+          <date-picker class="filter-date-picker" @pick="datePick" />
         </div>
       </span>
       <span class="box">

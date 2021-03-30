@@ -180,11 +180,13 @@ html {
 .btn-search {
     background-color: #ff385c;
     border-radius: 50%;
-    width: 40px !important;
-    height: 40px;
+    width: 41px !important;
+    height: 41px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid white;
+    margin-bottom: 3px;
 }
 
 .location-header {

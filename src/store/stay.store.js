@@ -100,12 +100,12 @@ export const stayStore = {
             }
             // const updatedStay= await stayService.addReview(newReview,currStay)
         },
-
+ 
 
 
     async toggleLike(context, { stay }) {
         const user = context.getters.loggedinUser; 
-        const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
+          const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
         if (favIdx >= 0) stay.favorites.splice(favIdx, 1); 
         else stay.favorites = [{userId: user._id}]; 
         try {
