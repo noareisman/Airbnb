@@ -151,10 +151,10 @@ export default {
        if(this.first === false) return
        this.first = false;
         this.$notify({
-          title: 'Reservation ACCEPTED',
-          message: 'Enjoy your trip :)',
+          title: `${this.stay.host.fullname} has ACCEPTED your Reservation`,
+          message: `${this.buyer.fullname} Enjoy your trip in ${this.stay.loc.address} :)`,
           type: 'success',
-          position:'top-left',
+          position:'top-right',
           duration:20000
         });
       },
