@@ -20,11 +20,11 @@ async function createStay(){
     // for (var i=0;i<parisStays.length;i++){
         //     await stayService.save(parisStays[i])
         // }
-        // var newYorkStays= await createStaysDBByCity(13,24,'newYork')
-        // // allSyntheticStays.push(newYorkStays)
-        var barcelonaStays= await createStaysDBByCity(25,36,'barcelona')
-        allSyntheticStays.push(barcelonaStays)
-        console.log(JSON.stringify(barcelonaStays));
+        var newYorkStays= await createStaysDBByCity(13,24,'newYork')
+        allSyntheticStays.push(newYorkStays)
+        // var barcelonaStays= await createStaysDBByCity(25,36,'barcelona')
+        // allSyntheticStays.push(barcelonaStays)
+        console.log(JSON.stringify(newYorkStays));
     // console.log(allSyntheticStays) ;
     // allSyntheticStays.push(parisStays,newYorkStays,barcelonaStays)
     // JSON.stringify(allSyntheticStays)
@@ -56,7 +56,7 @@ async function createStaysDBByCity(stayNumStart, stayNunEnd, location) {
     for (var i = 0; i < stayNunEnd-stayNumStart; i++) {
         var allUsers=await userService.getUsers()
         var host=allUsers.splice(utilService.getRandomInt(0,allUsers.length),1)[0]
-        var reviewNum=utilService.getRandomInt(3,8)
+        var reviewNum=utilService.getRandomInt(6,10)
         var reviewers= createReviewers(reviewNum,allUsers)
         var txt=getTxtByLocation(location)
         // console.log(txt);
@@ -141,12 +141,12 @@ function createFakeReviews(reviewers,location) {
 
 function getCategoryRating(){
     var category= {
-        Cleanliness: utilService.getRandomInt(1, 6),
-        Accuracy: utilService.getRandomInt(1, 6),
-        Communication: utilService.getRandomInt(1, 6),
-        Location: utilService.getRandomInt(1, 6),
-        CheckIn: utilService.getRandomInt(1, 6),
-        Accessibility: utilService.getRandomInt(1, 6),
+        Cleanliness: utilService.getRandomInt(3, 6),
+        Accuracy: utilService.getRandomInt(3, 6),
+        Communication: utilService.getRandomInt(3, 6),
+        Location: utilService.getRandomInt(3, 6),
+        CheckIn: utilService.getRandomInt(3, 6),
+        Accessibility: utilService.getRandomInt(3, 6),
     }
     var avg =calcCategoryAvg(category)
     return [category,avg]
@@ -185,7 +185,7 @@ function setLocDetails(location) {
             loc = {
                 country: 'spain',
                 countryCode: 'ES',
-                address: 'barcelona, spain',
+                address: 'Barcelona, Spain',
                 lat: 41.34617,
                 lng: 2.168365
             }
@@ -222,7 +222,29 @@ function getReviewsByLocation(location){
             return barcelonaReviews
         case 'newYork':
             return [
-
+                'Great experience. Great value for money!',
+                'Definitely will be coming back to Sonder when I visit NYC again! Such a cozy clean place to stay in, I loved it.',
+                'This place was beautiful. great location and spacious.',
+                'Great location. Easy check in and very clean! Highly recommended.',
+                'Definitely is a good spot to stay, very nice space in downtown Manhattan. Will recommend to anyone and would also stay here again.',
+                'Great value, great place. You have almost all of the classy hotel feel with the technological convenience of check-in/out and communication. The place was clean and stylish. The sound isolation though is 3 out of 5 stars. I could hear nearby conversations. And when I practice violin in my room, I get conscious even though I have a practice mute. See if you can request booking a room with no neighbors.',
+                'Absolutely brilliant. Feel like at home and at a vacation.',
+                'The space was cleaned, and the high touch items were sealed once they were sanitized. The kitchen was stocked with pantry basics and plenty of utensils, dishes, pots, pans, etc. The bed was comfortable, and everything more than met our expectations',
+                'Loved the room and building. Everything was perfect except one woman at the front desk in the mornings--so rude and made me afraid to even ask her questions when I needed assistance. Stayed for more than a month so used their mail delivery and it was lost.',
+                'This was an amazing space in a great part of New York, access to multiple subway lines, great restaurants & polite staff! Would 100% recommend this space for anyone coming to the city :)',
+                'Amazing stay overall, loved everything about the place. Highlights included gym access (NYSC) and the many amenities offered in the room - eg coffee, olive oil bottles, toaster! It is a very well connected location.',
+                'Ideal place to stay. The room and amenities were perfect, and the host was helpful and responsive.',
+                'Was great! It is just as advertised. Loved the record player in our room and gym access. We were set up nicely.',
+                'This is a wonderful classy stay. The rooms are super clean and excellent space . There is everything you need there from coffee to cups and plates a nice fridge . Even washer and dryer. It is worth every penny !',
+                'Beautiful everything from beginning to the end',
+                'Will be staying again! Beautiful place!',
+                'Not comfortable at all',
+                'AWESOME STAYCATION PLACE',
+                'Wonderful stay and accommodation by Sonder! Great location in Manhattan. Would stay again.',
+                'Great place to stay... Only issue was with building access keypad. Very inconvenient. If that works then it is a smooth stay.',
+                'This is a great location. The view of the Statue of Liberty was just a block away. The subway was easily accessible from this location. I rented a car and the paid valet parking garage was just a few blocks away. The apartment itself was very clean and comfortable. I felt very safe in this neighborhood.',
+                'Excellent space. Much nicer than staying in a hotel because of the full kitchen. Mattresses tend to be on the firm side just as a heads up.',
+                'Clean and stylish! Great place to work from home for a few weeks in NYC. Better than a hotel and great price point.'
             ]
         case 'paris':
             var parisReviews = [
@@ -243,7 +265,7 @@ function getReviewsByLocation(location){
                 'Great space, very private area (great for photos) and very close to markets, parks, and other tourist-y locations.',
                 'Great location, very comfortable accommodation, very good service by Halldis.',
                 'Great location on a quiet street that is now closed to vehicular traffic. Wonderful location. Very clean and private. We stayed 1 week. Would stay again.',
-                'Wow what a great place right in the middle of everything! It was so quaint and French felt like real Parisian for the week. We were there. It’s very clean and an easy one flight to the apartment.I was with my mom who is French she felt Right at home‍ we would definitely recommend this again and we look forward to maybe staying there again next year fantastic :)',
+                'Wow what a great place right in the middle of everything! It was so quaint and French felt like real Parisian for the week. We were there. It’ is very clean and an easy one flight to the apartment.I was with my mom who is French she felt Right at home‍ we would definitely recommend this again and we look forward to maybe staying there again next year fantastic :)',
 
 
             
@@ -284,7 +306,7 @@ function getTxtByLocation(location){
                 {
                 title: 'RAMBLAS, GOTHIC QUARTER APARTMENTS BY THE5VESOUL',
                 summary: 'Entire serviced apartment',
-                description: 'Top of the apartments list of attractions is its large terrace, perfect for candlelit dinners under the stars, rising and shining in the morning with breakfast, coffee breaks, or just relaxing after exploring the city.Situated on the ground floor (no steps), the flat consists of one bedroom with a double bed and big wardrobe, plus an open-plan living/dining room with a double sofa bed'
+                description: 'Top of the apartments list of attractions is it is large terrace, perfect for candlelit dinners under the stars, rising and shining in the morning with breakfast, coffee breaks, or just relaxing after exploring the city.Situated on the ground floor (no steps), the flat consists of one bedroom with a double bed and big wardrobe, plus an open-plan living/dining room with a double sofa bed'
                 },
                 {
                 title: 'Modern & Quiet TopFloor Apartment',
@@ -304,7 +326,7 @@ function getTxtByLocation(location){
                 {
                 title: 'Apartamento exterior',
                 summary: 'Entire apartment',
-                description: 'STYLISH DESIGN LOFT in an classical Barcelonas gothic quarter 18th century building. Its located 3 minutes away from Plaza Real. Its a modern kitchen, a big open space, 2 exterior balconies and a beautiful bathroom. Its perfect place to stay in the best location in old town'
+                description: 'STYLISH DESIGN LOFT in an classical Barcelonas gothic quarter 18th century building. It is located 3 minutes away from Plaza Real. It is a modern kitchen, a big open space, 2 exterior balconies and a beautiful bathroom. Its perfect place to stay in the best location in old town'
                 },
                 {
                 title: 'ALEGRE APARTAMENTO EN EL CENTRO DE BARCELONA',
@@ -312,14 +334,74 @@ function getTxtByLocation(location){
                 description: 'Amazing flat, recently renovated in the city center. Located in the heart of the gothic neighborhood, just 1 minute walking to the Ramblas, in the middle of the most popular area in Barcelona! The apartment is modern, cozy and extremly comfortable.2 Bedrooms with bathrooms in suite, and a Sofa-bed.'
                 },
                 {
-                title: 'APARTAMENTO EN EL CENTRO DE BARCELONA    ',
+                title: 'APARTAMENTO EN EL CENTRO DE BARCELONA',
                 summary: 'Entire apartment',
-                description: 'Its located in the Gothic quarter, in the centre of Ciutat Vella, the old part of the city. A few minutes walk will take you to Plaça de Catalunya, the Portal del Ángel, la Rambla, the Boquería Market or the Picasso Museum, along with many other famous tourist spots. Its location will make it easy to find services around such as supermarkets, bookshops or pharmacies, and transport in Ciutat Vella makes it one of the best communicated areas of the city.'
+                description: 'It is located in the Gothic quarter, in the centre of Ciutat Vella, the old part of the city. A few minutes walk will take you to Plaça de Catalunya, the Portal del Ángel, la Rambla, the Boquería Market or the Picasso Museum, along with many other famous tourist spots. Its location will make it easy to find services around such as supermarkets, bookshops or pharmacies, and transport in Ciutat Vella makes it one of the best communicated areas of the city.'
                 }
             ]
         case 'newYork':
             return [
+                {
+                    title: 'Duplex penthouse in NY',
+                    summary: 'Entire apartmen',
+                    description: 'Beautiful penthouse with cosy terrace in Brooklyn. It has super fast reliable internet connection and comfy table ad chairs in case you need to work from home. The apartment has been renovated with a classical chic decoration, it boasts very spacious rooms and a bathtub in the main bedroom with terrace views. It has a living and dining-room with an integrated kitchen and is fully equipped for your comfort.'
+                },
+                {
+                    title: 'Spectacular penthouse in the heart of NY',
+                    summary: 'Entire apartmen',
+                    description: 'Enjoy our fantastic penthouse in NY where you can sleep watching the moon, have breakfast in one of our terraces or sunbathe in our comfortable chill out. Situated in the coolest neighborhood in the world (TIME OUT ranking 2020), this fully equipped apartment is just 15min walk from the city center (3 bus stops). It has a super fast reliable internet connection in case you have to work from home, and a huge smart TV to watch your favorite movies and series.'
+                },
+                {
+                    title: 'Bright, central, spacious, 2 bedrooms, Balcony',
+                    summary: 'Entire serviced apartment',
+                    description: 'This is a fabulous apartment placed in the heart of NY. It is very close to many of NYC must-see attractions. This location will allow you to enjoy as much as possible your holiday in New York.'
+                },
+                {
+                    title: 'Sonder at Battery Park',
+                    summary: 'Entire apartment',
+                    description: 'Whether you are just getting away for the weekend or looking for an extended stay, we are committed to creating comfortable experiences for our guests. We offer contact-free check-in and 24/7 virtual support which limits in-person interaction. In addition to following the guidance of the CDC and the World Health Organization, we’re partnering with sanitization experts at the Cleveland Clinic to ensure that all of our cleaning standards follow the advice of leaders in the field. We’ve put safety seals on high-touch items, stocked all spaces with complimentary hand sanitizer, and added social distancing signage in common areas. Each space is carefully designed and run by us, so you’ll always know what to expect.'
+                    },
+                {
+                    title: 'My Nova York Palace Welcomes You',
+                    summary: 'Entire apartment',
+                    description: 'Very clean and centrally located.\n Subway station steps away. You will be very comfortable here!\n Grocery and pharmacy also steps away\n You will be in the heart of the city here.\n Get around seamlessly.\n Kitchen is fully equip with everything you need for cooking.\n The building is very well kept and extremely clean.\n Laundry available in the building as well as elevator.\n Apartment has windows in the bedroom and in the living room.\n Bathroom is a good size with both tub and shower.'
+                },
+                {
+                    title: 'SPACIOUS & CHARMFUL',
+                    summary: 'Entire apartment',
+                    description: '5-10 min walk to subway lines to Manhattan! Gorgeous APT historic Brooklyn Brownstone w/ restored 18-Century + backyard garden! Located in the popular historic district of Bed-Stuy Brooklyn. The apartment is on a quiet, residential street, offering 1 Large Bed & 1 Small Bed + 1 sofa bed + fully equipped kitchen & bathroom + wonderful backyard w/ sitting!'
 
+                },
+                {
+                    title: '138 Bowery, King Room',
+                    summary: 'Entire apartment',
+                    description:'The studio apartment has a Kitchen space (hot plate, microwave and mini fridge ) bathroom, flat-screen TV and heat/air conditioning.'
+                },
+                {
+                    title: 'Appartement in the center of NYC',
+                    summary: 'Entire apartment',
+                    description: 'A charming apartment overlooking a lovely private courtyard is a 10-minute walk from the subway. Very sunny and very quiet. The kitchen is fully equipped. Close to family-friendly activities, nightlife, public transport and the city centre. Perfect for couples, solo travelers and business travelers.'
+                },
+                                {
+                    title: 'Romantic appartment, Soho',
+                    summary: 'Entire apartment',
+                    description: 'The apartment includes a living room, kitchen corner, double bedroom and bathroom, located on the 1st floor of a building (no elevator).'
+                },
+                {
+                    title: 'Cosy home in NYC',
+                    summary: 'Entire apartment',
+                    description: 'Charming studio in the 17th arrondissement of Paris, it is located on horseback between the Batignolles and the Montmartre district Functional and practical, it is ideal for a stay alone or as a couple. Guests can access the living room with TV, sofa bed and desk area. Everything you\'ll need in the kitchen. The bathroom is equipped with a shower, toilet, sink and washer/dryer. 5 minutes from metro 13 and 10 minutes from metro 2, you can move quickly.'
+                },
+                {
+                    title: 'Lovely flat in NYC',
+                    summary: 'Entire apartment',
+                    description: 'Welcome!\n Right in the NYC heart you will find our lovey flat! Our bedroom is furnished with a double bed fitted with hotel quality linens. The bathroom is equipped with a shower, toilet, mirror and hairdryer. And we also provide fresh towels and complimentary toiletries. The living room has a young and casual décor, with a comfortable and stylish sofa, rattan chairs and coffee table. The kitchen, though modest is fully equipped with all the necessities, from cookware to cutlery. Our flat also has 2 flat-screen TVs, one in the main bedroom, and another in the living room. We hope you have a fantastic stay! =)' 
+                },
+                {
+                    title: 'Romantic loft near Central Park',
+                    summary: 'Entire apartment',
+                    description: 'Located in next to Central Park, this elegant yet relaxing space inspired by the literary culture of NY. A sleek black-and-white color palette exudes glamour, and enchanting trompe l’oeil art adds a touch of fantasy. A staircase leads to a secluded loft bedroom, and a kitchenette has everything you need. This studio accommodates up to two people, making it an ideal romantic getaway. It is the perfect place to fall in love with NY.'
+                }
             ]
         case 'paris':
             return [

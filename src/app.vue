@@ -25,6 +25,8 @@ export default {
   },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
+
+    //connects a default user for demo mode
     // await this.$store.dispatch({
     //   type: "login",
     //   userCred: { username: "mor97", password: "secret" },
@@ -33,6 +35,9 @@ export default {
     
     const user = this.$store.getters.loggedinUser;
     await this.$store.dispatch({ type: "loadHostOrders", host: user });
+    
+    // syntheticDataService.createStay()//creates synthetic data and prints it to the console 
+    //-it does not insert the data to the collection... if console printing was successful json format can be copied from the console
     socketService.setup();
 
     socketService.on("loadOrders", this.loadOrder);
