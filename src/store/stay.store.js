@@ -105,7 +105,7 @@ export const stayStore = {
 
     async toggleLike(context, { stay }) {
         const user = context.getters.loggedinUser; 
-          const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
+        const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
         if (favIdx >= 0) stay.favorites.splice(favIdx, 1); 
         else stay.favorites = [{userId: user._id}]; 
         try {
@@ -115,7 +115,7 @@ export const stayStore = {
         } catch (err) {
             console.log('from Store: Cannot toggleLike', err);
             throw new Error('Cannot toggleLike');
-        }
+        } 
     }
 },
 

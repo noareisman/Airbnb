@@ -103,6 +103,8 @@
     height: 100px;
 }
 
+
+
 .stay-address{
     font-size: 14px;
     font-style: italic  ;
@@ -116,12 +118,30 @@
 
 
 @media (max-width:400px){
-    .card-info {
-        font-size: 1.5rem;
+    // .card-info {
+    //     font-size: 1.5rem;
+    // }
+    .advanced-search-input .advanced-input-container .advanced-input-section .advanced-input, .advanced-search-input .advanced-input-container .advanced-input-section .label {
+       font-size: 18px;
+       background-color: transparent;
     }
 
     .card-info >*:not(:last-child) {
         // background-color: red !important;
         margin-bottom: 1%;
+    }
+
+    .host-orders .host-order .order-respons-buyer{
+        margin-bottom:14px;
+    }
+
+    .host-orders .host-order .host-order-btns {
+        margin-top: 18px;
+    }
+
+    .host-orders .host-order .host-order-bio {
+        font-size: 15px;
+        padding: 2px;
+
     }
 }

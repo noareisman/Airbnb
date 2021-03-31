@@ -86,7 +86,7 @@ export default {
       return "$" + this.stay.price;
     },
 
-    
+     
     isLiked() {
       const user = this.$store.getters.loggedinUser;
       if (!user) return;

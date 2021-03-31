@@ -100,9 +100,14 @@
 }
 
 .filter-container .wrapper .box .title {
-    
-    margin-left: 3px;
+    margin-top: 6px;
+    margin-left: 2px;
 }
+
+.filter-container .wrapper .box .desc {
+padding-bottom: 3px;
+}
+
 
 
 .secondary {
@@ -128,6 +133,9 @@
     line-height: 19px;
 }
 
+.location{
+margin-left: 11px;
+}
 
 @media (max-width:400px) {
     .filter-container {
@@ -193,4 +201,21 @@
 
 .filter-date-picker{
     margin-left: -48px !important;
+}
+
+.filter-container .wrapper .box:nth-child(2) {
+width: 285px !important;
+}
+
+.date-title-sec{
+    margin-left: 2px;
+    margin-left: 36px !important;
+}
+
+.advanced-search-input .advanced-input-container .advanced-input-section .advanced-input span, .advanced-search-input .advanced-input-container .advanced-input-section .label span{
+    margin-left: -2px;
+}
+
+.filter-container .wrapper .box:first-child {
+    width: 200px !important;
 }
