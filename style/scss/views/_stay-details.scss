@@ -433,7 +433,9 @@ margin-right: 10px;
     padding-bottom: 30px;
 }
  .el-popper{
-    width: 212px;
+    &:not(.el-picker-panel.el-date-range-picker) { 
+        width: 212px;
+    }
     position: absolute;
     top: 910px;
     left: 580px;
