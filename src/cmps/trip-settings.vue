@@ -29,7 +29,6 @@
           <span class="special-btn-txt">Check availability</span>
         </button>
 
-
         <div v-else class="reservation-summary flex column center">
 
        <button v-if="!isReserved" class="special-btn" @click="sendOrderRequest()">
@@ -62,9 +61,6 @@
             <span>${{ orderSettings.totalPrice }}</span>
           </div>
         </div>
-
-
-
       </div>
     </form>
   </section>
