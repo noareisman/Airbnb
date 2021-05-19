@@ -7,7 +7,7 @@
     </div>
     <stay-list v-if="staysToShow.length" :stays="staysToShow" />
         <img v-else :src="require(`@/assets/imgs/icons/load.gif`)">
-  </section>
+  </section> 
 </template>
 
 <script>

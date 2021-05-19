@@ -8,7 +8,7 @@
           <div class="cell check-respons"><h3>Check in/out</h3></div>
       </div>
 
-      <div class="stay-full-orders">
+      <div class="stay-full-orders"> 
         <div class="single-stay-order" v-for="order in singleStayOrders" :key="order._id">
           <div class="cell" v-if="order.status === 'approve'">
             <b>{{ order.buyer.fullname }}</b>

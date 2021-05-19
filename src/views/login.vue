@@ -18,12 +18,6 @@
         />
         <br />
         <button class="login-btn">Login</button>
-        <!-- <p
-          v-if="
-            msg === 'Incorrect username or password.' ||
-            msg === 'Please enter username and password.'
-          "
-        > -->
       </form>
       <div class="middle-page flex">
         <div class="login-signup-supperline">
@@ -34,7 +28,19 @@
           <hr />
         </div>
       </div>
-      <form @submit.prevent="doSignup" class="signup-form">
+      <div>
+        <div>
+               <button v-if="IsSignUp" @click="toggleSignUp" class="toggle-btn">
+          Signup
+        </button>
+
+        <button @click="guestLogin" class="guest-login">
+          Login as a guest
+        </button>
+        </div>
+   
+      </div>
+      <form v-if="!IsSignUp" @submit.prevent="doSignup" class="signup-form">
         <h2 class="login-page-headlines">Signup</h2>
         <input
           autocomplete="off"
@@ -58,10 +64,21 @@
         />
         <br />
         <button>Signup</button>
+  
+
         <p>
           {{ msg }}
         </p>
       </form>
+      <!-- <div class="middle-page flex">
+        <div class="login-signup-supperline">
+          <hr />
+        </div>
+        <h3>or</h3>
+        <div class="login-signup-supperline">
+          <hr />
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -74,6 +91,7 @@ export default {
       loginCred: { username: "", password: "" },
       signupCred: { username: "", password: "", fullname: "" },
       allUsers: null,
+      IsSignUp: true,
     };
   },
   computed: {
@@ -106,6 +124,11 @@ export default {
         console.log(err);
       }
     },
+    async guestLogin() {
+      this.loginCred.username = "mor97";
+      this.loginCred.password = "secret";
+      this.doLogin();
+    },
     async doSignup() {
       if (
         !this.signupCred.fullname ||
@@ -127,6 +150,9 @@ export default {
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" });
       this.allUsers = this.$store.getters.users;
+    },
+    toggleSignUp() {
+      this.IsSignUp = !this.IsSignUp;
     },
   },
   created() {
