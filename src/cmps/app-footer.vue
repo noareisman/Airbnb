@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout footer-container">
+  <section class="footer-container">
       <div class="footer-content"> 
            <img class="logo-img"
                 :src="require(`@/assets/imgs/icons/HomeAwaylogo.svg`)"

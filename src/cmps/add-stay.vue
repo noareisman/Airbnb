@@ -1,6 +1,7 @@
 <template>
     <section>
         <form class="add-stay-form">
+          <h2>Add a New List:</h2>
             <div>
                 <span>Stay Name:</span>
                 <el-input class="add-stay-name" placeholder="Name" v-model="stay.name"></el-input>
@@ -28,10 +29,10 @@
             </div>
             <div class="flex align-center">
                 <span>Price per night:</span>
-                <el-input class="add-stay-price" placeholder="Enter price" size=small v-model="stay.name"></el-input>
+                <el-input class="add-stay-price" placeholder="Enter price" size=small v-model="stay.price"></el-input>
             </div>
-            <div>
-                <span class="capacity">Capacity:</span>
+            <div class="capacity">
+                <span class="capacity-title">Capacity:</span>
                 <el-input-number size=small v-model="stay.capacity" @change="handleChange" :min="1" :max="20"></el-input-number>
             </div>
             <div>
@@ -43,7 +44,7 @@
             <span>Upload stay images:</span>
             <img-cld-upload class="upload-stay-img"/>
             </div>
-            <button class="call-to-action-btn" @click="addStay()">Publish Listing</button>
+            <button class="special-btn add-asset-btn" @click="addStay()">Publish Listing</button>
         </form>
     </section>    
 </template>
@@ -94,6 +95,7 @@ export default {
       },
       async addStay(){
           try{
+            this.stay.price=+this.stay.price;
             await this.$store.dispatch({type:'saveStay',stay:this.stay})
             Swal.fire('Your new stay was added to listing!')
             this.stay=stayService.getEmptyStay()

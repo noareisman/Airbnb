@@ -9,9 +9,15 @@
     }
     
     .el-input-number {
-        margin-left: 9%;
+        margin-left: 62px;
     }   
+
+    .add-asset-btn{
+        width:200px;
+    }
+    
 }
+
 
 .add-stay-form>*{ 
     margin-bottom:20px;
@@ -19,37 +25,41 @@
     text-align: left;
 }
 
-@media screen and(max-width:400px){
-    .add-stay-form>*{ margin-right: unset;}
+@media screen and(max-width:700px){
+    .add-stay-form>*{ margin-right: 0;}
     
     .add-stay-form{
         text-align: center;
-        font-size: 2rem;
+        font-size: 1rem;
         
         .el-input-number {
             margin-left: unset;
         }
-
+        
         .capacity {
-            display: block;
+            display: flex;
+        }
+        
+        .capacity-title{
+            margin-right: 68px;
         }
         
         .el-checkbox__label {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
-       
+        
         textarea {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
-       
+        
         button {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
        
         input {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
-       
+        
         img {
             width: 200px;
         }

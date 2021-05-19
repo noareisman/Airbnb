@@ -1,26 +1,44 @@
 .login-page {
     text-align: center;
-    // height: 100vh;
-    padding:  0 1% 1% 1%; 
-    .login-signup-supperline {
-        width: 28%;
-        padding: 5px 3px 0 3px;
+    height: 83vh;
+    padding-top:15px; 
+    .login-page-headlines{
+        margin-bottom: 15px;
+        margin-top: 15px;
     }
     input {
         outline: none !important;
+        min-width: 250px;
         width: 30%;
+        max-width: 400px;
         padding: 12px 12px;
-        margin-bottom: 1%;
-        border-radius: 10px;
+        margin-bottom: 7px;
+        border-radius: 8px;
+        height: 2.8rem;
+        border-width:1px;
     }
-    button {
-        outline: none !important;
-        color: white;
+    
+    // button {
+        //     outline: none !important;
+        //     color: white;
+        //     width: 30%;
+        //     border-radius: 10px;
+        //     height: 30px;
+        //     cursor: pointer;
+    //     background-color: #FF385C;
+    
+    // }
+    
+    .btn{
+        font-size: 18px;
+        min-width: 250px;
         width: 30%;
-        border-radius: 10px;
-        height: 30px;
-        cursor: pointer;
-        background-color: #FF385C;
+        max-width: 400px;
+    }
+    p {
+        color: red;
+        padding-top: 1%;
+        margin: 0 auto;
     }
     button:hover {
         background-color: #FF385C;
@@ -28,15 +46,10 @@
     .middle-page{
         justify-content: center;
         margin: 1% 25% 0% 25%;
-    }
-    .login-page-headlines{
-        margin-bottom: 1%;
-    }
-
-    p {
-        color: red;
-        padding-top: 1%;
-        margin: 0 auto;
+        .login-signup-supperline {
+            width: 28%;
+            padding: 5px 3px 0 3px;
+        }
     }
 }
 

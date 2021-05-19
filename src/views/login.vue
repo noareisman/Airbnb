@@ -7,7 +7,7 @@
           autocomplete="off"
           type="text"
           v-model="loginCred.username"
-          placeholder="User name"
+          placeholder="Username"
         />
         <br />
         <input
@@ -17,7 +17,7 @@
           placeholder="Password"
         />
         <br />
-        <button class="login-btn">Login</button>
+        <button class="login-btn special-btn btn">Login</button>
         <!-- <p
           v-if="
             msg === 'Incorrect username or password.' ||
@@ -40,7 +40,7 @@
           autocomplete="off"
           type="text"
           v-model="signupCred.fullname"
-          placeholder="Your full name"
+          placeholder="Name"
         />
         <br />
         <input
@@ -57,7 +57,7 @@
           placeholder="Password"
         />
         <br />
-        <button>Signup</button>
+        <button class="special-btn btn">Signup</button>
         <p>
           {{ msg }}
         </p>

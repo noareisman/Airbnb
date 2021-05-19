@@ -3,9 +3,9 @@
       <div class="stay-order-headlines">
           <div class="cell"><h3>Name</h3></div>
           <div class="cell"><h3>Guests</h3></div>
-          <div class="cell check"><h3>Check in</h3></div>
-          <div class="cell check"><h3>Check out</h3></div>
-          <div class="cell check-respons"><h3>Check in/out</h3></div>
+          <div class="cell check"><h3>Check-in</h3></div>
+          <div class="cell check"><h3>Check-out</h3></div>
+          <div class="cell check-mobile"><h3>Dates</h3></div>
       </div>
 
       <div class="stay-full-orders">
@@ -27,7 +27,7 @@
             <p>{{ order.endDate }}</p>
           </div>
           
-          <div class="cell dates-respons" v-if="order.status === 'approve'">
+          <div class="cell dates-mobile" v-if="order.status === 'approve'">
             <p>{{ order.startDate }}</p>
             <p>{{ order.endDate }}</p>
           </div>
@@ -40,8 +40,6 @@
 export default {
   props: ["stay"],
   computed: {
-    /////////////////////////////Noa: I think  maybe you can get it filtered
-    ////////////////////straight from the store I wrote there a function just like it
     stayOrders() {
       return this.$store.getters.getHostOrders.filter((order) => {
         return order.stay._id === this.stay._id;

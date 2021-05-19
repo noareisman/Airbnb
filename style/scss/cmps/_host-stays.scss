@@ -1,76 +1,32 @@
 .host-stays-headline{
-    // margin-top: 4%;
-    // border-top: 3px solid lightgray;
-   
     .host-stays {
-        padding: 1% 0 1% 1%;
         list-style-type: none;
+        margin-bottom: 25px;
         
         .host-stay-and-orders{
             border: 1px solid rgba(211, 211, 211, 0.671);
             border-radius: 12px;
             padding: 2%;
-            padding-right: 0;
+            padding-right: 3%;
             margin-top: 2%;
-        }
-        
-        .host-stay{
-            border-radius: 5px;
-            display: flex;
-            align-items: flex-start;
-            
-            .host-stay-txt {
-                margin-left: 5%;
-                width:100%;
-               
-                h2{
-                    margin-bottom: 20px;
+
+            .host-stay{
+                border-radius: 5px;
+                display: flex;
+                align-items: flex-start;
+
+                .host-stay-img{
+                    width:150px;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
                 }
-            }
-            
-            .host-stay-img{
-                width:150px;
-                height: 150px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
-        }
-        
-        .stay-order-details {
-            width: 100%;
-            
-            .stay-order-headlines {
-                display: grid;
-                grid-template-columns: 1fr 30% 1fr 1fr ;
-                .check-respons {display: none;}
-               
-                .cell {
-                    padding: 1%;
-                    text-align: left;
+                .host-stay-txt {
+                    margin-left: 3%;
+                    width:100%;
                     
-                    h3 {
-                        border-bottom: 1px solid lightgray;
-                        width: fit-content;
-                    }
-                }
-                
-            }
-            .stay-full-orders {
-                h2{width: 400%;}
-                
-                h4 {
-                    background-color: red;
-                    width: fit-content;
-                }
-                
-                .single-stay-order {
-                    display: grid;
-                    // grid-template-columns: 25% 25% 25% 25% ;
-                    grid-template-columns: 1fr 30% 1fr 1fr ;
-                    .dates-respons{display: none;}
-                    .cell {
-                        padding: 1%;
-                        text-align: left;
+                    h2{
+                        margin-bottom: 20px;
                     }
                 }
             }
@@ -78,67 +34,50 @@
     }
 }
 
-@media screen and(max-width:400px){ 
-    .super-line {display: none;}
-    .host-stay-img-container {
-        display: none;
-    }
-    
+@media screen and(max-width:900px){
+.host-stay-img-container{
+    display:none;
 }
+}
+
 @media screen and(max-width:700px){
     .host-stays{
         padding: unset !important;
-
+        
         .host-stay-and-orders{
             padding: unset !important;
             margin-top: 2%;
         }
         
         .host-stay{
-            padding: 1% !important;
-            // flex-direction: column;
             .host-stay-txt {
-                margin-right: 5%;
-            }
+                margin-right: 3%;
+                margin-bottom: 3%;
+                margin-left: 2% !important;
+                .cell{
 
-            h2 {margin-left: unset !important;
-                font-size: 1.3rem;
+                    font-size: 13px !important;
+                }
+                h2 {
+                    font-size: 1.2rem;
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                }
             }
-            
             .host-stay-img-container {
                 display: none;
             }
         }
     }
+}
 
-    .stay-order-details {
-        font-size: 0.8rem;
-        // .single-stay-order>*:not(:last-child){border-right: 1px solid lightgray;}
-        
-        .stay-order-headlines {
-            border-bottom: 1px solid lightgray;
-            grid-template-columns: 33% 35% 30% !important;
-            // grid-template-columns: 30% 30% 40% !important;
-            .cell {h3 {border-bottom: unset !important;}}
-            .check {display: none;}
-            .check-respons {display: unset !important;}
-        }
-        
-        .single-stay-order {
-            font-size: 1rem;
-            grid-template-columns: 33% 35% 30% !important;
-            // grid-template-columns: 30% 30% 40% !important;
-            .dates-respons{display: unset !important;}
-            .date{display: none;}
-            
-            .cell{
-                // padding:0 6% !important;
-                margin-top: 8%;
-                .dates-respons {
-                    margin-top: unset !important;
-                }
-            }
-        }
-        
+@media screen and(max-width:440px){ 
+    .super-line {display: none;}
+    .host-stay-img-container {
+        display: none;
+    }
+    .assets-title{
+        font-size: 1.6rem;
+        margin-bottom: 15px;
     }
 }
