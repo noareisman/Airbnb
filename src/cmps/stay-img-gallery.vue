@@ -8,7 +8,7 @@
         :key="idx"
       >
           <img
-            class="stay-img-prev"  
+            class="stay-img-prev stay-details-img-prev"  
             :src= imgLink(img)
           />
       </el-carousel-item>
@@ -17,10 +17,6 @@
         <img v-for="(img,idx) in imgs" :key="idx" class="stay-img"
             :src="imgLink(img)">
       </ul>
-      <!-- <ul v-else class="stay-details-img-grid-container">
-        <img v-for="(img,idx) in imgs" :key="idx" class="stay-img"
-            :src="require(`@/assets/imgs/airbnb-imgs/${img}.jpg`)">
-      </ul> -->
   </section>
 </template>
 

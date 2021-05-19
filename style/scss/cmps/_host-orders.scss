@@ -1,44 +1,44 @@
-// .host-order-container{
-//     margin-top: 2%;
-// }
-
 .reservations-title{
     margin-bottom: 15px;
-}
-
-.ssets-title{
-    margin-top:25px ;
 }
 
 .host-orders{
     height: fit-content;
     border: 1px solid rgba(211, 211, 211, 0.671);
-    padding: 2%;
-    border-radius: 25px;
+    padding: 3%;
+    border-radius: 12px;
     margin-top: 2%;
     
     .host-order:last-child{
-        border: none;
+        border-bottom: none;
     }
-    
     .host-order {
         display: grid;
-        grid-template-columns: 30% 25% 20% 25%;
+        grid-template-columns: 1fr 1fr 1fr 200px;
         list-style-type: none;
         padding: 1%;
-        border-bottom: 2px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        
+        .cell-1{
+            grid-column: 1;
+        }
+        .cell-2{
+            grid-column: 2;
+        }
+        .cell-3{
+            grid-column: 3;
+        }
+        .cell-4{
+            grid-column: 4;
+            // background-color: yellow;
+        }
 
-        .br {
-            display: none;
-        }
-        .order-respons-buyer{
-            display: none;
-        }
-        .respons-dates{
+
+        .order-buyer-mobile{
             display: none;
         }
 
-        .host-order-bio {
+        .order-details {
             display: grid;
             grid-template-rows: 50% 50%;
             text-align: left;
@@ -46,6 +46,7 @@
             
             p {
                 padding: 1%;
+                font-size: 14px;
             }
             
             h3 {
@@ -54,121 +55,115 @@
                 padding-bottom: 1%;
                 margin-bottom: 1%;
             }
-        }
-
-        .host-order-btns{
-            margin: auto auto;
-            // order:reverse;
-            width: 100%;
-        }
-        .slash{
-            font-size: 2em;
-            margin: auto 0;
-            font-weight: 10; 
+            .response-dates{
+                display: none;
             }
-
+            .br {
+                display: none;
+            }
+        }
+        
+        
         button {
             outline: unset !important;
             height: fit-content;
             background-color: unset;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 10px;
+            // font-size:;
             padding: 0.8em;
-            border: 1px solid lightgray;
-        }
-        
+        border: 1px solid lightgray;
+    }
         button:hover {
-            // border: unset !important;
             background-color: rgb(218, 218, 218);
         }
-        
         .reject {
             color: #6d696a;
+            width:44%
         }
-        
         .approve{
             color: #f86792;
             font-weight:600;
-            margin-right: 10%;
+            margin-right: 6%;
+            margin-left: 6%;
+            width:44%
         }
+        
+        
     }
 }
 
-@media screen and(max-width:700px) {
-    .host-order{
-        // background-color: red;
-        font-size: 0.9rem;
-        grid-template-columns: 30% 25% 18% 27% !important;
 
+@media screen and(max-width:760px) {
+    .noReserv{
+        font-size: 14px;
+        padding: 10px;
+    }
+    .host-order{
+        font-size: 0.75rem;
+        // grid-template-columns: 22% 21% 16% 46% !important;
+        
+        .br {
+            display: unset !important;
+        }
+        
         .host-order-btns {
             justify-content: center;
-
+            
             button {
                 font-size: 0.8rem;
             }
             
         }
-        .br {
-            display: unset !important;
-        }
-    }
-    .NoReserv{
-        font-size: 17px;
-        padding: 5px 10px 9px 5px;
-        color:#5f5d5d ;
     }
 }
-@media screen and(max-width:400px) {
+@media screen and(max-width:440px) {
     .reservations-title{
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
-
-    .NoReserv{
-        font-size:20px
-    }
-
-    .host-order {
-        display: flex !important;
-        flex-direction: column;
-        font-size: 1.1rem;
-
-        .br {
-            display: none !important;
-        }
-        .order-buyer {
-            display: none;
-        }
-        .order-respons-buyer{
-            display: unset !important;
-        }
+    .host-orders{
+        padding-bottom: 0;
+        padding-top: 0;
+        .host-order {
+            display: flex !important;
+            flex-direction: column;
         
-        .respons-dates{
+            .order-buyer-mobile{
+                // background-color: red;
+                margin-bottom: 12px;
+            margin-top: 12px;
             display: unset !important;
+            font-size: 1.2rem;
         }
-
-        
-        .host-order-bio {
-            grid-template-rows: unset !important;
-            grid-template-columns: 35% 65%;
-            text-align: left !important;
-
-            h3 {
-                margin: 0;
-            }
-        }
-
-        .host-order-btns {
-            justify-content: center;
-            margin-bottom: 3% !important;
-            button {
-                font-size: 1.3rem;
-            }
+        .order-details {
+            grid-template-columns: 30% 70%;
+            font-size: 0.85rem;
+            padding:0 !important;
             
+            .order-buyer {
+                display: none;
+            }
+            .response-dates{
+                display: unset !important;
+            }
+            .br {
+                display: none !important;
+            }
+        }
+        
+        .host-order-btns{
+            display: flex;
+            margin-bottom: 20px !important;
+            margin-top: 20px !important;
+            
+            button {
+                font-size: 1.2rem;
+                width:120px !important;
+            }
             button:hover {
                 background-color: unset;
             }
         }
-
     }
+}
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="preview-card space-preview">
+  <section class="preview-card">
     <el-carousel :autoplay="false" height="175px" indicator-position="none">
       <el-carousel-item
         style="background-color: #fff"

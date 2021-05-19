@@ -59,30 +59,19 @@ cursor: pointer;
 @media screen and(max-width:400px){
   .footer-container{
     .footer-content{
-      font-size: 1rem;
       display: flex;
-      flex-direction: column !important;
+      justify-content: space-between;
+      padding:15px;
+      font-size: 0.6rem;
       align-items: center;
-      padding: 5% unset;
- 
-      .logo{
-        font-size: 1.4rem !important;
+      width:100%;
+      .logo-img{
+        width:120px
       }
- 
-      .social-links>*:nth-child(2) {
-        margin: 0 35px;
+      
+      .social-links{ 
+      display: none;
       }
-    }
- 
-    .footer-content >*:not(:first-child){
-      margin-top: 5%;
     }
   }
-}
-
-.logo-img-footer{
-  width: 150px;
-  // height: 40px;
-  object-fit: cover;
-  // margin-left: -38px
 }

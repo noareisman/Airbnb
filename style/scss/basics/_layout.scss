@@ -15,6 +15,9 @@
 //     //     grid-template-columns:      
 //     // }
 
+.full-width{
+    grid-column: 1/span 3;   
+}
 }
 
 .full-height{
@@ -37,13 +40,19 @@
 
 }
 
+.modal{
+    height: 100vh;
+    padding:30px;
+}
+
 .el-icon-date:before {
 margin-left: -11px;
 }
 
-@media screen and(max-width:400px){
+@media screen and(max-width:440px){
 
     .main-layout {
         grid-template-columns: minmax(2rem, 1fr) minmax(auto, 312.3px) minmax(2rem, 1fr) !important;
+        
     }
 }

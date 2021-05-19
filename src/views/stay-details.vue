@@ -1,9 +1,10 @@
 <template>
-  <section v-if="stay" class="stay-details-container main-layout">
-    <div  class="stay-details-title flex column">
+  <section v-if="stay" class="stay-details-container main-layout layout-change">
+    <stay-img-gallery class="img-gallery stay-details-img-carousel-container full-width" :imgs="stay.imgUrls" />
+    <div class="stay-details-title flex column">
       <div class="stay-title-primary">{{ stay.summary }}</div>
       <div class="stay-title-secondary flex space-between center">
-        <div class="left flex space-between">
+        <div class="left flex space-between center">
           <star-rating :reviews="this.reviews" /> <span> · </span>
           <!-- TODO: finish routerLink -->
           <router-link class="link" to="/stay/:id:location?">{{
@@ -32,54 +33,44 @@
         </div>
       </div>
     </div>
-    <stay-img-gallery class="img-gallery" :imgs="stay.imgUrls" />
+    <stay-img-gallery class="img-gallery img-grid-wide-view" :imgs="stay.imgUrls" />
     <div class="flex space-between stay-description-wrapper">
-      <div class="bottom-border stay-description ">
+      <div class="bottom-border stay-description">
         <div class="flex space-between bottom-border stay-desctiption-title">
           <div>
-            <h2>{{ stay.name }} hosted by {{ stay.host.fullname }}</h2>
+            <h2 class="hosted-by">{{ stay.name }} hosted by {{ stay.host.fullname }}</h2>
             <p>Up to {{ guestAmount }}</p>
           </div>
           <img class="thumb-img" :src="stay.host.imgUrl" />
         </div>
         <div class="description-section flex column bottom-border">
           <div class="description-txt">
-            Come to discover my appartment in the middle of {{stay.loc.address}}. It is located
-            in near the park and close to several bus stations. This
-            apartment can accommodate up to <span>{{guestAmount}}</span> people, it is on the {{stay.capacity +3}}th floor
-            (with a large lift) and is very well equipped. This accommodation is
-            surrounded by shops for shopping, bakeries, groceries but also
-            restaurants and bars ... Do not hesitate any more!
+            Come to discover my appartment in the middle of
+            {{ stay.loc.address }}. It is located in near the park and close to
+            several bus stations. This apartment can accommodate up to
+            <span>{{ guestAmount }}</span> people, it is on the
+            {{ stay.capacity + 3 }}th floor (with a large lift) and is very well
+            equipped. This accommodation is surrounded by shops for shopping,
+            bakeries, groceries but also restaurants and bars ... Do not
+            hesitate any more!
           </div>
-          <a href="#msg" class="contact-host-btn underline">Contact Host</a>
+          <p class="contact-host-btn underline">Contact Host</p>
         </div>
         <div>
           <stay-amenities :stay="stay" />
-          <!-- <button @click="chatModal" class="contact-host-btn underline">Contact Host</button> -->
         </div>
       </div>
-
       <trip-settings class="trip-settings" :stay="stay" />
     </div>
-    <div>
-      <!-- <el-input
-          type="textarea"
-          :rows="2"
-          placeholder="Please input"
-          v-model="contactHostMsg"
-        >
-        </el-input>
-        <button class="call-to-action-btn" @click="contactHost()">
-          Send message
-        </button> -->
-    </div>
+
     <div class="review-section bottom-border">
       <review-categories :reviews="this.reviews" />
       <review-list :reviews="this.reviews" />
       <review-add @postReview="postReview"></review-add>
     </div>
 
-    <div>
+    <!-- <div> -->
+          <!-- <button @click="chatModal" class="contact-host-btn underline">Contact Host</button> -->
       <!-- Contact host
       <el-input
         type="textarea"
@@ -95,13 +86,14 @@
       <!-- <button class="call-to-action-btn" @click="chatModal">
         send message to
       </button> -->
-      <pop-up>
+      <!-- <pop-up> -->
         <!-- @updateToy="updateToy"  -->
         <!-- <app-chat id="msg" :stay="stay" slot="main" /> -->
-      </pop-up>
-    </div>
+      <!-- </pop-up> -->
+    <!-- </div> -->
 
     <stay-map :location="stay.loc" />
+  <trip-settings-mobile class="trip-settings-mobile full-width" :stay="stay" />
   </section>
 </template> 
  
@@ -109,12 +101,12 @@
 import stayAmenities from "../cmps/stay-amenities.vue";
 import stayImgGallery from "../cmps/stay-img-gallery.vue";
 import tripSettings from "../cmps/trip-settings.vue";
+import tripSettingsMobile from "../cmps/trip-settings-mobile.vue";
 import reviewList from "../cmps/review-list.vue";
 import reviewCategories from "../cmps/review-categories.vue";
 import starRating from "../cmps/star-rating.vue";
 import stayMap from "../cmps/stay-map.vue";
 import { stayService } from "../services/stay.service.js";
-// import { utilService } from "../services/util.service.js";
 import appChat from "../cmps/app-chat.vue";
 import popUp from "../cmps/pop-up.vue";
 import reviewAdd from "../cmps/review-add.vue";
@@ -124,7 +116,7 @@ export default {
   name: "stay-details",
   data() {
     return {
-      first:true,
+      first: true,
       reviews: null,
       onChat: false,
       stay: null,
@@ -147,17 +139,17 @@ export default {
     };
   },
   methods: {
-     open1() {
-       if(this.first === false) return
-       this.first = false;
-        this.$notify({
-          title: `${this.stay.host.fullname} has ACCEPTED your Reservation`,
-          message: `${this.buyer.fullname} Enjoy your trip in ${this.stay.loc.address} :)`,
-          type: 'success',
-          position:'top-right',
-          duration:20000
-        });
-      },
+    open1() {
+      if (this.first === false) return;
+      this.first = false;
+      this.$notify({
+        title: `${this.stay.host.fullname} has ACCEPTED your Reservation`,
+        message: `${this.buyer.fullname} Enjoy your trip in ${this.stay.loc.address} :)`,
+        type: "success",
+        position: "top-right",
+        duration: 20000,
+      });
+    },
     contactHost() {
       var msg = {
         txt: this.contactHostMsg,
@@ -243,15 +235,15 @@ export default {
     if (this.$store.getters.loggedinUser) {
       this.buyer = this.$store.getters.loggedinUser;
     }
-        socketService.on("updatedAns", this.open1);
-
+    socketService.on("updatedAns", this.open1);
   },
-    destroyed(){
-    socketService.off('updatedAns')
+  destroyed() {
+    socketService.off("updatedAns");
   },
   components: {
     stayImgGallery,
     tripSettings,
+    tripSettingsMobile,
     reviewList,
     stayService,
     stayMap,

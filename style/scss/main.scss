@@ -27,9 +27,12 @@
 @import 'cmps/host-orders';
 @import 'cmps/user-dashboard.scss';
 @import 'cmps/host-stays';
+@import 'cmps/single-stay-order';
 @import 'cmps/app-chat';
 // @import 'cmps/notifications';
 @import 'cmps/add-stay-form';
+@import 'cmps/stay-reviews';
+@import 'cmps/trip-settings';
 @import 'cmps/slide-img';
 
 //VIEWS
@@ -39,3 +42,6 @@
 @import 'views/user-details';
 @import 'views/stay-details';
 @import 'views/messeges';
+
+
+//more CMPS that must come last

@@ -1,9 +1,6 @@
 <template>
   <section class="host-stays-headline">
-    <!--REAM: FIND NEW NAME -->
     <h2 class="assets-title">{{ userName }} Assets :</h2>
-    <!--REAM: FIND NEW NAME -->
-
     <ul v-if="stays" class="host-stays">
       <li v-for="stay in stays" :key="stay._id" class="host-stay-and-orders">
         <div class="host-stay flex">
