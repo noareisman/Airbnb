@@ -1,6 +1,5 @@
 .login-page {
     text-align: center;
-<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,13 +9,6 @@
     .login-signup-supperline {
         width: 28%;
         padding: 5px 3px 0 3px;
-=======
-    height: 83vh;
-    padding-top:15px; 
-    .login-page-headlines{
-        margin-bottom: 15px;
-        margin-top: 15px;
->>>>>>> 064eed97dbeeb254843490e37c8be7a46fe09d64
     }
     input {
         outline: none !important;
@@ -31,12 +23,12 @@
     }
     
     // button {
-        //     outline: none !important;
-        //     color: white;
-        //     width: 30%;
-        //     border-radius: 10px;
-        //     height: 30px;
-        //     cursor: pointer;
+    //         outline: none !important;
+    //         color: white;
+    //         width: 30%;
+    //         border-radius: 10px;
+    //         height: 30px;
+    //         cursor: pointer;
     //     background-color: #FF385C;
     
     // }
@@ -57,7 +49,6 @@
     }
     .middle-page{
         justify-content: center;
-<<<<<<< HEAD
         margin: 2% 25% 2% 25%;
     }
     .login-page-headlines{
@@ -69,13 +60,6 @@
         color: red;
         padding-top: 1%;
         margin: 0 auto;
-=======
-        margin: 1% 25% 0% 25%;
-        .login-signup-supperline {
-            width: 28%;
-            padding: 5px 3px 0 3px;
-        }
->>>>>>> 064eed97dbeeb254843490e37c8be7a46fe09d64
     }
 
     .pre{

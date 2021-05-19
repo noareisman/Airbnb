@@ -263,16 +263,21 @@ width: 100% !important;
 
 
         .el-picker-panel{
-            width:250px;
+            max-width:300px;
             .el-picker-panel__body-wrapper{
-                width:250px;
+                max-width:300px;
                 .el-picker-panel__body{
-                    max-width:250px;
-                    .el-picker-panel__content{
-                        width: 250px;
-                    }
+                    max-width:300px;
                 }
             }
+        }
+        .el-date-range-picker__content{
+            width: 100% !important;
+            max-width: 300px !important;
+        }
+
+        .el-date-range-picker .el-picker-panel__body{
+            min-width: 0px !important;
         }
         
         .setting-container>*{

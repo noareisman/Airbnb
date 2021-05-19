@@ -12,25 +12,19 @@
           class="user-menu-img"
           :src="require(`@/assets/imgs/icons/userGuest.jpg`)"
         />
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item
+      </span> 
+      <el-dropdown-menu  slot="dropdown">
+        <el-dropdown-item  
           class="user-option"
           v-if="!loggedInUser"
           @click.native="navTo"
           >Log-in</el-dropdown-item
         >
-        <el-dropdown-item
+        <el-dropdown-item 
           class="user-option"
           v-if="loggedInUser"
           @click.native="navTo"
           >My profile</el-dropdown-item
-        >
-        <el-dropdown-item
-          class="user-option"
-          v-if="loggedInUser"
-          @click.native="navTo"
-          >Notifications</el-dropdown-item
         >
         <el-dropdown-item
           class="user-option"
@@ -77,7 +71,8 @@ export default {
     };
   },
   methods: {
-    navTo(ev) {
+     navTo(ev) {
+      console.log('click')
       switch (ev.target.textContent) {
         case "Notifications":
           if (this.$route.path !== "/notifications") {

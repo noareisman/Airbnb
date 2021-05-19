@@ -17,17 +17,7 @@
           placeholder="Password"
         />
         <br />
-<<<<<<< HEAD
-        <button class="login-btn">Login</button>
-=======
         <button class="login-btn special-btn btn">Login</button>
-        <!-- <p
-          v-if="
-            msg === 'Incorrect username or password.' ||
-            msg === 'Please enter username and password.'
-          "
-        > -->
->>>>>>> 064eed97dbeeb254843490e37c8be7a46fe09d64
       </form>
       <div class="middle-page flex">
         <div class="login-signup-supperline">
@@ -40,17 +30,16 @@
       </div>
       <div>
         <div>
-               <button v-if="IsSignUp" @click="toggleSignUp" class="toggle-btn">
-          Signup
-        </button>
+          <!-- <button @click="toggleSignUp" class="toggle-btn special-btn btn">
+            Signup
+          </button> -->
 
-        <button @click="guestLogin" class="guest-login">
-          Login as a guest
-        </button>
+          <button @click="guestLogin" class="guest-login special-btn btn">
+            Login as a guest
+          </button>
         </div>
-   
       </div>
-      <form v-if="!IsSignUp" @submit.prevent="doSignup" class="signup-form">
+      <form  @submit.prevent="doSignup" class="signup-form">
         <h2 class="login-page-headlines">Signup</h2>
         <input
           autocomplete="off"
@@ -73,13 +62,8 @@
           placeholder="Password"
         />
         <br />
-<<<<<<< HEAD
-        <button>Signup</button>
-  
+        <button class="special-btn btn ">Signup</button>
 
-=======
-        <button class="special-btn btn">Signup</button>
->>>>>>> 064eed97dbeeb254843490e37c8be7a46fe09d64
         <p>
           {{ msg }}
         </p>
