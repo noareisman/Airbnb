@@ -13,9 +13,10 @@
       <div class="about-card-homeaway">
         <h2 class="about-title">What is hosting?</h2>
         <p class="about-txt">
-          HomeAway connects people with places to stay and things to do around
-          the world. The community is powered by hosts, who provide their guests
-          with the unique opportunity to travel like a local.
+          Whether that’s an entire home, a spare room, or a comfy sofa bed,
+          there’s likely to be a guest who will be happy in your space. The key
+          is to create an Airbnb listing that honestly and accurately shows
+          travelers what to expect. 
         </p>
       </div>
     </div>
@@ -23,9 +24,7 @@
 </template>
 
 <script>
-export default {
-  
-};
+export default {};
 </script>
 
 <style>

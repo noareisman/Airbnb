@@ -42,7 +42,7 @@
 
       <div @click="submitSearch" class="search-icon">
       <!-- <router-link class="search-icon" :to="`/stay/${filterBy.location}`"> -->
-        <div class="btn-search">
+        <div class="btn-search-large">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
       <!-- </router-link> -->
@@ -90,7 +90,7 @@
       </span>
 
       <div @click="submitSearch" class="search-icon">
-        <div class="btn-search">
+        <div class="btn-search-large">
           <img src="../assets/imgs/icons/icon-search.png" />
         </div>
       </div>

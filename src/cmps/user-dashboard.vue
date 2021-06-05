@@ -3,9 +3,9 @@
     <h2 class="dash-title">{{ user.fullname }} Favorites</h2>
 
     <section v-if="!likes.length" class="no-fav-container">
-      <h2 class="no-fav-title">No Favorite</h2>
-      <p>There is no favorite at the moment,</p>
-      <p>to add some,</p>
+      <h2 class="no-fav-title">No Favorites</h2>
+      <p>There are no favorites at the moment</p>
+      <p>To add some - click the button!</p>
       <router-link class="router explore-fav-btn" :to="`/stay`">
         <el-button
           title="Explore"
@@ -27,7 +27,22 @@
       </div>
 
       <div class="home-pop" v-for="stay in likes" :key="stay._id" :stay="stay">
-        <section class="preview-card space-preview">
+        <section class="preview-card like-preview flex space-between">
+          <div class="card-info flex column space-between">
+            <div class="flex column">
+            <span>
+              {{ stay.name }} -
+              <span class="stay-address"> {{ stay.loc.address }} </span>
+            </span>
+            <span class="summary-txt"> {{ stay.summary }}</span>
+              
+            </div>
+            <div class="rate-and-price flex column">
+            <star-rating :reviews="stay.reviews" />
+            <span><span class="price-bold"> ${{ stay.price }} </span> /Night</span>
+            </div>
+          </div>
+          <div class="preview-img">
           <router-link class="router" :to="`/stay/${stay._id}`">
             <img
               class="explore-img" 
@@ -41,17 +56,6 @@
             class="like-btn"
             src="../assets/imgs/icons/fillheart.png"
           />
-
-          <div class="card-info">
-            <star-rating :reviews="stay.reviews" />
-            <span>
-              {{ stay.name }} -
-              <span class="stay-address"> {{ stay.loc.address }} </span>
-            </span>
-
-            <span>
-              <span class="price-bold"> ${{ stay.price }} </span> /Night</span
-            >
           </div>
         </section>
       </div>

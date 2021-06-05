@@ -7,7 +7,7 @@
     
     .user-profile{
         position: sticky;
-        top: 22.6%;
+        top: 180px;
         grid-column: 2 / 3;
         // grid-row: 1 / 2;
         padding: 10% 10% 15% 10% ;
@@ -51,7 +51,7 @@
     }    
 }
 
-@media screen and(max-width:700px){
+@media screen and(max-width:770px){
     .user-details {
         padding: 1%;
         display: flex;

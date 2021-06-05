@@ -59,11 +59,23 @@
 @media (max-width :740px){
     .main-layout.layout-change{ 
             grid-template-columns: 24px auto 24px !important;
-        
             .img-grid-wide-view{
                 display:none;
         }
+        .img-container{
+            position: relative;
 
+            .heart-btn{
+                z-index: 10;
+                position: absolute;
+                top: 7px;
+                right: 7px;
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+            }
+        }
+            
         //CMP:stay-img-gallery////////////////////////////////
         .stay-details-img-carousel-container{
             display:block;

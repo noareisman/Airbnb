@@ -1,15 +1,51 @@
 <template>
   <section v-if="stay" class="stay-details-container main-layout layout-change">
-    <stay-img-gallery class="img-gallery stay-details-img-carousel-container full-width" :imgs="stay.imgUrls" />
+    <div class="full-width img-container">
+    <stay-img-gallery @toggleLike="toggleLike()" class="img-gallery stay-details-img-carousel-container full-width" :imgs="stay.imgUrls" :isLiked="this.isLiked"/>
+    <div class="heart-btn">
+      <img
+        v-if="!isLiked"
+        title="Save To Favorites"
+        @click="toggleLike()"
+        class="like-btn"
+        src="../assets/imgs/icons/heart.png"
+      />
+      <img
+        v-else
+        title="Remove From Favorites"
+        @click="toggleLike()"
+        class="like-btn"
+        src="../assets/imgs/icons/fillheart.png"
+      />
+        <!-- <button
+            class="btn flex action-btn"
+            v-if="isLiked"
+            @click="toggleLike()"
+          >
+            <i class="save-btn btn fas fa-heart" style="color: #ca4c4c"></i
+            >
+        </button>
+        <button
+            class="btn flex action-btn"
+            v-if="!isLiked"
+            @click="toggleLike()"
+          >
+        <i class="save-btn btn far fa-heart"></i>
+          </button> -->
+    </div> 
+    </div>
     <div class="stay-details-title flex column">
       <div class="stay-title-primary">{{ stay.summary }}</div>
       <div class="stay-title-secondary flex space-between center">
         <div class="left flex space-between center">
           <star-rating :reviews="this.reviews" /> <span> · </span>
           <!-- TODO: finish routerLink -->
-          <router-link class="link" to="/stay/:id:location?">{{
+          <!-- <router-link class="link" to="/stay/:id:location?">{{
             stay.loc.address
-          }}</router-link>
+          }}</router-link> -->
+          <a class="link" href="#location">{{
+            stay.loc.address
+          }}</a>
         </div>
         <div class="right flex space-between">
           <button class="btn flex center space-evenly action-btn">
@@ -92,7 +128,7 @@
       <!-- </pop-up> -->
     <!-- </div> -->
 
-    <stay-map :location="stay.loc" />
+    <stay-map id="location" :location="stay.loc" />
   <trip-settings-mobile class="trip-settings-mobile full-width" :stay="stay" />
   </section>
 </template> 
@@ -132,7 +168,7 @@ export default {
           Accessibility: null,
         },
       },
-      isLiked: false,
+      isLiked: null,
       stayOrders: [],
       buyer: null,
       host: null,
@@ -222,6 +258,13 @@ export default {
       }
     },
   },
+      // isLiked() {
+      // const user = this.$store.getters.loggedinUser;
+      // if (!user) return;
+      // return this.stay.favorites.some(({userId}) => {
+      //   return userId === user._id;
+      // })
+      // },
   created() {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {
@@ -230,13 +273,21 @@ export default {
         this.stay.host._id;
         this.reviews = stay.reviews;
         this.$store.dispatch({ type: "loadAllOrders", stayId: stay._id });
+      const user = this.$store.getters.loggedinUser;
+        if (!user){
+          this.isLiked=false;
+        }else{
+          this.isLiked= this.stay.favorites.some(({userId}) => {
+                return userId === user._id;
+          })
+        }
       }
     });
     if (this.$store.getters.loggedinUser) {
       this.buyer = this.$store.getters.loggedinUser;
     }
     socketService.on("updatedAns", this.open1);
-  },
+      },
   destroyed() {
     socketService.off("updatedAns");
   },

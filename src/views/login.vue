@@ -17,7 +17,10 @@
           placeholder="Password"
         />
         <br />
-        <button class="login-btn special-btn btn">Login</button>
+        <div class="login-btns flex column center">
+          <button class="special-btn btn login-btn">Login</button>
+          <button @click="guestLogin" class="guest-login special-btn btn"> Login as a guest</button>
+        </div>
       </form>
       <div class="middle-page flex">
         <div class="login-signup-supperline">
@@ -26,17 +29,6 @@
         <h3>OR</h3>
         <div class="login-signup-supperline">
           <hr />
-        </div>
-      </div>
-      <div>
-        <div>
-          <!-- <button @click="toggleSignUp" class="toggle-btn special-btn btn">
-            Signup
-          </button> -->
-
-          <button @click="guestLogin" class="guest-login special-btn btn">
-            Login as a guest
-          </button>
         </div>
       </div>
       <form  @submit.prevent="doSignup" class="signup-form">

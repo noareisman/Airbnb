@@ -180,12 +180,18 @@ html {
     background-color: #ff385c;
     border-radius: 50%;
     width: 41px !important;
-    height: 41px;
+    // height: 41px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid white;
     margin-bottom: 3px;
+}
+
+.btn-search-large{
+ width: 50px !important;
+ margin-top: 3px;
+ margin-right: 3px;
 }
 
 .location-header {
@@ -216,6 +222,8 @@ html {
     height: 220px;
     border-radius: 13px;
     cursor: pointer;
+    object-fit: cover;
+
 }
 
 .location-txt {
@@ -249,9 +257,10 @@ html {
 }
 
 
-@media (max-width:400px){
+@media (max-width:440px){
     .filter-container {
         margin-bottom: 6vh;
+        width: 100%;
     }
 
     .logo-img{

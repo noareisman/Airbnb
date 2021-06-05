@@ -124,6 +124,9 @@
 }
 
 @media screen and(max-width:440px) {
+  .header-container {
+    grid-template-columns: 15px 1fr 15px !important;
+  }
   .nav-container {
     padding: unset !important;
 

@@ -137,10 +137,12 @@ padding-bottom: 3px;
 margin-left: 11px;
 }
 
-@media (max-width:400px) {
+@media (max-width:440px) {
     .filter-container {
         // background-color: blue;
-        width: fit-content;
+        // width: fit-content;
+        width: 100%;
+
     }
 
     .advanced-search-input .advanced-input-container .advanced-input-section .label {
