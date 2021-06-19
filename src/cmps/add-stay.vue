@@ -94,15 +94,19 @@ export default {
           this.stay.amenities=amenities;
       },
       async addStay(){
-          try{
-            this.stay.price=+this.stay.price;
-            await this.$store.dispatch({type:'saveStay',stay:this.stay})
-            Swal.fire('Your new stay was added to listing!')
-            this.stay=stayService.getEmptyStay()
-          } catch(err){
-              console.log('stay was not added:',err);
-              Swal.fire('Oops! Something went wrong. Stay was not added. Try again later.')
-          }
+        this.$notify.error({
+          title: 'This feature is not active yet but will be implemented soon :)',
+          // message: 'Thank'
+        })
+          // try{
+          //   this.stay.price=+this.stay.price;
+          //   await this.$store.dispatch({type:'saveStay',stay:this.stay})
+          //   Swal.fire('Your new stay was added to listing!')
+          //   this.stay=stayService.getEmptyStay()
+          // } catch(err){
+          //     console.log('stay was not added:',err);
+          //     Swal.fire('Oops! Something went wrong. Stay was not added. Try again later.')
+          // }
       }
     },
     components: {

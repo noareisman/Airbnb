@@ -118,6 +118,10 @@ export default {
       this.orderSettings.guest = value;
     },
     async sendOrderRequest() {
+      if (!this.orderSettings.buyer){
+        this.open2()
+        return
+      }
       // console.log('tripSettings', this.orderSettings);
       try {
         await this.$store.dispatch({
@@ -140,7 +144,13 @@ export default {
           position:'bottom-right'
         });
       },
-      
+    open2() {
+        this.$notify.warning({
+          title: 'In order to set a reservation you must login',
+          message: 'You can login with a demo user or sign-up with your own user',
+          type: 'warning',
+        });
+      },      
       open4() {
         this.$notify.error({
           title: 'Error',
