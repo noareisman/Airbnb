@@ -280,12 +280,12 @@ function getTxtByLocation(location){
             return[
                 {
                 title: 'Bohemian duplex penthouse in Barcelona',
-                summary: 'Entire apartmen',
+                summary: 'Entire apartment',
                 description: 'Beautiful penthouse with cosy terrace in the bohemian neighborhood of Gracia. It has super fast reliable internet connection and comfy table ad chairs in case you need to work from home. The apartment has been renovated with a classical chic decoration, it boasts very spacious rooms and a bathtub in the main bedroom with terrace views. It has a living and dining-room with an integrated kitchen and is fully equipped for your comfort. A 15 sqm terrace completes the amenities.'
                 },
                 {
                 title: 'Spectacular penthouse in the center',
-                summary: 'Entire apartmen',
+                summary: 'Entire apartment',
                 description: 'Enjoy our fantastic penthouse in Barcelona where you can sleep watching the moon, have breakfast in one of our terraces or sunbathe in our comfortable chill out. Situated in the coolest neighborhood in the world (TIME OUT ranking 2020), this fully equipped apartment is just 15min walk from the city center (3 metro stops). It has a super fast reliable internet connection in case you have to work from home, and a huge smart TV to watch your favorite movies and series.'
                 },
                 {
@@ -343,12 +343,12 @@ function getTxtByLocation(location){
             return [
                 {
                     title: 'Duplex penthouse in NY',
-                    summary: 'Entire apartmen',
+                    summary: 'Entire apartment',
                     description: 'Beautiful penthouse with cosy terrace in Brooklyn. It has super fast reliable internet connection and comfy table ad chairs in case you need to work from home. The apartment has been renovated with a classical chic decoration, it boasts very spacious rooms and a bathtub in the main bedroom with terrace views. It has a living and dining-room with an integrated kitchen and is fully equipped for your comfort.'
                 },
                 {
                     title: 'Spectacular penthouse in the heart of NY',
-                    summary: 'Entire apartmen',
+                    summary: 'Entire apartment',
                     description: 'Enjoy our fantastic penthouse in NY where you can sleep watching the moon, have breakfast in one of our terraces or sunbathe in our comfortable chill out. Situated in the coolest neighborhood in the world (TIME OUT ranking 2020), this fully equipped apartment is just 15min walk from the city center (3 bus stops). It has a super fast reliable internet connection in case you have to work from home, and a huge smart TV to watch your favorite movies and series.'
                 },
                 {

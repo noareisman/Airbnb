@@ -51,12 +51,15 @@
         
         .host-stay{
             .host-stay-txt {
-                margin-right: 3%;
+                margin-right: 2%;
                 margin-bottom: 3%;
                 margin-left: 2% !important;
                 .cell{
+                    p{
 
-                    font-size: 13px !important;
+                        
+                        font-size: 14px ;
+                    }
                 }
                 h2 {
                     font-size: 1.2rem;
@@ -79,5 +82,12 @@
     .assets-title{
         font-size: 1.6rem;
         margin-bottom: 15px;
+    }
+}
+@media screen and(max-width:370px){ 
+    .cell{
+        p{
+            font-size: 13px !important;
+        }
     }
 }

@@ -52,7 +52,16 @@ margin-left: -11px;
 @media screen and(max-width:440px){
 
     .main-layout {
-        grid-template-columns: minmax(2rem, 1fr) minmax(auto, 312.3px) minmax(2rem, 1fr) !important;
+        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 320px) minmax(1rem, 1fr) !important;
+        // grid-template-columns: minmax(1rem, 1fr) minmax(auto, 400px) minmax(1rem, 1fr) ;
+        
+    }
+}
+
+@media screen and(max-width:370px){
+
+    .main-layout {
+        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 320px) minmax(1rem, 1fr) !important;
         
     }
 }
