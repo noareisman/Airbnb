@@ -1,9 +1,7 @@
 import { userService } from '../services/user.service.js';
 
-
 export const userStore = {
     state: {
-        // loggedInUser: userService.getLoggedinUser(),// no need for additional "isLoggedUser" as we can check if this is null
         users: [],
         user: userService.getLoggedinUser(),
         msg: '',
@@ -15,7 +13,7 @@ export const userStore = {
         loggedinUser(state) {
             return state.user;
         },
-        msg(state){
+        msg(state) {
             return state.msg;
         }
     },
@@ -23,13 +21,13 @@ export const userStore = {
         setUser(state, { user }) {
             state.user = user
         },
-        setUsers(state, { users }) { 
+        setUsers(state, { users }) {
             state.users = users;
         },
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
         },
-        setMsg(state, { msg }){
+        setMsg(state, { msg }) {
             state.msg = msg
         }
     },
@@ -39,7 +37,7 @@ export const userStore = {
                 const user = await userService.login(userCred);
                 if (user._id) commit({ type: 'setUser', user })
                 else {
-                    console.log('user in else:',user);
+                    console.log('user in else:', user);
                     commit({ type: 'setMsg', msg: user })
                 }
                 return user
@@ -59,7 +57,6 @@ export const userStore = {
                 console.log('userStore: Error in signup', err)
                 throw err
             }
-
         },
         async logout({ commit }) {
             try {

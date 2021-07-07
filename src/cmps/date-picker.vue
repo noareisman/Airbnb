@@ -16,7 +16,6 @@
       prefix-icon="false"
     >
     </el-date-picker>
-    <!-- <button @click="print()"></button> -->
   </section>
 </template>
 
@@ -35,19 +34,7 @@ export default {
           this.stayOrders && this.stayOrders.some((stayOrder)=>{
             return (time.getTime() > stayOrder[0]) && (time.getTime() <stayOrder[1])
           }))
-
           )},
-        // shortcuts: [
-        //   {
-        //     text: "",
-        //     onClick(picker) {
-        //       const end = new Date();
-        //       const start = new Date();
-        //       start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-        //       picker.$emit("pick", [start, end]);
-        //     },
-        //   },
-        // ],
       },
       value1: "",
     };

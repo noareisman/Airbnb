@@ -1,7 +1,6 @@
 import { stayService } from '../services/stay.service.js';
 import { utilService } from '../services/util.service.js';
 
-
 export const stayStore = {
     state: {
         stays: [],
@@ -16,9 +15,9 @@ export const stayStore = {
                 return a.price - b.price
             })
         },
-        sortByPopularity(state){
-        return state.stays.sort((a,b) =>{
-                return  b.reviews.length -  a.reviews.length
+        sortByPopularity(state) {
+            return state.stays.sort((a, b) => {
+                return b.reviews.length - a.reviews.length
             })
         },
         getAllUserLike(state, getters) {
@@ -32,31 +31,27 @@ export const stayStore = {
                 });
             });
             return stays
-        },     
+        },
     },
-
     mutations: {
         setStays(state, { stays }) {
             state.stays = stays;
 
         },
-        filterByPrice(state, {price}){
-        const staysToShow =  state.stays
-         const stays =  staysToShow.forEach(stay => {
-              return stay.price < price
-          }); 
-          return stays
+        filterByPrice(state, { price }) {
+            const staysToShow = state.stays
+            const stays = staysToShow.forEach(stay => {
+                return stay.price < price
+            });
+            return stays
         },
-
         updateStays(state, { updatedStay }) {
             const idx = state.stays.findIndex(({ _id }) => _id === updatedStay._id);
             state.stays.splice(idx, 1, updatedStay);
         },
-
-
     },
     actions: {
-        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0 , price: 0, amenities:null }  }) {
+        async loadStays({ commit, state }, { filterBy = { location: '', guests: 0, price: 0, amenities: null } }) {
             try {
                 const stays = await stayService.query(filterBy)
                 commit({
@@ -72,18 +67,11 @@ export const stayStore = {
         async postReview(context, { review }) {
             var newReview = {
                 currStay: review.stay,
-                id: utilService.makeId(),
                 txt: review.txt,
                 avgRate: review.avgRate,
-                category: {
-                    Cleanliness: review.category.Cleanliness,
-                    Accuracy: review.category.Accuracy,
-                    Communication: review.category.Communication,
-                    Location: review.category.Location,
-                    CheckIn: review.category.CheckIn,
-                    Accessibility: review.category.Accessibility
-                },
-                by: {
+                category: JSON.parse(JSON.stringify(review.category)),
+                id: utilService.makeId(),//Move to backend
+                by: {// move to backend
                     _id: review.buyer._id,
                     fullname: review.buyer.fullname,
                     imgUrl: review.buyer.imgUrl,
@@ -91,38 +79,30 @@ export const stayStore = {
                 }
             }
             newReview.currStay.reviews.unshift(newReview)
-            try{
-                const updatedStay= await stayService.save(currStay)
-                commit({type:'updateStays',updatedStay})
+            try {
+                const updatedStay = await stayService.save(currStay)
+                // const updatedStay= await stayService.addReview(newReview,currStay)
+                commit({ type: 'updateStays', updatedStay })
                 return updatedStay
-            }catch (err){
+            } catch (err) {
                 throw err
             }
-            // const updatedStay= await stayService.addReview(newReview,currStay)
         },
- 
-
-
-    async toggleLike(context, { stay }) {
-        const user = context.getters.loggedinUser; 
-        const favIdx = stay.favorites && stay.favorites.findIndex(({userId}) => user._id === userId); 
-        if (favIdx >= 0) stay.favorites.splice(favIdx, 1); 
-        else stay.favorites = [{userId: user._id}]; 
-        try {
-            const updatedStay = await stayService.save(stay)
-            context.commit({ type: 'updateStays', updatedStay })
-            return updatedStay
-        } catch (err) {
-            console.log('from Store: Cannot toggleLike', err);
-            throw new Error('Cannot toggleLike');
-        } 
-    }
-},
-
-
-
-
-
+        async toggleLike(context, { stay }) {
+            const user = context.getters.loggedinUser;
+            const favIdx = stay.favorites && stay.favorites.findIndex(({ userId }) => user._id === userId);
+            if (favIdx >= 0) stay.favorites.splice(favIdx, 1);
+            else stay.favorites = [{ userId: user._id }];
+            try {
+                const updatedStay = await stayService.save(stay)
+                context.commit({ type: 'updateStays', updatedStay })
+                return updatedStay
+            } catch (err) {
+                console.log('from Store: Cannot toggleLike', err);
+                throw new Error('Cannot toggleLike');
+            }
+        }
+    },
     async saveStay(context, { stay }) {
         try {
             const savededStay = await stayService.save(stay)
@@ -155,12 +135,4 @@ export const stayStore = {
     //         throw err
     //     }
     // },
-
-    checkAvailability(context, stayId) {
-
-    },
-    sendMsgToHost(context, payload) {
-
-    },
-
 }

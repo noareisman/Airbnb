@@ -10,7 +10,7 @@
 import myHeader from "./cmps/app-header.vue";
 import myFooter from "./cmps/app-footer.vue";
 import { socketService } from "./services/socket.service.js";
-import { syntheticDataService } from "./services/synthetic-data.service.js";
+
 export default {
   name: "vueApp",
   data() {
@@ -21,27 +21,22 @@ export default {
       const host = this.$store.getters.loggedinUser;
       await this.$store.dispatch({ type: "loadHostOrders", host });
     },
-  
   },
   async created() {
     await this.$store.dispatch({ type: "loadUsers" });
-
-    //connects a default user for demo mode
+    await this.$store.dispatch({ type: "loadStays" });
+    //connects a default user for demo mode - not used as if user logges out and refreshes it reconects it to the demo user
     // await this.$store.dispatch({
     //   type: "login",
     //   userCred: { username: "mor97", password: "secret" },
     // });
-    await this.$store.dispatch({ type: "loadStays" });
-    
+
+//relevant only if there is a loggedin user:
     const user = this.$store.getters.loggedinUser;
     await this.$store.dispatch({ type: "loadHostOrders", host: user });
     
-    // syntheticDataService.createStay()//creates synthetic data and prints it to the console 
-    //-it does not insert the data to the collection... if console printing was successful json format can be copied from the console
     socketService.setup();
-
     socketService.on("loadOrders", this.loadOrder);
-    
   },
   destroyed(){
     socketService.off('loadOrders')

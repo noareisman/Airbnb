@@ -1,7 +1,6 @@
 <template>
   <section class="host-order-container">
     <h2 class="reservations-title">Pending Reservations</h2>
-    <!-- <section class="host-orders"> -->
     <section class="host-orders">
       <p
         class="noReserv"
@@ -69,7 +68,6 @@ export default {
     },
     async changeOrderStat(event, order) {
       order = JSON.parse(JSON.stringify(order));
-
       switch (event.target.className) {
         case "reject":
           order.status = "deny";
@@ -91,6 +89,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

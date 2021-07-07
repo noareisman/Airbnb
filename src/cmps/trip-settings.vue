@@ -157,12 +157,9 @@ export default {
           message: 'Please Try Again later'
         });
       },
-    
     mousemove(e) {
       this.mouseX = e.offsetX;
       this.mouseY = e.offsetY;
-      // this.mousePos= `{background-position: calc((100 - var(${this.mouseX}, 0)) * 1%) calc((100 - var(${this.mouseY}, 0)) * 1%)}`
-      // console.log(this.mouseX);
     },
   },
   computed: {

@@ -17,21 +17,6 @@
         class="like-btn"
         src="../assets/imgs/icons/fillheart.png"
       />
-        <!-- <button
-            class="btn flex action-btn"
-            v-if="isLiked"
-            @click="toggleLike()"
-          >
-            <i class="save-btn btn fas fa-heart" style="color: #ca4c4c"></i
-            >
-        </button>
-        <button
-            class="btn flex action-btn"
-            v-if="!isLiked"
-            @click="toggleLike()"
-          >
-        <i class="save-btn btn far fa-heart"></i>
-          </button> -->
     </div> 
     </div>
     <div class="stay-details-title flex column">
@@ -39,10 +24,6 @@
       <div class="stay-title-secondary flex space-between center">
         <div class="left flex space-between center">
           <star-rating :reviews="this.reviews" /> <span> · </span>
-          <!-- TODO: finish routerLink -->
-          <!-- <router-link class="link" to="/stay/:id:location?">{{
-            stay.loc.address
-          }}</router-link> -->
           <a class="link" href="#location">{{
             stay.loc.address
           }}</a>
@@ -104,29 +85,6 @@
       <review-list :reviews="this.reviews" />
       <review-add @postReview="postReview"></review-add>
     </div>
-
-    <!-- <div> -->
-          <!-- <button @click="chatModal" class="contact-host-btn underline">Contact Host</button> -->
-      <!-- Contact host
-      <el-input
-        type="textarea"
-        :rows="2"
-        placeholder="Please input"
-        v-model="contactHostMsg"
-      >
-      </el-input>
-      <button class="call-to-action-btn" @click="contactHost()">
-        Send message
-      </button> -->
-
-      <!-- <button class="call-to-action-btn" @click="chatModal">
-        send message to
-      </button> -->
-      <!-- <pop-up> -->
-        <!-- @updateToy="updateToy"  -->
-        <!-- <app-chat id="msg" :stay="stay" slot="main" /> -->
-      <!-- </pop-up> -->
-    <!-- </div> -->
 
     <stay-map id="location" :location="stay.loc" />
   <trip-settings-mobile class="trip-settings-mobile full-width" :stay="stay" />
@@ -200,9 +158,8 @@ export default {
       var review = {
         txt: postedReview.reviewTxt,
         buyer: this.buyer,
-        hostId: this.stay.host._id,
+        hostId: this.stay.host._id,// will be used in the future for updating host
         stay: this.stay,
-        time: Date.now(),
         avgRate: postedReview.userReviewAvgRate,
         category: {
           Cleanliness: postedReview.categoryMap.Cleanliness,
@@ -244,10 +201,13 @@ export default {
     //     console.log(err);
     //   }
     // },
-
-    chatModal() {
-      this.onChat = !this.onChat;
-    },
+      // isLiked() {
+      // const user = this.$store.getters.loggedinUser;
+      // if (!user) return;
+      // return this.stay.favorites.some(({userId}) => {
+      //   return userId === user._id;
+      // })
+      // },
   },
   computed: {
     guestAmount() {
@@ -258,13 +218,6 @@ export default {
       }
     },
   },
-      // isLiked() {
-      // const user = this.$store.getters.loggedinUser;
-      // if (!user) return;
-      // return this.stay.favorites.some(({userId}) => {
-      //   return userId === user._id;
-      // })
-      // },
   created() {
     const _id = this.$route.params.id;
     stayService.getById(_id).then((stay) => {

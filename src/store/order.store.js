@@ -7,7 +7,6 @@ export const orderStore = {
     currStayOrders: [],
     hostOrders: [],
     host: null,
-    // currViewedStayId: null
   },
   getters: {
     getHostOrders(state) {
@@ -67,7 +66,7 @@ export const orderStore = {
       try {
         const filterBy = {}
         filterBy._id = host._id
-
+        
         commit({ type: 'setHost', host })
         const stays = await stayService.query(filterBy);
         const orders = await orderService.query();
@@ -88,48 +87,13 @@ export const orderStore = {
       dispatch({ type: "loadHostOrders", host:order.buyer });
     },
     async setPendingOrder({ dispatch }, { orderSettings }) {
-      console.log(orderSettings)
       var host = orderSettings.currStay.host
-      //TODO: move to service
-      var newPendingOrder = {
-        createdAt: Date.now(),
-        buyer: {
-          _id: orderSettings.buyer._id,
-          fullname: orderSettings.buyer.fullname
-        },
-        totalPrice: orderSettings.totalPrice,
-        startDate: orderSettings.requestedDates[0],
-        endDate: orderSettings.requestedDates[1],
-        guests: {
-          adults: orderSettings.guest.adultsNum,
-          kids: orderSettings.guest.childrenNum + orderSettings.guest.infantsNum
-        },
-        stay: {
-          _id: orderSettings.currStay._id,
-          name: orderSettings.currStay.name,
-          price: orderSettings.currStay.price
-        },
-        status: 'pending'
-      }//
-      await orderService.save(newPendingOrder)
+      await orderService.save(orderSettings)
+      await socketService.emit('renderOrders',host )
       // dispatch({ type: "loadHostOrders", host });
-      console.log('110!!!!!!!!!!!')
-     await socketService.emit('renderOrders',host )
+      // socketService.emit('loadOrders',(newPendingOrder))
     },
-  
+  }
 }
-}
-
-
-
-
-  //   async setPendingOrder({ dispatch }, { orderSettings }) {
-  //     var host = orderSettings.currStay.host
-  //     var newPendingOrder= await orderService.save(orderSettings)
-  //     socketService.emit('test', newPendingOrder)
-  //     // dispatch({ type: "loadHostOrders", host });
-  //     // socketService.emit('loadOrders',(newPendingOrder))
-  //   }
-  // }
 
 

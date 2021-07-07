@@ -39,7 +39,6 @@
               <span class="add-amen"> Choose amenities:</span>
               <add-stay-amenities @updateAmenities="updateAmenities()"/>
             </div>
-            <!-- <div class="add-stay-address"/> -->
             <div>
             <span>Upload stay images:</span>
             <img-cld-upload class="upload-stay-img"/>
