@@ -1,5 +1,5 @@
 <template>
-  <section class="user-details">
+  <section class="user-details page">
     <section class="user-profile">
       <div>
         <img :src="user.imgUrl" alt="User profile IMG" />

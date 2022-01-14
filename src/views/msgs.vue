@@ -1,5 +1,5 @@
 <template>
-<section class="notifications flex">
+<section class="notifications page flex">
     <div class="notifications-address">
         <h3 class="notifications-address-headline flex">Notifications</h3>
         <ul v-if="loggedInUserNotifications.length" class="list-of-notifications">

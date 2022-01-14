@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details-container main-layout layout-change">
+  <section v-if="stay" class="stay-details-container main-layout layout-change page">
     <div class="full-width img-container">
     <stay-img-gallery @toggleLike="toggleLike()" class="img-gallery stay-details-img-carousel-container full-width" :imgs="stay.imgUrls" :isLiked="this.isLiked"/>
     <div class="heart-btn">

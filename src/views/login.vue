@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page flex column">
     <div class="login-page" v-if="!loggedInUser">
       <h2 class="login-page-headlines">Login</h2>
       <form @submit.prevent="doLogin" class="login-form">
